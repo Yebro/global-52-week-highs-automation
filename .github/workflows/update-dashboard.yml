@@ -2,7 +2,7 @@ name: Update 52-week highs dashboard
 
 on:
   schedule:
-    - cron: "0 7 * * 1-5"
+    - cron: "5 7 * * 1-5"
     - cron: "0 23 * * 1-5"
   workflow_dispatch:
 
@@ -44,7 +44,7 @@ jobs:
         run: |
           if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
             slot="manual"
-          elif [[ "$EVENT_SCHEDULE" == "0 7 * * 1-5" ]]; then
+          elif [[ "$EVENT_SCHEDULE" == "5 7 * * 1-5" ]]; then
             slot="asia"
           else
             slot="us"
@@ -80,4 +80,3 @@ jobs:
         id: deployment
         if: steps.gate.outputs.should_publish == 'true'
         uses: actions/deploy-pages@v4
-
