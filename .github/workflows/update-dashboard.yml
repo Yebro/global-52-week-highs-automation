@@ -3,7 +3,7 @@ name: Update 52-week highs dashboard
 on:
   schedule:
     - cron: "5 7 * * 1-5"
-    - cron: "0 23 * * 1-5"
+    - cron: "5 23 * * 1-5"
   workflow_dispatch:
 
 permissions:
