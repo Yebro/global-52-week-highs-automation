@@ -1,0 +1,582 @@
+<style>
+  #actual-highs-tracker {
+    --ht-bg: light-dark(#f3f6f7, #0d1218);
+    --ht-surface: light-dark(#ffffff, #151c24);
+    --ht-surface-2: light-dark(#f7f9fa, #1b2530);
+    --ht-text: light-dark(#17212a, #e8eef5);
+    --ht-muted: light-dark(#687583, #9ba9b8);
+    --ht-line: light-dark(#dce3e8, #2b3744);
+    --ht-accent: light-dark(#16684f, #4cc79a);
+    --ht-accent-soft: light-dark(#e6f3ed, #153b31);
+    --ht-up: light-dark(#ce3048, #ff6b7f);
+    --ht-down: light-dark(#2869c7, #77a6ff);
+    --ht-shadow: light-dark(0 16px 42px rgba(27, 39, 48, .11), 0 18px 45px rgba(0, 0, 0, .34));
+    --ht-sector-1: light-dark(#176b51, #4cc79a);
+    --ht-sector-2: light-dark(#2e70c9, #77a6ff);
+    --ht-sector-3: light-dark(#d0682d, #f39a63);
+    --ht-sector-4: light-dark(#7657b2, #ae92e8);
+    --ht-sector-5: light-dark(#b13f68, #ec7ca5);
+    --ht-sector-6: light-dark(#1d8395, #5fc2d2);
+    --ht-sector-7: light-dark(#8a6d1f, #d2b65a);
+    --ht-sector-8: light-dark(#65758a, #9caec2);
+    --ht-sector-9: light-dark(#a34737, #df7d6e);
+    --ht-sector-10: light-dark(#4d7d3b, #89bd71);
+    --ht-sector-11: light-dark(#89766b, #b9a79c);
+    --ht-sector-12: light-dark(#5f676e, #929da8);
+    color-scheme: light dark;
+    color: var(--ht-text);
+    font-family: Inter, Pretendard, "Noto Sans KR", system-ui, sans-serif;
+    width: 100%;
+  }
+
+  #actual-highs-tracker * { box-sizing: border-box; }
+  #actual-highs-tracker button { font: inherit; }
+  #actual-highs-tracker .ht-app {
+    background: var(--ht-bg);
+    border: 1px solid var(--ht-line);
+    border-radius: 18px;
+    box-shadow: var(--ht-shadow);
+    overflow: hidden;
+  }
+  #actual-highs-tracker .ht-header {
+    align-items: center;
+    background: var(--ht-surface);
+    border-bottom: 1px solid var(--ht-line);
+    display: flex;
+    gap: 18px;
+    justify-content: space-between;
+    padding: 18px 22px;
+  }
+  #actual-highs-tracker .ht-title-row { align-items: center; display: flex; flex-wrap: wrap; gap: 9px; }
+  #actual-highs-tracker .ht-mark {
+    align-items: center;
+    background: var(--ht-accent);
+    border-radius: 9px;
+    color: light-dark(#ffffff, #082119);
+    display: inline-flex;
+    font-weight: 500;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+  }
+  #actual-highs-tracker h1 { font-size: 18px; font-weight: 500; line-height: 1.25; margin: 0; }
+  #actual-highs-tracker .ht-live-badge {
+    background: var(--ht-accent-soft);
+    border-radius: 999px;
+    color: var(--ht-accent);
+    font-size: 10px;
+    font-weight: 500;
+    padding: 4px 8px;
+  }
+  #actual-highs-tracker .ht-subtitle { color: var(--ht-muted); font-size: 11px; margin: 5px 0 0 39px; }
+  #actual-highs-tracker .ht-collected { color: var(--ht-muted); font-size: 11px; text-align: right; }
+  #actual-highs-tracker .ht-collected strong { color: var(--ht-text); display: block; font-size: 12px; font-weight: 500; margin-top: 3px; }
+  #actual-highs-tracker .ht-body { padding: 18px 22px 24px; }
+
+  #actual-highs-tracker .ht-filter-row { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; margin-bottom: 11px; }
+  #actual-highs-tracker .ht-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+  #actual-highs-tracker .ht-tab {
+    background: transparent;
+    border: 1px solid var(--ht-line);
+    border-radius: 8px;
+    color: var(--ht-muted);
+    cursor: pointer;
+    min-height: 34px;
+    padding: 0 12px;
+  }
+  #actual-highs-tracker .ht-tab[aria-pressed="true"] { background: var(--ht-text); border-color: var(--ht-text); color: var(--ht-surface); }
+  #actual-highs-tracker .ht-rule { color: var(--ht-muted); font-size: 10px; }
+  #actual-highs-tracker .ht-scope { color: var(--ht-muted); font-size: 10px; margin-bottom: 15px; }
+  #actual-highs-tracker .ht-scope strong { color: var(--ht-text); font-weight: 500; }
+
+  #actual-highs-tracker .ht-stats { display: grid; gap: 10px; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 14px; }
+  #actual-highs-tracker .ht-stat { background: var(--ht-surface); border: 1px solid var(--ht-line); border-radius: 12px; min-width: 0; padding: 14px 15px; }
+  #actual-highs-tracker .ht-stat-label { color: var(--ht-muted); display: block; font-size: 10px; margin-bottom: 7px; }
+  #actual-highs-tracker .ht-stat-value { font-size: 24px; font-variant-numeric: tabular-nums; font-weight: 500; letter-spacing: -.03em; }
+  #actual-highs-tracker .ht-stat-unit { color: var(--ht-muted); font-size: 11px; margin-left: 3px; }
+  #actual-highs-tracker .ht-stat-context { color: var(--ht-muted); display: block; font-size: 10px; margin-top: 5px; }
+  #actual-highs-tracker .ht-stat-context.is-up { color: var(--ht-up); }
+  #actual-highs-tracker .ht-stat-context.is-down { color: var(--ht-down); }
+
+  #actual-highs-tracker .ht-market-strip { background: var(--ht-surface); border: 1px solid var(--ht-line); border-radius: 12px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-bottom: 14px; overflow: hidden; }
+  #actual-highs-tracker .ht-market-cell { background: transparent; border: 0; border-right: 1px solid var(--ht-line); color: var(--ht-text); cursor: pointer; min-width: 0; padding: 11px 12px; text-align: left; }
+  #actual-highs-tracker .ht-market-cell:last-child { border-right: 0; }
+  #actual-highs-tracker .ht-market-cell.is-active { background: var(--ht-accent-soft); }
+  #actual-highs-tracker .ht-market-name { color: var(--ht-muted); display: block; font-size: 10px; }
+  #actual-highs-tracker .ht-market-count { display: block; font-size: 18px; font-variant-numeric: tabular-nums; font-weight: 500; margin-top: 3px; }
+  #actual-highs-tracker .ht-market-detail { color: var(--ht-muted); display: block; font-size: 9px; line-height: 1.4; margin-top: 2px; }
+
+  #actual-highs-tracker .ht-insights { display: grid; gap: 14px; grid-template-columns: minmax(390px, 1fr) minmax(0, 1.25fr); margin-bottom: 14px; }
+  #actual-highs-tracker .ht-trend-wrap { min-height: 150px; position: relative; }
+  #actual-highs-tracker .ht-trend { display: block; height: auto; min-width: 460px; overflow: visible; width: 100%; }
+  #actual-highs-tracker .ht-trend-scroll { overflow-x: auto; padding-bottom: 2px; }
+  #actual-highs-tracker .ht-trend-grid { stroke: var(--ht-line); stroke-width: 1; }
+  #actual-highs-tracker .ht-trend-axis-label { fill: var(--ht-muted); font-size: 10px; }
+  #actual-highs-tracker .ht-trend-line { fill: none; stroke-linecap: round; stroke-linejoin: round; transition: opacity .16s ease, stroke-width .16s ease; }
+  #actual-highs-tracker .ht-trend-point { cursor: crosshair; stroke: var(--ht-surface); stroke-width: 2; }
+  #actual-highs-tracker .ht-trend-legend { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  #actual-highs-tracker .ht-trend-legend-button { align-items: center; background: transparent; border: 1px solid var(--ht-line); border-radius: 999px; color: var(--ht-text); cursor: pointer; display: inline-flex; gap: 6px; min-height: 28px; padding: 0 9px; }
+  #actual-highs-tracker .ht-trend-legend-button[aria-pressed="false"] { color: var(--ht-muted); opacity: .48; }
+  #actual-highs-tracker .ht-trend-legend-button.is-static { cursor: default; }
+  #actual-highs-tracker .ht-trend-legend-button .ht-dot { flex: 0 0 auto; }
+
+  #actual-highs-tracker .ht-panel { background: var(--ht-surface); border: 1px solid var(--ht-line); border-radius: 12px; min-width: 0; padding: 16px; }
+  #actual-highs-tracker .ht-panel-header { align-items: flex-start; display: flex; gap: 10px; justify-content: space-between; margin-bottom: 12px; }
+  #actual-highs-tracker h2 { font-size: 14px; font-weight: 500; margin: 0; }
+  #actual-highs-tracker .ht-panel-note { color: var(--ht-muted); font-size: 9px; margin-top: 4px; }
+
+  #actual-highs-tracker .ht-sector-content { align-items: center; display: grid; gap: 8px; grid-template-columns: 220px minmax(0, 1fr); }
+  #actual-highs-tracker .ht-donut-wrap { align-items: center; display: flex; justify-content: center; min-height: 220px; position: relative; }
+  #actual-highs-tracker .ht-donut { height: 220px; overflow: visible; width: 220px; }
+  #actual-highs-tracker .ht-donut-bg { fill: none; stroke: var(--ht-surface-2); stroke-width: 34; }
+  #actual-highs-tracker .ht-donut-segment { cursor: pointer; fill: none; stroke-linecap: butt; stroke-width: 34; transition: opacity .16s ease, stroke-width .16s ease; }
+  #actual-highs-tracker .ht-donut-segment.is-muted { opacity: .2; }
+  #actual-highs-tracker .ht-donut-segment.is-active { stroke-width: 39; }
+  #actual-highs-tracker .ht-donut-label { fill: var(--ht-muted); font-size: 10px; text-anchor: middle; }
+  #actual-highs-tracker .ht-donut-value { fill: var(--ht-text); font-size: 25px; font-weight: 500; text-anchor: middle; }
+  #actual-highs-tracker .ht-tooltip { background: var(--ht-text); border-radius: 7px; color: var(--ht-surface); display: none; font-size: 10px; pointer-events: none; position: absolute; transform: translate(-50%, -115%); white-space: nowrap; z-index: 5; padding: 6px 8px; }
+  #actual-highs-tracker .ht-tooltip.is-visible { display: block; }
+
+  #actual-highs-tracker .ht-legend { display: grid; gap: 2px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 4px; }
+  #actual-highs-tracker .ht-legend-item { align-items: center; background: transparent; border: 0; border-radius: 6px; color: var(--ht-text); cursor: pointer; display: grid; gap: 6px; grid-template-columns: 9px minmax(0, 1fr) auto; padding: 6px; text-align: left; }
+  #actual-highs-tracker .ht-legend-item:hover, #actual-highs-tracker .ht-legend-item[aria-pressed="true"] { background: var(--ht-surface-2); }
+  #actual-highs-tracker .ht-dot { border-radius: 50%; height: 8px; width: 8px; }
+  #actual-highs-tracker .ht-legend-name { font-size: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #actual-highs-tracker .ht-legend-count { color: var(--ht-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+  #actual-highs-tracker .ht-clear { background: transparent; border: 0; color: var(--ht-accent); cursor: pointer; font-size: 10px; padding: 0; }
+
+  #actual-highs-tracker .ht-list-tools { align-items: center; display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-end; }
+  #actual-highs-tracker .ht-control-button { background: transparent; border: 1px solid var(--ht-line); border-radius: 6px; color: var(--ht-muted); cursor: pointer; min-height: 26px; padding: 0 7px; white-space: nowrap; }
+  #actual-highs-tracker .ht-control-button[aria-pressed="true"] { background: var(--ht-accent-soft); border-color: var(--ht-accent); color: var(--ht-accent); }
+  #actual-highs-tracker .ht-count-chip { background: var(--ht-surface-2); border-radius: 6px; color: var(--ht-muted); font-size: 10px; padding: 4px 6px; white-space: nowrap; }
+  #actual-highs-tracker .ht-table-wrap { overflow-x: auto; }
+  #actual-highs-tracker table { border-collapse: collapse; min-width: 760px; width: 100%; }
+  #actual-highs-tracker th { border-bottom: 1px solid var(--ht-line); color: var(--ht-muted); font-size: 9px; font-weight: 400; padding: 0 7px 8px; text-align: left; white-space: nowrap; }
+  #actual-highs-tracker td { border-bottom: 1px solid var(--ht-line); font-size: 10px; padding: 8px 7px; vertical-align: middle; }
+  #actual-highs-tracker tbody tr:last-child td { border-bottom: 0; }
+  #actual-highs-tracker .ht-rank { color: var(--ht-muted); width: 27px; }
+  #actual-highs-tracker .ht-company { font-weight: 500; }
+  #actual-highs-tracker .ht-new-badge { background: var(--ht-accent-soft); border-radius: 4px; color: var(--ht-accent); display: inline-block; font-size: 8px; font-weight: 500; margin-left: 5px; padding: 2px 4px; vertical-align: 1px; }
+  #actual-highs-tracker .ht-ticker { color: var(--ht-muted); display: block; font-size: 9px; margin-top: 2px; }
+  #actual-highs-tracker .ht-market-cap { font-variant-numeric: tabular-nums; font-weight: 500; white-space: nowrap; }
+  #actual-highs-tracker .ht-tag { background: var(--ht-surface-2); border-radius: 5px; color: var(--ht-muted); display: inline-block; padding: 3px 5px; white-space: nowrap; }
+  #actual-highs-tracker .ht-num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  #actual-highs-tracker .ht-breakout { color: var(--ht-up); font-weight: 500; }
+  #actual-highs-tracker .ht-return-days { color: var(--ht-muted); font-size: 9px; font-weight: 400; margin-left: 4px; }
+  #actual-highs-tracker .ht-date { color: var(--ht-muted); white-space: nowrap; }
+  #actual-highs-tracker .ht-empty { color: var(--ht-muted); padding: 32px 8px; text-align: center; }
+  #actual-highs-tracker .ht-pagination { align-items: center; border-top: 1px solid var(--ht-line); display: flex; gap: 7px; justify-content: space-between; margin-top: 8px; padding-top: 10px; }
+  #actual-highs-tracker .ht-page-info { color: var(--ht-muted); font-size: 9px; }
+  #actual-highs-tracker .ht-page-actions { display: flex; gap: 5px; }
+  #actual-highs-tracker .ht-page-button { background: transparent; border: 1px solid var(--ht-line); border-radius: 6px; color: var(--ht-text); cursor: pointer; min-height: 28px; padding: 0 8px; }
+  #actual-highs-tracker .ht-page-button:disabled { color: var(--ht-muted); cursor: default; opacity: .45; }
+  #actual-highs-tracker .ht-footer { border-top: 1px solid var(--ht-line); color: var(--ht-muted); display: flex; flex-wrap: wrap; font-size: 9px; gap: 7px 16px; justify-content: space-between; margin-top: 14px; padding-top: 11px; }
+
+  @media (max-width: 780px) {
+    #actual-highs-tracker .ht-header { align-items: flex-start; flex-direction: column; }
+    #actual-highs-tracker .ht-subtitle { margin-left: 0; }
+    #actual-highs-tracker .ht-collected { text-align: left; }
+    #actual-highs-tracker .ht-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #actual-highs-tracker .ht-market-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    #actual-highs-tracker .ht-market-cell:nth-child(3) { border-right: 0; }
+    #actual-highs-tracker .ht-market-cell:nth-child(-n+3) { border-bottom: 1px solid var(--ht-line); }
+    #actual-highs-tracker .ht-insights { grid-template-columns: 1fr; }
+    #actual-highs-tracker .ht-list-tools { justify-content: flex-start; }
+  }
+  @media (max-width: 440px) {
+    #actual-highs-tracker .ht-header, #actual-highs-tracker .ht-body { padding-left: 13px; padding-right: 13px; }
+    #actual-highs-tracker .ht-stat { padding: 11px; }
+    #actual-highs-tracker .ht-stat-value { font-size: 20px; }
+    #actual-highs-tracker .ht-market-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #actual-highs-tracker .ht-market-cell:nth-child(3) { border-right: 1px solid var(--ht-line); }
+    #actual-highs-tracker .ht-market-cell:nth-child(2n) { border-right: 0; }
+    #actual-highs-tracker .ht-market-cell:nth-child(-n+4) { border-bottom: 1px solid var(--ht-line); }
+    #actual-highs-tracker .ht-rule { width: 100%; }
+    #actual-highs-tracker .ht-legend { grid-template-columns: 1fr 1fr; }
+    #actual-highs-tracker .ht-sector-content { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #actual-highs-tracker .ht-donut-segment { transition: none; }
+  }
+</style>
+
+<div id="actual-highs-tracker">
+  <section class="ht-app" aria-label="실제 데이터 기반 글로벌 52주 신고가 트래커">
+    <header class="ht-header">
+      <div>
+        <div class="ht-title-row">
+          <span class="ht-mark" aria-hidden="true">52</span>
+          <h1>Global Highs Tracker</h1>
+          <span class="ht-live-badge">ACTUAL DATA</span>
+        </div>
+        <p class="ht-subtitle">한국 전체 시총 · 기타 시장 3,000억원 이상 · 종가 기준 52주 신고가</p>
+      </div>
+      <div class="ht-collected">수집 완료 시각<strong id="ht-collected-at">-</strong></div>
+    </header>
+
+    <div class="ht-body">
+      <div class="ht-filter-row">
+        <div class="ht-tabs" role="group" aria-label="시장 필터"></div>
+        <span class="ht-rule">한국 시총 제한 없음 · 기타 시장 시총 ≥ 3,000억원 · 수익률은 최근 365일 내 첫 52주 신고가 종가 대비</span>
+      </div>
+      <div class="ht-scope"><strong>범위</strong> 한국 KOSPI+KOSDAQ 전체 시총 · 미국 NASDAQ 전체+S&amp;P 500 중복 제거 · 일본 TSE · 중국 SSE+SZSE · 대만 TWSE+TPEx · 홍콩 HKEX · 한국 외 원화 환산 시가총액 3,000억원 미만 및 전 시장 시가총액 미확인 종목 제외</div>
+
+      <section class="ht-stats" aria-label="핵심 지표">
+        <div class="ht-stat"><span class="ht-stat-label">신고가 종목</span><span class="ht-stat-value" id="ht-highs">-</span><span class="ht-stat-unit">개</span><span class="ht-stat-context" id="ht-delta">-</span></div>
+        <div class="ht-stat"><span class="ht-stat-label">가격 스크리닝</span><span class="ht-stat-value" id="ht-screened">-</span><span class="ht-stat-unit">개</span><span class="ht-stat-context" id="ht-coverage">-</span></div>
+        <div class="ht-stat"><span class="ht-stat-label">신고가 비율</span><span class="ht-stat-value" id="ht-ratio">-</span><span class="ht-stat-unit">%</span><span class="ht-stat-context" id="ht-as-of">시장별 최근 완료일</span></div>
+        <div class="ht-stat"><span class="ht-stat-label">최다 신고가 섹터</span><span class="ht-stat-value" id="ht-top-sector">-</span><span class="ht-stat-context" id="ht-top-sector-count">-</span></div>
+      </section>
+
+      <section class="ht-market-strip" aria-label="시장별 실제 신고가 현황"></section>
+
+      <div class="ht-insights">
+        <section class="ht-panel ht-sector-panel" aria-labelledby="ht-sector-heading">
+          <div class="ht-panel-header">
+            <div><h2 id="ht-sector-heading">섹터별 신고가 비중</h2><div class="ht-panel-note">섹터 색상은 전 국가 공통 · 조각 또는 범례를 선택하면 종목표가 필터링됩니다</div></div>
+            <button class="ht-clear" type="button" hidden>전체 보기</button>
+          </div>
+          <div class="ht-sector-content">
+            <div class="ht-donut-wrap">
+              <svg class="ht-donut" viewBox="0 0 220 220" role="img" aria-labelledby="ht-donut-title ht-donut-desc">
+                <title id="ht-donut-title">섹터별 신고가 종목 비중</title>
+                <desc id="ht-donut-desc">선택 시장의 신고가 종목을 섹터별 원형차트로 표시합니다.</desc>
+                <circle class="ht-donut-bg" cx="110" cy="110" r="72"></circle>
+                <g class="ht-donut-segments" transform="rotate(-90 110 110)"></g>
+                <text class="ht-donut-value" id="ht-donut-total" x="110" y="107">-</text>
+                <text class="ht-donut-label" id="ht-donut-market" x="110" y="126">전체 신고가</text>
+              </svg>
+              <div class="ht-tooltip" role="tooltip"></div>
+            </div>
+            <div class="ht-legend"></div>
+          </div>
+        </section>
+
+        <section class="ht-panel ht-trend-panel" aria-labelledby="ht-trend-heading">
+          <div class="ht-panel-header">
+            <div><h2 id="ht-trend-heading">국가별 신고가 종목 수 추이</h2><div class="ht-panel-note">업데이트일 기준 · 8월 30일 이전 한국은 당시 시총 필터 기준</div></div>
+            <span class="ht-count-chip" id="ht-trend-range">-</span>
+          </div>
+          <div class="ht-trend-scroll">
+            <div class="ht-trend-wrap">
+              <svg class="ht-trend" viewBox="0 0 760 150" role="img" aria-labelledby="ht-trend-title ht-trend-desc">
+                <title id="ht-trend-title">국가별 52주 신고가 종목 수 추이</title>
+                <desc id="ht-trend-desc">각 대시보드 업데이트일의 미국, 한국, 일본, 중국, 대만, 홍콩 신고가 종목 수를 선 그래프로 비교합니다.</desc>
+              </svg>
+              <div class="ht-tooltip ht-trend-tooltip" role="tooltip"></div>
+            </div>
+          </div>
+          <div class="ht-trend-legend" role="group" aria-label="추이 차트 국가 표시 설정"></div>
+        </section>
+      </div>
+
+      <section class="ht-panel ht-list-panel" aria-labelledby="ht-list-heading">
+          <div class="ht-panel-header">
+            <div><h2 id="ht-list-heading">실제 신고가 종목</h2><div class="ht-panel-note" id="ht-list-note">1년 첫 신고가 후 수익률 높은 순</div></div>
+            <div class="ht-list-tools" role="group" aria-label="종목표 보기 설정">
+              <button type="button" class="ht-control-button" id="ht-sort-cap" aria-pressed="false">시총순</button>
+              <button type="button" class="ht-control-button" id="ht-new-only" aria-pressed="false">신규만 <span id="ht-new-count">-</span></button>
+              <span class="ht-count-chip" id="ht-visible-count">-</span>
+            </div>
+          </div>
+          <div class="ht-table-wrap">
+            <table>
+              <thead><tr><th>#</th><th>종목</th><th class="ht-num">시가총액</th><th>시장</th><th>섹터</th><th>기준일</th><th class="ht-num">종가</th><th class="ht-num">1년 첫 신고가</th><th class="ht-num">이후 수익률</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="ht-pagination">
+            <span class="ht-page-info" id="ht-page-info">-</span>
+            <div class="ht-page-actions"><button type="button" class="ht-page-button" id="ht-prev">이전</button><button type="button" class="ht-page-button" id="ht-next">다음</button></div>
+          </div>
+      </section>
+
+      <footer class="ht-footer"><span id="ht-source-note">-</span><span>상장 52주 미만은 상장 이후 · 최소 20거래일</span></footer>
+    </div>
+  </section>
+</div>
+
+<script type="application/json" id="ht-actual-data">__TRACKER_DATA__</script>
+<script>
+(() => {
+  const root = document.getElementById('actual-highs-tracker');
+  const dataNode = document.getElementById('ht-actual-data');
+  if (!root || !dataNode) return;
+  const data = JSON.parse(dataNode.textContent);
+  const marketOrder = ['US', 'KR', 'JP', 'CN', 'TW', 'HK'];
+  const sectorColorMap = {
+    'IT': 'var(--ht-sector-1)',
+    '금융': 'var(--ht-sector-2)',
+    '산업재': 'var(--ht-sector-3)',
+    '소재': 'var(--ht-sector-4)',
+    '헬스케어': 'var(--ht-sector-5)',
+    '경기소비재': 'var(--ht-sector-6)',
+    '필수소비재': 'var(--ht-sector-7)',
+    '커뮤니케이션': 'var(--ht-sector-8)',
+    '에너지': 'var(--ht-sector-9)',
+    '유틸리티': 'var(--ht-sector-10)',
+    '부동산': 'var(--ht-sector-11)',
+    '기타': 'var(--ht-sector-12)'
+  };
+  const sectorColor = sector => sectorColorMap[sector] || 'var(--ht-sector-12)';
+  const marketColorMap = {
+    US: '#2e70c9',
+    KR: '#ce3048',
+    JP: '#d0682d',
+    CN: '#b13f68',
+    TW: '#176b51',
+    HK: '#7657b2'
+  };
+  const pageSize = 25;
+  let activeMarket = 'ALL';
+  let activeSector = null;
+  let page = 1;
+  let sortByCap = false;
+  let newOnly = false;
+  const hiddenTrendMarkets = new Set();
+
+  const tabs = root.querySelector('.ht-tabs');
+  const strip = root.querySelector('.ht-market-strip');
+  const segments = root.querySelector('.ht-donut-segments');
+  const legend = root.querySelector('.ht-legend');
+  const tbody = root.querySelector('tbody');
+  const tooltip = root.querySelector('.ht-tooltip');
+  const clearButton = root.querySelector('.ht-clear');
+  const sortCapButton = root.querySelector('#ht-sort-cap');
+  const newOnlyButton = root.querySelector('#ht-new-only');
+  const trendSvg = root.querySelector('.ht-trend');
+  const trendLegend = root.querySelector('.ht-trend-legend');
+  const trendTooltip = root.querySelector('.ht-trend-tooltip');
+
+  const formatNumber = value => Number(value || 0).toLocaleString('ko-KR');
+  const formatPrice = value => Number(value).toLocaleString('ko-KR', { maximumFractionDigits: value < 1 ? 4 : value < 100 ? 2 : 0 });
+  const formatMarketCap = eok => {
+    const value = Number(eok || 0);
+    if (value >= 10000) {
+      const jo = value / 10000;
+      return `${jo.toLocaleString('ko-KR', { maximumFractionDigits: jo >= 100 ? 0 : 1 })}조원`;
+    }
+    return `${value.toLocaleString('ko-KR', { maximumFractionDigits: 0 })}억원`;
+  };
+  const formatCollected = iso => new Intl.DateTimeFormat('ko-KR', { timeZone:'Asia/Seoul', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hour12:false }).format(new Date(iso));
+  const aggregate = () => activeMarket === 'ALL' ? data.summary : data.markets[activeMarket];
+  const sectorMap = () => activeMarket === 'ALL' ? data.sectors : data.markets[activeMarket].sectors;
+  const marketName = () => activeMarket === 'ALL' ? '전체' : data.markets[activeMarket].name;
+
+  root.querySelector('#ht-collected-at').textContent = formatCollected(data.meta.collected_at);
+  root.querySelector('#ht-source-note').textContent = `원 유니버스 ${formatNumber(data.summary.raw_universe)}개 중 시총 미달 ${formatNumber(data.summary.excluded_small_cap)}개·미확인 ${formatNumber(data.summary.excluded_unknown_market_cap)}개 제외 · 가격 수집률 ${data.summary.coverage_pct}%`;
+
+  [{ code:'ALL', name:'전체' }, ...marketOrder.map(code => ({ code, name:data.markets[code].name }))].forEach(item => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'ht-tab';
+    button.textContent = item.name;
+    button.setAttribute('aria-pressed', item.code === activeMarket ? 'true' : 'false');
+    button.addEventListener('click', () => { activeMarket = item.code; activeSector = null; page = 1; render(); });
+    tabs.appendChild(button);
+  });
+
+  marketOrder.forEach(code => {
+    const item = data.markets[code];
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'ht-market-cell';
+    button.dataset.market = code;
+    button.innerHTML = `<span class="ht-market-name">${item.name}</span><span class="ht-market-count">${formatNumber(item.highs)}</span><span class="ht-market-detail">${item.ratio_pct}% · ${item.as_of.slice(5).replace('-', '.')}<br>수집률 ${item.coverage_pct}%</span>`;
+    button.addEventListener('click', () => { activeMarket = code; activeSector = null; page = 1; render(); });
+    strip.appendChild(button);
+  });
+
+  function setSector(sector) {
+    activeSector = activeSector === sector ? null : sector;
+    page = 1;
+    render();
+  }
+
+  function renderStats() {
+    const item = aggregate();
+    const sectorsNow = Object.entries(sectorMap()).sort((a,b) => b[1] - a[1]);
+    root.querySelector('#ht-highs').textContent = formatNumber(item.highs);
+    root.querySelector('#ht-screened').textContent = formatNumber(item.screened);
+    root.querySelector('#ht-coverage').textContent = `시총 기준 통과 ${formatNumber(item.universe)}개 · 수집률 ${item.coverage_pct}%`;
+    root.querySelector('#ht-ratio').textContent = Number(item.ratio_pct).toFixed(2);
+    root.querySelector('#ht-top-sector').textContent = sectorsNow.length ? sectorsNow[0][0] : '-';
+    root.querySelector('#ht-top-sector-count').textContent = sectorsNow.length ? `${formatNumber(sectorsNow[0][1])}개 · ${marketName()} 기준` : '-';
+    const delta = Number(item.delta || 0);
+    const deltaEl = root.querySelector('#ht-delta');
+    deltaEl.textContent = `신규 ${formatNumber(item.new_highs || 0)}개 · 전 거래일 대비 ${delta > 0 ? '+' : ''}${formatNumber(delta)}`;
+    deltaEl.className = `ht-stat-context ${delta > 0 ? 'is-up' : delta < 0 ? 'is-down' : ''}`;
+    root.querySelector('#ht-as-of').textContent = activeMarket === 'ALL' ? '시장별 최근 완료 거래일' : `기준일 ${item.as_of}`;
+  }
+
+  function renderDonut() {
+    const entries = Object.entries(sectorMap()).filter(([,count]) => count > 0).sort((a,b) => b[1] - a[1]);
+    const total = entries.reduce((sum,[,count]) => sum + count, 0);
+    const radius = 72;
+    const circumference = 2 * Math.PI * radius;
+    let offset = 0;
+    segments.innerHTML = '';
+    legend.innerHTML = '';
+    entries.forEach(([sector,count], index) => {
+      const length = total ? count / total * circumference : 0;
+      const color = sectorColor(sector);
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      circle.setAttribute('class', `ht-donut-segment${activeSector && activeSector !== sector ? ' is-muted' : ''}${activeSector === sector ? ' is-active' : ''}`);
+      circle.setAttribute('cx', '110'); circle.setAttribute('cy', '110'); circle.setAttribute('r', String(radius));
+      circle.setAttribute('stroke', color);
+      circle.setAttribute('stroke-dasharray', `${length} ${Math.max(0, circumference - length)}`);
+      circle.setAttribute('stroke-dashoffset', String(-offset));
+      circle.dataset.sector = sector;
+      circle.addEventListener('click', () => setSector(sector));
+      circle.addEventListener('pointermove', event => {
+        const bounds = root.querySelector('.ht-donut-wrap').getBoundingClientRect();
+        tooltip.textContent = `${sector} ${formatNumber(count)}개 · ${(count / total * 100).toFixed(1)}%`;
+        tooltip.style.left = `${event.clientX - bounds.left}px`; tooltip.style.top = `${event.clientY - bounds.top}px`;
+        tooltip.classList.add('is-visible');
+      });
+      circle.addEventListener('pointerleave', () => tooltip.classList.remove('is-visible'));
+      segments.appendChild(circle);
+      offset += length;
+
+      const button = document.createElement('button');
+      button.type = 'button'; button.className = 'ht-legend-item'; button.setAttribute('aria-pressed', activeSector === sector ? 'true' : 'false');
+      button.innerHTML = `<span class="ht-dot" style="background:${color}"></span><span class="ht-legend-name">${sector}</span><span class="ht-legend-count">${formatNumber(count)}</span>`;
+      button.addEventListener('click', () => setSector(sector));
+      legend.appendChild(button);
+    });
+    root.querySelector('#ht-donut-total').textContent = formatNumber(total);
+    root.querySelector('#ht-donut-market').textContent = `${marketName()} 신고가`;
+    clearButton.hidden = !activeSector;
+  }
+
+  function renderTrend() {
+    const history = Array.isArray(data.history) ? data.history : [];
+    const selectedMarkets = activeMarket === 'ALL' ? marketOrder.filter(code => !hiddenTrendMarkets.has(code)) : [activeMarket];
+    const legendMarkets = activeMarket === 'ALL' ? marketOrder : [activeMarket];
+    trendSvg.innerHTML = '';
+    trendLegend.innerHTML = '';
+    root.querySelector('#ht-trend-range').textContent = history.length ? `${activeMarket === 'ALL' ? '전체 비교' : data.markets[activeMarket].name} · ${history.length}회` : '기록 없음';
+    if (!history.length) {
+      trendSvg.innerHTML = '<text x="380" y="75" text-anchor="middle" class="ht-trend-axis-label">추이 데이터가 아직 없습니다</text>';
+      return;
+    }
+
+    const width = 760, height = 150;
+    const margin = { top: 8, right: 12, bottom: 26, left: 38 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+    const values = history.flatMap(item => selectedMarkets.map(code => Number(item.markets?.[code]?.highs || 0)));
+    const rawMax = Math.max(...values, 1);
+    const step = rawMax <= 20 ? 5 : rawMax <= 100 ? 20 : 50;
+    const yMax = Math.ceil(rawMax / step) * step;
+    const x = index => margin.left + (history.length === 1 ? plotWidth / 2 : index / (history.length - 1) * plotWidth);
+    const y = value => margin.top + plotHeight - Number(value || 0) / yMax * plotHeight;
+
+    const parts = [];
+    for (let tick = 0; tick <= 4; tick += 1) {
+      const value = yMax * tick / 4;
+      const yy = y(value);
+      parts.push(`<line class="ht-trend-grid" x1="${margin.left}" y1="${yy}" x2="${width - margin.right}" y2="${yy}"></line>`);
+      parts.push(`<text class="ht-trend-axis-label" x="${margin.left - 8}" y="${yy + 3}" text-anchor="end">${Math.round(value)}</text>`);
+    }
+    const tickEvery = Math.max(1, Math.ceil(history.length / 7));
+    history.forEach((item, index) => {
+      if (index % tickEvery && index !== history.length - 1) return;
+      parts.push(`<text class="ht-trend-axis-label" x="${x(index)}" y="${height - 10}" text-anchor="middle">${item.date.slice(5).replace('-', '.')}</text>`);
+    });
+
+    selectedMarkets.forEach(code => {
+      const points = history.map((item, index) => `${x(index)},${y(item.markets?.[code]?.highs || 0)}`).join(' ');
+      parts.push(`<polyline class="ht-trend-line" points="${points}" stroke="${marketColorMap[code]}" stroke-width="${activeMarket === 'ALL' ? 2.25 : 3.25}"></polyline>`);
+      history.forEach((item, index) => {
+        const value = Number(item.markets?.[code]?.highs || 0);
+        const asOf = item.markets?.[code]?.as_of || item.date;
+        parts.push(`<circle class="ht-trend-point" data-market="${code}" data-date="${item.date}" data-as-of="${asOf}" data-value="${value}" cx="${x(index)}" cy="${y(value)}" r="${activeMarket === 'ALL' ? 3.25 : 4}" fill="${marketColorMap[code]}"></circle>`);
+      });
+    });
+    trendSvg.innerHTML = parts.join('');
+
+    trendSvg.querySelectorAll('.ht-trend-point').forEach(point => {
+      point.addEventListener('pointermove', event => {
+        const code = point.dataset.market;
+        const bounds = root.querySelector('.ht-trend-wrap').getBoundingClientRect();
+        trendTooltip.textContent = `${point.dataset.date} · ${data.markets[code].name} ${formatNumber(point.dataset.value)}개 · 종가 ${point.dataset.asOf}`;
+        trendTooltip.style.left = `${event.clientX - bounds.left}px`;
+        trendTooltip.style.top = `${event.clientY - bounds.top}px`;
+        trendTooltip.classList.add('is-visible');
+      });
+      point.addEventListener('pointerleave', () => trendTooltip.classList.remove('is-visible'));
+    });
+
+    legendMarkets.forEach(code => {
+      const button = document.createElement('button');
+      const isOverall = activeMarket === 'ALL';
+      const visible = !isOverall || !hiddenTrendMarkets.has(code);
+      button.type = 'button';
+      button.className = `ht-trend-legend-button${isOverall ? '' : ' is-static'}`;
+      button.setAttribute('aria-pressed', String(visible));
+      button.innerHTML = `<span class="ht-dot" style="background:${marketColorMap[code]}"></span>${data.markets[code].name}`;
+      if (isOverall) {
+        button.addEventListener('click', () => {
+          if (visible && marketOrder.length - hiddenTrendMarkets.size === 1) return;
+          visible ? hiddenTrendMarkets.add(code) : hiddenTrendMarkets.delete(code);
+          renderTrend();
+        });
+      }
+      trendLegend.appendChild(button);
+    });
+  }
+
+  function marketSectorRows() {
+    return data.highs.filter(row => (activeMarket === 'ALL' || row.market_code === activeMarket) && (!activeSector || row.sector === activeSector));
+  }
+
+  function filteredRows() {
+    const rows = marketSectorRows().filter(row => !newOnly || row.is_new_high);
+    return [...rows].sort((a,b) => sortByCap
+      ? Number(b.market_cap_krw) - Number(a.market_cap_krw) || Number(b.breakout_pct) - Number(a.breakout_pct)
+      : Number(b.breakout_pct) - Number(a.breakout_pct) || Number(b.market_cap_krw) - Number(a.market_cap_krw));
+  }
+
+  function renderTable() {
+    const rows = filteredRows();
+    const pages = Math.max(1, Math.ceil(rows.length / pageSize));
+    page = Math.min(page, pages);
+    const start = (page - 1) * pageSize;
+    const visible = rows.slice(start, start + pageSize);
+    tbody.innerHTML = '';
+    if (!visible.length) {
+      const tr = document.createElement('tr'); tr.innerHTML = '<td class="ht-empty" colspan="9">해당 조건의 신고가 종목이 없습니다</td>'; tbody.appendChild(tr);
+    } else {
+      visible.forEach((row,index) => {
+        const tr = document.createElement('tr');
+        const newBadge = row.is_new_high ? '<span class="ht-new-badge">NEW</span>' : '';
+        tr.innerHTML = `<td class="ht-rank">${start + index + 1}</td><td><span class="ht-company">${row.name}</span>${newBadge}<span class="ht-ticker">${row.symbol}</span></td><td class="ht-num ht-market-cap">${formatMarketCap(row.market_cap_krw_eok)}</td><td><span class="ht-tag">${row.market} · ${row.exchange}</span></td><td>${row.sector}</td><td class="ht-date">${row.as_of}</td><td class="ht-num">${formatPrice(row.close)} <span class="ht-ticker">${row.currency}</span></td><td class="ht-num">${formatPrice(row.breakout_close)}<span class="ht-ticker">${row.breakout_date}</span></td><td class="ht-num ht-breakout">+${Number(row.breakout_pct).toFixed(2)}%<span class="ht-return-days">(${Number(row.breakout_days)}일)</span></td>`;
+        tbody.appendChild(tr);
+      });
+    }
+    const newCount = marketSectorRows().filter(row => row.is_new_high).length;
+    sortCapButton.setAttribute('aria-pressed', String(sortByCap));
+    newOnlyButton.setAttribute('aria-pressed', String(newOnly));
+    root.querySelector('#ht-new-count').textContent = formatNumber(newCount);
+    root.querySelector('#ht-visible-count').textContent = `${formatNumber(rows.length)}개`;
+    root.querySelector('#ht-list-note').textContent = `${marketName()}${activeSector ? ` · ${activeSector}` : ''}${newOnly ? ' · 신규 신고가만' : ''} · ${sortByCap ? '시가총액 높은 순' : '1년 첫 신고가 후 수익률 높은 순'}`;
+    root.querySelector('#ht-page-info').textContent = rows.length ? `${formatNumber(start + 1)}–${formatNumber(Math.min(start + pageSize, rows.length))} / ${formatNumber(rows.length)}` : '0개';
+    root.querySelector('#ht-prev').disabled = page <= 1;
+    root.querySelector('#ht-next').disabled = page >= pages;
+  }
+
+  function render() {
+    root.querySelectorAll('.ht-tab').forEach((button,index) => button.setAttribute('aria-pressed', (index === 0 ? 'ALL' : marketOrder[index - 1]) === activeMarket ? 'true' : 'false'));
+    root.querySelectorAll('.ht-market-cell').forEach(button => button.classList.toggle('is-active', button.dataset.market === activeMarket));
+    renderStats(); renderTrend(); renderDonut(); renderTable();
+  }
+
+  clearButton.addEventListener('click', () => { activeSector = null; page = 1; render(); });
+  sortCapButton.addEventListener('click', () => { sortByCap = !sortByCap; page = 1; renderTable(); });
+  newOnlyButton.addEventListener('click', () => { newOnly = !newOnly; page = 1; renderTable(); });
+  root.querySelector('#ht-prev').addEventListener('click', () => { if (page > 1) { page -= 1; renderTable(); } });
+  root.querySelector('#ht-next').addEventListener('click', () => { if (page * pageSize < filteredRows().length) { page += 1; renderTable(); } });
+  render();
+})();
+</script>

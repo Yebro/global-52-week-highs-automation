@@ -1,0 +1,3969 @@
+﻿Symbol,Name,IndustryCode,Industry
+NVDA,NVIDIA Corp,57101010,반도체
+AAPL,Apple Inc,57106020,전화 및 소형 장치
+MSFT,Microsoft Corporation,57201020,소프트웨어
+AMZN,Amazon.com Inc,53402010,백화점
+GOOGL,Alphabet Inc. Class A,57201030,온라인 서비스
+AVGO,Broadcom Inc,57101010,반도체
+SPCX,Space Exploration Technologies Corp,57401020,무선 통신 서비스
+GOOG,Alphabet Inc. Class C,57201030,온라인 서비스
+META,Meta Platforms  Inc.,57201030,온라인 서비스
+TSLA,Tesla Inc,53101010,자동차 및 트럭 제조
+SKHY,SK hynix Inc. ADR,57101010,반도체
+MU,Micron Technology  Inc.,57101010,반도체
+WMT,Walmart Inc,54301020,식품 소매 및 유통
+AMD,Advanced Micro Devices  Inc.,57101010,반도체
+ASML,ASML Holding N.V. ADR,57101020,반도체 장비 및 테스트
+INTC,Intel Corp,57101010,반도체
+CSCO,Cisco Systems Inc,57102010,통신 및 네트워킹
+AMAT,Applied Materials Inc,57101020,반도체 장비 및 테스트
+COST,Costco Wholesale Corp,53402020,할인점
+PLTR,Palantir Technologies Inc.,57201020,소프트웨어
+LRCX,Lam Research Corporation,57101020,반도체 장비 및 테스트
+PANW,Palo Alto Networks  Inc.,57201020,소프트웨어
+NFLX,Netflix  Inc.,57201030,온라인 서비스
+ARM,ARM Holdings PLC ADR,57101010,반도체
+KLAC,KLA Corporation,57101020,반도체 장비 및 테스트
+TXN,Texas Instruments Inc,57101010,반도체
+CRWD,CrowdStrike Holdings  Inc.,57201020,소프트웨어
+AMGN,Amgen Inc,56201040,제약
+LIN,Linde PLC,51101010,상품 화학
+STX,Seagate Technology Holdings PLC,57106010,컴퓨터 하드웨어
+SNDK,SanDisk Corporation,57106010,컴퓨터 하드웨어
+SHOP,Shopify Inc.,57201030,온라인 서비스
+MRVL,Marvell Technology  Inc.,57101010,반도체
+TMUS,T-Mobile US Inc,57401020,무선 통신 서비스
+PEP,PepsiCo Inc,54101030,무알콜 음료
+ADI,Analog Devices  Inc.,57101010,반도체
+QCOM,QUALCOMM Incorporated,57101010,반도체
+GILD,Gilead Sciences  Inc,56201040,제약
+BKNG,Booking Holdings Inc.,53301040,여가 및 오락시설
+WDC,Western Digital Corp,57106010,컴퓨터 하드웨어
+IBKR,Interactive Brokers Group Inc,55102010,투자 은행 및 중개 서비스
+ISRG,Intuitive Surgical Inc,56101010,첨단 의료 장비 및 기술
+VRTX,Vertex Pharmaceuticals Incorporated,56201040,제약
+PDD,PDD Holdings Inc. ADR,57201030,온라인 서비스
+SBUX,Starbucks Corp,53301020,레스토랑 및 바
+FTNT,Fortinet  Inc.,57201020,소프트웨어
+ADP,Automatic Data Processing Inc,52203030,고용 서비스
+ABNB,Airbnb  Inc.,57201030,온라인 서비스
+EQIX,Equinix  Inc.,60102040,특수 REITs
+SNY,Sanofi SA ADR,56201040,제약
+ADBE,Adobe Inc,57201020,소프트웨어
+APP,AppLovin Corporation,57201020,소프트웨어
+CEG,Constellation Energy Corp,59101010,전력 유틸리티
+CME,CME Group Inc.,55102050,"금융, 상품 시장 운영 및 서비스 제공"
+CSX,CSX Corporation,52405030,지상 화물 및 물류
+MELI,MercadoLibre  Inc.,57201030,온라인 서비스
+MAR,Marriott International  Inc.,53301010,"호텔, 모텔 및 크루즈 라인"
+DASH,DoorDash  Inc.,57201030,온라인 서비스
+INTU,Intuit Inc.,57301010,핀테크
+CMCSA,Comcast Corporation,57401020,무선 통신 서비스
+MNST,Monster Beverage Corp,54101030,무알콜 음료
+CDNS,Cadence Design Systems  Inc.,57201020,소프트웨어
+DDOG,Datadog Inc,57201020,소프트웨어
+HOOD,Robinhood Markets  Inc.,57301010,핀테크
+LITE,Lumentum Holdings Inc.,57102010,통신 및 네트워킹
+REGN,Regeneron Pharmaceuticals  Inc.,56201040,제약
+CTAS,Cintas Corporation,52203040,경영 지원 서비스
+ROST,Ross Stores Inc,53403040,의류 및 액세서리 소매
+NTES,NetEase  Inc. ADR,57201030,온라인 서비스
+MDLZ,Mondelez International Inc,54102020,식품 가공
+SNPS,Synopsys  Inc.,57201020,소프트웨어
+HON,Honeywell International Inc,54401010,소비재 대기업
+ORLY,O'Reilly Automotive  Inc.,53403010,"자동차 차량, 부품 및 서비스 소매"
+MPWR,Monolithic Power Systems Inc,57101010,반도체
+WBD,Warner Bros. Discovery  Inc.,53302020,방송
+PCAR,Paccar Inc,52102020,중장비 및 차량
+AEP,American Electric Power Company Inc,59101010,전력 유틸리티
+NBIS,Nebius Group NV,52203040,경영 지원 서비스
+BKR,Baker Hughes Company,50103020,오일 관련 서비스 및 장비
+TER,Teradyne  Inc.,57101020,반도체 장비 및 테스트
+FAST,Fastenal Company,52102010,산업용 기계 및 장비
+CBRS,Cerebras Systems Inc,57107010,통합 하드웨어 및 소프트웨어
+NXPI,NXP Semiconductors NV,57101010,반도체
+CRWV,CoreWeave  Inc.,57201010,IT 서비스 및 컨설팅
+FANG,Diamondback Energy  Inc.,50102020,"오일, 가스 탐사 및 생산"
+ALAB,Astera Labs  Inc.,57101010,반도체
+ARGX,argenx SE ADR,56202010,생명 공학 및 의학 연구
+NDAQ,Nasdaq Inc,55102050,"금융, 상품 시장 운영 및 서비스 제공"
+HONA,Honeywell Aerospace Inc,52101010,항공우주 및 방위
+ADSK,Autodesk  Inc.,57201020,소프트웨어
+PYPL,Paypal Holdings Inc,52203040,경영 지원 서비스
+CRDO,Credo Technology Group Holding Ltd,57101010,반도체
+XEL,Xcel Energy Inc,59101010,전력 유틸리티
+AXON,Axon Enterprise  Inc.,52101010,항공우주 및 방위
+RKLB,Rocket Lab Corp,52101010,항공우주 및 방위
+FER,Ferrovial N.V.,52201020,건설 및 엔지니어링
+CCEP,Coca-Cola Europacific Partners PLC,54101030,무알콜 음료
+EXC,Exelon Corp,59101010,전력 유틸리티
+MDLN,Medline Inc.,56101020,"의료 장비, 물품 및 유통"
+FLEX,Flex Ltd,57104010,전자 장비 및 부품
+NTRA,Natera  Inc.,56102010,의료 시설 및 서비스
+EBAY,eBay Inc.,57201030,온라인 서비스
+TTWO,Take-Two Interactive Software  Inc.,57201020,소프트웨어
+IDXX,IDEXX Laboratories Inc,56101020,"의료 장비, 물품 및 유통"
+TRI,Thomson Reuters Corp,52203070,전문 정보 서비스
+ODFL,Old Dominion Freight Line  Inc.,52405030,지상 화물 및 물류
+RVMD,Revolution Medicines  Inc.,56202010,생명 공학 및 의학 연구
+WDAY,Workday  Inc.,57201020,소프트웨어
+MCHP,Microchip Technology Inc,57101010,반도체
+PAYX,Paychex  Inc.,52203030,고용 서비스
+UAL,United Airlines Holdings  Inc.,52406010,항공사
+KDP,Keurig Dr Pepper Inc,54101030,무알콜 음료
+NTAP,NetApp Inc,57106010,컴퓨터 하드웨어
+JD,JD.com  Inc. ADR,53402010,백화점
+ONC,BeOne Medicines AG ADR,56202010,생명 공학 및 의학 연구
+TEAM,Atlassian Corp,57201020,소프트웨어
+COIN,Coinbase Global Inc,57301030,블록 체인 및 암호화폐
+ROP,Roper Technologies  Inc.,57201020,소프트웨어
+EXPE,Expedia Group  Inc.,53301040,여가 및 오락시설
+STLD,Steel Dynamics Inc,51201020,철 및 강철
+VOD,Vodafone Group PLC ADR,57401020,무선 통신 서비스
+ESLT,Elbit Systems Ltd.,52101010,항공우주 및 방위
+MSTR,Strategy Inc,57201020,소프트웨어
+KMB,Kimberly-Clark Corporation,54201020,개인 생활 필수 용품
+HBAN,Huntington Bancshares Inc,55101010,은행
+BIDU,Baidu  Inc. ADR,57201030,온라인 서비스
+MDB,MongoDB  Inc.,57201020,소프트웨어
+NTRS,Northern Trust Corporation,55102020,투자 관리 및 펀드 운영
+DXCM,Dexcom Inc,56101020,"의료 장비, 물품 및 유통"
+RPRX,Royalty Pharma PLC,56201040,제약
+ACGL,Arch Capital Group Ltd.,55301020,손해보험
+GEHC,GE HealthCare Technologies Inc.,56101010,첨단 의료 장비 및 기술
+ON,ON Semiconductor Corp,57101010,반도체
+WTW,Willis Towers Watson Public Limited Company,55301010,복합보험 및 중개인
+BSP,Bending Spoons SpA,57201020,소프트웨어
+CASY,Caseys General Stores Inc,54301020,식품 소매 및 유통
+BIIB,Biogen Inc.,56201040,제약
+ZM,Zoom Communications  Inc.,57201020,소프트웨어
+RYAAY,Ryanair Holdings PLC ADR,52406010,항공사
+ERIC,Telefonaktiebolaget LM Ericsson ADR,57102010,통신 및 네트워킹
+ALNY,Alnylam Pharmaceuticals  Inc.,56201040,제약
+TCOM,Trip.com Group Limited ADR,53301040,여가 및 오락시설
+LPLA,LPL Financial Holdings Inc.,55102010,투자 은행 및 중개 서비스
+TSEM,Tower Semiconductor Ltd.,57101010,반도체
+GFS,GLOBALFOUNDRIES Inc.,57101020,반도체 장비 및 테스트
+ILMN,Illumina Inc,56101010,첨단 의료 장비 및 기술
+KHC,Kraft Heinz Co,54102020,식품 가공
+ASTS,AST SpaceMobile  Inc.,57401020,무선 통신 서비스
+INSM,Insmed Inc,56202010,생명 공학 및 의학 연구
+ZS,Zscaler  Inc.,57201020,소프트웨어
+FISV,Fiserv Inc,52203040,경영 지원 서비스
+ECHO,EchoStar Corporation,57401020,무선 통신 서비스
+CPRT,Copart Inc,57201030,온라인 서비스
+CINF,Cincinnati Financial Corporation,55301020,손해보험
+CTSH,Cognizant Technology Solutions Corporation,57201010,IT 서비스 및 컨설팅
+ROIV,Roivant Sciences Ltd,56201040,제약
+JBHT,J B Hunt Transport Services Inc,52405030,지상 화물 및 물류
+OKTA,Okta  Inc.,57201010,IT 서비스 및 컨설팅
+VRSN,VeriSign  Inc.,57201010,IT 서비스 및 컨설팅
+MRNA,Moderna Inc,56201040,제약
+SYM,Symbotic Inc,52102010,산업용 기계 및 장비
+DLTR,Dollar Tree Inc,53402020,할인점
+ENTG,Entegris Inc,57101020,반도체 장비 및 테스트
+AFRM,Affirm Holdings  Inc.,57301010,핀테크
+INCY,Incyte Corp,56201040,제약
+FSLR,First Solar  Inc.,50201010,재생 가능 에너지 장비 및 서비스
+PFG,Principal Financial Group Inc,55301010,복합보험 및 중개인
+ARXS,Arxis Inc,52102010,산업용 기계 및 장비
+FFIV,F5 Inc,57201010,IT 서비스 및 컨설팅
+TROW,T. Rowe Price Group  Inc.,55102020,투자 관리 및 펀드 운영
+MTSI,MACOM Technology Solutions Holdings  Inc.,57101010,반도체
+VRSK,Verisk Analytics  Inc.,57201010,IT 서비스 및 컨설팅
+FCNCA,First Citizens BancShares Inc (Delaware),55101010,은행
+BNTX,Biontech SE ADR,56202010,생명 공학 및 의학 연구
+FTAI,FTAI Aviation Ltd.,52101010,항공우주 및 방위
+FWONK,Liberty Media Formula One Ord Shs Series C,53302020,방송
+SOFI,SoFi Technologies  Inc.,55101030,소비자 대출
+RIVN,Rivian Automotive Inc,53101010,자동차 및 트럭 제조
+ULTA,Ulta Beauty Inc,53403090,기타 전문 소매
+EXE,Expand Energy Corporation,50102020,"오일, 가스 탐사 및 생산"
+SMCI,Super Micro Computer Inc,57106010,컴퓨터 하드웨어
+ROKU,Roku  Inc.,53302030,엔터테인먼트 제작
+GH,Guardant Health  Inc.,56101020,"의료 장비, 물품 및 유통"
+UTHR,United Therapeutics Corporation,56201040,제약
+TW,Tradeweb Markets Inc,55102050,"금융, 상품 시장 운영 및 서비스 제공"
+WWD,Woodward  Inc.,52101010,항공우주 및 방위
+INIO,Innio NV,52102010,산업용 기계 및 장비
+MKSI,MKS Incorporated,52102010,산업용 기계 및 장비
+SITM,SiTime Corporation,57101010,반도체
+RGLD,Royal Gold  Inc.,51201060,금
+TPG,TPG Inc,55102020,투자 관리 및 펀드 운영
+SBAC,SBA Communications Corp,60102040,특수 REITs
+GMAB,Genmab A/S ADR,56202010,생명 공학 및 의학 연구
+EVRG,Evergy  Inc.,59101010,전력 유틸리티
+TSCO,Tractor Supply Company,53403090,기타 전문 소매
+KSPI,Kaspi.kz AO ADR,57301010,핀테크
+QNT,Quantinuum Inc,57201010,IT 서비스 및 컨설팅
+SSNC,SS&C Technologies Holdings  Inc.,57201010,IT 서비스 및 컨설팅
+EWBC,East West Bancorp  Inc.,55101010,은행
+VTRS,Viatris Inc.,56201040,제약
+LSCC,Lattice Semiconductor Corporation,57101010,반도체
+LNT,Alliant Energy Corp,59101010,전력 유틸리티
+CHTR,Charter Communications  Inc.,57401010,통합 통신 서비스
+ZBRA,Zebra Technologies Corp,57104010,전자 장비 및 부품
+AKAM,Akamai Technologies Inc,57201010,IT 서비스 및 컨설팅
+TLN,Talen Energy Corp,59101020,민자 발전 사업
+NTNX,Nutanix  Inc.,57201010,IT 서비스 및 컨설팅
+NDSN,Nordson Corporation,52102010,산업용 기계 및 장비
+CG,Carlyle Group Inc,55102020,투자 관리 및 펀드 운영
+GEN,Gen Digital Inc.,57201020,소프트웨어
+CHRW,C.H. Robinson Worldwide  Inc.,52405030,지상 화물 및 물류
+CDW,CDW Corporation,57107010,통합 하드웨어 및 소프트웨어
+ASND,Ascendis Pharma A/S,56202010,생명 공학 및 의학 연구
+STRL,Sterling Infrastructure  Inc.,52201020,건설 및 엔지니어링
+MEDP,Medpace Holdings  Inc.,56202010,생명 공학 및 의학 연구
+LOGI,Logitech international S.A.,57106010,컴퓨터 하드웨어
+PAA,Plains All American Pipeline Units,50103030,오일 및 가스 수송 서비스
+BBIO,BridgeBio Pharma  Inc.,56201040,제약
+TIGO,Millicom International Cellular S.A.,57401020,무선 통신 서비스
+JAZZ,Jazz Pharmaceuticals PLC,56201040,제약
+IREN,IREN Limited,57301030,블록 체인 및 암호화폐
+PTC,PTC Inc.,57201020,소프트웨어
+NBIX,Neurocrine Biosciences  Inc.,56201040,제약
+NXT,Nextpower Inc,50201010,재생 가능 에너지 장비 및 서비스
+LAMR,Lamar Advertising Co,60102040,특수 REITs
+LECO,Lincoln Electric Holdings Inc,52102010,산업용 기계 및 장비
+HST,Host Hotels & Resorts  Inc.,60102040,특수 REITs
+IESC,IES Holdings Inc,52201020,건설 및 엔지니어링
+VNOM,Viper Energy Inc,50102020,"오일, 가스 탐사 및 생산"
+COO,The Cooper Companies  Inc.,56101020,"의료 장비, 물품 및 유통"
+FUTU,Futu Holdings Limited ADR,57301010,핀테크
+GRAB,Grab Holdings Limited,57201020,소프트웨어
+TTMI,TTM Technologies Inc,57101010,반도체
+ARCC,Ares Capital Corp,55102020,투자 관리 및 펀드 운영
+TXRH,Texas Roadhouse Inc,53301020,레스토랑 및 바
+APA,APA Corporation,50102020,"오일, 가스 탐사 및 생산"
+REG,Regency Centers Corp,60102020,상업용 REITs
+AUR,Aurora Innovation  Inc.,57201020,소프트웨어
+LULU,lululemon athletica inc.,53202020,의류 및 액세서리
+HAS,Hasbro  Inc.,53205010,장난감 및 어린이 제품
+AMKR,Amkor Technology  Inc.,57101020,반도체 장비 및 테스트
+BMRN,BioMarin Pharmaceutical Inc.,56201040,제약
+AEIS,Advanced Energy Industries  Inc.,52102030,전기 부품 및 장비
+ERIE,Erie Indemnity Co,55301020,손해보험
+CHKP,Check Point Software Technologies Ltd.,57201020,소프트웨어
+FIVE,Five Below  Inc.,53402010,백화점
+TRMB,Trimble Inc,57201020,소프트웨어
+SMTC,Semtech Corporation,57101010,반도체
+WMG,Warner Music Group Corp.,53302030,엔터테인먼트 제작
+NVMI,Nova Ltd.,57101010,반도체
+AGNC,AGNC Investment Corp.,60102040,특수 REITs
+ICLR,ICON PLC,56202010,생명 공학 및 의학 연구
+HTHT,H World Group Ltd ADR,53301010,"호텔, 모텔 및 크루즈 라인"
+SEIC,SEI Investments Company,55102020,투자 관리 및 펀드 운영
+DKNG,DraftKings Inc.,53301030,카지노 및 도박
+WSE,Wise Group PLC,57201030,온라인 서비스
+FOXA,Fox Corporation Class A,53302020,방송
+COKE,Coca-Cola Consolidated Inc,54101030,무알콜 음료
+GLPI,Gaming and Leisure Properties  Inc.,60102040,특수 REITs
+EXEL,Exelixis Inc,56202010,생명 공학 및 의학 연구
+MDGL,Madrigal Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+ALGN,Align Technology  Inc.,56101020,"의료 장비, 물품 및 유통"
+CSGP,CoStar Group  Inc.,57201030,온라인 서비스
+FOX,Fox Corporation Class B,53302020,방송
+ARWR,Arrowhead Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+CORT,Corcept Therapeutics Incorporated,56201040,제약
+DRS,Leonardo DRS Inc,52101010,항공우주 및 방위
+SMMT,Summit Therapeutics Inc.,56202010,생명 공학 및 의학 연구
+VSAT,Viasat Inc,57102010,통신 및 네트워킹
+KTOS,Kratos Defense & Security Solutions  Inc.,52101010,항공우주 및 방위
+CHYM,Chime Financial  Inc.,57301010,핀테크
+ENLT,Enlight Renewable Energy Ltd.,59101020,민자 발전 사업
+BTSG,Brightspring Health Services Inc,56102010,의료 시설 및 서비스
+DPZ,Domino's Pizza  Inc.,53301020,레스토랑 및 바
+AAOI,Applied Optoelectronics  Inc.,57104010,전자 장비 및 부품
+LFUS,Littelfuse  Inc.,57104010,전자 장비 및 부품
+HALO,Halozyme Therapeutics  Inc.,56201040,제약
+UMBF,UMB Financial Corp,55101010,은행
+TECH,Bio-Techne Corporation,56202010,생명 공학 및 의학 연구
+AXSM,Axsome Therapeutics  Inc.,56201040,제약
+BPOP,Popular Inc,55101010,은행
+MANH,Manhattan Associates  Inc.,57201010,IT 서비스 및 컨설팅
+CART,Maplebear Inc.,57201030,온라인 서비스
+SANM,Sanmina Corp,57104010,전자 장비 및 부품
+HUT,Hut 8 Corp,57301030,블록 체인 및 암호화폐
+DOCU,Docusign  Inc.,57201020,소프트웨어
+WTFC,Wintrust Financial Corp,55101010,은행
+RMBS,Rambus Inc.,57101010,반도체
+JKHY,Jack Henry & Associates Inc,57201010,IT 서비스 및 컨설팅
+BSY,Bentley Systems  Inc,57201020,소프트웨어
+LI,Li Auto Inc. ADR,53101010,자동차 및 트럭 제조
+GSAT,Globalstar  Inc.,57401020,무선 통신 서비스
+PSKY,Paramount Skydance Corp,53302030,엔터테인먼트 제작
+SAIL,SailPoint  Inc.,57201020,소프트웨어
+FROG,Jfrog Ltd,57201020,소프트웨어
+WYNN,Wynn Resorts  Limited,53301030,카지노 및 도박
+ENSG,The Ensign Group  Inc.,56102010,의료 시설 및 서비스
+CYTK,Cytokinetics  Incorporated,56202010,생명 공학 및 의학 연구
+ZION,Zions Bancorporation  National Association,55101010,은행
+CGNX,Cognex Corporation,52102010,산업용 기계 및 장비
+PRAX,Praxis Precision Medicines  Inc.,56202010,생명 공학 및 의학 연구
+VIAV,Viavi Solutions Inc.,57102010,통신 및 네트워킹
+SWKS,Skyworks Solutions  Inc.,57101010,반도체
+VICR,Vicor Corporation,52102030,전기 부품 및 장비
+ONB,Old National Bancorp,55101010,은행
+NWSA,News Corporation Class A,53302040,소비자 출판
+APGE,Apogee Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+HSIC,Henry Schein  Inc.,56101020,"의료 장비, 물품 및 유통"
+PAYP,PayPay Corp ADR,52203040,경영 지원 서비스
+PODD,Insulet Corporation,56101020,"의료 장비, 물품 및 유통"
+FORM,FormFactor Inc,57101020,반도체 장비 및 테스트
+STRC,Strategy Variable Rate Perpetual Stretch Prf Shs Series A,57201020,소프트웨어
+ABVX,Abivax SA ADR,56202010,생명 공학 및 의학 연구
+AAL,American Airlines Group Inc.,52406010,항공사
+SOLS,Solstice Advanced Materials Inc,51101030,특수 화학제
+TEM,Tempus AI Inc,56202010,생명 공학 및 의학 연구
+KRYS,Krystal Biotech  Inc.,56201040,제약
+PTGX,Protagonist Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+AVAV,Aerovironment  Inc,52101010,항공우주 및 방위
+SAIA,Saia Inc,52405030,지상 화물 및 물류
+FRHC,Freedom Holding Corp,55102010,투자 은행 및 중개 서비스
+SIRI,Sirius XM Holdings Inc.,53302020,방송
+KYMR,Kymera Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+GOOGM,Alphabet Dep Shs Repstg 1 20Th Int Mandatory Conv Prf Shs Ser A,57201030,온라인 서비스
+LINE,Lineage  Inc.,60102040,특수 REITs
+GOOGN,Alphabet Dep Shs Repstg 1 20Th Int Mandatory Conv Prf Shs Ser B,57201030,온라인 서비스
+IONS,Ionis Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+RGEN,Repligen Corporation,56101020,"의료 장비, 물품 및 유통"
+FCFS,Firstcash Holdings Inc (Texas),55101030,소비자 대출
+SYRE,Spyre Therapeutics Inc,56202010,생명 공학 및 의학 연구
+COLB,Columbia Banking System Inc,55101010,은행
+TTEK,Tetra Tech Inc (Delaware),52203010,환경 서비스 및 장비
+APLD,Applied Digital Corp,57301030,블록 체인 및 암호화폐
+IDCC,InterDigital Inc,57102010,통신 및 네트워킹
+BRKR,Bruker Corporation,56101010,첨단 의료 장비 및 기술
+CRNX,Crinetics Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+SFD,Smithfield Foods Inc,54102020,식품 가공
+CAE,CAE Inc,52101010,항공우주 및 방위
+PCVX,Vaxcyte  Inc.,56202010,생명 공학 및 의학 연구
+HQY,HealthEquity  Inc.,57201020,소프트웨어
+IMVT,Immunovant  Inc.,56202010,생명 공학 및 의학 연구
+BOKF,BOK Financial Corp,55101010,은행
+TTAN,ServiceTitan Inc,57201020,소프트웨어
+QRVO,Qorvo  Inc.,57101010,반도체
+WULF,TeraWulf Inc.,57301030,블록 체인 및 암호화폐
+CBSH,Commerce Bancshares  Inc.,55101010,은행
+ALKS,Alkermes Plc,56202010,생명 공학 및 의학 연구
+MTCH,Match Group  Inc.,57201030,온라인 서비스
+SNEX,StoneX Group Inc,55102010,투자 은행 및 중개 서비스
+TWST,Twist Bioscience Corporation,56201040,제약
+XE,X-Energy Inc,52102040,중전기장비
+VLY,Valley National Bancorp,55101010,은행
+IBRX,Immunitybio Inc,56202010,생명 공학 및 의학 연구
+CBC,Central Bancompany  Inc.,55101010,은행
+SFM,Sprouts Farmers Market Inc,54301020,식품 소매 및 유통
+AVT,Avnet Inc,57104010,전자 장비 및 부품
+XP,XP Inc,55102010,투자 은행 및 중개 서비스
+ALGM,Allegro Microsystems Inc,57101010,반도체
+BZ,KANZHUN LIMITED ADR,52203030,고용 서비스
+MAAS,Maase Inc,57201010,IT 서비스 및 컨설팅
+GLXY,Galaxy Digital Inc,55102010,투자 은행 및 중개 서비스
+SIMO,Silicon Motion Technology Corporation ADR,57101010,반도체
+CAMT,Camtek Ltd.,57101020,반도체 장비 및 테스트
+RYTM,Rhythm Pharmaceuticals  Inc.,56201040,제약
+PCTY,Paylocity Holding Corp,57201020,소프트웨어
+QBTS,D-Wave Quantum Inc.,57201010,IT 서비스 및 컨설팅
+RIOT,Riot Platforms  Inc.,57301030,블록 체인 및 암호화폐
+POWL,Powell Industries Inc,52102030,전기 부품 및 장비
+TGTX,TG Therapeutics  Inc.,56201040,제약
+CHRD,Chord Energy Corporation,50102020,"오일, 가스 탐사 및 생산"
+TXG,10x Genomics  Inc.,56101020,"의료 장비, 물품 및 유통"
+MBLY,Mobileye Global Inc,57107010,통합 하드웨어 및 소프트웨어
+LGN,Legence Corp.,52201020,건설 및 엔지니어링
+CIFR,Cipher Digital Inc,57301030,블록 체인 및 암호화폐
+MORN,Morningstar  Inc.,52203070,전문 정보 서비스
+BILI,Bilibili Inc ADR,57201030,온라인 서비스
+NAVN,Navan  Inc.,57201020,소프트웨어
+DBX,Dropbox Inc,57201020,소프트웨어
+SLAB,Silicon Laboratories Inc.,57101010,반도체
+VFS,VinFast Auto Ltd,53101010,자동차 및 트럭 제조
+PLXS,Plexus Corp,57104010,전자 장비 및 부품
+POOL,Pool Corporation,53205020,오락용 제품
+BLTE,Belite Bio  Inc ADR,56202010,생명 공학 및 의학 연구
+VCTR,Victory Capital Holdings  Inc.,55102020,투자 관리 및 펀드 운영
+ORKA,Oruka Therapeutics Inc,56202010,생명 공학 및 의학 연구
+LNW,Light & Wonder Inc,53301030,카지노 및 도박
+AAON,Aaon Inc,52102030,전기 부품 및 장비
+LQDA,Liquidia Corporation,56201040,제약
+CELH,Celsius Holdings  Inc.,54101030,무알콜 음료
+APPF,AppFolio  Inc.,57201020,소프트웨어
+ROAD,Construction Partners  Inc.,52201020,건설 및 엔지니어링
+GTLB,GitLab Inc.,57201020,소프트웨어
+CGON,CG Oncology  Inc.,56202010,생명 공학 및 의학 연구
+GLBE,Global-E Online Ltd.,57201030,온라인 서비스
+VSEC,VSE Corp,52101010,항공우주 및 방위
+LLYVK,Liberty Live Holdings Inc Series C,53301040,여가 및 오락시설
+ACT,Enact Holdings Inc,55301020,손해보험
+COGT,Cogent Biosciences  Inc.,56202010,생명 공학 및 의학 연구
+GDS,GDS Holdings Limited ADR,57201010,IT 서비스 및 컨설팅
+CPB,Campbell's Co,54102020,식품 가공
+SSRM,SSR Mining Inc.,51201060,금
+CORZ,Core Scientific Inc,57301030,블록 체인 및 암호화폐
+MRCY,Mercury Systems Inc,52101010,항공우주 및 방위
+UBSI,United Bankshares  Inc.,55101010,은행
+DSGX,The Descartes Systems Group Inc.,57201020,소프트웨어
+WFRD,Weatherford International PLC,50103020,오일 관련 서비스 및 장비
+URBN,Urban Outfitters  Inc,53403040,의류 및 액세서리 소매
+RRR,Red Rock Resorts  Inc.,53301030,카지노 및 도박
+LNTH,Lantheus Holdings  Inc.,56101020,"의료 장비, 물품 및 유통"
+AUGO,Aura Minerals Inc,51201060,금
+ERAS,Erasca  Inc.,56202010,생명 공학 및 의학 연구
+QLYS,Qualys  Inc.,57201010,IT 서비스 및 컨설팅
+MIRM,Mirum Pharmaceuticals  Inc.,56201040,제약
+PPC,Pilgrims Pride Corp,54102020,식품 가공
+TTD,Trade Desk Inc,57201020,소프트웨어
+NOVT,Novanta Inc.,57104010,전자 장비 및 부품
+MWH,Solv Energy Inc,52201020,건설 및 엔지니어링
+CAI,Caris Life Sciences  Inc.,56101020,"의료 장비, 물품 및 유통"
+LYFT,Lyft  Inc.,57201030,온라인 서비스
+FRVO,Fervo Energy Co,59101010,전력 유틸리티
+FIGR,Figure Technology Solutions  Inc.,57201010,IT 서비스 및 컨설팅
+MXL,MaxLinear  Inc.,57101010,반도체
+SRRK,Scholar Rock Holding Corporation,56202010,생명 공학 및 의학 연구
+HWC,Hancock Whitney Corporation,55101010,은행
+XENE,Xenon Pharmaceuticals Inc.,56202010,생명 공학 및 의학 연구
+LSTR,Landstar System  Inc.,52405030,지상 화물 및 물류
+DUOL,Duolingo  Inc.,57201030,온라인 서비스
+DNTH,Dianthus Therapeutics Inc,56202010,생명 공학 및 의학 연구
+FSV,FIRSTSERVICE CORPORATION,60101020,부동산 서비스
+CROX,Crocs  Inc.,53202030,제화
+LKQ,LKQ Corp,53101020,"자동차, 트럭 및 오토바이 부품"
+CHDN,Churchill Downs Incorporated,53301030,카지노 및 도박
+DOX,Amdocs Limited,57201010,IT 서비스 및 컨설팅
+AMRX,Amneal Pharmaceuticals  Inc.,56201040,제약
+RGTI,Rigetti Computing  Inc.,57101010,반도체
+CRUS,Cirrus Logic  Inc.,57101010,반도체
+KNSA,Kiniksa Pharmaceuticals International  PLC,56201040,제약
+PTCT,PTC Therapeutics  Inc.,56201040,제약
+RDNT,RadNet  Inc.,56102010,의료 시설 및 서비스
+NTSK,Netskope  Inc.,57201010,IT 서비스 및 컨설팅
+CZR,Caesars Entertainment Inc,53301030,카지노 및 도박
+CACC,Credit Acceptance Corp,55101030,소비자 대출
+NWS,News Corporation Class B,53302040,소비자 출판
+Z,Zillow Group  Inc. Class C,60101020,부동산 서비스
+FTDR,Frontdoor Inc,54201030,개인 서비스
+CVLT,Commvault Systems  Inc.,57201020,소프트웨어
+GGAL,Grupo Financiero Galicia S.A. ADR,55101010,은행
+TVTX,Travere Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+LGND,Ligand Pharmaceuticals Incorporated,56201040,제약
+CAKE,Cheesecake Factory Inc,53301020,레스토랑 및 바
+MMED,MiniMed Group Inc,56101020,"의료 장비, 물품 및 유통"
+STEP,StepStone Group Inc.,55102020,투자 관리 및 펀드 운영
+OTEX,Open Text Corporation,57201020,소프트웨어
+CWST,Casella Waste Systems  Inc.,52203010,환경 서비스 및 장비
+NICE,NICE Ltd. ADR,57201020,소프트웨어
+DFTX,Definium Therapeutics Inc,56202010,생명 공학 및 의학 연구
+BCPC,Balchem Corporation,51101030,특수 화학제
+MKTX,MarketAxess Holdings Inc.,55102050,"금융, 상품 시장 운영 및 서비스 제공"
+NXST,Nexstar Media Group Inc,53302020,방송
+HLNE,Hamilton Lane Incorporated,55102020,투자 관리 및 펀드 운영
+OZK,Bank Ozk,55101010,은행
+MMYT,MakeMyTrip Limited,53301040,여가 및 오락시설
+ACMR,ACM Research  Inc.,57101020,반도체 장비 및 테스트
+SIGI,Selective Insurance Group  Inc.,55301020,손해보험
+ONDS,Ondas Inc,57102010,통신 및 네트워킹
+REYN,Reynolds Consumer Products Inc,54201010,가정용 제품
+PSMT,PriceSmart  Inc.,53402020,할인점
+PI,Impinj  Inc.,57101010,반도체
+GTX,Garrett Motion Inc.,53101020,"자동차, 트럭 및 오토바이 부품"
+MMSI,Merit Medical Systems Inc,56101020,"의료 장비, 물품 및 유통"
+SHC,Sotera Health Company,56102010,의료 시설 및 서비스
+ENPH,Enphase Energy  Inc.,50201010,재생 가능 에너지 장비 및 서비스
+MIDD,The Middleby Corporation,52102010,산업용 기계 및 장비
+SAIC,Science Applications International Corp,57201010,IT 서비스 및 컨설팅
+EBC,Eastern Bankshares Inc,55101010,은행
+IEP,Icahn Enterprises Units,50102030,"오일, 가스 정제 및 마케팅"
+EXLS,ExlService Holdings  Inc.,52203040,경영 지원 서비스
+CIGI,Colliers International Group Inc.,60101020,부동산 서비스
+PEGA,Pegasystems Inc.,57201020,소프트웨어
+OCTV,Octave Intelligence PLC,57201020,소프트웨어
+XMTR,Xometry  Inc.,57201010,IT 서비스 및 컨설팅
+ACIW,ACI Worldwide  Inc.,57301010,핀테크
+VSNT,Versant Media Group Inc,53302020,방송
+IRDM,Iridium Communications Inc.,57401020,무선 통신 서비스
+SLM,SLM Corp,55101030,소비자 대출
+CRSP,CRISPR Therapeutics AG,56202010,생명 공학 및 의학 연구
+EQPT,Equipmentshare.Com Inc,52203040,경영 지원 서비스
+GLNG,Golar LNG Limited,52405020,해양 화물 및 물류
+MYRG,MYR Group Inc,52201020,건설 및 엔지니어링
+PECO,Phillips Edison & Company  Inc.,60102020,상업용 REITs
+SBRA,Sabra Health Care REIT  Inc.,60102040,특수 REITs
+AXTI,AXT  Inc.,57101010,반도체
+RELY,Remitly Global Inc,52203040,경영 지원 서비스
+MRX,Marex Group Ltd,55102010,투자 은행 및 중개 서비스
+BGC,Bgc Group Inc,55102010,투자 은행 및 중개 서비스
+LAUR,Laureate Education  Inc.,63101010,기타 교육 서비스 제공
+ACAD,Acadia Pharmaceuticals Inc.,56202010,생명 공학 및 의학 연구
+UFPI,UFP Industries  Inc.,51301010,임업 및 목재 제품
+FFIN,First Financial Bankshares Inc,55101010,은행
+KLIC,Kulicke and Soffa Industries Inc,57101020,반도체 장비 및 테스트
+PAGP,Plains GP Holdings Limited Partner Interests Units Class A,50103030,오일 및 가스 수송 서비스
+CAR,Avis Budget Group Inc,52406020,지상 및 해상 여객 운송
+GNTX,Gentex Corporation,53101020,"자동차, 트럭 및 오토바이 부품"
+RUSHA,Rush Enterprises  Inc. Class A,53403010,"자동차 차량, 부품 및 서비스 소매"
+DIOD,Diodes Incorporated,57101010,반도체
+TFSL,TFS Financial Corp,55101010,은행
+DYN,Dyne Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+FRMI,Fermi Inc,59101010,전력 유틸리티
+VRNS,Varonis Systems  Inc.,57201020,소프트웨어
+CENX,Century Aluminum Company,51201030,알루미늄
+FELE,FRANKLIN ELECTRIC CO.  INC.,52102010,산업용 기계 및 장비
+EWTX,Edgewise Therapeutics Inc,56202010,생명 공학 및 의학 연구
+OLLI,Ollie's Bargain Outlet Holdings Inc,53402020,할인점
+WAY,Waystar Holding Corp.,57201020,소프트웨어
+DOO,BRP Inc.,53205020,오락용 제품
+LFST,LifeStance Health Group  Inc.,56102010,의료 시설 및 서비스
+FULT,Fulton Financial Corp,55101010,은행
+OMAB,Grupo Aeroportuario del Centro Norte  S.A.B. de C.V. ADR,52407010,공항 운영 및 서비스
+ATAT,Atour Lifestyle Holdings Limited ADR,53301010,"호텔, 모텔 및 크루즈 라인"
+CVCO,Cavco Industries  Inc.,53203010,주택 건설
+BLLN,BillionToOne  Inc.,56202010,생명 공학 및 의학 연구
+USAR,USA Rare Earth  Inc.,51201010,금 제외 귀금속 및 광물
+INDV,Indivior Pharmaceuticals Inc,56201040,제약
+FSLY,Fastly  Inc.,57201010,IT 서비스 및 컨설팅
+NSIT,Insight Enterprises Inc,57201010,IT 서비스 및 컨설팅
+CHEF,The Chefs' Warehouse  Inc.,54301020,식품 소매 및 유통
+IBOC,International Bancshares Corp,55101010,은행
+ITRI,Itron  Inc.,57104010,전자 장비 및 부품
+ICUI,ICU Medical  Inc.,56101020,"의료 장비, 물품 및 유통"
+LIVN,LivaNova PLC,56101020,"의료 장비, 물품 및 유통"
+FLY,Firefly Aerospace Inc.,52101010,항공우주 및 방위
+CECO,CECO Environmental Corp.,52203010,환경 서비스 및 장비
+LBRDK,Liberty Broadband Corp Series C,53302020,방송
+RLAY,Relay Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+TCBI,Texas Capital Bancshares  Inc.,55101010,은행
+NWE,NorthWestern Energy Group  Inc.,59101010,전력 유틸리티
+TNGX,Tango Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+ELVN,Enliven Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+OLED,Universal Display Corp,57101010,반도체
+SEZL,Sezzle Inc,52203040,경영 지원 서비스
+SMCIP,Super Micro Computer Depositary Shs representing 1 20th Mandatory Convert Prf,57106010,컴퓨터 하드웨어
+CELC,Celcuity Inc.,56202010,생명 공학 및 의학 연구
+ACLS,Axcelis Technologies  Inc.,57101020,반도체 장비 및 테스트
+PBLS,Parabilis Medicines Inc,56202010,생명 공학 및 의학 연구
+BWIN,The Baldwin Insurance Group  Inc.,55301010,복합보험 및 중개인
+SYNA,Synaptics Incorporated,57101010,반도체
+CATY,Cathay General Bancorp,55101010,은행
+AEHR,Aehr Test Systems,57101020,반도체 장비 및 테스트
+LILAP,Liberty Latin America 9 0 Fixed Rate Cumulative Perpetual Redeemable Prf Shs,57401020,무선 통신 서비스
+LFTO,Liftoff Mobile Inc,57201020,소프트웨어
+PTEN,Patterson-UTI Energy Inc,50103010,오일 및 가스 시추
+DLO,DLocal Limited,52203040,경영 지원 서비스
+MAT,Mattel Inc,53205010,장난감 및 어린이 제품
+MEOH,Methanex Corp,51101010,상품 화학
+SKYW,SkyWest  Inc.,52406010,항공사
+CLMT,Calumet  Inc.,50102030,"오일, 가스 정제 및 마케팅"
+WSFS,WSFS Financial Corporation,55101010,은행
+ALM,Almonty Industries Inc.,51201050,특수 채굴 및 금속
+IRTC,iRhythm Holdings  Inc,56101010,첨단 의료 장비 및 기술
+CCC,CCC Intelligent Solutions Holdings Inc.,57201020,소프트웨어
+UCTT,Ultra Clean Holdings Inc,57101020,반도체 장비 및 테스트
+BULL,Webull Corp,57301010,핀테크
+TENB,Tenable Holdings  Inc.,57201020,소프트웨어
+TLX,Telix Pharmaceuticals Limited ADR,56202010,생명 공학 및 의학 연구
+WSBC,Wesbanco  Inc.,55101010,은행
+CVBF,CVB Financial Corp,55101010,은행
+INDB,Independent Bank Corp (Massachusetts),55101010,은행
+DNLI,Denali Therapeutics Inc.,56202010,생명 공학 및 의학 연구
+AYA,Aya Gold & Silver Inc (Quebec),,
+DAVE,Dave Inc.,57301010,핀테크
+ADPT,Adaptive Biotechnologies Corporation,56202010,생명 공학 및 의학 연구
+LIF,Life360  Inc.,57201020,소프트웨어
+LEGN,Legend Biotech Corporation ADR,56202010,생명 공학 및 의학 연구
+WSC,WillScot Holdings Corporation,55101050,기업 금융 서비스
+PTRN,Pattern Group Inc.,57201010,IT 서비스 및 컨설팅
+VKTX,Viking Therapeutics Inc,56202010,생명 공학 및 의학 연구
+DORM,Dorman Products  Inc.,53101020,"자동차, 트럭 및 오토바이 부품"
+QS,QuantumScape Corporation,53101020,"자동차, 트럭 및 오토바이 부품"
+VEON,VEON Ltd ADR,57401020,무선 통신 서비스
+SRAD,Sportradar Group AG,57201020,소프트웨어
+OTTR,Otter Tail Corporation,59101010,전력 유틸리티
+CALM,Cal-Maine Foods  Inc.,54102010,어업 및 농업
+GPCR,Structure Therapeutics Inc. ADR,56202010,생명 공학 및 의학 연구
+BANF,BancFirst Corp,55101010,은행
+COCO,The Vita Coco Company  Inc.,54101030,무알콜 음료
+OSIS,OSI Systems  Inc.,57104010,전자 장비 및 부품
+CLBT,Cellebrite DI Ltd,57201020,소프트웨어
+MCHB,Mechanics Bancorp,55101010,은행
+IPAR,Interparfums Inc,54201020,개인 생활 필수 용품
+JOYY,JOYY Inc. ADR,57201030,온라인 서비스
+MARA,MARA Holdings Inc,57301030,블록 체인 및 암호화폐
+IPGP,IPG Photonics Corp,57104010,전자 장비 및 부품
+LOPE,Grand Canyon Education Inc,63101010,기타 교육 서비스 제공
+FIBK,First Interstate Bancsystem Inc,55101010,은행
+AMBA,Ambarella  Inc.,57101010,반도체
+MNDY,monday.com Ltd.,57201020,소프트웨어
+FA,First Advantage Corporation,52203030,고용 서비스
+VCYT,Veracyte  Inc.,56202010,생명 공학 및 의학 연구
+PONY,Pony AI Inc ADR,57201010,IT 서비스 및 컨설팅
+NESR,National Energy Services Reunited Corp.,50103020,오일 관련 서비스 및 장비
+LUNR,Intuitive Machines Inc,52101010,항공우주 및 방위
+NVTS,Navitas Semiconductor Corporation,57101010,반도체
+BELFB,Bel Fuse Inc. Class B,57104010,전자 장비 및 부품
+FFBC,First Financial Bancorp.,55101010,은행
+OPCH,Option Care Health Inc,56102010,의료 시설 및 서비스
+POWI,Power Integrations  Inc.,57101010,반도체
+IDYA,IDEAYA Biosciences  Inc.,56202010,생명 공학 및 의학 연구
+KC,Kingsoft Cloud Holdings Ltd ADR,57201010,IT 서비스 및 컨설팅
+CLDX,Celldex Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+TOWN,TowneBank,55101010,은행
+MGNI,Magnite  Inc.,53302010,광고 및 마케팅
+SHOO,Steven Madden  Ltd.,53202030,제화
+FRPT,Freshpet  Inc.,54102020,식품 가공
+SFNC,Simmons First National Corporation,55101010,은행
+SBCF,Seacoast Banking Corporation of Florida,55101010,은행
+BHF,Brighthouse Financial  Inc.,55301030,생명 및 건강 보험
+USLM,United States Lime & Minerals Inc,51202010,건설 자재
+GBDC,Golub Capital BDC Inc,55102020,투자 관리 및 펀드 운영
+OPEN,Opendoor Technologies Inc.,60101020,부동산 서비스
+NMIH,NMI Holdings  Inc.,55301020,손해보험
+FHB,First Hawaiian  Inc.,55101010,은행
+PLMR,Palomar Holdings  Inc.,55301020,손해보험
+CSQ,Calamos Strategic Total Return Closed Fund,55501030,폐쇄형 펀드
+NAMS,NewAmsterdam Pharma Company N.V.,56202010,생명 공학 및 의학 연구
+OUST,Ouster  Inc.,57104010,전자 장비 및 부품
+ARQT,Arcutis Biotherapeutics  Inc.,56201040,제약
+SOUN,SoundHound AI  Inc.,57201010,IT 서비스 및 컨설팅
+CARG,CarGurus  Inc.,57201030,온라인 서비스
+ALMS,Alumis Inc.,56202010,생명 공학 및 의학 연구
+VECO,Veeco Instruments Inc,57101020,반도체 장비 및 테스트
+NN,NextNav Inc.,57106020,전화 및 소형 장치
+DGII,Digi International Inc.,57102010,통신 및 네트워킹
+ARLP,Alliance Resource Partners Units,50101010,석탄
+MBX,MBX Biosciences  Inc.,56202010,생명 공학 및 의학 연구
+TARS,Tarsus Pharmaceuticals  Inc.,56201040,제약
+EXPO,Exponent  Inc.,52203040,경영 지원 서비스
+EXTR,Extreme Networks  Inc.,57102010,통신 및 네트워킹
+PLUG,Plug Power Inc.,50201010,재생 가능 에너지 장비 및 서비스
+MZTI,The Marzetti Company,54102020,식품 가공
+CRVL,CorVel Corporation,56102010,의료 시설 및 서비스
+TSAT,Telesat Corp,57401020,무선 통신 서비스
+PPTA,Perpetua Resources Corp.,51201060,금
+ARCB,ArcBest Corporation,52405030,지상 화물 및 물류
+QURE,uniQure N.V.,56202010,생명 공학 및 의학 연구
+WDFC,WD-40 Company,54201010,가정용 제품
+BRZE,Braze Inc,57201020,소프트웨어
+SBLK,Star Bulk Carriers Corp.,52405020,해양 화물 및 물류
+ADEA,Adeia Inc.,55601010,투자 지주 회사
+KALU,Kaiser Aluminum Corporation,51201030,알루미늄
+IRON,Disc Medicine  Inc.,56202010,생명 공학 및 의학 연구
+PLSE,Pulse Biosciences Inc,56101010,첨단 의료 장비 및 기술
+GRAL,Grail Inc,56202010,생명 공학 및 의학 연구
+MGEE,MGE Energy  Inc.,59101010,전력 유틸리티
+KYIV,Kyivstar Group Ltd,57401010,통합 통신 서비스
+ASO,Academy Sports and Outdoors  Inc.,53403040,의류 및 액세서리 소매
+WING,Wingstop Inc.,53301020,레스토랑 및 바
+INTA,Intapp  Inc.,57201020,소프트웨어
+FRSH,Freshworks Inc.,57201020,소프트웨어
+DXPE,DXP Enterprises  Inc.,52102010,산업용 기계 및 장비
+TMDX,TransMedics Group  Inc.,56101010,첨단 의료 장비 및 기술
+IMNM,Immunome  Inc.,56202010,생명 공학 및 의학 연구
+ABCL,AbCellera Biologics Inc.,56202010,생명 공학 및 의학 연구
+CLBK,Columbia Financial Inc,55101010,은행
+CLSK,CleanSpark  Inc.,57301030,블록 체인 및 암호화폐
+LASR,nLIGHT  Inc.,57101010,반도체
+IOVA,Iovance Biotherapeutics Inc,56202010,생명 공학 및 의학 연구
+AGYS,Agilysys Inc,57201020,소프트웨어
+PPLI,People Incorporated,57201030,온라인 서비스
+RUM,RUM Group Inc.,57201030,온라인 서비스
+PENG,Penguin Solutions Inc,57101010,반도체
+CHRN,Chronoscale Corp,56101010,첨단 의료 장비 및 기술
+HSAI,Hesai Group ADR,57104010,전자 장비 및 부품
+TRMD,Torm PLC,50103030,오일 및 가스 수송 서비스
+ACHC,Acadia Healthcare Company  Inc.,56102010,의료 시설 및 서비스
+MGRC,McGrath RentCorp,52203040,경영 지원 서비스
+IOND,Ionic Digital Inc,52203040,경영 지원 서비스
+ZLAB,Zai Lab Ltd ADR,56201040,제약
+FIZZ,National Beverage Corp.,54101030,무알콜 음료
+COLM,Columbia Sportswear Company,53202020,의류 및 액세서리
+WIX,Wix.com Ltd.,57201030,온라인 서비스
+NTCT,NetScout Systems  Inc.,57201010,IT 서비스 및 컨설팅
+VC,Visteon Corporation,53101020,"자동차, 트럭 및 오토바이 부품"
+TBBK,Bancorp Inc,55101010,은행
+UPST,Upstart Holdings  Inc.,55101030,소비자 대출
+GCMG,GCM Grosvenor Inc.,55102020,투자 관리 및 펀드 운영
+ALHC,Alignment Healthcare  Inc.,56102020,의료 관리
+BATRK,Liberty Media Liberty Braves Ord Shs Series C,53301040,여가 및 오락시설
+TRMK,Trustmark Corporation,55101010,은행
+WAFD,WaFd Inc,55101010,은행
+PATK,Patrick Industries  Inc.,53203020,건설 자재 및 비품
+SUPN,Supernus Pharmaceuticals  Inc.,56201040,제약
+NBTB,NBT Bancorp Inc.,55101010,은행
+NRIX,Nurix Therapeutics Inc,56202010,생명 공학 및 의학 연구
+BEAM,Beam Therapeutics Inc.,56202010,생명 공학 및 의학 연구
+AVPT,AvePoint  Inc.,57201010,IT 서비스 및 컨설팅
+PRVA,Privia Health Group Inc,56102010,의료 시설 및 서비스
+SPSC,SPS Commerce  Inc.,57201020,소프트웨어
+RNW,Renew Energy Global PLC,59101020,민자 발전 사업
+ALRM,Alarm.com Holdings  Inc.,57201020,소프트웨어
+FBNC,First Bancorp (North Carolina),55101010,은행
+KOD,Kodiak Sciences Inc.,56202010,생명 공학 및 의학 연구
+FRME,First Merchants Corporation,55101010,은행
+BCRX,BioCryst Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+HWKN,Hawkins Inc,51101090,다각적 화학 산업
+OSW,OneSpaWorld Holdings Ltd,53301040,여가 및 오락시설
+NMRK,Newmark Group Inc,60101020,부동산 서비스
+ATAI,AtaiBeckley Inc,56202010,생명 공학 및 의학 연구
+VISN,Vistance Networks Inc,57102010,통신 및 네트워킹
+AXGN,AxoGen  Inc.,56101010,첨단 의료 장비 및 기술
+SKWD,Skyward Specialty Insurance Group Inc,55301020,손해보험
+EEFT,Euronet Worldwide Inc,52203040,경영 지원 서비스
+RARE,Ultragenyx Pharmaceutical Inc.,56201040,제약
+SYBT,Stock Yards Bancorp Inc,55101010,은행
+HIMX,Himax Technologies Inc ADR,57101010,반도체
+NWL,Newell Brands Inc,53204030,"가전제품, 도구 및 가정 용품"
+HTO,H2O America(Dover),59103010,수자원 유틸리티
+AMLX,Amylyx Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+VRDN,Viridian Therapeutics Inc,56202010,생명 공학 및 의학 연구
+LCID,Lucid Group  Inc.,53101010,자동차 및 트럭 제조
+LIME,Neutron Holdings Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+ATRO,Astronics Corporation,52101010,항공우주 및 방위
+COHU,Cohu  Inc.,57101020,반도체 장비 및 테스트
+LLYVA,Liberty Live Holdings Inc Series A,53301040,여가 및 오락시설
+ICHR,Ichor Holdings  Ltd.,57101010,반도체
+BUSE,First Busey Corporation,55101010,은행
+HTFL,Heartflow  Inc.,56101010,첨단 의료 장비 및 기술
+PENN,PENN Entertainment  Inc.,53301030,카지노 및 도박
+NKTR,Nektar Therapeutics,56202010,생명 공학 및 의학 연구
+HYMC,Hycroft Mining Holding Corp,51201080,다각적 채굴
+PHVS,Pharvaris N.V.,56202010,생명 공학 및 의학 연구
+TRVI,Trevi Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+MBIN,Merchants Bancorp,55101010,은행
+RGC,Regencell Bioscience Holdings Ltd,56202010,생명 공학 및 의학 연구
+DRH,Diamondrock Hospitality Co,60102040,특수 REITs
+NEOG,Neogen Corporation,56101020,"의료 장비, 물품 및 유통"
+COAG,Hemab Therapeutics Holdings Inc,56202010,생명 공학 및 의학 연구
+UFPT,UFP Technologies Inc,56101020,"의료 장비, 물품 및 유통"
+BANR,Banner Corp,55101010,은행
+APPN,Appian Corp,57201020,소프트웨어
+HUBG,Hub Group  Inc.,52405030,지상 화물 및 물류
+WGS,GeneDx Holdings Corp.,56102010,의료 시설 및 서비스
+PGEN,Precigen  Inc.,56201040,제약
+BTDR,Bitdeer Technologies Group,57301030,블록 체인 및 암호화폐
+SLDE,Slide Insurance Holdings  Inc.,55301020,손해보험
+CDNA,CareDx  Inc.,56202010,생명 공학 및 의학 연구
+FLNC,Fluence Energy Inc,50201010,재생 가능 에너지 장비 및 서비스
+STNE,StoneCo Ltd.,57301010,핀테크
+PAYO,Payoneer Global Inc,52203040,경영 지원 서비스
+CLOV,Clover Health Investments  Corp.,56102020,의료 관리
+EFSC,Enterprise Financial Services Corp,55101010,은행
+KLRA,Kailera Therapeutics Inc,56201040,제약
+CMPR,Cimpress PLC,52203020,상업 인쇄 서비스
+URGN,Urogen Pharma Ltd,56202010,생명 공학 및 의학 연구
+HURN,Huron Consulting Group Inc.,52203040,경영 지원 서비스
+MLYS,Mineralys Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+IQMX,Iqm Quantum Computers Oyj ADR,57106010,컴퓨터 하드웨어
+PTON,Peloton Interactive Inc,53205020,오락용 제품
+SLS,Sellas Life Sciences Group Inc,56202010,생명 공학 및 의학 연구
+RUN,Sunrun Inc,50201010,재생 가능 에너지 장비 및 서비스
+FIVN,Five9  Inc.,57201020,소프트웨어
+GSHD,Goosehead Insurance  Inc.,55301010,복합보험 및 중개인
+HRMY,Harmony Biosciences Holdings  Inc.,56201040,제약
+PLUS,ePlus inc.,57201010,IT 서비스 및 컨설팅
+ALGT,Allegiant Travel Company,52406010,항공사
+UNIT,Uniti Group Inc (Delaware),57401010,통합 통신 서비스
+NWBI,Northwest Bancshares Inc,55101010,은행
+DJT,Trump Media & Technology Group Corp,57201030,온라인 서비스
+ALMR,Alamar Biosciences Inc,56101010,첨단 의료 장비 및 기술
+IOSP,Innospec Inc,51101030,특수 화학제
+VCEL,Vericel Corporation,56201040,제약
+RAPP,Rapport Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+PLPC,Preformed Line Products Co,52102030,전기 부품 및 장비
+STGW,Stagwell Inc.,53302010,광고 및 마케팅
+XRAY,DENTSPLY SIRONA Inc.,56101020,"의료 장비, 물품 및 유통"
+FWONA,Liberty Media Formula One Ord Shs Series A,53302020,방송
+ETOR,eToro Group Ltd.,55102010,투자 은행 및 중개 서비스
+SEPN,Septerna  Inc.,56202010,생명 공학 및 의학 연구
+PVLA,Palvella Therapeutics Inc,56202010,생명 공학 및 의학 연구
+INTR,Inter & Co Inc,55101010,은행
+TILE,Interface  Inc.,53203020,건설 자재 및 비품
+SHAZ,SharonAI Holdings Inc,57201010,IT 서비스 및 컨설팅
+PLBL,Polibeli Group Ltd,57106030,가정용 전자 제품
+WERN,Werner Enterprises  Inc.,52405030,지상 화물 및 물류
+ESTA,Establishment Labs Holdings Inc,56101020,"의료 장비, 물품 및 유통"
+HAPN,Happen  Inc.,55101030,소비자 대출
+OCUL,Ocular Therapeutix  Inc.,56201040,제약
+LIND,Lindblad Expeditions Holdings  Inc.,53301010,"호텔, 모텔 및 크루즈 라인"
+ANDE,Andersons Inc,54102010,어업 및 농업
+MCRI,Monarch Casino & Resort  Inc.,53301030,카지노 및 도박
+ATRC,AtriCure  Inc.,56101020,"의료 장비, 물품 및 유통"
+ADUS,Addus Homecare Corp,56102010,의료 시설 및 서비스
+ADMA,ADMA Biologics  Inc.,56201040,제약
+PDFS,PDF Solutions  Inc.,57101020,반도체 장비 및 테스트
+KEEL,Keel Infrastructure Corp,57301030,블록 체인 및 암호화폐
+JBLU,JetBlue Airways Corporation,52406010,항공사
+MESO,Mesoblast Limited ADR,56202010,생명 공학 및 의학 연구
+ALKT,Alkami Technology  Inc.,57201010,IT 서비스 및 컨설팅
+VERA,Vera Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+MLCO,Melco Resorts & Entertainment Ltd ADR,53301030,카지노 및 도박
+LIFE,Ethos Technologies Inc,55301030,생명 및 건강 보험
+HCM,HUTCHMED (China) Ltd ADR,56201040,제약
+SRCE,1st Source Corp,55101010,은행
+STOK,Stoke Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+FLYW,Flywire Corporation,52203040,경영 지원 서비스
+VNET,VNET Group  Inc. ADR,57201010,IT 서비스 및 컨설팅
+INOD,Innodata Inc.,57201010,IT 서비스 및 컨설팅
+NEO,NeoGenomics  Inc.,56102010,의료 시설 및 서비스
+TSHA,Taysha Gene Therapies  Inc.,56202010,생명 공학 및 의학 연구
+NCNO,nCino  Inc.,57201020,소프트웨어
+GHRS,GH Research PLC,56202010,생명 공학 및 의학 연구
+ECPG,Encore Capital Group  Inc.,55101050,기업 금융 서비스
+CHCO,City Holding Co,55101010,은행
+AUPH,Aurinia Pharmaceuticals Inc,56201040,제약
+DRVN,Driven Brands Holdings Inc.,54201030,개인 서비스
+NVCR,NovoCure Limited,56101020,"의료 장비, 물품 및 유통"
+GRFS,Grifols  S.A. ADR,56201040,제약
+AGIO,Agios Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+BLBD,Blue Bird Corporation,52102020,중장비 및 차량
+KARD,Kardigan Inc,56202010,생명 공학 및 의학 연구
+BLKB,Blackbaud  Inc.,57201020,소프트웨어
+CNXN,PC Connection Inc,57107010,통합 하드웨어 및 소프트웨어
+MCHPP,Microchip Technology Dep Shs Repstg 1 20Th Pfd Conv Ser A,57101010,반도체
+QUBT,Quantum Computing Inc.,57201020,소프트웨어
+DHC,Diversified Healthcare Trust,60102040,특수 REITs
+SGRY,Surgery Partners  Inc.,56102010,의료 시설 및 서비스
+VERX,Vertex Inc,57201020,소프트웨어
+CENTA,Central Garden & Pet Co Class A,54102020,식품 가공
+PSNY,Polestar Automotive Holding UK PLC ADR Class A,53101010,자동차 및 트럭 제조
+MFP,Midera Food Processing Inc,52102010,산업용 기계 및 장비
+IMOS,ChipMOS Technologies Inc ADR,57101020,반도체 장비 및 테스트
+ZBIO,Zenas BioPharma  Inc.,56202010,생명 공학 및 의학 연구
+AVAH,Aveanna Healthcare Holdings Inc,56102010,의료 시설 및 서비스
+SEDG,SolarEdge Technologies  Inc.,50201010,재생 가능 에너지 장비 및 서비스
+PRDO,Perdoceo Education Corporation,63101010,기타 교육 서비스 제공
+PGNY,Progyny  Inc.,56102020,의료 관리
+TMC,TMC the metals company Inc.,51201050,특수 채굴 및 금속
+CHA,Chagee Holdings Ltd ADR,53301020,레스토랑 및 바
+WRD,WeRide Inc ADR,57201010,IT 서비스 및 컨설팅
+NYAX,Nayax Ltd.,57301090,기타 핀테크 인프라
+OBX,Galera Therapeutics  Inc,56202010,생명 공학 및 의학 연구
+BRVE,Braveheart Bio  Inc.,56202010,생명 공학 및 의학 연구
+PLAB,Photronics  Inc.,57101020,반도체 장비 및 테스트
+CMPS,Compass Pathways PLC ADR,56202010,생명 공학 및 의학 연구
+ALNT,Allient Inc,52102030,전기 부품 및 장비
+SRPT,Sarepta Therapeutics  Inc.,56201040,제약
+KARO,Karooooo Ltd,57201010,IT 서비스 및 컨설팅
+GENB,Generate Biomedicines Inc,56101010,첨단 의료 장비 및 기술
+DMRA,Damora Therapeutics Inc (Pre-Reincorporation),56202010,생명 공학 및 의학 연구
+NBTX,Nanobiotix SA ADR,56202010,생명 공학 및 의학 연구
+GABC,German American Bancorp Inc,55101010,은행
+RBCAA,Republic Bancorp Inc,55101010,은행
+WB,Weibo Corp ADR,57201030,온라인 서비스
+FSUN,Firstsun Capital Bancorp,55101010,은행
+ZD,Ziff Davis Inc,57201030,온라인 서비스
+LMAT,LeMaitre Vascular  Inc.,56101010,첨단 의료 장비 및 기술
+SONO,Sonos  Inc.,57106030,가정용 전자 제품
+OCFC,OceanFirst Financial Corp,55101010,은행
+GCT,Gigacloud Technology Inc,57201030,온라인 서비스
+LBTYA,Liberty Global Ltd Class A,53302020,방송
+TCBK,Trico Bancshares,55101010,은행
+PRCH,Porch Group Inc,57201020,소프트웨어
+LKFT,Lakefront Biotherapeutics NV ADR,56202010,생명 공학 및 의학 연구
+HOPE,Hope Bancorp Inc,55101010,은행
+STBA,S&T Bancorp Inc,55101010,은행
+IMCR,Immunocore Holdings PLC ADR,56201040,제약
+CNOB,ConnectOne Bancorp  Inc.,55101010,은행
+PAX,Patria Investments Ltd,55102020,투자 관리 및 펀드 운영
+NEXT,NextDecade Corporation,52201020,건설 및 엔지니어링
+PRGS,Progress Software Corp,57201020,소프트웨어
+CASH,Pathward Financial Inc,55101010,은행
+OPRA,Opera Ltd ADR,57201020,소프트웨어
+STRA,Strategic Education  Inc.,63101010,기타 교육 서비스 제공
+EZPW,EZCORP Inc,55101030,소비자 대출
+ASTH,Astrana Health  Inc.,56102010,의료 시설 및 서비스
+AAPG,Ascentage Pharma Group International ADR,56202010,생명 공학 및 의학 연구
+ZYME,Zymeworks Inc.,56202010,생명 공학 및 의학 연구
+SNDX,Syndax Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+EVCM,EverCommerce Inc,57201020,소프트웨어
+RXRX,Recursion Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+AEVA,Aeva Technologies Inc,57102010,통신 및 네트워킹
+FTRE,Fortrea Holdings Inc,56202010,생명 공학 및 의학 연구
+ATEX,Anterix Inc,57401020,무선 통신 서비스
+BFC,Bank First Corp,55101010,은행
+GT,Goodyear Tire & Rubber Co,53101030,타이어 및 고무 제품
+HLMN,Hillman Solutions Corp,52102010,산업용 기계 및 장비
+QCRH,QCR Holdings Inc,55101010,은행
+ANIP,ANI Pharmaceuticals  Inc.,56201040,제약
+XNCR,Xencor  Inc.,56202010,생명 공학 및 의학 연구
+BLFS,BioLife Solutions  Inc.,56101020,"의료 장비, 물품 및 유통"
+CDNL,Cardinal Infrastructure Group Inc,52201020,건설 및 엔지니어링
+PGY,Pagaya Technologies Ltd,57301010,핀테크
+NTLA,INTELLIA THERAPEUTICS  INC.,56202010,생명 공학 및 의학 연구
+OMCL,Omnicell Inc,56101010,첨단 의료 장비 및 기술
+ANAB,AnaptysBio  Inc.,56202010,생명 공학 및 의학 연구
+JJSF,J&J Snack Foods Corp,54102020,식품 가공
+BAND,Bandwidth Inc.,57201020,소프트웨어
+IMKTA,Ingles Markets  Incorporated,54301020,식품 소매 및 유통
+PWP,Perella Weinberg Partners,55102010,투자 은행 및 중개 서비스
+TH,Target Hospitality Corp.,53301010,"호텔, 모텔 및 크루즈 라인"
+EYE,National Vision Holdings  Inc.,53403090,기타 전문 소매
+FCEL,Fuelcell Energy Inc,50201010,재생 가능 에너지 장비 및 서비스
+AVLN,Avalyn Pharma Inc,56202010,생명 공학 및 의학 연구
+BL,BlackLine Inc,57201020,소프트웨어
+WEN,Wendy's Co,53301020,레스토랑 및 바
+KMTS,Kestra Medical Technologies  Ltd.,56101010,첨단 의료 장비 및 기술
+MLKN,MillerKnoll  Inc.,52203060,비즈니스 지원 용품
+MQ,Marqeta  Inc.,57301010,핀테크
+TNDM,Tandem Diabetes Care  Inc.,56101020,"의료 장비, 물품 및 유통"
+ABSI,Absci Corp,56202010,생명 공학 및 의학 연구
+BCAX,Bicara Therapeutics Inc,56202010,생명 공학 및 의학 연구
+DSGR,Distribution Solutions Group  Inc.,52102010,산업용 기계 및 장비
+FORTY,Formula Systems 1985 Ltd ADR,57201010,IT 서비스 및 컨설팅
+TRAX,First Tracks Biotherapeutics Inc,56202010,생명 공학 및 의학 연구
+ESQ,Esquire Financial Holdings Inc,55101010,은행
+ICFI,ICF International  Inc.,52203040,경영 지원 서비스
+CSWC,Capital Southwest Corporation,55102020,투자 관리 및 펀드 운영
+ZG,Zillow Group  Inc. Class A,60101020,부동산 서비스
+BTSGU,BrightSpring Health Services Units,56102010,의료 시설 및 서비스
+RCAT,Red Cat Holdings Inc,52101010,항공우주 및 방위
+FBRX,Forte Biosciences Inc,56202010,생명 공학 및 의학 연구
+ALVO,Alvotech SA,56202010,생명 공학 및 의학 연구
+AMSC,American Superconductor Corp,52102030,전기 부품 및 장비
+UROY,Uranium Royalty Corp,50301010,우라늄
+XERS,Xeris Biopharma Holdings  Inc.,56201040,제약
+LKFN,Lakeland Financial Corp,55101010,은행
+QFIN,Qfin Holdings Inc ADR,55101030,소비자 대출
+AMPL,Amplitude  Inc.,57201020,소프트웨어
+EOSE,Eos Energy Enterprises  Inc.,52102030,전기 부품 및 장비
+ULCC,Frontier Group Holdings  Inc.,52406010,항공사
+LBTYK,Liberty Global Ltd Class C,53302020,방송
+POET,POET Technologies Inc,57101010,반도체
+MAZE,Maze Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+SAFT,Safety Insurance Group Inc,55301020,손해보험
+PSNL,Personalis  Inc.,56202010,생명 공학 및 의학 연구
+AMAL,Amalgamated Financial Corp,55101010,은행
+VIR,Vir Biotechnology  Inc.,56202010,생명 공학 및 의학 연구
+TYRA,Tyra Biosciences  Inc.,56202010,생명 공학 및 의학 연구
+QQQX,Nuveen Nasdaq 100 Dynamic Overwrite Fund,55501030,폐쇄형 펀드
+INVA,Innoviva  Inc.,56201040,제약
+APPS,Digital Turbine  Inc.,57201020,소프트웨어
+MRVI,Maravai LifeSciences Holdings Inc,56202010,생명 공학 및 의학 연구
+SLBT,SL Science Holding Ltd,56202010,생명 공학 및 의학 연구
+CNXC,Concentrix Corporation,52203040,경영 지원 서비스
+BHRB,Burke & Herbert Financial Services Corp,55101010,은행
+ATEC,Alphatec Holdings  Inc,56101020,"의료 장비, 물품 및 유통"
+BJRI,BJ's Restaurants Inc,53301020,레스토랑 및 바
+PEBO,Peoples Bancorp Inc,55101010,은행
+HROW,Harrow  Inc.,56201040,제약
+AZTA,Azenta  Inc.,56202010,생명 공학 및 의학 연구
+AVBP,ArriVent BioPharma  Inc.,56202010,생명 공학 및 의학 연구
+LBRX,LB Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+OMDA,Omada Health  Inc.,56102010,의료 시설 및 서비스
+ROCK,Gibraltar Industries  Inc.,53203020,건설 자재 및 비품
+PCT,PureCycle Technologies  Inc.,52203010,환경 서비스 및 장비
+EMAT,Evolution Metals & Technologies Corp,51201010,금 제외 귀금속 및 광물
+HCSG,Healthcare Services Group  Inc.,52203040,경영 지원 서비스
+GIII,G-III Apparel Group Ltd,53202020,의류 및 액세서리
+SHLS,Shoals Technologies Group  Inc.,52102030,전기 부품 및 장비
+REAL,The RealReal  Inc.,53402010,백화점
+TOP,TOP Financial Group Ltd,55102010,투자 은행 및 중개 서비스
+BRUN,Boost Run Inc,57201010,IT 서비스 및 컨설팅
+ATLC,Atlanticus Holdings Corp,55101030,소비자 대출
+JBIO,Jade Biosciences Inc,56202010,생명 공학 및 의학 연구
+MLTX,MoonLake Immunotherapeutics,56202010,생명 공학 및 의학 연구
+INBX,Inhibrx Biosciences Inc,56202010,생명 공학 및 의학 연구
+ORIC,ORIC Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+CTBI,Community Trust Bancorp  Inc.,55101010,은행
+INNV,InnovAge Holding Corp,56102010,의료 시설 및 서비스
+REPL,Replimune Group  Inc.,56202010,생명 공학 및 의학 연구
+TRS,TriMas Corporation,51302010,용기(종이 제외) 및 포장재
+WLTH,Wealthfront Corporation,55102030,다각적 투자 서비스
+PICS,Pics NV,52203040,경영 지원 서비스
+CRSR,Corsair Gaming Inc,57106010,컴퓨터 하드웨어
+SDGR,Schrodinger Inc,57201020,소프트웨어
+NSSC,NAPCO Security Technologies  Inc.,57102010,통신 및 네트워킹
+AIP,Arteris Inc,57201020,소프트웨어
+YSWY,Yesway Inc,54301020,식품 소매 및 유통
+FMBH,First Mid Bancshares Inc,55101010,은행
+RMIX,Suncrete  Inc,51202010,건설 자재
+WABC,Westamerica Bancorp,55101010,은행
+PAHC,Phibro Animal Health Corp,56201040,제약
+ARHS,Arhaus Inc,53403030,가정용 가구 소매
+UFCS,United Fire Group Inc,55301020,손해보험
+GLUE,Monte Rosa Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+CCEC,Capital Clean Energy Carriers Corp,52405020,해양 화물 및 물류
+XPEL,XPEL  Inc.,53101020,"자동차, 트럭 및 오토바이 부품"
+IART,Integra LifeSciences Holdings Corporation,56101020,"의료 장비, 물품 및 유통"
+LQDT,Liquidity Services Inc,57201030,온라인 서비스
+DMLP,Dorchester Minerals Units,50102020,"오일, 가스 탐사 및 생산"
+SBET,Sharplink Inc,53302010,광고 및 마케팅
+PNTG,The Pennant Group  Inc.,56102010,의료 시설 및 서비스
+LILAK,Liberty Latin America Ltd. Class C,57401020,무선 통신 서비스
+SGML,Sigma Lithium Corporation,51201010,금 제외 귀금속 및 광물
+TRUP,Trupanion  Inc.,55301030,생명 및 건강 보험
+IMTX,Immatics N.V.,56202010,생명 공학 및 의학 연구
+HBT,HBT Financial Inc,55101010,은행
+LGIH,LGI Homes  Inc.,53203010,주택 건설
+CNL,Collective Mining Ltd.,51201080,다각적 채굴
+MGRT,Mega Fortune Co Ltd,57107010,통합 하드웨어 및 소프트웨어
+ELE,Elemental Royalty Corp,51201080,다각적 채굴
+NVAX,Novavax  Inc.,56202010,생명 공학 및 의학 연구
+CBRL,Cracker Barrel Old Country Store Inc,53301020,레스토랑 및 바
+OSBC,Old Second Bancorp  Inc,55101010,은행
+RUSHB,Rush Enterprises  Inc. Class B,53403010,"자동차 차량, 부품 및 서비스 소매"
+WLDN,Willdan Group  Inc,52203040,경영 지원 서비스
+IQ,iQIYI Inc ADR,57201030,온라인 서비스
+DRTS,Alpha Tau Medical Ltd,56101010,첨단 의료 장비 및 기술
+AKTS,Aktis Oncology Inc,56202010,생명 공학 및 의학 연구
+SPTX,Seaport Therapeutics Inc,56202010,생명 공학 및 의학 연구
+THRM,Gentherm Incorporated,53101020,"자동차, 트럭 및 오토바이 부품"
+PFBC,Preferred Bank,55101010,은행
+CGEM,Cullinan Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+TRIP,TripAdvisor  Inc.,53301040,여가 및 오락시설
+HBNB,Hotel101 Global Holdings Corp,53301010,"호텔, 모텔 및 크루즈 라인"
+WINA,Winmark Corporation,53403090,기타 전문 소매
+FRNM,Freenome  Inc.,56202010,생명 공학 및 의학 연구
+CRCT,Cricut Inc,57107010,통합 하드웨어 및 소프트웨어
+GDRX,GoodRx Holdings  Inc.,57201030,온라인 서비스
+PRCT,Procept Biorobotics Corp,56101020,"의료 장비, 물품 및 유통"
+VOR,Vor Biopharma Inc.,56202010,생명 공학 및 의학 연구
+HLIT,Harmonic Inc.,57102010,통신 및 네트워킹
+AHG,Akso Health Group ADR,57201030,온라인 서비스
+CRVS,Corvus Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+STAA,STAAR Surgical Company,56101020,"의료 장비, 물품 및 유통"
+AFYA,Afya Limited,63102010,"초, 중, 고등 교육기관"
+MNKD,MannKind Corporation,56202010,생명 공학 및 의학 연구
+LWLG,Lightwave Logic  Inc.,57104010,전자 장비 및 부품
+STRF,Strategy 10 00 Perpetual Strife Prf Shs Series A,57201020,소프트웨어
+RDWR,Radware Ltd.,57201020,소프트웨어
+CERT,Certara  Inc.,57201020,소프트웨어
+MRTN,Marten Transport  Ltd.,52405030,지상 화물 및 물류
+HFWA,Heritage Financial Corp,55101010,은행
+FBYD,Falcon's Beyond Global Inc,53302030,엔터테인먼트 제작
+BRKRP,Bruker 6 375 Mandatory Convertible Preference Shares Ser A,56101010,첨단 의료 장비 및 기술
+WLFC,Willis Lease Finance Corporation,52203040,경영 지원 서비스
+MGTX,MeiraGTx Holdings PLC,56202010,생명 공학 및 의학 연구
+BLZE,Backblaze Inc,57201010,IT 서비스 및 컨설팅
+QNST,QuinStreet Inc,57201030,온라인 서비스
+BITF,Bitfarms Ltd,57301030,블록 체인 및 암호화폐
+ELVR,Elevra Lithium Ltd ADR,51201050,특수 채굴 및 금속
+UVSP,Univest Financial Corp,55101010,은행
+RXT,Rackspace Technology Inc,57201010,IT 서비스 및 컨설팅
+NUTX,Nutex Health Inc,56102010,의료 시설 및 서비스
+CRON,Cronos Group Inc.,56201040,제약
+WBTN,Webtoon Entertainment Inc,57201030,온라인 서비스
+SVRA,Savara Inc.,56202010,생명 공학 및 의학 연구
+BVS,Bioventus Inc.,56101020,"의료 장비, 물품 및 유통"
+JCAP,Jefferson Capital Inc,55101050,기업 금융 서비스
+EYPT,EyePoint Inc,56201040,제약
+LTGO,Latigo Biotherapeutics  Inc.,56202010,생명 공학 및 의학 연구
+FSBC,Five Star Bancorp,55101010,은행
+BRAI,Braiin Ltd,57201010,IT 서비스 및 컨설팅
+NBN,Northeast Bank,55101010,은행
+PSEC,Prospect Capital Corp,55501030,폐쇄형 펀드
+ETON,Eton Pharmaceuticals Inc,56201040,제약
+IGIC,International General Insurance Holdings Ltd,55301020,손해보험
+SIFY,Sify Technologies Ltd ADR,57401010,통합 통신 서비스
+SANA,Sana Biotechnology Inc,56202010,생명 공학 및 의학 연구
+LMRI,Lumexa Imaging Holdings  Inc.,56102010,의료 시설 및 서비스
+AVO,Mission Produce Inc,54102010,어업 및 농업
+GTM,ZoomInfo Technologies Inc.,57201010,IT 서비스 및 컨설팅
+OCSL,Oaktree Specialty Lending Corp,55501030,폐쇄형 펀드
+AIIR,Air Global PLC,54102030,담배
+IRMD,IRADIMED CORPORATION,56101010,첨단 의료 장비 및 기술
+CFFN,Capitol Federal Financial Inc,55101010,은행
+UPBD,Upbound Group  Inc.,53403090,기타 전문 소매
+RDVT,Red Violet Inc,57201020,소프트웨어
+MSEX,Middlesex Water Company,59103010,수자원 유틸리티
+NWPX,NWPX Infrastructure Inc,51201020,철 및 강철
+CHY,Calamos Convertible and High Income Closed Fund,55501030,폐쇄형 펀드
+VMET,Versamet Royalties Corporation,55102020,투자 관리 및 펀드 운영
+CHI,Calamos Convertible Opportunities and Income Closed Fund,55501030,폐쇄형 펀드
+BXBL,BOXABL Inc,53203010,주택 건설
+RZLV,Rezolve AI PLC,57201010,IT 서비스 및 컨설팅
+CSIQ,Canadian Solar Inc.,50201010,재생 가능 에너지 장비 및 서비스
+GPRE,Green Plains Inc,50201020,재생 가능 연료
+ASST,Strive Inc,55102020,투자 관리 및 펀드 운영
+TBLA,Taboola.com Ltd,57201020,소프트웨어
+LXRX,Lexicon Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+EVLV,Evolv Technologies Holdings  Inc.,57102010,통신 및 네트워킹
+WYFI,WhiteFiber Inc,57201010,IT 서비스 및 컨설팅
+SVC,Service Properties Trust,60102040,특수 REITs
+AOSL,Alpha and Omega Semiconductor Limited,57101010,반도체
+ITRN,Ituran Location and Control Ltd,57102010,통신 및 네트워킹
+APMD,Apnimed Inc,56202010,생명 공학 및 의학 연구
+MBWM,Mercantile Bank Corp,55101010,은행
+CRAI,CRA International Inc,52203040,경영 지원 서비스
+SCSC,ScanSource  Inc.,57106010,컴퓨터 하드웨어
+HBNC,Horizon Bancorp Inc,55101010,은행
+UPWK,Upwork Inc.,52203030,고용 서비스
+AVTX,Avalo Therapeutics Inc,56202010,생명 공학 및 의학 연구
+BFST,Business First Bancshares Inc,55101010,은행
+OPK,OPKO Health  Inc.,56102010,의료 시설 및 서비스
+MCBS,Metrocity Bankshares Inc,55101010,은행
+ODTX,Odyssey Therapeutics Inc,56202010,생명 공학 및 의학 연구
+WVE,Wave Life Sciences Ltd.,56202010,생명 공학 및 의학 연구
+ENVX,Enovix Corporation,52102030,전기 부품 및 장비
+CCNE,CNB Financial Corp,55101010,은행
+ANL,Adlai Nortye Ltd ADR,56202010,생명 공학 및 의학 연구
+NNE,NANO Nuclear Energy Inc.,59101010,전력 유틸리티
+JANX,Janux Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+QDEL,QuidelOrtho Corp,56101010,첨단 의료 장비 및 기술
+HEPS,D Market Elektronik Hizmetler ve Ticaret AS ADR,53402010,백화점
+GERN,Geron Corporation,56202010,생명 공학 및 의학 연구
+AEBI,Aebi Schmidt Holding AG,52102020,중장비 및 차량
+GO,Grocery Outlet Holding Corp.,54301020,식품 소매 및 유통
+SBGI,Sinclair  Inc.,53302020,방송
+NBBK,NB Bancorp Inc,55101010,은행
+DAKT,Daktronics Inc,57104010,전자 장비 및 부품
+ASTE,Astec Industries  Inc.,52102020,중장비 및 차량
+OMER,Omeros Corporation,56202010,생명 공학 및 의학 연구
+CAC,Camden National Corp,55101010,은행
+ARDX,Ardelyx  Inc.,56202010,생명 공학 및 의학 연구
+JBSS,John B. Sanfilippo & Son  Inc.,54102020,식품 가공
+SENEA,Seneca Foods Corporation Class A,54102020,식품 가공
+PSIX,Power Solutions International  Inc.,52102010,산업용 기계 및 장비
+IVA,Inventiva SA ADR,56202010,생명 공학 및 의학 연구
+BLMN,Bloomin' Brands Inc,53301020,레스토랑 및 바
+SLDB,Solid Biosciences Inc,56202010,생명 공학 및 의학 연구
+CRML,Critical Metals Corp,51201050,특수 채굴 및 금속
+THFF,First Financial Corp,55101010,은행
+MPB,Mid Penn Bancorp Inc,55101010,은행
+SMPL,The Simply Good Foods Company,54102020,식품 가공
+FRBT,Forbright Inc,55101010,은행
+TRST,TrustCo Bank Corp NY,55101010,은행
+RJET,Republic Airways Holdings Inc,52406010,항공사
+KRT,Karat Packaging Inc,51302010,용기(종이 제외) 및 포장재
+CSTL,Castle Biosciences  Inc.,56101020,"의료 장비, 물품 및 유통"
+FMNB,Farmers National Banc Corp,55101010,은행
+HAFC,Hanmi Financial Corp,55101010,은행
+STRD,Strategy 10 00 Perpetual Stride Prf Shs Series A,57201020,소프트웨어
+STRK,Strategy 8 00 Perpetual Strike Prf Shs Series A,57201020,소프트웨어
+LINC,Lincoln Educational Services Corp,63103010,전문 및 비즈니스 교육
+PCRX,Pacira BioSciences  Inc.,56201040,제약
+ACDC,ProFrac Holding Corp.,50103020,오일 관련 서비스 및 장비
+KOPN,Kopin Corp,57101010,반도체
+LZ,LegalZoom.com  Inc.,57201030,온라인 서비스
+HPK,Highpeak Energy Inc,50102020,"오일, 가스 탐사 및 생산"
+ABUS,Arbutus Biopharma Corp,56101010,첨단 의료 장비 및 기술
+PLTK,Playtika Holding Corp,57201030,온라인 서비스
+HTZ,Hertz Global Holdings Inc,52406020,지상 및 해상 여객 운송
+HTLD,Heartland Express Inc,52405030,지상 화물 및 물류
+OXLC,Oxford Lane Capital Corp,55501030,폐쇄형 펀드
+INDI,indie Semiconductor Inc,57101010,반도체
+FCBC,First Community Bankshares Inc,55101010,은행
+GLIBK,Liberty Capital Corp Series C,57401010,통합 통신 서비스
+SWIM,Latham Group Inc,53205020,오락용 제품
+SATL,Satellogic Inc.,57401020,무선 통신 서비스
+DSGN,Design Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+TRNS,Transcat  Inc.,52203040,경영 지원 서비스
+OLMA,Olema Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+ADAM,Adamas Trust  Inc.,60102040,특수 REITs
+FOXF,Fox Factory Holding Corp.,53101020,"자동차, 트럭 및 오토바이 부품"
+LPTH,LightPath Technologies Inc,57106030,가정용 전자 제품
+PURR,Hyperliquid Strategies Inc,57301030,블록 체인 및 암호화폐
+CCXI,Churchill Capital Corp XI,55601010,투자 지주 회사
+GRPN,Groupon  Inc.,53402020,할인점
+APOG,Apogee Enterprises Inc,53203020,건설 자재 및 비품
+CCBG,Capital City Bank Group Inc,55101010,은행
+GILT,Gilat Satellite Networks Ltd.,57102010,통신 및 네트워킹
+IPX,IperionX Limited ADR,51201050,특수 채굴 및 금속
+APC,Arko Petroleum Corp,50102030,"오일, 가스 정제 및 마케팅"
+ADSE,ADS-TEC Energy PLC,52102030,전기 부품 및 장비
+LYTS,LSI Industries Inc,53203020,건설 자재 및 비품
+DBVT,Dbv Technologies SA ADR,56201040,제약
+NOVTU,Novanta Tangible Equity Units,57104010,전자 장비 및 부품
+WRLD,World Acceptance Corp,55101030,소비자 대출
+WOOF,Petco Health and Wellness Company Inc,53403090,기타 전문 소매
+KURA,Kura Oncology  Inc.,56202010,생명 공학 및 의학 연구
+TBPH,Theravance Biopharma  Inc.,56201040,제약
+FEIM,Frequency Electronics Inc,52102030,전기 부품 및 장비
+VERB,Verb Technology Company Inc,57201030,온라인 서비스
+GSBC,Great Southern Bancorp Inc,55101010,은행
+EGBN,Eagle Bancorp  Inc.,55101010,은행
+INMD,InMode Ltd.,56101010,첨단 의료 장비 및 기술
+MAKO,Mako Mining Corp,51201060,금
+ANNX,Annexon  Inc.,56202010,생명 공학 및 의학 연구
+TALK,Talkspace  Inc.,56102010,의료 시설 및 서비스
+MOMO,Hello Group Inc. ADR,57201020,소프트웨어
+EVER,EverQuote  Inc.,57201030,온라인 서비스
+AVR,Anteris Technologies Global Corp,56101020,"의료 장비, 물품 및 유통"
+HDL,Super Hi International Holding Ltd. ADR,53301020,레스토랑 및 바
+TIGR,UP Fintech Holding Limited ADR,55102010,투자 은행 및 중개 서비스
+ACRS,Aclaris Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+SPFI,South Plains Financial Inc,55101010,은행
+CEVA,CEVA Inc,57101010,반도체
+ALOY,REalloys Inc,51201010,금 제외 귀금속 및 광물
+SMBC,Southern Missouri Bancorp Inc,55101010,은행
+SIBN,SI-BONE  Inc.,56101020,"의료 장비, 물품 및 유통"
+CRTO,Criteo SA (Pre-Reincorporation),53302010,광고 및 마케팅
+IBCP,Independent Bank Corp,55101010,은행
+ORRF,Orrstown Financial Services Inc,55101010,은행
+AMPH,Amphastar Pharmaceuticals  Inc.,56201040,제약
+PHAR,Pharming Group N.V. ADR,56201040,제약
+COLL,Collegium Pharmaceutical Inc,56201040,제약
+GSM,Ferroglobe PLC,51201050,특수 채굴 및 금속
+DSP,Viant Technology Inc,57201020,소프트웨어
+KDK,Kodiak AI Inc,57201010,IT 서비스 및 컨설팅
+RPD,Rapid7  Inc.,57201020,소프트웨어
+SCZM,Santacruz Silver Mining Ltd,51201010,금 제외 귀금속 및 광물
+CBLL,CeriBell  Inc.,56101010,첨단 의료 장비 및 기술
+QMCO,Quantum Corp,57106010,컴퓨터 하드웨어
+ENRD,Einride AB (publ) ADR,53101010,자동차 및 트럭 제조
+SGP,SpyGlass Pharma  Inc.,56101020,"의료 장비, 물품 및 유통"
+ALRS,Alerus Financial Corp,55101010,은행
+MITK,Mitek Systems Inc,57201020,소프트웨어
+SABR,Sabre Corporation,57201020,소프트웨어
+HSTM,HealthStream  Inc.,57201020,소프트웨어
+NAVI,Navient Corporation,55101030,소비자 대출
+HTBK,Heritage Commerce Corp,55101010,은행
+CLYM,Climb Bio Inc,56202010,생명 공학 및 의학 연구
+MAMA,Mama's Creations Inc,54102020,식품 가공
+APEI,American Public Education  Inc.,63101010,기타 교육 서비스 제공
+FISI,Financial Institutions Inc,55101010,은행
+PGC,Peapack-Gladstone Financial Corp,55101010,은행
+IMMX,Immix Biopharma  Inc.,56202010,생명 공학 및 의학 연구
+WEST,Westrock Coffee Co,54102020,식품 가공
+AURA,Aura Biosciences  Inc.,56202010,생명 공학 및 의학 연구
+SHBI,Shore Bancshares Inc,55101010,은행
+ARRY,Array Technologies Inc,50201010,재생 가능 에너지 장비 및 서비스
+SCHL,Scholastic Corporation,53302040,소비자 출판
+OCS,Oculis Holding AG,56202010,생명 공학 및 의학 연구
+MFIC,MidCap Financial Investment Corp,55102020,투자 관리 및 펀드 운영
+QVCG,Old QVC Group  Inc.,53402010,백화점
+PZZA,Papa John's International Inc,53301020,레스토랑 및 바
+BLDP,Ballard Power Systems Inc,50201010,재생 가능 에너지 장비 및 서비스
+AHCO,AdaptHealth Corp.,56101020,"의료 장비, 물품 및 유통"
+PUBM,PubMatic  Inc.,57201020,소프트웨어
+CADL,Candel Therapeutics Inc,56202010,생명 공학 및 의학 연구
+RIGL,Rigel Pharmaceuticals  Inc.,56201040,제약
+BBNX,Beta Bionics Inc,56101010,첨단 의료 장비 및 기술
+DRUG,Bright Minds Biosciences Inc.,56202010,생명 공학 및 의학 연구
+SATA,Strive Perp Var Rate Pref Shs Series A,55102020,투자 관리 및 펀드 운영
+EVO,Evotec SE ADR,56202010,생명 공학 및 의학 연구
+VREX,Varex Imaging Corporation,56101010,첨단 의료 장비 및 기술
+ATTO,Attovia Therapeutics Inc,56202010,생명 공학 및 의학 연구
+MNPR,Monopar Therapeutics Inc.,56202010,생명 공학 및 의학 연구
+SSYS,Stratasys Ltd,57104010,전자 장비 및 부품
+DJCO,Daily Journal Corporation,57201030,온라인 서비스
+CGBD,Carlyle Secured Lending Inc,55102020,투자 관리 및 펀드 운영
+CTMX,CytomX Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+NB,NioCorp Developments Ltd.,51201050,특수 채굴 및 금속
+FTH,Faeth Therapeutics  Inc,56202010,생명 공학 및 의학 연구
+BOT,RoboStrategy Inc,55501030,폐쇄형 펀드
+KRNT,Kornit Digital Ltd.,52102010,산업용 기계 및 장비
+CCD,Calamos Dynamic Convertible And Income Closed Fund,55501030,폐쇄형 펀드
+BBSI,Barrett Business Services Inc,52203030,고용 서비스
+BBOT,BridgeBio Oncology Therapeutics Inc,56202010,생명 공학 및 의학 연구
+CCB,Coastal Financial Corp (EVERETT),55101010,은행
+WASH,Washington Trust Bancorp Inc,55101010,은행
+CYRX,Cryoport  Inc.,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+FDUS,Fidus Investment Corp,55501030,폐쇄형 펀드
+ROOT,Root Inc,55301020,손해보험
+HNRG,Hallador Energy Company,59101020,민자 발전 사업
+CASS,Cass Information Systems Inc,52203040,경영 지원 서비스
+BWMN,Bowman Consulting Group Ltd.,52201020,건설 및 엔지니어링
+MATW,Matthews International Corp,54201020,개인 생활 필수 용품
+SHEN,Shenandoah Telecommunications Co,57401010,통합 통신 서비스
+ALLO,Allogene Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+AGMB,Agomab Therapeutics NV ADR,56202010,생명 공학 및 의학 연구
+HQ,Horizon Quantum Holdings Ltd,57201020,소프트웨어
+HELP,Cybin Inc.,56202010,생명 공학 및 의학 연구
+FWRG,First Watch Restaurant Group  Inc.,53301020,레스토랑 및 바
+STTK,Shattuck Labs Inc,56202010,생명 공학 및 의학 연구
+TRON,TRON Inc,57301030,블록 체인 및 암호화폐
+PHAT,Phathom Pharmaceuticals  Inc.,56201040,제약
+NGNE,Neurogene Inc,56202010,생명 공학 및 의학 연구
+SSII,SS Innovations International  Inc.,56202010,생명 공학 및 의학 연구
+PRAA,PRA Group Inc,55101050,기업 금융 서비스
+HIVE,HIVE Digital Technologies Ltd,57301030,블록 체인 및 암호화폐
+NMFC,New Mountain Finance Corp,55501030,폐쇄형 펀드
+AROW,Arrow Financial Corp,55101010,은행
+PAYS,Paysign Inc,52203040,경영 지원 서비스
+TBLD,Thornburg Income Builder Opportunities Trust,55501030,폐쇄형 펀드
+RGNX,REGENXBIO Inc.,56202010,생명 공학 및 의학 연구
+CCXIU,Churchill Capital XI Units,55601010,투자 지주 회사
+CARE,Carter Bankshares Inc,55101010,은행
+PKOH,Park Ohio Holdings Corp,52102010,산업용 기계 및 장비
+AGNT,Agnt  Inc (Pre-Reincorporation),60101020,부동산 서비스
+NHP,National Healthcare Properties  Inc.,60102040,특수 REITs
+VRRM,Verra Mobility Corporation,52203040,경영 지원 서비스
+IRWD,Ironwood Pharmaceuticals  Inc.,56201040,제약
+PFIS,Peoples Financial Services Corp,55101010,은행
+GYRE,Gyre Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+BCAL,California Bancorp,55101010,은행
+CWBC,Community West Bancshares,55101010,은행
+SLRC,SLR Investment Corp,55501030,폐쇄형 펀드
+HELE,Helen of Troy Ltd,53204030,"가전제품, 도구 및 가정 용품"
+MSBI,Midland States Bancorp Inc,55101010,은행
+CCSI,Consensus Cloud Solutions Inc,57201020,소프트웨어
+HIFS,Hingham Institution For Savings,55101010,은행
+ACHV,Achieve Life Sciences  Inc.,56202010,생명 공학 및 의학 연구
+LEGH,Legacy Housing Corp (Texas),53203010,주택 건설
+ZVRA,Zevra Therapeutics Inc,56201040,제약
+CRESY,Cresud SACIF y A ADR,54102010,어업 및 농업
+CGNT,COGNYTE SOFTWARE LTD.,57201020,소프트웨어
+RRBI,Red River Bancshares Inc,55101010,은행
+CSHR,Coinshares PLC,55102020,투자 관리 및 펀드 운영
+RCBC,River City Bank,55101010,은행
+TIPT,Tiptree Inc,55601010,투자 지주 회사
+DMIIU,Drugs Made In America Acquisition II Units,55601010,투자 지주 회사
+NKLR,Terra Innovatum Global NV,52102040,중전기장비
+NTGR,NETGEAR  Inc.,57102010,통신 및 네트워킹
+ACNB,ACNB Corp,55101010,은행
+GAIN,Gladstone Investment Corp,55501030,폐쇄형 펀드
+ANGO,AngioDynamics  Inc.,56101020,"의료 장비, 물품 및 유통"
+RSVR,Reservoir Media Inc,53302030,엔터테인먼트 제작
+LBRDA,Liberty Broadband Corp Series A,53302020,방송
+DMII,Drugs Made In America Acquisition II Corp,55601010,투자 지주 회사
+SOPH,Sophia Genetics SA,56101010,첨단 의료 장비 및 기술
+KPLT,Katapult Holdings Inc,57201020,소프트웨어
+ALTI,AlTi Global  Inc,55102020,투자 관리 및 펀드 운영
+TLRY,Tilray Brands Inc,56201040,제약
+SLN,Silence Therapeutics PLC ADR,56202010,생명 공학 및 의학 연구
+ASPI,ASP Isotopes Inc,56201040,제약
+AGCC,Agencia Comercial Spirits Ltd,54301020,식품 소매 및 유통
+SWBI,Smith & Wesson Brands Inc,52101010,항공우주 및 방위
+VSTM,Verastem Inc,56202010,생명 공학 및 의학 연구
+FAC,Factorial Energy Inc,52102030,전기 부품 및 장비
+VINP,Vinci Compass Investments Ltd,52203040,경영 지원 서비스
+TECX,Tectonic Therapeutic Inc,56202010,생명 공학 및 의학 연구
+BWAY,Brainsway Ltd ADR,56101010,첨단 의료 장비 및 기술
+ADTN,ADTRAN Holdings Inc,57102010,통신 및 네트워킹
+FWRD,Forward Air Corp (Delaware),52405010,"배달, 우편, 항공 화물 및 육상 물류"
+KIDS,OrthoPediatrics Corp,56101020,"의료 장비, 물품 및 유통"
+STLN,Starling Oncology  Inc.,56102010,의료 시설 및 서비스
+ITG,ITG Inc,52201020,건설 및 엔지니어링
+KRUS,Kura Sushi USA  Inc.,53301020,레스토랑 및 바
+OIO,Oio Group,52203010,환경 서비스 및 장비
+NVCT,Nuvectis Pharma Inc,56202010,생명 공학 및 의학 연구
+TASK,Taskus Inc,52203040,경영 지원 서비스
+YB,Yuanbao Inc ADR,55301030,생명 및 건강 보험
+RMR,The RMR Group Inc.,60101020,부동산 서비스
+GDYN,Grid Dynamics Holdings  Inc.,57201010,IT 서비스 및 컨설팅
+MLAB,Mesa Laboratories  Inc.,56101020,"의료 장비, 물품 및 유통"
+VBNK,Versabank,55101010,은행
+GOOD,Gladstone Commercial Corp,60102010,복합부동산 REITs
+VLGEA,Village Super Market Inc,54301020,식품 소매 및 유통
+MDXG,MiMedx Group  Inc.,56202010,생명 공학 및 의학 연구
+CTKB,Cytek Biosciences  Inc.,56101010,첨단 의료 장비 및 기술
+FDMT,4D Molecular Therapeutics Inc,56202010,생명 공학 및 의학 연구
+UNTY,Unity Bancorp Inc,55101010,은행
+CBNK,Capital Bancorp Inc,55101010,은행
+KRNY,Kearny Financial Corp,55101010,은행
+NRDS,NerdWallet  Inc.,55101030,소비자 대출
+BTQ,BTQ Technologies Corp.,57201020,소프트웨어
+CTRN,Citi Trends Inc,53403040,의류 및 액세서리 소매
+IMSR,Terrestrial Energy Inc,52201020,건설 및 엔지니어링
+BWB,Bridgewater Bancshares Inc,55101010,은행
+CBIO,Crescent Biopharma  Inc.,56201040,제약
+OSPN,OneSpan Inc.,57201020,소프트웨어
+SFST,Southern First Bancshares Inc,55101010,은행
+DDI,DoubleDown Interactive Co Ltd ADR,53301030,카지노 및 도박
+KE,Kimball Electronics Inc,57101010,반도체
+ILPT,Industrial Logistics Properties Trust,60102020,상업용 REITs
+LOT,Lotus Technology Inc ADR,53101010,자동차 및 트럭 제조
+GCBC,Greene County Bancorp Inc,55101010,은행
+SPRY,ARS Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+MCFT,Mastercraft Boat Holdings Inc,53205020,오락용 제품
+NRIM,Northrim BanCorp Inc,55101010,은행
+NEXN,Nexxen International Ltd,53302010,광고 및 마케팅
+CIVB,Civista Bancshares Inc,55101010,은행
+CEPF,Cantor Equity Partners IV Inc,55601010,투자 지주 회사
+ODD,ODDITY Tech Ltd.,54201020,개인 생활 필수 용품
+CXII,Churchill Capital Corp XII,55601010,투자 지주 회사
+DCTH,Delcath Systems Inc,56101020,"의료 장비, 물품 및 유통"
+FBIZ,First Business Financial Services Inc,55101010,은행
+DGICA,Donegal Group Inc Class A,55301020,손해보험
+SGMT,Sagimet Biosciences Inc.,56202010,생명 공학 및 의학 연구
+PRME,Prime Medicine  Inc.,56202010,생명 공학 및 의학 연구
+AGNCP,Agnc Invt 1000 Dep Shs Repstg Cum Red Prf Series F,60102040,특수 REITs
+ARVN,Arvinas Inc,56202010,생명 공학 및 의학 연구
+SPT,Sprout Social  Inc.,57201020,소프트웨어
+MBUU,Malibu Boats Inc,53205020,오락용 제품
+ALT,Altimmune Inc,56202010,생명 공학 및 의학 연구
+XMAX,XMax Inc,53204040,가정용 가구
+AUTL,Autolus Therapeutics PLC ADR,56201040,제약
+ARTV,Artiva Biotherapeutics Inc,56202010,생명 공학 및 의학 연구
+DCBO,Docebo Inc.,57201020,소프트웨어
+GFUZ,General Fusion Group Ltd,59101010,전력 유틸리티
+LAES,Sealsq Corp,57101010,반도체
+NVEC,NVE Corp,57101010,반도체
+BATRA,Liberty Media Liberty Braves Ord Shs  Series A,53301040,여가 및 오락시설
+DNUT,Krispy Kreme  Inc.,53301020,레스토랑 및 바
+HBCP,Home Bancorp Inc,55101010,은행
+METC,Ramaco Resources  Inc. Class A,51201020,철 및 강철
+EIKN,Eikon Therapeutics Inc,56202010,생명 공학 및 의학 연구
+CTNM,Contineum Therapeutics Inc,56202010,생명 공학 및 의학 연구
+NUAI,New Era Energy & Digital Inc,50102020,"오일, 가스 탐사 및 생산"
+XNDU,Xanadu Quantum Technologies Ltd,57201010,IT 서비스 및 컨설팅
+CRMD,CorMedix Inc.,56201040,제약
+CMCO,Columbus McKinnon Corp,52102020,중장비 및 차량
+TCMD,Tactile Systems Technology  Inc.,56101020,"의료 장비, 물품 및 유통"
+ZURA,Zura Bio Ltd,56202010,생명 공학 및 의학 연구
+CHW,Calamos Global Dynamic Income Closed Fund,55501030,폐쇄형 펀드
+CHSCO,CHS Cumulative Redeemable Pref Shs Class B,54102010,어업 및 농업
+CERS,Cerus Corp,56101020,"의료 장비, 물품 및 유통"
+HNST,The Honest Company  Inc.,53403090,기타 전문 소매
+BWFG,Bankwell Financial Group Inc,55101010,은행
+VACH,Voyager Acquisition Corp,55601010,투자 지주 회사
+ADUR,Aduro Clean Technologies Inc,52203010,환경 서비스 및 장비
+AXG,Solowin Holdings Ltd,55102020,투자 관리 및 펀드 운영
+EOLS,Evolus Inc,56201040,제약
+ASMB,Assembly Biosciences Inc,56202010,생명 공학 및 의학 연구
+SLDP,Solid Power  Inc.,53101020,"자동차, 트럭 및 오토바이 부품"
+LMB,Limbach Holdings Inc,52201020,건설 및 엔지니어링
+TMS,Teamshares Inc.,55102020,투자 관리 및 펀드 운영
+SRTA,Strata Critical Medical  Inc.,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+FIP,FTAI Infrastructure Inc.,52405030,지상 화물 및 물류
+AQST,Aquestive Therapeutics Inc,56201040,제약
+ITIC,Investors Title Co,55301020,손해보험
+BMM,Blue Moon Metals Inc.,51201080,다각적 채굴
+YORW,York Water Co,59103010,수자원 유틸리티
+CLMB,Climb Global Solutions Inc,57201010,IT 서비스 및 컨설팅
+GEMI,Gemini Space Station Inc,57301030,블록 체인 및 암호화폐
+VALN,Valneva SE ADR,56202010,생명 공학 및 의학 연구
+ESEA,Euroseas Ltd,52405020,해양 화물 및 물류
+CCOI,Cogent Communications Holdings Inc,57401010,통합 통신 서비스
+CHSCL,CHS Cumulative Redeemable Pref Shs Series 4 Class B,54102010,어업 및 농업
+PWRL,PowerLaw10 LLC,,
+OBT,Orange County Bancorp Inc,55101010,은행
+BSRR,Sierra Bancorp,55101010,은행
+ROMA,Roma Green Finance Ltd,52203040,경영 지원 서비스
+ULH,Universal Logistics Holdings Inc,52405030,지상 화물 및 물류
+AMSF,Amerisafe Inc,55301020,손해보험
+MPLT,MapLight Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+FLGT,Fulgent Genetics Inc,56102010,의료 시설 및 서비스
+COFS,ChoiceOne Financial Services Inc,55101010,은행
+REAX,The Real Brokerage Inc.,60101020,부동산 서비스
+ABTC,American Bitcoin Corp,57301030,블록 체인 및 암호화폐
+GLRE,Greenlight Capital Re Ltd,55301050,재보험
+CWCO,Consolidated Water Co Ltd,59103010,수자원 유틸리티
+CENT,Central Garden & Pet Co,54102020,식품 가공
+NPCE,NeuroPace  Inc.,56101010,첨단 의료 장비 및 기술
+BLSM,BlossomHill Therapeutics Inc,56202010,생명 공학 및 의학 연구
+EVGO,EVgo Inc,59101010,전력 유틸리티
+VITL,Vital Farms Inc,54301020,식품 소매 및 유통
+AIIO,Robo.ai Inc,57201010,IT 서비스 및 컨설팅
+ENTX,Entera Bio Ltd,56202010,생명 공학 및 의학 연구
+SFIX,Stitch Fix  Inc.,57201030,온라인 서비스
+BTBT,Bit Digital  Inc.,57301030,블록 체인 및 암호화폐
+ELMT,Elmet Group Co,52102010,산업용 기계 및 장비
+TATT,TAT Technologies Ltd,52102030,전기 부품 및 장비
+RLMD,Relmada Therapeutics Inc,56202010,생명 공학 및 의학 연구
+WTBA,West Bancorporation Inc,55101010,은행
+BELFA,Bel Fuse Inc. Class A,57104010,전자 장비 및 부품
+ARKO,Arko Corp.,50102030,"오일, 가스 정제 및 마케팅"
+PDLB,Ponce Financial Group Inc,55101010,은행
+JOUT,Johnson Outdoors Inc,53205020,오락용 제품
+KYTX,Kyverna Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+OABI,OmniAb Inc,56202010,생명 공학 및 의학 연구
+BSVN,Bank7 Corp,55101010,은행
+FISN,Deep Fission  Inc,55601010,투자 지주 회사
+PBAM,Private Bancorp of America Inc,55101010,은행
+GRVY,Gravity Co Ltd ADR,57201020,소프트웨어
+OVID,Ovid Therapeutics Inc.,56202010,생명 공학 및 의학 연구
+MLAA,Mountain Lake Acquisition Corp II,55601010,투자 지주 회사
+KELYA,Kelly Services Inc Class A,52203030,고용 서비스
+CBK,Commercial BancGroup Inc,55101010,은행
+AMCX,AMC Global Media Inc,53302020,방송
+FMAO,Farmers & Merchants Bancorp Inc,55101010,은행
+CHSCM,CHS Reset Rate Cumulative Redeemable Pref Shs Series 3 Class B,54102010,어업 및 농업
+GTEN,Gores Holdings X Inc,55601010,투자 지주 회사
+BIOA,BioAge Labs  Inc.,56202010,생명 공학 및 의학 연구
+BRBI,BRBI BR Partners SA ADR,55102030,다각적 투자 서비스
+CCCC,C4 Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+BBCP,Concrete Pumping Holdings Inc,52201020,건설 및 엔지니어링
+ATNI,ATN International Inc,57401010,통합 통신 서비스
+PANL,Pangaea Logistics Solutions Ltd.,52405020,해양 화물 및 물류
+ANSC,Agriculture & Natural Solutions Acquisition Corp,55601010,투자 지주 회사
+OWLS,OBOOK Holdings Inc,57301030,블록 체인 및 암호화폐
+CRAN,Crane Harbor Acquisition Corp II,55601010,투자 지주 회사
+PRTA,Prothena Corporation PLC,56202010,생명 공학 및 의학 연구
+OCGN,Ocugen  Inc.,56202010,생명 공학 및 의학 연구
+FRBA,FIRST BANK (Hamilton),55101010,은행
+IBEX,Ibex Ltd,57201020,소프트웨어
+ASTL,Algoma Steel Group Inc,51201020,철 및 강철
+GCGR,General Catalyst Global Resilience Merger Corp,55601010,투자 지주 회사
+CZNC,Citizens & Northern Corp,55101010,은행
+APXT,Apex Treasury Corp,55601010,투자 지주 회사
+CABA,Cabaletta Bio  Inc.,56202010,생명 공학 및 의학 연구
+ACIC,American Coastal Insurance Corp,55301020,손해보험
+CLPT,Clearpoint Neuro Inc,56101010,첨단 의료 장비 및 기술
+LOCO,El Pollo Loco Holdings Inc,53301020,레스토랑 및 바
+FITBI,Fifth Third Bancorp Depositary Shares Representing 1/1000th Perp Pref Shs,55101010,은행
+RBB,RBB Bancorp,55101010,은행
+BMRC,Bank of Marin Bancorp,55101010,은행
+PBYI,Puma Biotechnology Inc,56201040,제약
+AIRJ,AirJoule Technologies Corporation,52203010,환경 서비스 및 장비
+QTTB,Q32 Bio Inc.,56202010,생명 공학 및 의학 연구
+NRC,NRC Health,53302010,광고 및 마케팅
+ACTG,Acacia Research Corporation,52203040,경영 지원 서비스
+CXIIU,Churchill Capital XII Units,55601010,투자 지주 회사
+BCCQ,Bleichroeder Acquisition Corp III,55601010,투자 지주 회사
+IHRT,iHeartMedia  Inc.,53302020,방송
+PROK,Prokidney Corp,56202010,생명 공학 및 의학 연구
+LWAY,Lifeway Foods Inc,54102020,식품 가공
+EDIT,Editas Medicine  Inc.,56202010,생명 공학 및 의학 연구
+NNNN,Anbio Biotechnology,56101020,"의료 장비, 물품 및 유통"
+BNTC,Benitec Biopharma Inc,56202010,생명 공학 및 의학 연구
+VELO,Velo3D Inc,57104010,전자 장비 및 부품
+PHOE,Phoenix Asia Holdings Ltd,52201020,건설 및 엔지니어링
+PRLD,Prelude Therapeutics Incorporated,56202010,생명 공학 및 의학 연구
+SGHT,Sight Sciences  Inc.,56101020,"의료 장비, 물품 및 유통"
+LRMR,Larimar Therapeutics Inc,56202010,생명 공학 및 의학 연구
+RZLT,Rezolute  Inc.,56202010,생명 공학 및 의학 연구
+WEYS,WEYCO Group Inc,53202030,제화
+RMNI,Rimini Street Inc,57201010,IT 서비스 및 컨설팅
+WTFCN,Wintrust Financial Depositary Shares Rep 1000 Share 7 875 Fixed Rate Reset Non,55101010,은행
+SWMR,Swarmer Inc,57201020,소프트웨어
+KBON,Karbon Capital Partners Corp,55601010,투자 지주 회사
+GLAD,Gladstone Capital Corp,55501030,폐쇄형 펀드
+IEAG,Infinite Eagle Acquisition Corp,55601010,투자 지주 회사
+TREE,LendingTree  Inc.,55101030,소비자 대출
+MBVI,M3-Brigade Acquisition VI Corp,55601010,투자 지주 회사
+XIIIU,Churchill Capital XIII Units,55601010,투자 지주 회사
+PLBC,Plumas Bancorp,55101010,은행
+IACO,Idea Acquisition Corp,55601010,투자 지주 회사
+IIIV,I3 Verticals  Inc.,57301010,핀테크
+CGC,Canopy Growth Corporation,56201040,제약
+DBCA,D Boral Acquisition I Corp,55601010,투자 지주 회사
+MESH,Meshflow Acquisition Corp,55601010,투자 지주 회사
+EH,EHang Holdings Limited ADR,52101010,항공우주 및 방위
+KRAQ,KRAKacquisition Corp,55601010,투자 지주 회사
+BPYPM,Brookfield Property Preferred Pref Shs Class A,55101050,기업 금융 서비스
+TITN,Titan Machinery Inc,52102020,중장비 및 차량
+PBFS,Pioneer Bancorp Inc,55101010,은행
+STRZ,Starz Entertainment Corp.,57201030,온라인 서비스
+EPRX,Eupraxia Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+PRTH,Priority Technology Holdings Inc,57301010,핀테크
+FRPH,FRP Holdings Inc,60101010,"부동산 임대, 개발 및 운영"
+XFOR,X4 Pharmaceuticals Inc,56201040,제약
+ABEO,Abeona Therapeutics Inc,56201040,제약
+ISTR,Investar Holding Corp,55101010,은행
+OFIX,Orthofix Medical Inc.,56101020,"의료 장비, 물품 및 유통"
+CHSCN,CHS Reset Rate Pref Shs Class B Series 2,54102010,어업 및 농업
+GCGRU,General Catalyst Global Resilience Merger Units,55601010,투자 지주 회사
+SHOE,Shoe Station Group Inc,53403040,의류 및 액세서리 소매
+OTLY,Oatly Group AB ADR,54102020,식품 가공
+SENS,Senseonics Holdings Inc,56101020,"의료 장비, 물품 및 유통"
+SERV,Serve Robotics Inc,57201010,IT 서비스 및 컨설팅
+KFII,K&F Growth Acquisition II Corp,55601010,투자 지주 회사
+OPI,Office Properties Income Trust,60102020,상업용 REITs
+FITBM,Fifth Third Bancorp Depositary Shares Representing a 1 40th Ownership Interest,55101010,은행
+USCB,USCB Financial Holdings Inc,55101010,은행
+MASS,908 Devices Inc.,56101010,첨단 의료 장비 및 기술
+AGNCO,AGNC Investment DS REP 1/1000 Cumulative Pref Shs Series E,60102040,특수 REITs
+ARQQ,Arqit Quantum Inc,57201020,소프트웨어
+XRX,Xerox Holdings Corp,57105010,사무기기
+FENC,Fennec Pharmaceuticals Inc.,56201040,제약
+LSAK,Lesaka Technologies Inc,57301010,핀테크
+CCAP,Crescent Capital BDC Inc,55501030,폐쇄형 펀드
+TDUP,ThredUp Inc.,57201030,온라인 서비스
+SCTX,Scribe Therapeutics Inc,56202010,생명 공학 및 의학 연구
+MRLN,Merlin Inc,52101010,항공우주 및 방위
+BMBL,Bumble Inc.,57201030,온라인 서비스
+CURR,CURRENC Group Inc,57201010,IT 서비스 및 컨설팅
+OPAL,Opal Fuels Inc.,50102020,"오일, 가스 탐사 및 생산"
+MOBI,Mobia Medical Inc,56101020,"의료 장비, 물품 및 유통"
+STRO,Sutro Biopharma Inc,56202010,생명 공학 및 의학 연구
+CMPX,Compass Therapeutics Inc.,56202010,생명 공학 및 의학 연구
+AIOT,Powerfleet  Inc.,57201010,IT 서비스 및 컨설팅
+MRAM,Everspin Technologies Inc,57101010,반도체
+NEGG,Newegg Commerce Inc,57201030,온라인 서비스
+ECX,Ecarx Holdings Inc.,57107010,통합 하드웨어 및 소프트웨어
+FRST,Primis Financial Corp,55101010,은행
+CDRO,Codere Online Luxembourg SA,53301030,카지노 및 도박
+GBLI,Global Indemnity Group LLC,55301020,손해보험
+PKBK,Parke Bancorp Inc,55101010,은행
+GRRR,Gorilla Technology Group Inc,57201010,IT 서비스 및 컨설팅
+FSTR,L B Foster Co,52102020,중장비 및 차량
+AVIR,Atea Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+ANSCU,Agriculture Natural Solutions Acquisition Units,55601010,투자 지주 회사
+FNLC,First Bancorp Inc,55101010,은행
+MTLS,Materialise NV ADR,57201020,소프트웨어
+FCNCN,First Ctzns Bancshares Del Dep Sh Repstg 1 40Th Int Non Cum Perp Pfd Ser E,55101010,은행
+GPAT,GP-Act III Acquisition Corp,55601010,투자 지주 회사
+CHMG,Chemung Financial Corp,55101010,은행
+NPAC,New Providence Acquisition Corp III,55601010,투자 지주 회사
+CZFS,Citizens Financial Services Inc,55101010,은행
+MEVO,M Evo Global Acquisition Corp II,55601010,투자 지주 회사
+ADV,Advantage Solutions Inc.,53302010,광고 및 마케팅
+TMCR,Metals Royalty Company Inc,51201080,다각적 채굴
+ERII,Energy Recovery  Inc.,52102010,산업용 기계 및 장비
+NATH,Nathan's Famous Inc,53301020,레스토랑 및 바
+KMDA,Kamada Ltd.,56201040,제약
+TKNO,Alpha Teknova  Inc.,56101020,"의료 장비, 물품 및 유통"
+MVBF,MVB Financial Corp,55101010,은행
+MFI,mF International Limited,57201010,IT 서비스 및 컨설팅
+CLFD,Clearfield Inc,57102010,통신 및 네트워킹
+PCB,PCB Bancorp,55101010,은행
+FHTX,Foghorn Therapeutics Inc.,56202010,생명 공학 및 의학 연구
+RR,Richtech Robotics Inc.,57104010,전자 장비 및 부품
+GTENU,Gores Holdings X Units,55601010,투자 지주 회사
+ENTA,Enanta Pharmaceuticals Inc,56201040,제약
+ALFUU,Centurion Acquisition Units Expiry 22nd May 2029,55601010,투자 지주 회사
+TACO,Berto Acquisition Corp,55601010,투자 지주 회사
+LE,Lands' End  Inc.,53403040,의류 및 액세서리 소매
+ZKP,Lafayette Digital Acquisition Corp I,55601010,투자 지주 회사
+CRNC,Cerence Inc.,57201020,소프트웨어
+GEVO,Gevo  Inc.,50201020,재생 가능 연료
+BBCQ,Bleichroeder Acquisition Corp II,55601010,투자 지주 회사
+RDAG,Republic Digital Acquisition Co,55601010,투자 지주 회사
+AIAI,AIAI Holdings Corp,57201020,소프트웨어
+WENN,Wen Acquisition Corp,55601010,투자 지주 회사
+WILC,G Willi Food International Ltd,54301020,식품 소매 및 유통
+CLNE,Clean Energy Fuels Corp.,50102030,"오일, 가스 정제 및 마케팅"
+GOGO,Gogo Inc.,57401020,무선 통신 서비스
+LXEO,Lexeo Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+MGPI,MGP Ingredients Inc,54101020,증류주 및 포도주
+CNCK,Coincheck Group NV,52203040,경영 지원 서비스
+YICC,Yorkville International Capital Corp,55601010,투자 지주 회사
+UPB,Upstream Bio  Inc.,56202010,생명 공학 및 의학 연구
+KEYY,Keystone Acquisition Corp,55601010,투자 지주 회사
+PERI,Perion Network Ltd,57201020,소프트웨어
+ALLT,Allot Ltd,57201020,소프트웨어
+HACQ,HCM IV Acquisition Corp,55601010,투자 지주 회사
+ALOV,Aldabra 4 Liquidity Opportunity Vehicle Inc,55601010,투자 지주 회사
+RCKT,Rocket Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+VALU,Value Line Inc,52203070,전문 정보 서비스
+PESI,Perma-Fix Environmental Services Inc,52203010,환경 서비스 및 장비
+ELVA,Electrovaya Inc,52102030,전기 부품 및 장비
+WSBF,Waterstone Financial Inc,55101010,은행
+NWFL,Norwood Financial Corp,55101010,은행
+CARL,Carlsmed  Inc.,56101020,"의료 장비, 물품 및 유통"
+MLAAU,Mountain Lake Acquisition II Units,55601010,투자 지주 회사
+RBBN,Ribbon Communications Inc.,57102010,통신 및 네트워킹
+NECB,Northeast Community Bancorp Inc,55101010,은행
+SLP,Simulations Plus  Inc.,56101010,첨단 의료 장비 및 기술
+NEWT,NewtekOne  Inc.,55101050,기업 금융 서비스
+GIW,GigCapital8 Corp,55601010,투자 지주 회사
+SOHU,Sohu.com Ltd ADR,57201030,온라인 서비스
+DMAC,DiaMedica Therapeutics Inc,56202010,생명 공학 및 의학 연구
+FDMM,Freedom Metals Acquisition Corp,55601010,투자 지주 회사
+FVAV,Fortress Value Acquisition Corp V,55601010,투자 지주 회사
+TRVG,Trivago NV ADR,57201030,온라인 서비스
+GHXIU,Gores Holdings XI Units,55601010,투자 지주 회사
+CRANU,Crane Harbor Acquisition II Units,55601010,투자 지주 회사
+OIM,OneIM Acquisition Corp,55601010,투자 지주 회사
+SDHI,Siddhi Acquisition Corp,55601010,투자 지주 회사
+GIX,GigCapital9 Corp,55601010,투자 지주 회사
+KBONU,Karbon Capital Partners Units,55601010,투자 지주 회사
+IEAGU,Infinite Eagle Acquisition Units,55601010,투자 지주 회사
+TACH,Titan Acquisition Corp,55601010,투자 지주 회사
+AVBH,Avidbank Holdings Inc,55101010,은행
+ISSC,Innovative Solutions and Support Inc,52101010,항공우주 및 방위
+WLACU,Willow Lane Acquisition Units,55601010,투자 지주 회사
+MNRO,Monro  Inc.,53403010,"자동차 차량, 부품 및 서비스 소매"
+ARCI,Archimedes Tech SPAC Partners III Co,55601010,투자 지주 회사
+VOXR,Vox Royalty Corp,51201010,금 제외 귀금속 및 광물
+CCII,Cohen Circle Acquisition Corp II,55601010,투자 지주 회사
+TSBK,Timberland Bancorp Inc,55101010,은행
+KCHV,Kochav Defense Acquisition Corp,55601010,투자 지주 회사
+ACAA,Averin Capital Acquisition Corp,55601010,투자 지주 회사
+RCKY,Rocky Brands Inc,53202030,제화
+MBVIU,M3 Brigade Acquisition VI Units,55601010,투자 지주 회사
+HCIC,Hennessy Capital Investment Corp. VIII,55601010,투자 지주 회사
+IPSC,Century Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+LAND,Gladstone Land Corp,60102040,특수 REITs
+VMD,Viemed Healthcare Inc,56102010,의료 시설 및 서비스
+APXTU,Apex Treasury Units,55601010,투자 지주 회사
+TLSI,TriSalus Life Sciences Inc,56202010,생명 공학 및 의학 연구
+IACOU,Idea Acquisition Units,55601010,투자 지주 회사
+OYSE,Oyster Enterprises II Acquisition Corp,55601010,투자 지주 회사
+BDCI,BTC Development Corp,55601010,투자 지주 회사
+OPTX,Syntec Optics Holdings  Inc,51101010,상품 화학
+AGNCZ,AGNC Investment 8 75 Fixed Rate Cumulative Redeemable Prf Shs Series H,60102040,특수 REITs
+BLZR,Trailblazer Acquisition Corp,55601010,투자 지주 회사
+BCCQU,Bleichroeder Acquisition III Units,55601010,투자 지주 회사
+MESHU,Meshflow Acquisition Units,55601010,투자 지주 회사
+LYEL,Lyell Immunopharma  Inc.,56202010,생명 공학 및 의학 연구
+OPRT,Oportun Financial Corp,55101030,소비자 대출
+PACB,Pacific Biosciences of California  Inc.,56101010,첨단 의료 장비 및 기술
+ABAT,American Battery Technology Company,51201050,특수 채굴 및 금속
+NNDM,Nano Dimension Ltd ADR,57104010,전자 장비 및 부품
+TWFG,TWFG  Inc.,55301010,복합보험 및 중개인
+IMXI,International Money Express Inc,52203040,경영 지원 서비스
+PALI,Palisade Bio Inc,56202010,생명 공학 및 의학 연구
+PMTS,CPI Card Group Inc,55101030,소비자 대출
+NCMI,National Cinemedia Inc,53302010,광고 및 마케팅
+CD,Chaince Digital Holdings Inc,57301010,핀테크
+PTLO,Portillos Inc,53301020,레스토랑 및 바
+PLAY,Dave & Buster's Entertainment  Inc.,53301020,레스토랑 및 바
+BUUU,BUUU Group Ltd,53302010,광고 및 마케팅
+JACK,Jack in the Box Inc,53301020,레스토랑 및 바
+VCRE,Vicore Pharma Holding AB ADR,56202010,생명 공학 및 의학 연구
+TWIN,Twin Disc Inc,52102010,산업용 기계 및 장비
+MVST,Microvast Holdings  Inc.,52102030,전기 부품 및 장비
+SHMD,SCHMID Group NV,57101010,반도체
+KRAQU,KRAKacquisition Units,55601010,투자 지주 회사
+SHIP,Seanergy Maritime Holdings Corp,52405020,해양 화물 및 물류
+TLNC,Talon Capital Corp,55601010,투자 지주 회사
+ARTC,Art Technology Acquisition Corp,55601010,투자 지주 회사
+HCMA,HCM III Acquisition Corp,55601010,투자 지주 회사
+DSAC,Daedalus Special Acquisition Corp,55601010,투자 지주 회사
+SORN,Soren Acquisition Corp,55601010,투자 지주 회사
+SABS,SAB Biotherapeutics Inc,56202010,생명 공학 및 의학 연구
+FGII,FG Imperii Acquisition Corp,55601010,투자 지주 회사
+ATIIU,Archimedes Tech SPAC Partners II Units,55601010,투자 지주 회사
+CV,CapsoVision Inc,56101010,첨단 의료 장비 및 기술
+IPFX,Inflection Point Acquisition Corp VI,55101050,기업 금융 서비스
+BCML,BayCom Corp,55101010,은행
+AACI,Armada Acquisition Corp III,55601010,투자 지주 회사
+PPHC,Public Policy Holding Company Inc,53302010,광고 및 마케팅
+PTOR,Praetorian Acquisition Corp,55601010,투자 지주 회사
+CAII,Collective Acquisition Corp. II,55601010,투자 지주 회사
+FVCB,FVCBankcorp Inc,55101010,은행
+AIBZ,Bitzero Holdings Inc,57301030,블록 체인 및 암호화폐
+AGNCN,Agnc Invt 1000 DS Repstg Pref Shs Series C,60102040,특수 REITs
+CUVL,Clinuvel Pharmaceuticals Ltd ADR,56201040,제약
+BEAG,Bold Eagle Acquisition Corp,55601010,투자 지주 회사
+SIMAU,SM Acquisition Units,55601010,투자 지주 회사
+TCPC,BlackRock TCP Capital Corp,55102020,투자 관리 및 펀드 운영
+IKT,Inhibikase Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+BLUW,Blue Water Acquisition Corp III,55601010,투자 지주 회사
+STRT,Strattec Security Corp,53101020,"자동차, 트럭 및 오토바이 부품"
+HRZN,Horizon Technology Finance Corporation,55501030,폐쇄형 펀드
+LTBR,Lightbridge Corp,52203040,경영 지원 서비스
+FNKO,Funko  Inc.,53205010,장난감 및 어린이 제품
+RPAY,Repay Holdings Corp,52203040,경영 지원 서비스
+ARTNA,Artesian Resources Corp,59103010,수자원 유틸리티
+RREV,RRE Ventures Acquisition Corp,55601010,투자 지주 회사
+DCX,Digital Currency X Technology Inc,53101010,자동차 및 트럭 제조
+XRPN,Armada Acquisition Corp II,55601010,투자 지주 회사
+ALMU,Aeluma Inc,57101010,반도체
+BRTMU,B&R Technology Merger Units,55601010,투자 지주 회사
+MTRX,Matrix Service Co,52201020,건설 및 엔지니어링
+CEPV,Cantor Equity Partners V Inc,55601010,투자 지주 회사
+SBC,SBC Medical Group Holdings Inc,52203040,경영 지원 서비스
+JMSB,John Marshall Bancorp Inc,55101010,은행
+FERA,Fifth Era Acquisition Corp I,55601010,투자 지주 회사
+PCAP,Procap Acquisition Corp,55601010,투자 지주 회사
+HBANL,Huntington Bancshares Dep Shs Repstg 1 40Th Int Non Cum Perp Prf Depositary,55101010,은행
+CHSCP,CHS 8 Cumulative Redeemable Pref Shs,54102010,어업 및 농업
+DRDB,Roman Dbdr Acquisition Corp. II,55601010,투자 지주 회사
+TACOU,Berto Acquisition Units,55601010,투자 지주 회사
+RTAC,Renatus Tactical Acquisition I Corp,55601010,투자 지주 회사
+SZZL,Sizzle Acquisition Corp II,55601010,투자 지주 회사
+OBA,Oxley Bridge Acquisition Ltd,55601010,투자 지주 회사
+PRE,Prenetics Global Ltd,56101020,"의료 장비, 물품 및 유통"
+TSSI,TSS Inc,57201010,IT 서비스 및 컨설팅
+OSS,One Stop Systems Inc,57106010,컴퓨터 하드웨어
+GASS,StealthGas Inc,50103030,오일 및 가스 수송 서비스
+DSC,DSC Holdings Ltd ADR,57201030,온라인 서비스
+IMRX,Immuneering Corporation,56202010,생명 공학 및 의학 연구
+LNKB,LINKBANCORP Inc,55101010,은행
+FSBW,FS Bancorp Inc,55101010,은행
+WLAC,Willow Lane Acquisition Corp,55601010,투자 지주 회사
+FWDI,Forward Industries Inc,55101050,기업 금융 서비스
+ACGLN,Arch Capital Group Depositary Shares Rep1000 Non Cumu Pref Shs Series G,55301020,손해보험
+TLS,Telos Corp,57107010,통합 하드웨어 및 소프트웨어
+CRAQ,Cal Redwood Acquisition Corp,55601010,투자 지주 회사
+PNRG,Primeenergy Resources Corp,50102020,"오일, 가스 탐사 및 생산"
+ALDFU,Aldel Financial II Units,55601010,투자 지주 회사
+NPACU,New Providence Acquisition III Units,55601010,투자 지주 회사
+EVOX,Evolution Global Acquisition Corp,55601010,투자 지주 회사
+KOYN,CSLM Digital Asset Acquisition III Corp Ltd,55601010,투자 지주 회사
+FDBC,Fidelity D&D Bancorp Inc,55101010,은행
+GUACU,Berto Acquisition II Units,55601010,투자 지주 회사
+ALDF,Aldel Financial II Inc,55601010,투자 지주 회사
+HBANP,Huntington Bancshares 4.500 Depositary Shares Rep Perp Prf Shs Series H,55101010,은행
+FCCO,First Community Corp (South Carolina),55101010,은행
+CAES,Cantor Equity Partners VII Inc,55601010,투자 지주 회사
+PMTR,Perimeter Acquisition I Corp,55601010,투자 지주 회사
+UMBFO,Umb Finl Corp Dep Shs Repstg 1 400Th Perp Pfd Ser B,55101010,은행
+LPAAU,Launch One Acquisition Units,55601010,투자 지주 회사
+POLE,Andretti Acquisition Corp. II,55601010,투자 지주 회사
+LILA,Liberty Latin America Ltd. Class A,57401020,무선 통신 서비스
+SAAQ,Space Asset Acquisition Corp,55601010,투자 지주 회사
+GPATU,GP Act III Acquisition Units,55601010,투자 지주 회사
+RNGT,Range Capital Acquisition II Corp,55601010,투자 지주 회사
+ZUMZ,Zumiez Inc.,53403040,의류 및 액세서리 소매
+KFIIU,K and F Growth Acquisition Ii Units,55601010,투자 지주 회사
+FUND,Sprott Focus Trust,55501030,폐쇄형 펀드
+FATE,Fate Therapeutics Inc,56202010,생명 공학 및 의학 연구
+NMRA,Neumora Therapeutics Inc,56202010,생명 공학 및 의학 연구
+ORBS,Eightco Holdings Inc (Pre-Reincorporation),55101030,소비자 대출
+GALT,Galectin Therapeutics Inc,56202010,생명 공학 및 의학 연구
+XNET,Xunlei Ltd ADR,57201010,IT 서비스 및 컨설팅
+TVA,Texas Ventures Acquisition III Corp,55601010,투자 지주 회사
+AVXL,Anavex Life Sciences Corp,56202010,생명 공학 및 의학 연구
+SMTI,Sanara Medtech Inc,56201040,제약
+ALTO,Alto Ingredients Inc,50201020,재생 가능 연료
+ATII,Archimedes Tech SPAC Partners II Co,55601010,투자 지주 회사
+AEAQ,Activate Energy Acquisition Corp,55601010,투자 지주 회사
+RDAGU,Republic Digital Acquisition Units,55601010,투자 지주 회사
+WENNU,WEN Acquisition Units,55601010,투자 지주 회사
+ILLUU,Illumination Acquisition I Units,55601010,투자 지주 회사
+CMII,Columbus Circle Capital Corp II,,
+GUAC,Berto Acquisition Corp II,55601010,투자 지주 회사
+NODK,NI Holdings Inc,55301020,손해보험
+PDYN,Palladyne AI Corp,57201020,소프트웨어
+SNDL,SNDL Inc,56201040,제약
+IRD,Opus Genetics Inc,56201040,제약
+SVIV,Spring Valley Acquisition Corp. IV,55601010,투자 지주 회사
+AACO,Abony Acquisition Corp I,55601010,투자 지주 회사
+CAQ,Cambridge Acquisition Corp,55601010,투자 지주 회사
+ISBA,Isabella Bank Corp,55101010,은행
+LPAA,Launch One Acquisition Corp,55601010,투자 지주 회사
+GBFH,GBank Financial Holdings Inc,55101010,은행
+BRCB,Black Rock Coffee Bar  Inc.,53301020,레스토랑 및 바
+FRD,Friedman Industries Inc,51201020,철 및 강철
+SSP,E W Scripps Co,53302020,방송
+TTRX,Turn Therapeutics Inc,56202010,생명 공학 및 의학 연구
+VNDA,Vanda Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+MKTW,MarketWise Inc,52203070,전문 정보 서비스
+LAB,Standard BioTools Inc.,56101010,첨단 의료 장비 및 기술
+FOSL,Fossil Group Inc,53202020,의류 및 액세서리
+AGEN,Agenus Inc,56202010,생명 공학 및 의학 연구
+ILLU,Illumination Acquisition I Corp,55601010,투자 지주 회사
+LPBB,Launch Two Acquisition Corp,55601010,투자 지주 회사
+OSPRU,Osprey Acquisition III Units,55601010,투자 지주 회사
+LWAC,LightWave Acquisition Corp,55601010,투자 지주 회사
+MYGN,Myriad Genetics  Inc.,56101020,"의료 장비, 물품 및 유통"
+TMCI,Treace Medical Concepts  Inc.,56101020,"의료 장비, 물품 및 유통"
+TMTS,Spartacus Acquisition Corp II,55601010,투자 지주 회사
+ALCO,Alico Inc,54102010,어업 및 농업
+MYFW,First Western Financial Inc,55101010,은행
+VLOSU,Velos Acquisition I Units,55601010,투자 지주 회사
+ITHA,ITHAX Acquisition Corp III,55601010,투자 지주 회사
+ZNTL,Zentalis Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+VHCP,Vine Hill Capital Investment Corp II,55601010,투자 지주 회사
+SUPX,SuperX AI Technology Ltd,57201010,IT 서비스 및 컨설팅
+VFF,Village Farms International Inc,56102010,의료 시설 및 서비스
+GLOO,Gloo Holdings  Inc.,57201010,IT 서비스 및 컨설팅
+OFLX,Omega Flex Inc,52102010,산업용 기계 및 장비
+MEVOU,M Evo Global Acquisition II Units,55601010,투자 지주 회사
+ZKPU,Lafayette Digital Acquisition I Units,55601010,투자 지주 회사
+NNBR,NN Inc,52102010,산업용 기계 및 장비
+RELL,Richardson Electronics Ltd,57104010,전자 장비 및 부품
+ALOVU,Aldabra 4 Liquidity Opportunity Vehicle Units,55601010,투자 지주 회사
+MTC,MMTEC Inc,52203070,전문 정보 서비스
+OTGA,OTG Acquisition I Corp,55601010,투자 지주 회사
+FLXS,Flexsteel Industries Inc,53204040,가정용 가구
+SLMBP,SLM Floating Rate Non Cumulative Pref Shs Series B,55101030,소비자 대출
+HVMC,Highview Merger Corp,55601010,투자 지주 회사
+GSRV,GSR V Acquisition Corp,55601010,투자 지주 회사
+MOVE,Corvex Inc,56101010,첨단 의료 장비 및 기술
+BBCQU,Bleichroeder Acquisition II Units,55601010,투자 지주 회사
+AREC,American Resources Corp,52102030,전기 부품 및 장비
+GSRF,GSR IV Acquisition Corp,55601010,투자 지주 회사
+CCCT,Columbus Circle Capital Corp III,55601010,투자 지주 회사
+AMRN,Amarin Corporation PLC ADR,56202010,생명 공학 및 의학 연구
+IFRX,InflaRx NV,55601010,투자 지주 회사
+ACGC,ACP Holdings Acquisition Corp,55601010,투자 지주 회사
+TACHU,Titan Acquisition Units,55601010,투자 지주 회사
+SDHIU,Siddhi Acquisition Units,55601010,투자 지주 회사
+OIMAU,OneIM Acquisition Units,55601010,투자 지주 회사
+DBCAU,D Boral Acquisition I Units,55601010,투자 지주 회사
+GPAC,General Purpose Acquisition Corp,55601010,투자 지주 회사
+NTRSO,Northern Trust DS Representing 1 1000th Non Cumulative Perpetual Pref Shs,55102020,투자 관리 및 펀드 운영
+ARCIU,Archimedes Tech SPAC Partners III Units,55601010,투자 지주 회사
+HCAC,Hall Chadwick Acquisition Corp,55601010,투자 지주 회사
+SVAQ,Silicon Valley Acquisition Corp,55601010,투자 지주 회사
+API,Agora Inc ADR,57201020,소프트웨어
+CDZI,Cadiz Inc,59103010,수자원 유틸리티
+AZ,A2Z Cust2Mate Solutions Corp,57201010,IT 서비스 및 컨설팅
+EGHT,8x8 Inc,57401010,통합 통신 서비스
+SRZN,Surrozen  Inc.,56202010,생명 공학 및 의학 연구
+BETR,Better Home & Finance Holding Co,55101030,소비자 대출
+DGXX,Digi Power X Inc,57301030,블록 체인 및 암호화폐
+RILY,BRC Group Holdings Inc,55102010,투자 은행 및 중개 서비스
+INV,Innventure Inc,55102020,투자 관리 및 펀드 운영
+ANIK,Anika Therapeutics Inc,56101020,"의료 장비, 물품 및 유통"
+BACC,Blue Acquisition Corp,55601010,투자 지주 회사
+BPRN,Princeton Bancorp Inc,55101010,은행
+BIXI,Bitcoin Infrastructure Acquisition Corp Ltd,55601010,투자 지주 회사
+FUNC,First United Corp,55101010,은행
+SENEB,Seneca Foods Corporation Class B,54102020,식품 가공
+RXST,RxSight  Inc.,56101020,"의료 장비, 물품 및 유통"
+NHIC,NewHold Investment Corp III,55601010,투자 지주 회사
+IRHO,Iron Horse Acquisitions Corp II,55601010,투자 지주 회사
+DUOT,Duos Technologies Group Inc,57201010,IT 서비스 및 컨설팅
+PACH,Pioneer Acquisition I Corp,55601010,투자 지주 회사
+HACQU,HCM IV Acquisition Units,55601010,투자 지주 회사
+KEYYU,Keystone Acquisition Units,55601010,투자 지주 회사
+AFRI,Forafric Global PLC,54102020,식품 가공
+AACB,Artius II Acquisition Inc,55601010,투자 지주 회사
+ELDN,Eledon Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+ADAC,American Drive Acquisition Co,55601010,투자 지주 회사
+AENT,Alliance Entertainment Holding Corp,57104010,전자 장비 및 부품
+LPCV,Launchpad Cadenza Acquisition Corp I,55601010,투자 지주 회사
+FRAF,Franklin Financial Services Corp,55101010,은행
+FXNC,First National Corp,55101010,은행
+CFFI,C&F Financial Corp,55101010,은행
+JAKK,JAKKS Pacific Inc,53205010,장난감 및 어린이 제품
+NSLR,Neostellar Capital Corp,55102020,투자 관리 및 펀드 운영
+CUB,Lionheart Holdings,55601010,투자 지주 회사
+BEAGU,Bold Eagle Acquisition Units,55601010,투자 지주 회사
+ESCA,Escalade Inc,53205020,오락용 제품
+BCYC,Bicycle Therapeutics PLC ADR,56202010,생명 공학 및 의학 연구
+RWAY,Runway Growth Finance Corp,55101050,기업 금융 서비스
+KINS,Kingstone Companies Inc,55301020,손해보험
+FULC,Fulcrum Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+OVLY,Oak Valley Bancorp,55101010,은행
+FNRN,First Northern Community Bancorp,55101010,은행
+TVAI,Thayer Ventures Acquisition II Corp,55601010,투자 지주 회사
+WNEB,Western New England Bancorp Inc,55101010,은행
+FDMMU,Freedom Metals Acquisition Units,55601010,투자 지주 회사
+KCHVU,Kochav Defense Acquisition Units,55601010,투자 지주 회사
+WLCO,Wilco 63 Corp,55601010,투자 지주 회사
+BLZRU,Trailblazer Acquisition Units,55601010,투자 지주 회사
+LCNB,LCNB Corp,55101010,은행
+XCBE,X3 Acquisition Corp Ltd,55601010,투자 지주 회사
+AXIN,Axiom Intelligence Acquisition Corp 1,55601010,투자 지주 회사
+ATLO,Ames National Corp,55101010,은행
+JAB,JAB Acquisition Corp I,55601010,투자 지주 회사
+PAMT,PAMT Corp,52405030,지상 화물 및 물류
+ISNR,Snow Rothschild Acquisition Corp,,
+NHIV,Newhold Investment Corp IV,55601010,투자 지주 회사
+HCKT,The Hackett Group  Inc.,52203040,경영 지원 서비스
+OYSEU,Oyster Enterprises II Acquisition Units,55601010,투자 지주 회사
+FCNCP,First Citizens Bancshares 40 DS Rep 1 Non Cumulative Perpetual Pref Shs Series A,55101010,은행
+HWBK,Hawthorn Bancshares Inc,55101010,은행
+PMTRU,Perimeter Acquisition I Units,55601010,투자 지주 회사
+XSLL,Xsolla SPAC 1,55101050,기업 금융 서비스
+CCIIU,Cohen Circle Acquisition II Units,55601010,투자 지주 회사
+PCYO,Pure Cycle Corp,59103010,수자원 유틸리티
+NATR,Nature's Sunshine Products Inc,54102020,식품 가공
+EMBC,Embecta Corp.,56101020,"의료 장비, 물품 및 유통"
+FXHO,UTime Ltd,57106020,전화 및 소형 장치
+TRDA,Entrada Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+CAMP,CAMP4 Therapeutics Corp,56202010,생명 공학 및 의학 연구
+AVNW,Aviat Networks Inc,57102010,통신 및 네트워킹
+ASYS,Amtech Systems Inc,57101020,반도체 장비 및 테스트
+ALXO,ALX Oncology Holdings Inc,56202010,생명 공학 및 의학 연구
+LTRX,Lantronix Inc,57102010,통신 및 네트워킹
+CGCFU,Cartesian Growth IV Units,55601010,투자 지주 회사
+SHOT,RMG ML Sports Holdings,55601010,투자 지주 회사
+HVII,Hennessy Capital Investment Corp VII,55601010,투자 지주 회사
+BLUWU,Blue Water Acquisition III Units,55601010,투자 지주 회사
+MUZE,Muzero Acquisition Corp,55601010,투자 지주 회사
+CEPO,Cantor Equity Partners I Inc,55601010,투자 지주 회사
+NKSH,National Bankshares Inc,55101010,은행
+IPFXU,Inflection Point Acquisition VI Units,55101050,기업 금융 서비스
+SORNU,Soren Acquisition Units,55601010,투자 지주 회사
+DNMX,Dynamix Corp III,55601010,투자 지주 회사
+RMBI,Richmond Mutual Bancorporation Inc,55101010,은행
+ASLE,AerSale Corp,52101010,항공우주 및 방위
+CPZ,Calamos Long Short Equity Dynamic Income Trust Closed Fund,55501030,폐쇄형 펀드
+WHWK,Whitehawk Therapeutics Inc,56201040,제약
+GIWWU,Gigcapital8 Units,55601010,투자 지주 회사
+IACQ,Irenic Acquisition Corp,55601010,투자 지주 회사
+EU,enCore Energy Corp.,50301010,우라늄
+REFI,Chicago Atlantic Real Estate Finance Inc,60102020,상업용 REITs
+TLNCU,Talon Capital Units,55601010,투자 지주 회사
+VRXA,Veraxa Biotech AG,56202010,생명 공학 및 의학 연구
+AIRO,AIRO Group Holdings Inc,52101010,항공우주 및 방위
+POWW,Outdoor Holding Company,53205020,오락용 제품
+ACIU,AC Immune SA,56201040,제약
+SILC,Silicom Ltd,57102010,통신 및 네트워킹
+BDCIU,BTC Development Units,55601010,투자 지주 회사
+AMACU,AMR Resources Acquisition Units,55601010,투자 지주 회사
+OBIO,Orchestra Biomed Holdings Inc,56101010,첨단 의료 장비 및 기술
+PCAPU,Procap Acquisition Units A,55601010,투자 지주 회사
+DVLT,Datavault AI Inc,57201010,IT 서비스 및 컨설팅
+HCMAU,HCM III Acquisition Units,55601010,투자 지주 회사
+ARTCU,Art Technology Acquisition Units,55601010,투자 지주 회사
+TTGT,TechTarget Inc,57201030,온라인 서비스
+DSACU,Daedalus Special Acquisition Units,55601010,투자 지주 회사
+OACC,Oaktree Acquisition III Life Sciences Corp,55601010,투자 지주 회사
+OBAWU,Oxley Bridge Acquisition Units,55601010,투자 지주 회사
+PACHU,Pioneer Acquisition I Units,55601010,투자 지주 회사
+RNAC,Cartesian Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+GIXXU,GigCapital9 Units,55601010,투자 지주 회사
+FLWS,1-800-FLOWERS.COM  Inc.,53403090,기타 전문 소매
+IACQU,Irenic Acquisition Units,55601010,투자 지주 회사
+DMAA,Drugs Made In America Acquisition Corp,55601010,투자 지주 회사
+FACT,FACT II Acquisition Corp,55601010,투자 지주 회사
+CMIIU,Columbus Circle Capital II Units,,
+RTACU,Renatus Tactical Acquisition I Units,55601010,투자 지주 회사
+AACIU,Armada Acquisition III Units,55601010,투자 지주 회사
+OSUR,OraSure Technologies Inc,56101020,"의료 장비, 물품 및 유통"
+NTWO,Newbury Street II Acquisition Corp,55601010,투자 지주 회사
+TRGS,TRG Latin America Acquisitions Corp,55601010,투자 지주 회사
+POLEU,Andretti Acquisition II Units,55601010,투자 지주 회사
+BHFAN,Brighthouse Financial 1000 DS Repstg Non Cum Pfd Ser C,55301030,생명 및 건강 보험
+IONR,ioneer Ltd ADR,51201050,특수 채굴 및 금속
+UXIN,Uxin Ltd ADR,53403010,"자동차 차량, 부품 및 서비스 소매"
+QUIK,Quicklogic Corp,57101010,반도체
+CEPL,Capstone Energy+ Inc,52102040,중전기장비
+PHOS,First Phosphate Corp ADR,51201050,특수 채굴 및 금속
+MNTK,Montauk Renewables Inc,59101010,전력 유틸리티
+VABK,Virginia National Bankshares Corp,55101010,은행
+PTORU,Praetorian Acquisition Units,55601010,투자 지주 회사
+MFIN,Medallion Financial Corp,55101010,은행
+VNME,Vendome Acquisition Corp I,55601010,투자 지주 회사
+XRPNU,Armada Acquisition II Units,55601010,투자 지주 회사
+CAIIU,Collective Acquisition II Units,55601010,투자 지주 회사
+BDSX,Biodesix Inc,56102010,의료 시설 및 서비스
+MGNX,MacroGenics Inc,56202010,생명 공학 및 의학 연구
+GSIT,GSI Technology Inc,57101010,반도체
+INBK,First Internet Bancorp,55101010,은행
+ACGLO,Acrh Cap Group 1000 Dep Shs Repstg Non Cumulative Pref Shs Series F,55301020,손해보험
+SNFCA,Security National Financial Corp,55101010,은행
+CUBWU,Lionheart Holdings Units,55601010,투자 지주 회사
+ACAAU,Averin Capital Acquisition Unit,55601010,투자 지주 회사
+LOVE,Lovesac Co,53204040,가정용 가구
+DMAAU,Drugs Made In America Acquisition Units,55601010,투자 지주 회사
+FERAU,Fifth Era Acquisition I Units,55601010,투자 지주 회사
+USAU,US Gold Corp,51201060,금
+GSRVU,GSR V Acquisition Units,55601010,투자 지주 회사
+PROF,Profound Medical Corp,56101010,첨단 의료 장비 및 기술
+IPVV,InterPrivate Investment Partners V Inc,55601010,투자 지주 회사
+FBLA,FB Bancorp Inc,55101010,은행
+VLOS,Velos Acquisition I Corp,55601010,투자 지주 회사
+RREVU,RRE Ventures Acquisition Units,55601010,투자 지주 회사
+HCICU,Hennessy Capital Investment VIII Units,55601010,투자 지주 회사
+RCEL,AVITA Medical Inc,56202010,생명 공학 및 의학 연구
+SCII,SC II Acquisition Corp,55601010,투자 지주 회사
+LMNR,Limoneira Co,54102010,어업 및 농업
+SVCO,Silvaco Group Inc,57201020,소프트웨어
+NHICU,Newhold Investment III Units,55601010,투자 지주 회사
+GSRFU,GSR IV Acquisition Units,55601010,투자 지주 회사
+LPBBU,Launch Two Acquisition Units,55601010,투자 지주 회사
+III,Information Services Group Inc,57201010,IT 서비스 및 컨설팅
+CRAQU,Cal Redwood Acquisition Units,55601010,투자 지주 회사
+QADR,QDRO Acquisition Corp,55601010,투자 지주 회사
+MKLY,McKinley Acquisition Corp,55601010,투자 지주 회사
+RDNW,RideNow Group Inc,53403010,"자동차 차량, 부품 및 서비스 소매"
+SZZLU,Sizzle Acquisition II Units,55601010,투자 지주 회사
+ADAG,Adagene Inc. ADR,56202010,생명 공학 및 의학 연구
+PRQR,ProQR Therapeutics NV,56202010,생명 공학 및 의학 연구
+IMMR,Immersion Corp,57201020,소프트웨어
+OTGAU,OTG Acquisition I Units,55601010,투자 지주 회사
+GTERA,Globa Terra Acquisition Corp,55601010,투자 지주 회사
+AEAQU,Activate Energy Acquisition Units,55601010,투자 지주 회사
+SAAQU,Space Asset Acquisition Units,55601010,투자 지주 회사
+KOYNU,CSLM Digital Asset Acquisition III Units,55601010,투자 지주 회사
+TCBIO,Texas Capital Bancshares Depositary Shares 5 75 Non Cum Pref Shs Series B,55101010,은행
+EVOXU,Evolution Global Acquisition Units,55601010,투자 지주 회사
+DRDBU,Roman DBDR Acquisition II Units,55601010,투자 지주 회사
+HVMCU,Highview Merger Units,55601010,투자 지주 회사
+RAIL,FreightCar America Inc,52102020,중장비 및 차량
+NAGE,Niagen Bioscience Inc,56202010,생명 공학 및 의학 연구
+SIDU,Sidus Space Inc,52101010,항공우주 및 방위
+CNDT,Conduent Incorporated,57201010,IT 서비스 및 컨설팅
+KLTR,Kaltura Inc,57201020,소프트웨어
+ESOA,Energy Services Of America Corp,52201020,건설 및 엔지니어링
+SLGL,SOL-GEL TECHNOLOGIES LTD.,56202010,생명 공학 및 의학 연구
+ZJYL,Jin Medical International Ltd,56101020,"의료 장비, 물품 및 유통"
+RACC,Research Alliance Corporation III,55601010,투자 지주 회사
+PYXS,Pyxis Oncology Inc,56202010,생명 공학 및 의학 연구
+TROO,TROOPS Inc,55301010,복합보험 및 중개인
+AKBA,Akebia Therapeutics Inc,56201040,제약
+PEBK,Peoples Bancorp of North Carolina Inc,55101010,은행
+STIM,Neuronetics Inc,56101010,첨단 의료 장비 및 기술
+RNGTU,Range Capital Acquisition II Units,55601010,투자 지주 회사
+MCGA,Yorkville Acquisition Corp,55601010,투자 지주 회사
+GNFT,Genfit SA ADR,56202010,생명 공학 및 의학 연구
+SOCA,Solarius Capital Acquisition Corp,55601010,투자 지주 회사
+AUDC,AudioCodes Ltd,57102010,통신 및 네트워킹
+SSAC,Spacsphere Acquisition Corp,55601010,투자 지주 회사
+TMTSU,Spartacus Acquisition II Units,55601010,투자 지주 회사
+ASUR,Asure Software Inc,57201020,소프트웨어
+HMH,HMH Holding Inc,50103020,오일 관련 서비스 및 장비
+TVACU,Texas Ventures Acquisition III Units,55601010,투자 지주 회사
+TOYO,TOYO Co.  Ltd,50201010,재생 가능 에너지 장비 및 서비스
+CAQUU,Cambridge Acquisition Units,55601010,투자 지주 회사
+IRHOU,Iron Horse Acquisition II Units,55601010,투자 지주 회사
+DYNC,Dynamix Corp,55601010,투자 지주 회사
+ALEC,Alector  Inc.,56202010,생명 공학 및 의학 연구
+AACOU,Abony Acquisition I Units,55601010,투자 지주 회사
+IGAC,Invest Green Acquisition Corp,55601010,투자 지주 회사
+SVIVU,Spring Valley Acquisition IV Units,55601010,투자 지주 회사
+BACCU,Blue Acquisition Units,55601010,투자 지주 회사
+MRBK,Meridian Corp,55101010,은행
+LX,Lexinfintech Holdings Ltd ADR,55101030,소비자 대출
+TDWD,Tailwind 2.0 Acquisition Corp,55601010,투자 지주 회사
+AACBU,Artius II Acquisition Units,55601010,투자 지주 회사
+AGNCM,AGNC Investment 1000 DS Rep 6.875 Fixed to Floating Cumulative Redeemable Pref,60102040,특수 REITs
+WSBCO,Wesbanco Depositary Shs Each Repstg 1 40Th In Sh Of Fxd Rate Rst Non Cumulatv,55101010,은행
+HDSN,Hudson Technologies Inc,52102030,전기 부품 및 장비
+CCCTU,Columbus Circle Capital III Units,55601010,투자 지주 회사
+TWLV,Twelve Seas Investment Company III,55601010,투자 지주 회사
+ADACU,American Drive Acquisition Units,55601010,투자 지주 회사
+OPBK,OP Bancorp,55101010,은행
+AACP,Apogee Acquisition Corp,55601010,투자 지주 회사
+AIRS,AirSculpt Technologies Inc,56102010,의료 시설 및 서비스
+FGIIU,Fg Imperii Acquisition Units,55601010,투자 지주 회사
+VHCPU,Vine Hill Capital Investment II Units,55601010,투자 지주 회사
+LATA,Galata Acquisition Corp II,55601010,투자 지주 회사
+SUMA,SUMA Acquisition Corp,55601010,투자 지주 회사
+HLXC,Helix Acquisition Corp III,55601010,투자 지주 회사
+ORGO,Organogenesis Holdings Inc.,56202010,생명 공학 및 의학 연구
+BHFAP,Brighthouse Financial 1000 DS Representing 6 6 Non Cumulative Pref Shs Series A,55301030,생명 및 건강 보험
+CFBK,CF Bankshares Inc,55101010,은행
+DYOR,Insight Digital Partners II,55601010,투자 지주 회사
+YICCU,Yorkville International Capital Units,55601010,투자 지주 회사
+BLRK,Bluerock Acquisition Corp,55601010,투자 지주 회사
+ITHAU,ITHAX Acquisition III Units,55601010,투자 지주 회사
+HQI,Hirequest Inc,52203030,고용 서비스
+LPCVU,Launchpad Cadenza Acquisition I Units,55601010,투자 지주 회사
+TBCH,Turtle Beach Corporation,57106010,컴퓨터 하드웨어
+EFSI,Eagle Financial Services Inc,55101010,은행
+TARA,Protara Therapeutics Inc,56202010,생명 공학 및 의학 연구
+MPAA,Motorcar Parts of America Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+NUCL,Eagle Nuclear Energy Corp,50301010,우라늄
+SPOK,Spok Holdings Inc,57401020,무선 통신 서비스
+RTB,RTB Digital Inc,57201020,소프트웨어
+SION,Sionna Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+GLSI,Greenwich Lifesciences Inc,56202010,생명 공학 및 의학 연구
+ACB,Aurora Cannabis Inc,56201040,제약
+CAPR,Capricor Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+ANTX,AN2 Therapeutics Inc,56202010,생명 공학 및 의학 연구
+CGEN,Compugen Ltd.,56202010,생명 공학 및 의학 연구
+BIXIU,Bitcoin Infrastructure Acquisition Units,55601010,투자 지주 회사
+SVCC,Stellar V Capital Corp,55601010,투자 지주 회사
+UTMD,Utah Medical Products Inc,56101020,"의료 장비, 물품 및 유통"
+WLCOU,Wilco 63 Units,55601010,투자 지주 회사
+SVAQU,Silicon Valley Acquisition Units,55601010,투자 지주 회사
+LWACU,Lightwave Acquisition Units,55601010,투자 지주 회사
+MBINL,Merchants Bancorp Ind Dep Shs Repstg 1 40Th Int Perp Prf Shs Ser E,55101010,은행
+LTGR,Long Table Growth Corp,,
+TVIV,Texas Ventures Acquisition IV Corp,55601010,투자 지주 회사
+BHFAO,Brighthouse Financial 1000 Depositary Shares Representing 1 Pref Series B,55301030,생명 및 건강 보험
+AIFU,AIFU Inc.,55301010,복합보험 및 중개인
+ALOT,AstroNova Inc,57106010,컴퓨터 하드웨어
+SUJA,Suja Life Inc,54101030,무알콜 음료
+ISNRU,Snow Rothschild Acquisition Units,,
+XCBEU,X3 Acquisition Units,55601010,투자 지주 회사
+OZKAP,Bank OZK 4 625 Non Cumulative Perpetual Pref Shs Series A,55101010,은행
+SY,So-Young International Inc ADR,53403090,기타 전문 소매
+OHAC,Oceanhawk Acquisition Corp,55601010,투자 지주 회사
+RGCO,RGC Resources Inc,59102010,천연가스 유틸리티
+ACGCU,ACP Holdings Acquisition Units,55601010,투자 지주 회사
+LIEN,Chicago Atlantic BDC Inc,55101050,기업 금융 서비스
+CMTV,Community Bancorp,55101010,은행
+ONCH,1rt Acquisition Corp,55601010,투자 지주 회사
+AXINU,Axiom Intelligence Acquisition 1 Units,55601010,투자 지주 회사
+FCAP,First Capital Inc,55101010,은행
+PTAC,Patriot Acquisition Corp,55601010,투자 지주 회사
+FORR,Forrester Research Inc,53302010,광고 및 마케팅
+CRAC,Crown Reserve Acquisition Corp. I,55601010,투자 지주 회사
+LCUT,Lifetime Brands Inc,53204030,"가전제품, 도구 및 가정 용품"
+GWRS,Global Water Resources Inc,59103010,수자원 유틸리티
+VUZI,Vuzix Corp,57104010,전자 장비 및 부품
+SHOTU,RMG ML Sports Holdings Units,55601010,투자 지주 회사
+TDACU,Translational Development Acquisition Units,55601010,투자 지주 회사
+IDAC,Iron Dome Acquisition I Corp,55601010,투자 지주 회사
+FUFU,BitFuFu Inc,52203040,경영 지원 서비스
+NBP,NovaBridge Biosciences ADR,56202010,생명 공학 및 의학 연구
+PPIH,Perma-Pipe International Holdings Inc,51201020,철 및 강철
+ARCT,Arcturus Therapeutics Holdings Inc,56202010,생명 공학 및 의학 연구
+ATOM,Atomera Inc,57101010,반도체
+PDEX,Pro-Dex Inc,56101020,"의료 장비, 물품 및 유통"
+CXDO,Crexendo Inc,57201010,IT 서비스 및 컨설팅
+TVAIU,Thayer Ventures Acquisition II Units,55601010,투자 지주 회사
+GSHR,Gesher Acquisition II Corp,55601010,투자 지주 회사
+CATLU,Catalyst Acquisition Units,55601010,투자 지주 회사
+NHIVU,Newhold Investment IV Units,55601010,투자 지주 회사
+BYND,Beyond Meat  Inc.,54102020,식품 가공
+HCACU,Hall Chadwick Acquisition Units,55601010,투자 지주 회사
+GDEV,GDEV Inc,57201020,소프트웨어
+CCAQ,Collective Acquisition Corp,55601010,투자 지주 회사
+EGHA,EGH Acquisition Corp,55601010,투자 지주 회사
+MTAKU,Market Technology Acquisition Units,55601010,투자 지주 회사
+TNXP,Tonix Pharmaceuticals Holding Corp.,56201040,제약
+ONEW,OneWater Marine Inc,53205020,오락용 제품
+FOCL,Edap Tms SA ADR,56101010,첨단 의료 장비 및 기술
+IPHA,Innate Pharma SA ADR,56202010,생명 공학 및 의학 연구
+BCAR,D Boral ARC Acquisition I Corp,55601010,투자 지주 회사
+KROS,Keros Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+IMUX,Immunic  Inc.,56202010,생명 공학 및 의학 연구
+IVVD,Invivyd  Inc.,56201040,제약
+RICK,RCI Hospitality Holdings Inc,53301020,레스토랑 및 바
+CLLS,Cellectis SA ADR,56202010,생명 공학 및 의학 연구
+SGC,Superior Group of Companies Inc,53202020,의류 및 액세서리
+SLNH,Soluna Holdings Inc,57201010,IT 서비스 및 컨설팅
+PALO,Paloma Acquisition Corp I,55601010,투자 지주 회사
+OACCU,Oaktree Acquisition III Units,55601010,투자 지주 회사
+OVBC,Ohio Valley Banc Corp,55101010,은행
+SPKLU,Spark I Acquisition Units,55601010,투자 지주 회사
+SND,Smart Sand Inc,51202010,건설 자재
+HAVA,Harvard Ave Acquisition Corp,55601010,투자 지주 회사
+XSLLU,Xsolla SPAC 1 Units,55101050,기업 금융 서비스
+TDAC,Translational Development Acquisition Corp,55601010,투자 지주 회사
+MSLE,Satellos Bioscience Inc.,56202010,생명 공학 및 의학 연구
+GPACU,General Purpose Acquisition Units,55601010,투자 지주 회사
+RNA,Atrium Therapeutics Inc,56202010,생명 공학 및 의학 연구
+LANDP,Gladstone Land 6 00 Cumulative Redeemable Preferred Stock Series C,60102040,특수 REITs
+MUZEU,Muzero Acquisition Units,55601010,투자 지주 회사
+TRGSU,TRG Latin America Acquisitions Units,55601010,투자 지주 회사
+WLII,Willow Lane Acquisition Corp II,55601010,투자 지주 회사
+QMLS,QumulusAI Inc,57201010,IT 서비스 및 컨설팅
+AESP,Aeon Acquisition I Corp,55601010,투자 지주 회사
+SIGA,SIGA Technologies Inc,56201040,제약
+VNMEU,Vendome Acquisition I Units,55601010,투자 지주 회사
+OTLK,Outlook Therapeutics Inc,56202010,생명 공학 및 의학 연구
+HVIIU,Hennessy Capital Investment VII Units,55601010,투자 지주 회사
+CPSS,Consumer Portfolio Services Inc,55101030,소비자 대출
+ZSQR,Z Squared Inc (Delaware),57201010,IT 서비스 및 컨설팅
+HITI,High Tide Inc,54301010,의약품 소매
+IMPP,Imperial Petroleum Inc,50201020,재생 가능 연료
+DTIL,Precision BioSciences Inc,56202010,생명 공학 및 의학 연구
+JONEU,Jones Ventures INTL Acquisition1 Units,55601010,투자 지주 회사
+IPVVU,InterPrivate Investment Partners V Units,55601010,투자 지주 회사
+DNMXU,Dynamix III Units,55601010,투자 지주 회사
+EXFY,Expensify  Inc.,57201020,소프트웨어
+RCMT,R C M Technologies Inc,52203030,고용 서비스
+QADRU,QDRO Acquisition Units,55601010,투자 지주 회사
+KTWO,K2 Capital Acquisition Corp,55601010,투자 지주 회사
+CRNT,Ceragon Networks Ltd,57102010,통신 및 네트워킹
+PEPG,PepGen Inc.,56202010,생명 공학 및 의학 연구
+MIACU,Meridian3 Industrials Acquisition Units,55601010,투자 지주 회사
+TORO,Toro Corp.,50103030,오일 및 가스 수송 서비스
+EGAN,eGain Corp,57201020,소프트웨어
+PLMKU,Plum Acquisition IV Units,55601010,투자 지주 회사
+CZWI,Citizens Community Bancorp Inc,55101010,은행
+BANX,ArrowMark Financial Corp.,55501030,폐쇄형 펀드
+FIGX,FIGX Capital Acquisition Corp,55601010,투자 지주 회사
+LKSP,Lake Superior Acquisition Corp,55601010,투자 지주 회사
+VYGR,Voyager Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+BID,Tribeca Strategic Acquisition Corp,55601010,투자 지주 회사
+WAFDP,Wafd Depositary Shares,55101010,은행
+FACTU,Fact II Acquisition Units,55601010,투자 지주 회사
+KRRO,Korro Bio  Inc.,56202010,생명 공학 및 의학 연구
+CNXU,Conexeu Sciences Inc,56202010,생명 공학 및 의학 연구
+BGIN,BGIN Blockchain Ltd,57301030,블록 체인 및 암호화폐
+NERV,Minerva Neurosciences  Inc,56202010,생명 공학 및 의학 연구
+RBKB,Rhinebeck Bancorp Inc,55101010,은행
+JRVR,James River Group Holdings Inc,55301010,복합보험 및 중개인
+DEFT,DeFi Technologies Inc,57301010,핀테크
+LARK,Landmark Bancorp Inc,55101010,은행
+SAFX,XCF Global Inc,50201020,재생 가능 연료
+FNWD,Finward Bancorp,55101010,은행
+ACOG,Alpha Cognition Inc,56201040,제약
+KGEI,Kolibri Global Energy Inc,50102020,"오일, 가스 탐사 및 생산"
+LFAC,Leapfrog Acquisition Corp,55601010,투자 지주 회사
+CBFV,CB Financial Services Inc,55101010,은행
+HNVR,Hanover Bancorp Inc,55101010,은행
+OHACU,Oceanhawk Acquisition Units,55601010,투자 지주 회사
+NTWOU,Newbury Street II Acquisition Units,55601010,투자 지주 회사
+FINW,Finwise Bancorp,55101010,은행
+CRBP,Corbus Pharmaceuticals Holdings  Inc.,56202010,생명 공학 및 의학 연구
+FITBP,Fifth Third Bancorp 40 Depository Shares representing Non Cum Series A Pref,55101010,은행
+EBMT,Eagle Bancorp Montana Inc,55101010,은행
+LUCD,Lucid Diagnostics Inc,56101020,"의료 장비, 물품 및 유통"
+GTERU,Globa Terra Acquisition Units,55601010,투자 지주 회사
+NGEN,NervGen Pharma Corp,56202010,생명 공학 및 의학 연구
+ADAMM,Adamas 7 875 Fixed to Floating Rate Cumulative Redeemable Prf Shs Series E,60102040,특수 REITs
+PAACU,Proem Acquisition Units,55601010,투자 지주 회사
+DOMO,Domo Inc,57201020,소프트웨어
+JABRU,JAB Acquisition I Units,55601010,투자 지주 회사
+SSACU,SPACSphere Acquisition Units,55601010,투자 지주 회사
+YDES,YD Bio Ltd,56202010,생명 공학 및 의학 연구
+FITBO,Fifth Third Bancorp 1000 DS Representing Preferred Series K,55101010,은행
+SOCAU,Solarius Capital Acquisition Units,55601010,투자 지주 회사
+NEOV,NeoVolta Inc,52102030,전기 부품 및 장비
+MCGAU,Yorkville Acquisition Units,55601010,투자 지주 회사
+BREZ,Breeze Acquisition Corp II,55601010,투자 지주 회사
+QSI,Quantum-Si Inc,56202010,생명 공학 및 의학 연구
+MKLYU,Mckinley Acquisition Units,55601010,투자 지주 회사
+OMSE,OMS Energy Technologies Inc,50103020,오일 관련 서비스 및 장비
+LEE,Lee Enterprises Inc,53302040,소비자 출판
+AACPU,Apogee Acquisition Units,55601010,투자 지주 회사
+SUMAU,SUMA Acquisition Units,55601010,투자 지주 회사
+ABOS,Acumen Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+BVFL,BV Financial Inc,55101010,은행
+CHRS,Coherus Oncology Inc,56201040,제약
+CRACU,Crown Reserve Acquisition I Units,55601010,투자 지주 회사
+TDWDU,Tailwind 2 0 Acquisition Units,55601010,투자 지주 회사
+LFCR,Lifecore Biomedical  Inc.,56201040,제약
+TWLVU,Twelve Seas Investment III Units,55601010,투자 지주 회사
+DYNCU,Dynamix Units,55601010,투자 지주 회사
+EPSN,Epsilon Energy Ltd,50102020,"오일, 가스 탐사 및 생산"
+HTLM,HomesToLife Ltd,53403030,가정용 가구 소매
+HUMA,Humacyte Inc,56202010,생명 공학 및 의학 연구
+MACIU,Melar Acquisition I Units Exp 10th June 2029,55601010,투자 지주 회사
+CMRC,Commerce.com  Inc.,57201020,소프트웨어
+SCIIU,SC II Acquisition Units,55601010,투자 지주 회사
+MDWD,Mediwound Ltd,56201040,제약
+ONCHU,1RT Acquisition Units,55601010,투자 지주 회사
+MRDN,Meridian Holdings Inc,57201030,온라인 서비스
+ARCL,ARC Group Acquisition I Corp,55101050,기업 금융 서비스
+ORMP,Oramed Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+CHEC,Chenghe Acquisition III Co,55601010,투자 지주 회사
+PAAC,Proem Acquisition Corp I,55601010,투자 지주 회사
+ANGI,Angi Inc,57201030,온라인 서비스
+IPCX,Inflection Point Acquisition Corp III,55601010,투자 지주 회사
+GSIW,Garden Stage Ltd,55102010,투자 은행 및 중개 서비스
+TCGX,TCGX Acquisition Corp,55601010,투자 지주 회사
+ECBK,ECB Bancorp Inc,55101010,은행
+OGI,Organigram Global Inc,56102010,의료 시설 및 서비스
+MNSB,MainStreet Bancshares Inc,55101010,은행
+LATAU,Galata Acquisition II Units,55601010,투자 지주 회사
+BLRKU,Bluerock Acquisition Units,55601010,투자 지주 회사
+CRDL,Cardiol Therapeutics Inc,56202010,생명 공학 및 의학 연구
+PTACU,Patriot Acquisition Units,55601010,투자 지주 회사
+CDXS,Codexis  Inc.,56202010,생명 공학 및 의학 연구
+DYORU,Insight Digital Partners II Units,55601010,투자 지주 회사
+SBFG,SB Financial Group Inc,55101010,은행
+PONO,Pono Capital Four Inc,55601010,투자 지주 회사
+SEVN,Seven Hills Realty Trust,60102040,특수 REITs
+TVIVU,Texas Ventures Acquisition IV Units,55601010,투자 지주 회사
+LTGRU,Long Table Growth Units,,
+MRCOU,Mercator Acquisition Units,55601010,투자 지주 회사
+RDCM,Radcom Ltd,57102010,통신 및 네트워킹
+ANNA,AleAnna Inc,50102020,"오일, 가스 탐사 및 생산"
+TAYD,Taylor Devices Inc,52102010,산업용 기계 및 장비
+TNYA,Tenaya Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+NKTX,Nkarta  Inc.,56202010,생명 공학 및 의학 연구
+BSET,Bassett Furniture Industries Inc,53204040,가정용 가구
+PALOU,Paloma Acquisition I Units,55601010,투자 지주 회사
+TAVI,Tavia Acquisition Corp,55601010,투자 지주 회사
+DPRO,Draganfly Inc,52101010,항공우주 및 방위
+ZENA,ZenaTech Inc,52101010,항공우주 및 방위
+CRBU,Caribou Biosciences  Inc.,56202010,생명 공학 및 의학 연구
+DAAQ,Digital Asset Acquisition Corp,55601010,투자 지주 회사
+SHIM,Shimmick Corp,52201020,건설 및 엔지니어링
+DMRC,Digimarc Corporation,57201020,소프트웨어
+CURI,CuriosityStream Inc,57201030,온라인 서비스
+SVCCU,Stellar V Capital Units,55601010,투자 지주 회사
+CTAA,Clearthink 1 Acquisition Corp,55601010,투자 지주 회사
+EGHAU,EGH Acquisition Units,55601010,투자 지주 회사
+FCNCO,First Citizens BancShares 5 625 Non Cumulative Perpetual Prf Shs Series C,55101010,은행
+JLHL,Julong Holding Ltd,52102010,산업용 기계 및 장비
+NMP,Nmp Acquisition Corp,55601010,투자 지주 회사
+WALD,Waldencast PLC,53403090,기타 전문 소매
+BZUN,Baozun Inc ADR,52202010,다각적 산업용 제품 도매
+INSE,Inspired Entertainment  Inc,57201030,온라인 서비스
+SKYX,SKYX Platforms Corp,52102030,전기 부품 및 장비
+SRBK,SR Bancorp Inc,55101010,은행
+LBTYB,Liberty Global Ltd Class B,53302020,방송
+IGACU,Invest Green Acquisition Units,55601010,투자 지주 회사
+EMIS,Emmis Acquisition Corp,55601010,투자 지주 회사
+BRR,ProCap Financial Inc,57301010,핀테크
+CTW,CTW,57201020,소프트웨어
+IDACU,Iron Dome Acquisition I Unit,55601010,투자 지주 회사
+BCARU,D Boral ARC Acquisition I Units,55601010,투자 지주 회사
+FIGXU,FIGX Capital Acquisition Units,55601010,투자 지주 회사
+HOFT,Hooker Furnishings Corp,53204040,가정용 가구
+XGN,Exagen Inc.,56102010,의료 시설 및 서비스
+BPYPN,Brookfield Ppty Partners 5 750 Cum Red Perp Series 3 Class A,55102020,투자 관리 및 펀드 운영
+OKUR,Onkure Therapeutics Inc,56202010,생명 공학 및 의학 연구
+LFMD,LifeMD Inc,56101010,첨단 의료 장비 및 기술
+LENZ,LENZ Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+TONX,Ton Strategy Co,57201030,온라인 서비스
+MENS,Jyong Biotech Ltd,56202010,생명 공학 및 의학 연구
+PLBY,Playboy Inc,53403040,의류 및 액세서리 소매
+BZAI,Blaize Holdings Inc,57201010,IT 서비스 및 컨설팅
+OXSQ,Oxford Square Capital Corp.,55501030,폐쇄형 펀드
+DIBS,1stdibs.Com Inc,57201030,온라인 서비스
+AMPG,Amplitech Group Inc,57102010,통신 및 네트워킹
+BCBP,BCB Bancorp Inc,55101010,은행
+LAFA,LaFayette Acquisition Corp,55601010,투자 지주 회사
+AOUT,American Outdoor Brands Inc,53205020,오락용 제품
+GSHRU,Gesher Acquisition II Units,55601010,투자 지주 회사
+FMAC,Future Money Acquisition Corp,55601010,투자 지주 회사
+SPEG,Silver Pegasus Acquisition Corp,55601010,투자 지주 회사
+NYXH,Nyxoah SA,56101010,첨단 의료 장비 및 기술
+TUSK,Mammoth Energy Services Inc,50103020,오일 관련 서비스 및 장비
+MBINN,Merchants Bancorp 40 DS Rep Perp Prf Shs Series C,55101010,은행
+HAVAU,Harvard Ave Acquisition Units,55601010,투자 지주 회사
+CCAQU,Collective Acquisition Units,55601010,투자 지주 회사
+BOOM,DMC Global Inc,53203020,건설 자재 및 비품
+MOLN,Molecular Partners AG ADR,56202010,생명 공학 및 의학 연구
+WLIIU,Willow Lane Acquisition II Units,55601010,투자 지주 회사
+LBRDP,Liberty Broadband Cum Redeemable Prf Shs Series A,53302020,방송
+EML,Eastern Company,52102010,산업용 기계 및 장비
+STRS,Stratus Properties Inc,60101010,"부동산 임대, 개발 및 운영"
+INGN,Inogen  Inc.,56101020,"의료 장비, 물품 및 유통"
+VLYPN,Valley National Bancorp 8 250 Fixed Rate Reset Non Cumulative 8.250,55101010,은행
+BPYPO,Brookfield Ppty Partners 6 375 Cum Red Perp Pfd Unit Class A,55102020,투자 관리 및 펀드 운영
+CEPS,Cantor Equity Partners Vi  Inc,55601010,투자 지주 회사
+KRMD,KORU Medical Systems Inc,56101020,"의료 장비, 물품 및 유통"
+CHCI,Comstock Holding Companies Inc,60101010,"부동산 임대, 개발 및 운영"
+STEX,Streamex Corp,55102050,"금융, 상품 시장 운영 및 서비스 제공"
+INAC,Indigo Acquisition Corp,55601010,투자 지주 회사
+CNTN,Canton Strategic Holdings Inc,56202010,생명 공학 및 의학 연구
+WHF,WhiteHorse Finance Inc,55501030,폐쇄형 펀드
+AGNCL,AGNC Invt Dep Shs Repstg 1 1000Th Pref Shs Series G,60102040,특수 REITs
+IPCXU,Inflection Point Acquisition III Units,55601010,투자 지주 회사
+RRGB,Red Robin Gourmet Burgers Inc,53301020,레스토랑 및 바
+DLTH,Duluth Holdings Inc,53202020,의류 및 액세서리
+LFACU,Leapfrog Acquisition Units,55601010,투자 지주 회사
+ADAMN,Adamas 8 00 Fixed Floating Rate Cumulative Redeemable Pref Shs Series D,60102040,특수 REITs
+PAL,Proficient Auto Logistics Inc,52406020,지상 및 해상 여객 운송
+APMCU,AmperCap Acquisition Company Units,55601010,투자 지주 회사
+HURA,TuHURA Biosciences Inc,56202010,생명 공학 및 의학 연구
+AESPU,Aeon Acquisition I Units,55601010,투자 지주 회사
+THEOU,BOA Acquisition II Units,55601010,투자 지주 회사
+APMC,AmperCap Acquisition Co,55601010,투자 지주 회사
+IMDX,Insight Molecular Diagnostics Inc,56202010,생명 공학 및 의학 연구
+SMID,Smith-Midland Corp,51202010,건설 자재
+BMHL,Bluemount Holdings Ltd,53202020,의류 및 액세서리
+APUR,Aperture AC,55601010,투자 지주 회사
+MBINM,Merchants Depository Shares Rep 1 40Th  Int Share of 8 25 Fixed Rate Reset Non,55101010,은행
+HBANM,Huntington Bancshares Dep Shs Rep 1 1000 Prf Shs Series I,55101010,은행
+MYX,Maywood Acquisition Corp 2,55601010,투자 지주 회사
+WW,WW International Inc,54201030,개인 서비스
+CBUS,Cibus Inc,56101010,첨단 의료 장비 및 기술
+BIDWU,Tribeca Strategic Acquisition Units,55601010,투자 지주 회사
+AARD,Aardvark Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+RGP,Resources Connection  Inc.,52203040,경영 지원 서비스
+KTWOU,K2 Capital Acquisition Units,55601010,투자 지주 회사
+ADAML,Adamas 6 875 Fixed To Floating Rate Cumulative Redeemable Pref Shs Series F,60102040,특수 REITs
+CLAR,Clarus Corp,53205020,오락용 제품
+MIST,Milestone Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+KZIA,Kazia Therapeutics Ltd ADR,56202010,생명 공학 및 의학 연구
+WCT,Wellchange Holdings Co Ltd,57201020,소프트웨어
+OCC,Optical Cable Corp,57102010,통신 및 네트워킹
+CNTB,Connect Biopharma Holdings Ltd,56202010,생명 공학 및 의학 연구
+NIU,NIU Technologies ADR,53101010,자동차 및 트럭 제조
+UNCY,Unicycive Therapeutics Inc,56202010,생명 공학 및 의학 연구
+HURC,Hurco Companies Inc,52102010,산업용 기계 및 장비
+RFIL,RF Industries Ltd,52102030,전기 부품 및 장비
+KVHI,KVH Industries Inc,57102010,통신 및 네트워킹
+VERI,Veritone Inc,57201010,IT 서비스 및 컨설팅
+WTF,Waton Financial Ltd,55102010,투자 은행 및 중개 서비스
+FULTP,Fulton Financial 1 40th DS Cum Prf Shs Series A,55101010,은행
+BHAV,BHAV Acquisition Corp,55601010,투자 지주 회사
+ALPX,Alpex Acquisition Corp,55601010,투자 지주 회사
+TCX,Tucows Inc,57201030,온라인 서비스
+PNBK,Patriot National Bancorp Inc,55101010,은행
+FGBI,First Guaranty Bancshares Inc,55101010,은행
+DERM,Journey Medical Corp,56201040,제약
+RFAM,RF Acquisition Corp III,55601010,투자 지주 회사
+DOYU,Douyu International Holdings Ltd ADR,57201030,온라인 서비스
+EQ,Equillium Inc,56202010,생명 공학 및 의학 연구
+FTHA,Forefront Tech Holdings Acquisition Corp,55601010,투자 지주 회사
+CAAS,China Automotive Systems Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+SANG,Sangoma Technologies Corp,57102010,통신 및 네트워킹
+SCPQ,Social Commerce Partners Corp,55601010,투자 지주 회사
+DAAQU,Digital Asset Acquisition Units,55601010,투자 지주 회사
+BHFAM,Brighthouse Financial DS rep 1 1 000 4 625 Cum Prf Shs Series D,55301030,생명 및 건강 보험
+MXCT,MaxCyte Inc,56101010,첨단 의료 장비 및 기술
+DWSN,Dawson Geophysical Co,50103020,오일 관련 서비스 및 장비
+LSBK,Lake Shore Bancorp Inc,55101010,은행
+HDRN,Hadron Energy Inc,59101010,전력 유틸리티
+RANGU,Range Capital Acquisition Units,55601010,투자 지주 회사
+HBANZ,Huntington Bancshares Depositary Shares Representing A 1 1000Th Interest In A,55101010,은행
+HCAT,Health Catalyst  Inc.,57201020,소프트웨어
+NCSM,NCS Multistage Holdings Inc,50103020,오일 관련 서비스 및 장비
+CHECU,Chenghe Acquisition III Units,55601010,투자 지주 회사
+BRLT,Brilliant Earth Group Inc,53403040,의류 및 액세서리 소매
+HOVR,New Horizon Aircraft Ltd,52101010,항공우주 및 방위
+ACNT,Ascent Industries Co,51201020,철 및 강철
+OPRX,OptimizeRx Corporation,57201030,온라인 서비스
+EWAVU,East West Ave Acquisition Units,55601010,투자 지주 회사
+ALF,Centurion Acquisition Corp,55601010,투자 지주 회사
+RFAIU,RF Acquisition II Units,55601010,투자 지주 회사
+HYNE,Hoyne Bancorp Inc,55101010,은행
+BPOPM,Popular Capital Trust II 6 125 Cumulative Monthly Income Pref Shs,55501010,영국 투자 신탁
+DGICB,Donegal Group Inc Class B,55301020,손해보험
+CGO,Calamos Global Total Return Closed Fund,55501030,폐쇄형 펀드
+ARCLU,ARC Group Acquisition I Units,55101050,기업 금융 서비스
+ATGL,Alpha Technology Group Ltd,57201010,IT 서비스 및 컨설팅
+PMN,ProMIS Neurosciences Inc,56202010,생명 공학 및 의학 연구
+SPRB,Spruce Biosciences  Inc.,56202010,생명 공학 및 의학 연구
+FLNT,Fluent Inc,53302010,광고 및 마케팅
+CVGI,Commercial Vehicle Group Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+TAVIU,Tavia Acquisition Units,55601010,투자 지주 회사
+PONOU,Pono Capital Four Units,55601010,투자 지주 회사
+TLSA,Tiziana Life Sciences Ltd,56202010,생명 공학 및 의학 연구
+APYX,Apyx Medical Inc,56101020,"의료 장비, 물품 및 유통"
+VTVT,vTv Therapeutics Inc,56202010,생명 공학 및 의학 연구
+LANDO,Gladstone Land 6 00 Cum Redmabe Prf Shs Series B,60102040,특수 REITs
+INDP,Indaptus Therapeutics Inc,56202010,생명 공학 및 의학 연구
+CIGL,Concorde International Group Ltd,52203040,경영 지원 서비스
+QTRX,Quanterix Corporation,56101010,첨단 의료 장비 및 기술
+HUHU,Huhutech International Group Inc,52102010,산업용 기계 및 장비
+BWEN,Broadwind Inc,50201010,재생 가능 에너지 장비 및 서비스
+IPEX,Inflection Point Acquisition Corp V,55601010,투자 지주 회사
+CTAAU,ClearThink 1 Acquisition Units,55601010,투자 지주 회사
+SIGIP,Selective Ins Group DS Repstg 1 1000 Interest 4.60% Non Cum Pref Shs Series B,55301020,손해보험
+AMTX,Aemetis Inc,50201020,재생 가능 연료
+NMPAU,NMP Acquisition Units,55601010,투자 지주 회사
+BOTJ,Bank of The James Financial Group Inc,55101010,은행
+LKSPU,Lake Superior Acquisition Units,55601010,투자 지주 회사
+AMBR,Amber International Holding Ltd ADR,52203040,경영 지원 서비스
+MGYR,Magyar Bancorp Inc,55101010,은행
+CUE,Cue Biopharma  Inc.,56202010,생명 공학 및 의학 연구
+JYNT,Joint Corp,56102010,의료 시설 및 서비스
+QSEAU,Quartzsea Acquisition Units,55601010,투자 지주 회사
+ONBPO,Old National Bancorp 40 Depositary Shs Rep 1 Pref Shs Series C,55101010,은행
+USGO,US GoldMining Inc,51201060,금
+NRXP,NRX Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+LAFAU,LaFayette Acquisition Units,55601010,투자 지주 회사
+GNLX,Genelux Corporation,56202010,생명 공학 및 의학 연구
+WSBK,Winchester Bancorp Inc,55101010,은행
+JFIN,Jiayin Group Inc ADR,57301010,핀테크
+WSHP,WeShop Holdings Limited,57201030,온라인 서비스
+BDTX,Black Diamond Therapeutics Inc,56202010,생명 공학 및 의학 연구
+SPEGU,Silver Pegasus Acquisition Units,55601010,투자 지주 회사
+ULBI,Ultralife Corp,52102030,전기 부품 및 장비
+NICM,Nicola Mining Inc ADR,51201080,다각적 채굴
+SFBC,Sound Financial Bancorp Inc,55101010,은행
+UNB,Union Bankshares Inc,55101010,은행
+CHAR,Charlton Aria Acquisition Corp,55601010,투자 지주 회사
+NCOOU,Southern Cross Acquisition I Units,55601010,투자 지주 회사
+RENT,Rent the Runway  Inc.,57201030,온라인 서비스
+INACU,Indigo Acquisition Units,55601010,투자 지주 회사
+SAMG,Silvercrest Asset Management Group Inc,55102020,투자 관리 및 펀드 운영
+LAKE,Lakeland Industries Inc,53202020,의류 및 액세서리
+BPYPP,Brookfield Property Partners 6 50 Cumulative Redeemable Perpetual Preferred,55102020,투자 관리 및 펀드 운영
+CPIX,Cumberland Pharmaceuticals Inc,56201040,제약
+SEER,Seer  Inc.,57105010,사무기기
+VANI,Vivani Medical Inc,56101020,"의료 장비, 물품 및 유통"
+QUMSU,Quantumsphere Acquisition Units,55601010,투자 지주 회사
+ALPXU,Alpex Acquisition Units,55601010,투자 지주 회사
+BRKH,Burtech Acquisition Corp II,55601010,투자 지주 회사
+STHO,Star Holdings,60101010,"부동산 임대, 개발 및 운영"
+FMACU,Future Money Acquisition Units,55601010,투자 지주 회사
+CNOBP,Connectone Bancorp New Depositary Shs Rep A 1 40Th Non Cm Perp Pref Shs Series A,55101010,은행
+NOEMU,CO2 Energy Transition Units,55601010,투자 지주 회사
+MSBIP,Midland Sts Bancorp Depositary Shs Repstg 1 40Th Perp Pfd Series A,55101010,은행
+BSBK,Bogota Financial Corp,55101010,은행
+CODA,Coda Octopus Group Inc,57104010,전자 장비 및 부품
+NCO,Southern Cross Acquisition I Corp,55601010,투자 지주 회사
+BGM,BGM Group Ltd,56201040,제약
+VLYPP,Valley National 6 25 Fixed to Floating Rate Non Cumulative Perpetual Pref Shs,55101010,은행
+CHARU,Charlton Aria Acquisition Units,55601010,투자 지주 회사
+BEEP,Mobile Infrastructure Corp,60101010,"부동산 임대, 개발 및 운영"
+YARW,Yarrow Bioscience Inc,56202010,생명 공학 및 의학 연구
+ENGN,enGene Therapeutics Inc,56202010,생명 공학 및 의학 연구
+INVZ,Innoviz Technologies Ltd,57104010,전자 장비 및 부품
+ZJK,ZJK Industrial Co Ltd,52102010,산업용 기계 및 장비
+LIXT,Lixte Biotechnology Holdings Inc,56202010,생명 공학 및 의학 연구
+GPRO,GoPro Inc,57106030,가정용 전자 제품
+ZTG,Zenta Group Co Ltd,52203040,경영 지원 서비스
+MBOT,Microbot Medical Inc,56202010,생명 공학 및 의학 연구
+NAUT,Nautilus Biotechnology  Inc.,56202010,생명 공학 및 의학 연구
+RDZN,Roadzen Inc,57201020,소프트웨어
+PLMK,Plum Acquisition Corp. IV,55601010,투자 지주 회사
+PROV,Provident Financial Holdings Inc,55101010,은행
+QUMS,Quantumsphere Acquisition Corp,55601010,투자 지주 회사
+PLYX,Polaryx Therapeutics  Inc,56202010,생명 공학 및 의학 연구
+GUTS,Fractyl Health  Inc.,56202010,생명 공학 및 의학 연구
+HOVNP,Hovnanian Enterprises 1000 Depositary Shares Representing 1 7.625% Pref Shs,53203010,주택 건설
+COYA,Coya Therapeutics Inc,56202010,생명 공학 및 의학 연구
+ANIX,Anixa Biosciences Inc,56202010,생명 공학 및 의학 연구
+RANI,Rani Therapeutics Holdings Inc,56202010,생명 공학 및 의학 연구
+EDRY,EuroDry Ltd,52405020,해양 화물 및 물류
+SCOR,Comscore Inc,53302010,광고 및 마케팅
+ONBPP,Old National Bancorp 40 Depositary Shares Rep 1 Pref Shs Series A,55101010,은행
+FLX,BingEx Ltd ADR,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+QSEA,Quartzsea Acquisition Corp,55601010,투자 지주 회사
+FNWB,First Northwest Bancorp,55101010,은행
+NVX,NOVONIX Ltd ADR,52102030,전기 부품 및 장비
+MYXXU,Maywood Acquisition 2 Units,55601010,투자 지주 회사
+BKHAU,Black Hawk Acquisition Units,55601010,투자 지주 회사
+MNTS,Momentus Inc,52101010,항공우주 및 방위
+FJDIU,ARC Group Securities Acquisition I Units,55601010,투자 지주 회사
+RVSB,Riverview Bancorp Inc,55101010,은행
+REGCP,Regency Centers 6 25 Series A Cumulative Redeemable Preferred Stock Series A,60102020,상업용 REITs
+SSTI,SoundThinking Inc,57201020,소프트웨어
+SCPQU,Social Commerce Partners Units,55601010,투자 지주 회사
+BVC,BitVentures Ltd,57301030,블록 체인 및 암호화폐
+BNR,Burning Rock Biotech Limited ADR,56101020,"의료 장비, 물품 및 유통"
+MB,Masterbeef Group,53301020,레스토랑 및 바
+CHPG,ChampionsGate Acquisition Corp,55601010,투자 지주 회사
+AMCI,AMC Robotics Corp,57201030,온라인 서비스
+CCLD,CareCloud Inc,57201020,소프트웨어
+KEQU,Kewaunee Scientific Corp,52203060,비즈니스 지원 용품
+RACD,Research Alliance Corporation IV,55601010,투자 지주 회사
+BNC,CEA Industries Inc,52102030,전기 부품 및 장비
+CSTE,Caesarstone Ltd,53203020,건설 자재 및 비품
+RFAMU,RF Acquisition III Units,55601010,투자 지주 회사
+BHAVU,BHAV Acquisition Units,55601010,투자 지주 회사
+JATT,JATT II Acquisition Corp,55601010,투자 지주 회사
+QETAU,Quetta Acquisition Units,55601010,투자 지주 회사
+NOEM,CO2 Energy Transition Corp,55601010,투자 지주 회사
+VSA,VisionSys AI Inc ADR,56202010,생명 공학 및 의학 연구
+OCLTU,OceanLight Acquisition Units,55601010,투자 지주 회사
+HERE,Here Group Ltd ADR,53205010,장난감 및 어린이 제품
+HSDT,Solana Co,55102020,투자 관리 및 펀드 운영
+SUNS,Sunrise Realty Trust Inc,60102040,특수 REITs
+FTHAU,Forefront Tech Holdings Acquisition Units,55601010,투자 지주 회사
+SPKL,Spark I Acquisition Corp,55601010,투자 지주 회사
+AMAN,Amanat Acquisition Corp,55601010,투자 지주 회사
+VLYPO,Valley National 5.50% Fixed to Floating Rate Non Cum Perp Pref Shs Series B,55101010,은행
+ISPR,Ispire Technology Inc,54102030,담배
+BYRN,Byrna Technologies Inc,52101010,항공우주 및 방위
+WRAP,Wrap Technologies Inc,57102010,통신 및 네트워킹
+FATN,FatPipe Inc,57201020,소프트웨어
+HYPR,Hyperfine Inc,56101010,첨단 의료 장비 및 기술
+WATT,Energous Corp,52102030,전기 부품 및 장비
+PODC,Podcastone Inc,57201010,IT 서비스 및 컨설팅
+NTHI,NeOnc Technologies Holdings Inc,56202010,생명 공학 및 의학 연구
+SLNG,Stabilis Solutions Inc,50103030,오일 및 가스 수송 서비스
+ARQ,Arq  Inc.,51101010,상품 화학
+YDDL,One and one Green Technologies.INC,52203010,환경 서비스 및 장비
+ICCC,ImmuCell Corp,56201040,제약
+HFFG,Hf Foods Group Inc,54301020,식품 소매 및 유통
+FSHPU,Flag Ship Acquisition Units,55601010,투자 지주 회사
+CGTX,Cognition Therapeutics Inc,56202010,생명 공학 및 의학 연구
+LUNG,Pulmonx Corp,56101020,"의료 장비, 물품 및 유통"
+ONCY,Oncolytics Biotech Inc,56202010,생명 공학 및 의학 연구
+IPEXU,Inflection Point Acquisition V Units,55601010,투자 지주 회사
+DCOMP,Dime Community Bancshares Cumulative Perpetual Pref Shs Series A,55101010,은행
+NDLS,Noodles & Co,53301020,레스토랑 및 바
+NHPAP,National Healthcare 7 375 Pref Shs Series A,60102040,특수 REITs
+VRA,Vera Bradley Inc,53202020,의류 및 액세서리
+FTLF,FitLife Brands Inc,54102020,식품 가공
+ANTA,Antalpha Platform Holding Co,57301030,블록 체인 및 암호화폐
+REGCO,Regency Centers 5 875 Series B Cumulative Redeemable Preferred Stock Series B,60102020,상업용 REITs
+HLP,Hongli Group Inc,52102010,산업용 기계 및 장비
+PGACU,Pantages Capital Acquisition Units,55601010,투자 지주 회사
+BCIC,BCP Investment Corp,55501030,폐쇄형 펀드
+BNAI,Brand Engagement Network Inc,57201010,IT 서비스 및 컨설팅
+VIRC,Virco Mfg Corp,52203060,비즈니스 지원 용품
+SPAI,Safe Pro Group Inc,57201010,IT 서비스 및 컨설팅
+PLCIU,Pelican Acquisition II Units,55601010,투자 지주 회사
+AGFY,Agrify Corp,54102010,어업 및 농업
+PARK,Park Dental Partners Inc,56102010,의료 시설 및 서비스
+FDSB,Fifth District Bancorp Inc,55101030,소비자 대출
+DH,Definitive Healthcare Corp,57201020,소프트웨어
+REKR,Rekor Systems Inc,57201020,소프트웨어
+NFE,New Fortress Energy Inc,59102010,천연가스 유틸리티
+GLIBA,Liberty Capital Corp Series A,57401010,통합 통신 서비스
+MMLP,Martin Midstream Partners Units,50103030,오일 및 가스 수송 서비스
+KLRS,Kalaris Therapeutics Inc,56202010,생명 공학 및 의학 연구
+TYGO,Tigo Energy Inc,57101010,반도체
+ARBE,Arbe Robotics Ltd,52101010,항공우주 및 방위
+LCCCU,Lakeshore Acquisition III Units,55601010,투자 지주 회사
+PYPD,PolyPid Ltd,56201040,제약
+BMEA,Biomea Fusion  Inc.,56202010,생명 공학 및 의학 연구
+AUBN,Auburn National Bancorporation Inc,55101010,은행
+GANX,Gain Therapeutics Inc,56202010,생명 공학 및 의학 연구
+BZFD,BuzzFeed Inc,57201030,온라인 서비스
+UBCP,United Bancorp Inc,55101010,은행
+AGPU,Axe Compute Inc,56202010,생명 공학 및 의학 연구
+RFAI,RF Acquisition Corp II,55601010,투자 지주 회사
+ATLX,Atlas Lithium Corp,51201050,특수 채굴 및 금속
+MCAHU,Mountain Crest Acquisition 6 Units,55601010,투자 지주 회사
+THRY,Thryv Holdings Inc,53302010,광고 및 마케팅
+ALDX,Aldeyra Therapeutics Inc,56202010,생명 공학 및 의학 연구
+FXACU,FortuneX Acquisition Units,55601010,투자 지주 회사
+FUSB,First US Bancshares Inc,55101010,은행
+MCAH,Mountain Crest Acquisition 6 Corp,55601010,투자 지주 회사
+FWACU,Futurewave Acquisition Units,55601010,투자 지주 회사
+AEC,Anfield Energy Inc,50301010,우라늄
+SIMA,SIM Acquisition I Corp,55601010,투자 지주 회사
+PIII,P3 Health Partners Inc,56202010,생명 공학 및 의학 연구
+OM,Outset Medical  Inc.,56101010,첨단 의료 장비 및 기술
+SKIN,Skinhealth Systems Inc,54201020,개인 생활 필수 용품
+TWG,Top Wealth Group Holding Ltd,54102010,어업 및 농업
+WYHG,Wing Yip Food Holdings Group Ltd ADR,54102020,식품 가공
+MWC,Micware Co Ltd ADR,57201010,IT 서비스 및 컨설팅
+MVIS,MicroVision Inc,57104010,전자 장비 및 부품
+GRWG,GrowGeneration Corp,53403020,주택 개조 제품 및 서비스 소매
+JFB,JFB Construction Holdings,52201020,건설 및 엔지니어링
+FBIO,Fortress Biotech Inc,56201040,제약
+MMTX,Miluna Acquisition Corp,55601010,투자 지주 회사
+ORIQ,Origin Investment Corp I,55601010,투자 지주 회사
+ENGS,Energys Group Ltd,52102030,전기 부품 및 장비
+ORIQU,Origin Investment I Units,55601010,투자 지주 회사
+FXAC,Fortunex Acquisition Corp,55601010,투자 지주 회사
+ATHE,Alterity Therapeutics Limited ADR,56202010,생명 공학 및 의학 연구
+MMTXU,Miluna Acquisition Units,55601010,투자 지주 회사
+PFX,PhenixFIN Corp,55501030,폐쇄형 펀드
+RLYB,Rallybio Corp,56202010,생명 공학 및 의학 연구
+FWAC,Futurewave Acquisition Corp,55601010,투자 지주 회사
+CPBI,Central Plains Bancshares Inc,55101010,은행
+BRKHU,Burtech Acquisition II Units,55601010,투자 지주 회사
+VRCA,Verrica Pharmaceuticals Inc,56201040,제약
+ASPCU,A SPAC III Acquisition Units,55601010,투자 지주 회사
+SSBI,Summit State Bank,55101010,은행
+PECE,Peace Acquisition Corp,55601010,투자 지주 회사
+YHNAU,YHN Acquisition I Units,55601010,투자 지주 회사
+GOSS,Gossamer Bio  Inc.,56202010,생명 공학 및 의학 연구
+DFDV,DeFi Development Corp (Pre-Reincorporation),57301010,핀테크
+CPSH,CPS Technologies Corp,52102030,전기 부품 및 장비
+NHPBP,National Healthcare 7.125 Cumulative Redeemable Perpetual Pref Shs Series B,60102040,특수 REITs
+DTI,Drilling Tools International Corp,50103020,오일 관련 서비스 및 장비
+NAKA,Nakamoto Inc,57301030,블록 체인 및 암호화폐
+ALIS,Calisa Acquisition Corp,55601010,투자 지주 회사
+PROP,Prairie Operating Co,50102020,"오일, 가스 탐사 및 생산"
+JXG,JX Luxventure Group Inc,52202010,다각적 산업용 제품 도매
+BLNK,Blink Charging Co,59101010,전력 유틸리티
+LSE,Leishen Energy Holding Co Ltd,50103020,오일 관련 서비스 및 장비
+RPID,Rapid Micro Biosystems  Inc.,56101010,첨단 의료 장비 및 기술
+ECOR,electroCore  Inc.,56101020,"의료 장비, 물품 및 유통"
+ASRV,Ameriserv Financial Inc,55101010,은행
+FLL,Full House Resorts Inc,53301030,카지노 및 도박
+FVN,Future Vision II Acquisition Corp,55601010,투자 지주 회사
+CSPI,CSP Inc,57201010,IT 서비스 및 컨설팅
+INSG,Inseego Corp.,57102010,통신 및 네트워킹
+GOODO,Gladstone Commercial 6 00 Cum Red Prf Shs Series G,60102010,복합부동산 REITs
+PCTTU,PureCycle Technologies Units,52203010,환경 서비스 및 장비
+LFVN,LifeVantage Corp,56201040,제약
+APAC,StoneBridge Acquisition II Corp,55601010,투자 지주 회사
+MAYS,J W Mays Inc,60101010,"부동산 임대, 개발 및 운영"
+SOTK,Sono-Tek Corp,52102010,산업용 기계 및 장비
+ROC,Rank One Computing Corp,57201020,소프트웨어
+FRMM,Forum Markets  Inc,57301090,기타 핀테크 인프라
+WSTN,Westin Acquisition Corp,55601010,투자 지주 회사
+SEAT,Vivid Seats Inc,57201030,온라인 서비스
+ZTEK,Zentek Ltd,56202010,생명 공학 및 의학 연구
+SDA,SunCar Technology Group Inc,57201030,온라인 서비스
+LNZA,Lanzatech Global Inc,52203010,환경 서비스 및 장비
+NEXM,NexMetals Mining Corp,51201050,특수 채굴 및 금속
+TTEC,TTEC Holdings Inc (Texas),57201010,IT 서비스 및 컨설팅
+CRDF,Cardiff Oncology  Inc.,56202010,생명 공학 및 의학 연구
+NPT,Texxon Holding Ltd,51101010,상품 화학
+NNOX,Nano-X Imaging Ltd,56101010,첨단 의료 장비 및 기술
+AIRT,Air T Inc,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+WFF,WF Holding Ltd,51101010,상품 화학
+GLND,Greenland Energy Co,50102010,통합 오일 및 가스
+LINK,Interlink Electronics Inc,57101010,반도체
+OESX,Orion Energy Systems Inc,53203020,건설 자재 및 비품
+ATRA,Atara Biotherapeutics  Inc.,56202010,생명 공학 및 의학 연구
+SEV,Aptera Motors Corp,53101010,자동차 및 트럭 제조
+GECC,Great Elm Capital Corp,55501030,폐쇄형 펀드
+CPHC,Canterbury Park Holding Corp,53301030,카지노 및 도박
+FVNNU,Future Vision II Acquisition Units,55601010,투자 지주 회사
+FSEA,First Seacoast Bancorp Inc,55101010,은행
+MBNKO,Medallion Bank Fixed Rate Reset Non Cumulative Perpetual Pref Shs Series G,55101010,은행
+PBHC,Pathfinder Bancorp Inc (MARYLAND),55101010,은행
+SSEAU,Starry Sea Acquisition Units,55601010,투자 지주 회사
+SERA,Sera Prognostics  Inc.,52203040,경영 지원 서비스
+OKYO,OKYO Pharma Ltd,56201040,제약
+HNNA,Hennessy Advisors Inc,55102020,투자 관리 및 펀드 운영
+OPXS,Optex Systems Holdings Inc,52101010,항공우주 및 방위
+SSEA,Starry Sea Acquisition Corp,55601010,투자 지주 회사
+CHPGU,Championsgate Acquisition Units,55601010,투자 지주 회사
+MDIA,Mediaco Holding Inc,53302020,방송
+GLBS,Globus Maritime Limited,52405020,해양 화물 및 물류
+HMR,Heidmar Maritime Holdings Corp,52405020,해양 화물 및 물류
+VNCE,Vince Holding Corp,53403040,의류 및 액세서리 소매
+MCHX,Marchex Inc,53302010,광고 및 마케팅
+GNSS,Genasys Inc,57102010,통신 및 네트워킹
+ACET,ADICET Bio  Inc.,56202010,생명 공학 및 의학 연구
+LNSR,LENSAR Inc,56101010,첨단 의료 장비 및 기술
+WTGUU,Wintergreen Acquisition Units,55601010,투자 지주 회사
+NTIC,Northern Technologies International Corp,52102010,산업용 기계 및 장비
+NIPG,NIP Group Inc ADR,53301040,여가 및 오락시설
+GIBO,Gibo Holdings Ltd,57201030,온라인 서비스
+PUSA,Aureus Greenway Holdings Inc,53301040,여가 및 오락시설
+WTG,Wintergreen Acquisition Corp,55601010,투자 지주 회사
+EMPD,Empery Digital Inc,55102020,투자 관리 및 펀드 운영
+LGO,Largo Inc,50301010,우라늄
+TELO,Telomir Pharmaceuticals Inc,56201040,제약
+UEIC,Universal Electronics Inc,57106030,가정용 전자 제품
+TZOO,Travelzoo,53301040,여가 및 오락시설
+NBRG,Newbridge Acquisition Limited,55601010,투자 지주 회사
+MOB,Mobilicom Limited,57201020,소프트웨어
+KELYB,Kelly Services Inc Class B,52203030,고용 서비스
+BPAC,Blueport Acquisition Ltd,55601010,투자 지주 회사
+DTCX,Datacentrex Inc,57301030,블록 체인 및 암호화폐
+IDN,Intellicheck Inc,57201020,소프트웨어
+OCCI,OFS Credit Company Inc,55501030,폐쇄형 펀드
+ELOX,Eloxx Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+ACRV,Acrivon Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+DRIO,DarioHealth Corp,56101020,"의료 장비, 물품 및 유통"
+SFWL,SHENGFENG DEVELOPMENT Ltd,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+FEAM,5E Advanced Materials  Inc.,51201050,특수 채굴 및 금속
+IBIO,iBio Inc,56202010,생명 공학 및 의학 연구
+BSIN,Big Sky Industrial Inc,50102020,"오일, 가스 탐사 및 생산"
+TLPH,Talphera Inc,56201040,제약
+NAMM,Namib Minerals,51201060,금
+AEYE,AudioEye Inc,57201010,IT 서비스 및 컨설팅
+GOODN,Gladstone Coml Pref Shs Series E,60102010,복합부동산 REITs
+DOMH,Dominari Holdings Inc,55102010,투자 은행 및 중개 서비스
+BAER,Bridger Aerospace Group Holdings Inc,51301010,임업 및 목재 제품
+ODYS,Odysight.AI Inc,57201030,온라인 서비스
+SORA,AsiaStrategy,53202020,의류 및 액세서리
+WNW,Meiwu Technology Co Ltd,53402010,백화점
+MYPS,PLAYSTUDIOS  Inc.,57201020,소프트웨어
+METCB,Ramaco Resources  Inc. Class B,51201020,철 및 강철
+INTG,InterGroup Corp,53301010,"호텔, 모텔 및 크루즈 라인"
+CTOR,Citius Oncology Inc,56202010,생명 공학 및 의학 연구
+XBIT,XBiotech Inc,56202010,생명 공학 및 의학 연구
+RSSS,Research Solutions Inc,57201030,온라인 서비스
+NMAD,NOMAD Power Solutions  Inc,52102030,전기 부품 및 장비
+SLSN,Solesence Inc,54201020,개인 생활 필수 용품
+LONA,LeonaBio Inc,56202010,생명 공학 및 의학 연구
+CVRX,CVRx  Inc.,56101020,"의료 장비, 물품 및 유통"
+NSTS,NSTS Bancorp Inc,55101010,은행
+EURKU,Eureka Acquisition Units,55601010,투자 지주 회사
+FTAIM,FTAI Aviation Fixed Rate Reset Cum Perp Pfd Series D,52101010,항공우주 및 방위
+HFBL,Home Federal Bancorp Inc of Louisiana,55101010,은행
+AISP,Airship AI Holdings Inc,57201010,IT 서비스 및 컨설팅
+SIEB,Siebert Financial Corp,55102010,투자 은행 및 중개 서비스
+VIVO,VivoPower PLC,59101010,전력 유틸리티
+FLZH,Flash Sports & Media Holdings  Inc.,54102010,어업 및 농업
+ELTX,Elicio Therapeutics Inc,56202010,생명 공학 및 의학 연구
+CING,Cingulate Inc,56202010,생명 공학 및 의학 연구
+IPWR,Ideal Power Inc,57101010,반도체
+CYPH,Cypherpunk Technologies Inc,56202010,생명 공학 및 의학 연구
+INO,Inovio Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+CBAT,CBAK Energy Technology Ltd,52102030,전기 부품 및 장비
+BYFC,Broadway Financial Corp,55101010,은행
+CLST,Catalyst Bancorp Inc,55101010,은행
+CAPNU,Cayson Acquisition Units,55601010,투자 지주 회사
+RGS,Regis Corp,54201030,개인 서비스
+YIBO,Planet Image International Ltd,57105010,사무기기
+AIRG,Airgain Inc,57102010,통신 및 네트워킹
+GEG,Great Elm Group Inc,55102020,투자 관리 및 펀드 운영
+JRSH,Jerash Holdings (US) Inc,53202010,직물 및 가죽제품
+CNVS,Cineverse Corp,53302030,엔터테인먼트 제작
+SPRO,Spero Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+COLAU,Columbus Acquisition Units,55601010,투자 지주 회사
+SUIG,Sui Group Holdings Ltd,57301030,블록 체인 및 암호화폐
+RNTX,Rein Therapeutics Inc,56202010,생명 공학 및 의학 연구
+CSBR,Champions Oncology Inc,56202010,생명 공학 및 의학 연구
+ATLCP,Atlanticus Holdings 7.625 Cumulative Perpetual Pref Shs Series B,55101030,소비자 대출
+GEOS,Geospace Technologies Corp,50103020,오일 관련 서비스 및 장비
+DLHC,DLH Holdings Corp,57201010,IT 서비스 및 컨설팅
+SPCB,Supercom Ltd,57201020,소프트웨어
+AUC,ATIF Holdings Ltd,52203070,전문 정보 서비스
+ALISU,Calisa Acquisition Units,55601010,투자 지주 회사
+PMVP,PMV Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+HIT,Health In Tech Inc,55301030,생명 및 건강 보험
+GRSD,Grandstand Ltd,53302010,광고 및 마케팅
+HOUR,Hour Loop Inc,53402010,백화점
+KG,Kestrel Group Ltd,55301010,복합보험 및 중개인
+FNUC,Frontier Nuclear and Minerals Inc,50301010,우라늄
+FBIOP,Fortress Biotech 9 375 Cumulative Redeemable Perpetual Pref Shs Series A,56201040,제약
+GOAI,Eva Live Inc,53302030,엔터테인먼트 제작
+GCL,GCL Global Holdings Ltd,57201030,온라인 서비스
+STI,Solidion Technology  Inc,52102030,전기 부품 및 장비
+APWC,Asia Pacific Wire & Cable Corporation Ltd,52102030,전기 부품 및 장비
+TEAD,Teads Holding Co,57201030,온라인 서비스
+ANPA,Rich Sparkle Holdings Ltd,52203020,상업 인쇄 서비스
+PCLA,Picocela Inc ADR,57102010,통신 및 네트워킹
+GENK,GEN Restaurant Group Inc,53301020,레스토랑 및 바
+CIRC,Circle8 Group Inc,52203030,고용 서비스
+ALPS,Alps Group Inc,56102010,의료 시설 및 서비스
+IMA,ImageneBio Inc,56202010,생명 공학 및 의학 연구
+BSEM,BioStem Technologies  Inc.,56201040,제약
+BOF,BranchOut Food Inc,54102020,식품 가공
+USDE,Stablecoinx Inc,57301030,블록 체인 및 암호화폐
+AFCG,Advanced Flower Capital Inc,60102040,특수 REITs
+PLRX,Pliant Therapeutics  Inc.,56201040,제약
+VHC,VirnetX Holding Corp,57201010,IT 서비스 및 컨설팅
+USIO,Usio Inc,52203040,경영 지원 서비스
+MNOV,MediciNova Inc,56202010,생명 공학 및 의학 연구
+PECEU,Peace Acquisition Units,55601010,투자 지주 회사
+DWTX,Dogwood Therapeutics Inc,56202010,생명 공학 및 의학 연구
+HRTX,Heron Therapeutics Inc,56202010,생명 공학 및 의학 연구
+OXLCO,Oxford Lane Capital 6 Pref Shs Series 2029,55501030,폐쇄형 펀드
+ELBM,Electra Battery Materials Corporation,51201050,특수 채굴 및 금속
+CRGO,Freightos Ltd,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+SGA,Saga Communications Inc,53302020,방송
+ASPS,Altisource Portfolio Solutions S.A.,60101020,부동산 서비스
+TENX,Tenax Therapeutics Inc,56202010,생명 공학 및 의학 연구
+UYSCU,UY Scuti Acquisition Units,55601010,투자 지주 회사
+APACU,StoneBridge Acquisition II Units,55601010,투자 지주 회사
+INVE,Identiv Inc,57201010,IT 서비스 및 컨설팅
+OXLCN,Oxford Lane Capital 7 125 Prf Shs Series 2029,55501030,폐쇄형 펀드
+BOLD,Boundless Bio  Inc.,56202010,생명 공학 및 의학 연구
+WHLRD,Wheeler Real Estate Investment Trust Cumulative Pref Shs Series D,60102020,상업용 REITs
+SOWG,Sow Good Inc,54102020,식품 가공
+RILYL,BRC Group Holdings Depositary Shares representing 1 1000 Cum Pref Series B,55102010,투자 은행 및 중개 서비스
+KNDI,Kandi Technologies Group Inc,53101010,자동차 및 트럭 제조
+ZKIN,ZK International Group Co Ltd,53203020,건설 자재 및 비품
+AACG,ATA Creativity Global ADR,63101010,기타 교육 서비스 제공
+XTIA,XTI Aerospace Inc,52101010,항공우주 및 방위
+HYFT,MindWalk Holdings Corp,56201040,제약
+LIDR,AEye Inc,57104010,전자 장비 및 부품
+BPACU,Blueport Acquisition Units,55601010,투자 지주 회사
+NCTY,The9 Ltd ADR,57301030,블록 체인 및 암호화폐
+NBRGU,Newbridge Acquisition Units,55601010,투자 지주 회사
+LGCL,Lucas GC Ltd,52203030,고용 서비스
+CCNEP,CNB FINL Depositary Shs REP 1 40 Prf Series A,55101010,은행
+UPXI,Upexi  Inc,54201020,개인 생활 필수 용품
+WSTNU,Westin Acquisition Units,55601010,투자 지주 회사
+OXLCM,OXFORD LANE CAP 8.25 Term Pref Shs,55501030,폐쇄형 펀드
+WFCF,Where Food Comes From Inc,57201010,IT 서비스 및 컨설팅
+BSAAU,Best SPAC I Acquistion Units,55601010,투자 지주 회사
+LFS,Leifras Co Ltd ADR,63101010,기타 교육 서비스 제공
+OBTC,OSPREY BITCOIN ETP,57301030,블록 체인 및 암호화폐
+DXR,Daxor Corp,55501030,폐쇄형 펀드
+AURE,Aurelion Inc,55102020,투자 관리 및 펀드 운영
+CAPN,Cayson Acquisition Corp,55601010,투자 지주 회사
+SELF,Global Self Storage Inc,60102040,특수 REITs
+AIFC,AI Financial Corp,57301010,핀테크
+CAST,Freecast Inc,57201030,온라인 서비스
+COCH,Envoy Medical Inc,56101010,첨단 의료 장비 및 기술
+ELTK,Eltek Ltd,57101010,반도체
+BRID,Bridgford Foods Corp,54102020,식품 가공
+VTIX,Virtuix Holdings Inc,55601010,투자 지주 회사
+INMB,INmune Bio Inc,56202010,생명 공학 및 의학 연구
+IMMP,Immutep Ltd ADR,56202010,생명 공학 및 의학 연구
+RYOJ,rYojbaba Co Ltd,56102010,의료 시설 및 서비스
+LVO,LiveOne Inc,53302030,엔터테인먼트 제작
+TACT,TransAct Technologies Inc,57106010,컴퓨터 하드웨어
+IZEA,IZEA Worldwide Inc,53302010,광고 및 마케팅
+DCGO,DocGo Inc.,56102010,의료 시설 및 서비스
+VHUB,Venhub Global Inc,57201020,소프트웨어
+TC,Token Cat Ltd ADR,52203040,경영 지원 서비스
+LASE,Laser Photonics Corp,52102030,전기 부품 및 장비
+SCLX,Scilex Holding Co,56201040,제약
+PTLE,PTL Ltd,50102030,"오일, 가스 정제 및 마케팅"
+SLNHP,Soluna Holdings 9.0 Cumulative Perpetual Pref Shs Series A,57201010,IT 서비스 및 컨설팅
+NAAS,NaaS Technology Inc ADR,59101010,전력 유틸리티
+INCR,InterCure Ltd,56102010,의료 시설 및 서비스
+RDACU,Rising Dragon Acquisition Units,55601010,투자 지주 회사
+STKS,One Group Hospitality Inc,53301020,레스토랑 및 바
+INKT,Mink Therapeutics Inc,56202010,생명 공학 및 의학 연구
+THCH,TH International Ltd,54301020,식품 소매 및 유통
+UYSC,UY Scuti Acquisition Corp,55601010,투자 지주 회사
+RIBBU,Ribbon Acquisition Units,55601010,투자 지주 회사
+VGAS,Verde Clean Fuels Inc,59101010,전력 유틸리티
+YTRA,Yatra Online Inc,53301040,여가 및 오락시설
+QXL,Quantum X Labs Inc,57201020,소프트웨어
+WKEY,Wisekey International Holding AG ADR,57101010,반도체
+EFSCP,Enterprise Finl Svcs DRC Rep Non Cum Perp Pfd Series A,55101010,은행
+ELWT,Elauwit Connection Inc,57401010,통합 통신 서비스
+BWBBP,Bridgewater Bancshares DS 1 100th Int 5 875 Non Cumu Perpl Prf Shs Series A,55101010,은행
+TOUR,Tuniu Corp ADR,53301040,여가 및 오락시설
+PLCE,Children's Place Inc,53403040,의류 및 액세서리 소매
+PGAC,Pantages Capital Acquisition Corp,55601010,투자 지주 회사
+ADAMZ,Adamas 7 000 Fixed To Floating Rate Cumulative Redeemable Pref Shs Series G,60102040,특수 REITs
+ETS,Elite Express Holding Inc,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+BRAG,Bragg Gaming Group Inc,57201030,온라인 서비스
+BTCS,BTCS Inc,57301030,블록 체인 및 암호화폐
+RIBB,Ribbon Acquisition Corp,55601010,투자 지주 회사
+XLO,Xilio Therapeutics Inc,56202010,생명 공학 및 의학 연구
+IBAC,IB Acquisition Corp,55601010,투자 지주 회사
+NCEW,New Century Logistics (BVI) Ltd,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+EXOZ,eXoZymes Inc,56202010,생명 공학 및 의학 연구
+ICG,Intchains Group Ltd ADR,57301030,블록 체인 및 암호화폐
+ATYR,aTyr Pharma Inc,56202010,생명 공학 및 의학 연구
+VRM,Vroom  Inc.,55101030,소비자 대출
+CMTL,Comtech Telecommunications Corp,57102010,통신 및 네트워킹
+CLNN,Clene Inc,56202010,생명 공학 및 의학 연구
+SRTS,Sensus Healthcare Inc,56101010,첨단 의료 장비 및 기술
+PRTS,Carparts.Com Inc,53403010,"자동차 차량, 부품 및 서비스 소매"
+EDSA,Edesa Biotech Inc,56202010,생명 공학 및 의학 연구
+BTMD,Biote Corp,52203070,전문 정보 서비스
+PXS,Pyxis Tankers Inc,52405020,해양 화물 및 물류
+MLGO,MicroAlgo Inc,57201010,IT 서비스 및 컨설팅
+TIL,Instil Bio  Inc.,56202010,생명 공학 및 의학 연구
+DSWL,Deswell Industries Inc,51101010,상품 화학
+MDAI,Spectral AI Inc,56101010,첨단 의료 장비 및 기술
+TCRX,TScan Therapeutics Inc,56202010,생명 공학 및 의학 연구
+RNXT,RenovoRx Inc,56101020,"의료 장비, 물품 및 유통"
+NEWTP,NewtekOne Depositary Shs Non Cumulative Perpetual Pref Shs Series B,55101050,기업 금융 서비스
+OMEX,Odyssey Marine Exploration Inc,51201050,특수 채굴 및 금속
+TCBS,Texas Community Bancshares Inc,55101010,은행
+CVV,CVD Equipment Corp,52102010,산업용 기계 및 장비
+GGR,Gogoro Inc,53205020,오락용 제품
+NTWK,NetSol Technologies Inc,57201010,IT 서비스 및 컨설팅
+AHMA,Ambitions Enterprise Management Co LLC,53301040,여가 및 오락시설
+LVLU,Lulu's Fashion Lounge Holdings Inc,53403040,의류 및 액세서리 소매
+SKYA,Skyai  Inc,57301090,기타 핀테크 인프라
+KBSX,FST Ltd,51201020,철 및 강철
+HAIN,Hain Celestial Group Inc,54102020,식품 가공
+NOMA,Nomadar Corp,63101010,기타 교육 서비스 제공
+BKHA,Black Hawk Acquisition Corp,55601010,투자 지주 회사
+ZIONP,Zions Bancorporation DS Representing 1/40th Floating Rate Non Cum Perpetual,55101010,은행
+BHST,BioHarvest Sciences Inc,56201040,제약
+OFS,OFS Capital Corp,55501030,폐쇄형 펀드
+MREO,Mereo BioPharma Group PLC ADR,56202010,생명 공학 및 의학 연구
+TPCS,TechPrecision Corp,52102010,산업용 기계 및 장비
+RMCO,Royalty Management Holding Corp,51201010,금 제외 귀금속 및 광물
+COLA,Columbus Acquisition Corp,55601010,투자 지주 회사
+VIOT,Viomi Technology Co Ltd ADR,53204030,"가전제품, 도구 및 가정 용품"
+BDMD,Baird Medical Investment Holdings Ltd,56101020,"의료 장비, 물품 및 유통"
+QTEX,Qtrex Quantum Ltd,56101010,첨단 의료 장비 및 기술
+SCYX,SCYNEXIS Inc,56201040,제약
+NEPH,Nephros Inc,52203010,환경 서비스 및 장비
+LOAN,Manhattan Bridge Capital Inc,60102040,특수 REITs
+XHG,XChange TEC.INC ADR,55301010,복합보험 및 중개인
+DGNX,Diginex Limited,57201020,소프트웨어
+YHNA,YHN Acquisition I Ltd,55601010,투자 지주 회사
+MCRB,Seres Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+NXXT,NextNRG Inc,50102030,"오일, 가스 정제 및 마케팅"
+SYPR,Sypris Solutions Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+VERU,Veru Inc.,56202010,생명 공학 및 의학 연구
+SKYQ,Sky Quarry Inc,52203010,환경 서비스 및 장비
+BODI,Beachbody Company  Inc,57201030,온라인 서비스
+SOGP,Sound Group Inc ADR,57201030,온라인 서비스
+CRVO,CervoMed Inc,56202010,생명 공학 및 의학 연구
+SNWV,SANUWAVE Health Inc,56101020,"의료 장비, 물품 및 유통"
+ACFN,Acorn Energy Inc,57201010,IT 서비스 및 컨설팅
+MGX,Metagenomi Therapeutics Inc,56202010,생명 공학 및 의학 연구
+ZYBT,Zhengye Biotechnology Holding Ltd,56201040,제약
+SPWH,Sportsman's Warehouse Holdings Inc,53403090,기타 전문 소매
+KPTI,Karyopharm Therapeutics Inc.,56201040,제약
+FTEK,Fuel Tech Inc,52203010,환경 서비스 및 장비
+MKDW,MKDWELL Tech Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+ATHR,Aether Holdings Inc,57301010,핀테크
+POCI,Precision Optics Corporation Inc,56101020,"의료 장비, 물품 및 유통"
+WAVE,Eco Wave Power Global AB (publ) ADR,59101010,전력 유틸리티
+FLNA,Filana Therapeutics Inc,56202010,생명 공학 및 의학 연구
+KFFB,Kentucky First Federal Bancorp,55101010,은행
+RYM,RYTHM Inc,54102010,어업 및 농업
+SLMT,Brera Holdings PLC,53301040,여가 및 오락시설
+QETA,Quetta Acquisition Corp,55601010,투자 지주 회사
+RAVE,Rave Restaurant Group Inc,53301020,레스토랑 및 바
+CULP,Culp Inc,53202010,직물 및 가죽제품
+ALGS,Aligos Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+BBGI,Beasley Broadcast Group Inc,53302020,방송
+SNT,Senstar Technologies Corp,52102030,전기 부품 및 장비
+PHUN,Phunware Inc,57201020,소프트웨어
+PN,PN Smart Energy Ltd,50201010,재생 가능 에너지 장비 및 서비스
+ZOOZ,Zooz Strategy Ltd,59101010,전력 유틸리티
+MAMO,Massimo Group,53101010,자동차 및 트럭 제조
+YAAS,Youxin Technology Ltd,57201020,소프트웨어
+MIND,Mind Technology Inc,50103020,오일 관련 서비스 및 장비
+GMHS,Gamehaus Holdings Inc,57201030,온라인 서비스
+SPWR,SunPower Inc,53203020,건설 자재 및 비품
+RETO,ReTo Eco-Solutions Inc,52102010,산업용 기계 및 장비
+AIOS,AIOS Tech Inc,57301010,핀테크
+EUDA,EUDA Health Holdings Ltd,52203040,경영 지원 서비스
+FTCI,FTC Solar Inc,52102030,전기 부품 및 장비
+XHLD,TEN Holdings Inc,52203040,경영 지원 서비스
+HWH,HWH International Inc,53301020,레스토랑 및 바
+AEI,Alset Inc,52201020,건설 및 엔지니어링
+CNTX,Context Therapeutics Inc,56202010,생명 공학 및 의학 연구
+PETS,PetMed Express  Inc.,54301010,의약품 소매
+MACI,Melar Acquisition Corp I,55601010,투자 지주 회사
+NSYS,Nortech Systems Inc,57101010,반도체
+GAME,GameSquare Holdings Inc,57201020,소프트웨어
+ONMD,Onemednet Corp,52203040,경영 지원 서비스
+NA,Nano Labs Ltd,57101010,반도체
+KTCC,Key Tronic Corp,57104010,전자 장비 및 부품
+PLUT,Plutus Financial Group Ltd,55102010,투자 은행 및 중개 서비스
+MBBC,Marathon Bancorp Inc,55101010,은행
+MNY,MoneyHero Ltd,57201030,온라인 서비스
+TVGN,Tevogen Inc,56202010,생명 공학 및 의학 연구
+QTI,QT Imaging Holdings Inc,56101010,첨단 의료 장비 및 기술
+MATH,Metalpha Technology Holding Ltd,57201030,온라인 서비스
+DTSQ,DT Cloud Star Acquisition Corp,55601010,투자 지주 회사
+STKE,Sol Strategies Inc,57301030,블록 체인 및 암호화폐
+SCWO,374Water Inc,52102040,중전기장비
+SAIH,SAIHEAT Ltd,57106010,컴퓨터 하드웨어
+HYPD,Hyperion DeFi Inc,56201040,제약
+AIRTP,Air T Funding Alpha Income Pref Shs,55101050,기업 금융 서비스
+ACCL,Acco Group Holdings Ltd,52203040,경영 지원 서비스
+PRPO,Precipio Inc,56101010,첨단 의료 장비 및 기술
+NSPR,InspireMD Inc,56101020,"의료 장비, 물품 및 유통"
+RADX,Radiopharm Theranostics Ltd ADR,56201040,제약
+LCCC,Lakeshore Acquisition III Corp,55601010,투자 지주 회사
+FGNX,FG Nexus Inc,55301050,재보험
+STRR,Star Equity Holdings Inc,53203010,주택 건설
+EHTH,eHealth Inc,55301010,복합보험 및 중개인
+CUBA,Herzfeld Caribbean Basin Fund，Inc.,55501030,폐쇄형 펀드
+FSHP,Flag Ship Acquisition Corp,55601010,투자 지주 회사
+CREX,Creative Realities Inc,57201010,IT 서비스 및 컨설팅
+DTSQU,DT Cloud Star Acquisition Units,55601010,투자 지주 회사
+HODO,House of Doge Inc,57301030,블록 체인 및 암호화폐
+ESHA,ESH Acquisition Corp,55601010,투자 지주 회사
+HOLO,MicroCloud Hologram Inc,57201020,소프트웨어
+GROW,US Global Investors Inc,55102020,투자 관리 및 펀드 운영
+RILYP,BRC Group Holdings Depositary Shares representing 1 1000 Cum Pref Series A,55102010,투자 은행 및 중개 서비스
+ABLV,Able View Global Inc,53403090,기타 전문 소매
+RYET,Ruanyun Edai Technology Inc,57201020,소프트웨어
+ARBK,Argo Blockchain PLC ADR,57301030,블록 체인 및 암호화폐
+AFJK,Aimei Health Technology Co Ltd,55601010,투자 지주 회사
+AFJKU,Aimei Health Technology Units,55601010,투자 지주 회사
+IXHL,Incannex Healthcare Inc,56202010,생명 공학 및 의학 연구
+TJGC,TJGC Group Ltd,53302010,광고 및 마케팅
+APLM,Apollomics Inc,55601010,투자 지주 회사
+NTRB,Nutriband Inc,56101020,"의료 장비, 물품 및 유통"
+DFNS,T3 Defense Inc,52101010,항공우주 및 방위
+AERT,Aeries Technology Inc,52203040,경영 지원 서비스
+HGBL,Heritage Global Inc,55102020,투자 관리 및 펀드 운영
+SWAG,Stran & Company Inc,53302010,광고 및 마케팅
+BENF,Beneficient,57301010,핀테크
+XOS,Xos Inc,53101010,자동차 및 트럭 제조
+ZEO,Zeo Energy Corp,50201010,재생 가능 에너지 장비 및 서비스
+CGTL,Creative Global Technology Holdings Ltd,53403090,기타 전문 소매
+WPRT,Westport Fuel Systems Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+DYAI,Dyadic International Inc,56202010,생명 공학 및 의학 연구
+SNAL,Snail Inc,57201020,소프트웨어
+PXLW,Pixelworks Inc,57101010,반도체
+HCAI,Huachen AI Parking Management Technology Holding Co Ltd,52102010,산업용 기계 및 장비
+YOUL,Youlife Group Inc ADR,52203030,고용 서비스
+NXTC,NextCure Inc,56202010,생명 공학 및 의학 연구
+VTSI,VirTra Inc,52101010,항공우주 및 방위
+SJ,Scienjoy Holding Corp,57201030,온라인 서비스
+ELUT,Elutia Inc,56201040,제약
+ITOC,iTonic Holdings Ltd,56101010,첨단 의료 장비 및 기술
+BGDE,Big Digital Energy Inc,57201010,IT 서비스 및 컨설팅
+KLXE,KLX Energy Services Holdings Inc,50103020,오일 관련 서비스 및 장비
+BLNE,Beeline Holdings Inc,55101030,소비자 대출
+OCCIN,OFS Credit Company 5 25 Prf Shs Series E Due 2026,55501030,폐쇄형 펀드
+ANGH,Anghami Inc,53301040,여가 및 오락시설
+NIKI,Aptorum Group Ltd,56202010,생명 공학 및 의학 연구
+KOSS,Koss Corp,57106030,가정용 전자 제품
+XBP,XBP Global Holdings Inc,57301010,핀테크
+NCT,Intercont (Cayman) Ltd,52405020,해양 화물 및 물류
+FIEE,FiEE Inc,57201010,IT 서비스 및 컨설팅
+CNTY,Century Casinos Inc,53301030,카지노 및 도박
+POWWP,AMMO 8 75 Cumulative Redeemable Perpetual Prf Shs Series A,53205020,오락용 제품
+GRCE,Grace Therapeutics  Inc,56202010,생명 공학 및 의학 연구
+PPSI,Pioneer Power Solutions Inc,52102040,중전기장비
+LPSN,LivePerson Inc,57201010,IT 서비스 및 컨설팅
+LTRN,Lantern Pharma Inc,56202010,생명 공학 및 의학 연구
+CCG,Cheche Group Inc,55301020,손해보험
+WKHS,Workhorse Group Inc,53101010,자동차 및 트럭 제조
+LIVE,Live Ventures Inc,55601010,투자 지주 회사
+PFAI,Pinnacle Food Group Ltd,53403020,주택 개조 제품 및 서비스 소매
+ARAY,Accuray Incorporated,56101010,첨단 의료 장비 및 기술
+UG,United-Guardian Inc,56201040,제약
+YI,111 Inc ADR,57201030,온라인 서비스
+ASTI,Ascent Solar Technologies Inc,50201010,재생 가능 에너지 장비 및 서비스
+DXLG,Destination XL Group Inc,53403040,의류 및 액세서리 소매
+LFMDP,LifeMD 8.875 Cumulative Perpetual Pref Shs Series A,56101010,첨단 의료 장비 및 기술
+QVCGP,Qurate Retail 8 0 Cumulative Redeemable Pref Shs,53402010,백화점
+EPOW,E-Power Inc,52102030,전기 부품 및 장비
+TELA,TELA Bio Inc,56101020,"의료 장비, 물품 및 유통"
+MERC,Mercer International Inc,51301020,종이 제품
+LOOP,Loop Industries Inc,52203010,환경 서비스 및 장비
+CRWS,Crown Crafts Inc,53204040,가정용 가구
+GIFT,Giftify Inc,57201030,온라인 서비스
+BOSC,BOS Better Online Solutions Ltd,52102010,산업용 기계 및 장비
+YSXT,YSX Tech Co Ltd,54201030,개인 서비스
+BEAT,HeartBeam  Inc.,56101010,첨단 의료 장비 및 기술
+HUBC,Hub Cyber Security Ltd,57201020,소프트웨어
+GYGY,Game Your Game Inc (Pre-Reincorporation),57201020,소프트웨어
+HERZ,Herzfeld Credit Income Fund，Inc.,55501030,폐쇄형 펀드
+RPGL,Republic Power Group Ltd,57201020,소프트웨어
+MDBH,MDB Capital Holdings LLC,55102010,투자 은행 및 중개 서비스
+MIRA,MIRA Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+ENLV,Enlivex Ltd,56202010,생명 공학 및 의학 연구
+GAIA,Gaia Inc,57201030,온라인 서비스
+GRML,Greenland Mines Ltd,51201080,다각적 채굴
+QNCX,Quince Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+BYSI,Beyondspring Inc,56202010,생명 공학 및 의학 연구
+PAVM,PAVmed Inc,56101010,첨단 의료 장비 및 기술
+QUCY,Quantum Cyber NV,57201010,IT 서비스 및 컨설팅
+MLCI,Mount Logan Capital Inc,55102020,투자 관리 및 펀드 운영
+PRPL,Purple Innovation Inc,53204040,가정용 가구
+YXT,YXT.Com Group Holding Ltd ADR,63103010,전문 및 비즈니스 교육
+BTAI,BioXcel Therapeutics Inc,56201040,제약
+VIP,Vulcan Infrastructure and Power Inc,57201010,IT 서비스 및 컨설팅
+ZSTK,Zerostack Corp,57201010,IT 서비스 및 컨설팅
+ESLA,Estrella Immunopharma Inc,56202010,생명 공학 및 의학 연구
+LITS,Lite Strategy Inc,55102020,투자 관리 및 펀드 운영
+STAK,STAK Inc,50103020,오일 관련 서비스 및 장비
+GNTA,Genenta Science SPA ADR,56202010,생명 공학 및 의학 연구
+UPC,Universe Pharmaceuticals Inc,56201040,제약
+JG,Aurora Mobile Ltd ADR,57201010,IT 서비스 및 컨설팅
+MEGL,Magic Empire Global Ltd,55102010,투자 은행 및 중개 서비스
+RDI,Reading International Inc Class A,53301040,여가 및 오락시설
+OCCIM,OFS Credit Company 7 875 Prf Shs Series F,55501030,폐쇄형 펀드
+BIRD,Smartbird Inc,57201010,IT 서비스 및 컨설팅
+AAME,Atlantic American Corp,55301030,생명 및 건강 보험
+QRHC,Quest Resource Holding Corp,52203010,환경 서비스 및 장비
+RAND,Rand Capital Corp,55102020,투자 관리 및 펀드 운영
+KSCP,Knightscope Inc,57102010,통신 및 네트워킹
+BCTX,Briacell Therapeutics Corp,56202010,생명 공학 및 의학 연구
+RMTI,Rockwell Medical Inc,56201040,제약
+VWAV,VisionWave Holdings Inc,52101010,항공우주 및 방위
+BRFH,Barfresh Food Group Inc,54101030,무알콜 음료
+MNSBP,MainStreet Bancshares Depositary Shares Representing Pref Shs,55101010,은행
+NCI,Neo-Concept International Group Holdings Ltd,53202020,의류 및 액세서리
+FKWL,Franklin Wireless Corp,57102010,통신 및 네트워킹
+KYNB,Kyntra Bio  Inc.,56201040,제약
+UCL,Ucloudlink Group Inc ADR,57401020,무선 통신 서비스
+WVVIP,Willamette Valley Vineyards Redeemable Pref Shs Series A,54101020,증류주 및 포도주
+BANFP,BancFirst 7.2% Cumulative Pref Shs,55101050,기업 금융 서비스
+DAIO,Data I/O Corp,57106010,컴퓨터 하드웨어
+CLIR,ClearSign Technologies Corp,52102010,산업용 기계 및 장비
+HBIO,Harvard Bioscience Inc,56101010,첨단 의료 장비 및 기술
+HTCO,High-Trend International Group,52407020,항만 운영 및 서비스
+HKIT,Hitek Global Inc,57107010,통합 하드웨어 및 소프트웨어
+GRAN,Grande Group Ltd,55102020,투자 관리 및 펀드 운영
+JSPR,Jasper Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+KAZR,Skyline Builders Group Holding Ltd,52201020,건설 및 엔지니어링
+GDHG,Golden Heaven Group Holdings Ltd,53301040,여가 및 오락시설
+FGBIP,First Guaranty Bancshares 6.75 Dep Shs Rep Non Cumulative Perpetual Prf Shs,55101010,은행
+OPTH,Optimi Health Corp,56201040,제약
+YQ,17 Education and Technology Group Inc ADR,63101010,기타 교육 서비스 제공
+MIMI,Mint Incorporation Ltd,52201020,건설 및 엔지니어링
+CRMT,America's CAR-MART Inc,53403010,"자동차 차량, 부품 및 서비스 소매"
+CLPS,CLPS Inc,57201010,IT 서비스 및 컨설팅
+EURK,Eureka Acquisition Corp,55601010,투자 지주 회사
+TAOX,TAO Synergies Inc,57301030,블록 체인 및 암호화폐
+SLGB,Smart Logistics Global Ltd,52405030,지상 화물 및 물류
+AWRE,Aware Inc,57201020,소프트웨어
+FTFT,Future Fintech Group Inc,57301030,블록 체인 및 암호화폐
+BAFN,Bayfirst Financial Corp,55101010,은행
+PBK,PowerBank Corp,50201010,재생 가능 에너지 장비 및 서비스
+BEEM,Beam Global,50201010,재생 가능 에너지 장비 및 서비스
+EVAX,Evaxion A/S ADR,56202010,생명 공학 및 의학 연구
+USEA,United Maritime Corp,52405020,해양 화물 및 물류
+UCAR,U Power Ltd,52102030,전기 부품 및 장비
+CNSY,Plus Therapeutics Inc,56202010,생명 공학 및 의학 연구
+SCAG,Scage Future ADR,52102020,중장비 및 차량
+AYTU,Aytu Biopharma Inc,56201040,제약
+ABVC,ABVC Biopharma Inc,56202010,생명 공학 및 의학 연구
+FUSE,FUSEMACHINES INC.,57201010,IT 서비스 및 컨설팅
+AIHS,Senmiao Technology Ltd,53403010,"자동차 차량, 부품 및 서비스 소매"
+JFU,9f Inc ADR,57201010,IT 서비스 및 컨설팅
+BLIV,Belive Holdings,57107010,통합 하드웨어 및 소프트웨어
+AZIO,Azio AI Holdings Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+EHLD,Euroholdings Ltd,52405020,해양 화물 및 물류
+FLD,Fold Holdings Inc,57301030,블록 체인 및 암호화폐
+KMRK,K-Tech Solutions Co Ltd,53205010,장난감 및 어린이 제품
+TGHL,Growhub Ltd,57201010,IT 서비스 및 컨설팅
+BCG,Binah Capital Group Inc,55102020,투자 관리 및 펀드 운영
+DUO,Fangdd Network Group Ltd,60101020,부동산 서비스
+ASPC,A SPAC III Acquisition Corp,55601010,투자 지주 회사
+CDLX,Cardlytics Inc,57201020,소프트웨어
+TRSG,Tungray Technologies Inc,52102010,산업용 기계 및 장비
+BAOS,Baosheng Media Group Holdings Ltd,53302010,광고 및 마케팅
+BIOX,Bioceres Crop Solutions Corp,51101020,농화학제
+MDXH,MDxHealth SA,56202010,생명 공학 및 의학 연구
+AVX,AVAX One Technology Ltd,57301030,블록 체인 및 암호화폐
+TXMD,TherapeuticsMD Inc,56201040,제약
+STRRP,Star Equity Holdings 10 Cumulative Perpetual Prf Shs Series A,53203010,주택 건설
+WIMI,WiMi Hologram Cloud Inc,57201020,소프트웨어
+BRNS,Barinthus Biotherapeutics PLC ADR,56202010,생명 공학 및 의학 연구
+SOHOO,Sotherly Hotels Cum Redeemable Perptual 7.875 Pref Shs Series C,60102040,특수 REITs
+ILLR,Triller Group Inc,57301010,핀테크
+LGVN,Longeveron Inc,56202010,생명 공학 및 의학 연구
+SPPL,Simpple Ltd,57201020,소프트웨어
+EDHL,Everbright Digital Holding Ltd,53302010,광고 및 마케팅
+ATOS,Atossa Therapeutics Inc,56202010,생명 공학 및 의학 연구
+FMST,Foremost Clean Energy Ltd,51201080,다각적 채굴
+BSAA,BEST SPAC I Acquistion Corp,55601010,투자 지주 회사
+CTSO,Cytosorbents Corp,56101010,첨단 의료 장비 및 기술
+ACTU,Actuate Therapeutics Inc,56202010,생명 공학 및 의학 연구
+RANG,Range Capital Acquisition Corp,55601010,투자 지주 회사
+FTHM,Fathom Holdings Inc,60101020,부동산 서비스
+OCCIO,OFS Credit Company 6 125 Prf Series C,55501030,폐쇄형 펀드
+SOHOB,Sotherly Hotels 8.0% Cumulative Redeemable Perpetual Pref Shs Series B,60102040,특수 REITs
+QCLS,Q/C Technologies Inc,57301030,블록 체인 및 암호화폐
+NTRP,Nexttrip Inc,53301040,여가 및 오락시설
+MOBX,MOBIX LABS  INC.,57101010,반도체
+ALLR,Allarity Therapeutics Inc,56202010,생명 공학 및 의학 연구
+QNTM,Quantum Biopharma Ltd,56202010,생명 공학 및 의학 연구
+GRDX,GridAI Technologies Corp,57201010,IT 서비스 및 컨설팅
+UTSI,UTStarcom Holdings Corp.,57102010,통신 및 네트워킹
+COOT,Australian Oilseeds Holdings Ltd,54102020,식품 가공
+TVRD,Tvardi Therapeutics  Inc.,56202010,생명 공학 및 의학 연구
+RDAC,Rising Dragon Acquisition Corp,55601010,투자 지주 회사
+LFWD,Lifeward Ltd,56101020,"의료 장비, 물품 및 유통"
+PSHG,Performance Shipping Inc,50103030,오일 및 가스 수송 서비스
+WHLRP,Wheeler Real Estate Investment Trust Series B Conv Prf Shs,60102020,상업용 REITs
+DARE,Dare Bioscience Inc,56201040,제약
+DETX,Liberty Defense Holdings Ltd,57104010,전자 장비 및 부품
+LICN,Lichen International Ltd,54201030,개인 서비스
+AMOD,Alpha Modus Holdings Inc,57201010,IT 서비스 및 컨설팅
+CALC,CalciMedica Inc,56202010,생명 공학 및 의학 연구
+NRSN,Neurosense Therapeutics Ltd,56202010,생명 공학 및 의학 연구
+DSY,Big Tree Cloud Holdings Ltd,54201020,개인 생활 필수 용품
+CLRB,Cellectar Biosciences Inc,56201040,제약
+PLRZ,Polyrizon Ltd,56202010,생명 공학 및 의학 연구
+ARKR,Ark Restaurants Corp,53301020,레스토랑 및 바
+XCH,XCHG Ltd ADR,59101010,전력 유틸리티
+RECT,Rectitude Holdings Ltd,52102010,산업용 기계 및 장비
+WXM,WF International Ltd,52201020,건설 및 엔지니어링
+EXYN,Exyn Technologies Inc,57201020,소프트웨어
+COCP,Cocrystal Pharma Inc,56202010,생명 공학 및 의학 연구
+ELWS,Earlyworks Co Ltd ADR,57301030,블록 체인 및 암호화폐
+EPSM,Epsium Enterprise Ltd,54301020,식품 소매 및 유통
+CTXR,Citius Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+PDC,Perpetuals.com Ltd ADR,57301030,블록 체인 및 암호화폐
+IMPPP,Imperial Petroleum 8.75 Cumulative Redeemable Perpetual Pref Shs Series A,50201020,재생 가능 연료
+NEUP,Neuphoria Therapeutics Inc,56202010,생명 공학 및 의학 연구
+MNDO,Mind CTI Ltd,57201010,IT 서비스 및 컨설팅
+TLF,Tandy Leather Factory Inc,53202010,직물 및 가죽제품
+BMR,Beamr Imaging Ltd,57201020,소프트웨어
+JVA,Coffee Holding Co Inc,54102020,식품 가공
+CTRM,Castor Maritime Inc,52405020,해양 화물 및 물류
+ORIO,Orion Digital Corp,57301010,핀테크
+CELU,Celularity Inc,56201040,제약
+PLSM,Pulsenmore Ltd,56101010,첨단 의료 장비 및 기술
+MWYN,Marwynn Holdings Inc,54301020,식품 소매 및 유통
+MDRR,Medalist Diversified Inc,60102020,상업용 REITs
+GGRP,Glimpse Group Inc,57201020,소프트웨어
+QNME,Quanome Technologies  Inc,56201040,제약
+MRKR,Marker Therapeutics Inc,56202010,생명 공학 및 의학 연구
+TPST,Tempest Therapeutics Inc,56202010,생명 공학 및 의학 연구
+SKYE,Skye Bioscience Inc,56202010,생명 공학 및 의학 연구
+EFOI,Energy Focus Inc,53203020,건설 자재 및 비품
+FOFO,Hang Feng Technology Innovation Co Ltd,52203040,경영 지원 서비스
+MF,MindForge Inc,53302010,광고 및 마케팅
+DUKR,DUKE Robotics Corp,52101010,항공우주 및 방위
+LRE,Lead Real Estate Co Ltd ADR,60101010,"부동산 임대, 개발 및 운영"
+FEMY,Femasys Inc,56101020,"의료 장비, 물품 및 유통"
+DFLI,Dragonfly Energy Holdings Corp,52102030,전기 부품 및 장비
+MDCX,Medicus Pharma Ltd,56201040,제약
+HHS,Harte Hanks Inc,53302010,광고 및 마케팅
+HOWL,Werewolf Therapeutics Inc,56202010,생명 공학 및 의학 연구
+MGIH,Millennium Group International Holdings Ltd,51302020,종이 포장재
+SOHON,SOTHERLY HOTELS Perpetual Pref Shs Series D,60102040,특수 REITs
+ANY,Sphere 3D Corp,57301030,블록 체인 및 암호화폐
+LIQT,LiqTech International Inc,52203010,환경 서비스 및 장비
+HCTI,Healthcare Triangle Inc,57201020,소프트웨어
+JF,J and Friends Holdings Ltd ADR,57301010,핀테크
+MSGM,Motorsport Games Inc,57201030,온라인 서비스
+BRLS,Borealis Foods Inc (Oakville),54102020,식품 가공
+LHSW,Lianhe Sowell International Group Ltd,57201020,소프트웨어
+FABC,Fabric.AI  Inc,57101010,반도체
+HPAI,Helport AI Ltd,57201010,IT 서비스 및 컨설팅
+UONEK,Urban One Inc Class D,53302020,방송
+UFG,Uni-Fuels Holdings Ltd,50102030,"오일, 가스 정제 및 마케팅"
+CXAI,CXApp Inc,57201020,소프트웨어
+MRNO,Murano Global Investments Plc,60101010,"부동산 임대, 개발 및 운영"
+FNGR,FingerMotion Inc,57201020,소프트웨어
+JL,J-Long Group Ltd,53202020,의류 및 액세서리
+AIFA,All in Futuretech Alliance Inc,57201030,온라인 서비스
+PLUR,Pluri Inc,56202010,생명 공학 및 의학 연구
+PSIG,PS International Group Ltd,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+FRTT,Fort Technology Inc,51101020,농화학제
+AIFF,Firefly Neuroscience Inc,57201010,IT 서비스 및 컨설팅
+CYN,CYNGN Inc,57201020,소프트웨어
+TURB,Turbo Energy SA ADR,50201010,재생 가능 에너지 장비 및 서비스
+PMEC,Primech Holdings Ltd,52203040,경영 지원 서비스
+INTZ,Intrusion Inc,57201010,IT 서비스 및 컨설팅
+MAXN,Maxeon Solar Technologies Ltd,50201010,재생 가능 에너지 장비 및 서비스
+LEDS,SemiLEDs Corp,57101010,반도체
+CYCN,Cyclerion Therapeutics Inc,56202010,생명 공학 및 의학 연구
+SCNX,Scienture Holdings Inc,56201040,제약
+NXPL,NextPlat Corp,57401020,무선 통신 서비스
+FOXX,Foxx Development Holdings Inc,53403050,컴퓨터 및 전자 제품 소매
+NIXX,Nixxy Inc,57201010,IT 서비스 및 컨설팅
+HTOO,Fusion Fuel Green PLC,52102030,전기 부품 및 장비
+NCEL,NewcelX AG,56202010,생명 공학 및 의학 연구
+SMX,SMX (Security Matters) PLC,57301030,블록 체인 및 암호화폐
+RAY,Raytech Holding Ltd,57106030,가정용 전자 제품
+INHD,Inno Holdings Inc,52201020,건설 및 엔지니어링
+JDZG,JIADE Ltd,63101010,기타 교육 서비스 제공
+IPM,Intelligent Protection Management Corp,52203040,경영 지원 서비스
+TULP,Bloomia Holdings  Inc,54102010,어업 및 농업
+HKPD,Cellyan Biotechnology Co Ltd,56201040,제약
+KALA,KALA BIO Inc,56202010,생명 공학 및 의학 연구
+SMSI,Smith Micro Software Inc,57201020,소프트웨어
+LPCN,Lipocine Inc,56202010,생명 공학 및 의학 연구
+GTEC,Greenland Technologies Holding Corp,53101020,"자동차, 트럭 및 오토바이 부품"
+BIYA,Baiya International Group Inc,52203030,고용 서비스
+REFR,Research Frontiers Inc,53302030,엔터테인먼트 제작
+RKTO,Rocket One Inc,56201040,제약
+TLIH,Ten-League International Holdings Ltd,52102010,산업용 기계 및 장비
+GRNQ,GreenPro Capital Corp,55101050,기업 금융 서비스
+NEON,Neonode Inc,57104010,전자 장비 및 부품
+GIGM,GigaMedia Ltd,57201030,온라인 서비스
+KTTA,Pasithea Therapeutics Corp,56202010,생명 공학 및 의학 연구
+ONEG,OneConstruction Group Ltd,52201020,건설 및 엔지니어링
+PRZO,Parazero Technologies Ltd,52101010,항공우주 및 방위
+BFRI,Biofrontera Inc,56201040,제약
+ATCX,Atlas Critical Minerals Corp,51202010,건설 자재
+GTIM,Good Times Restaurants Inc,53301020,레스토랑 및 바
+PETZ,TDH Holdings Inc,60101020,부동산 서비스
+ASTC,Astrotech Corp,57104010,전자 장비 및 부품
+PRHI,Presurance Holdings Inc,55301020,손해보험
+HIND,Vyome Holdings Inc,56202010,생명 공학 및 의학 연구
+CLRO,Clearone Inc,57102010,통신 및 네트워킹
+AVAT,Avalanche Treasury Corp,57301030,블록 체인 및 암호화폐
+PMA,Ming Shing Group Holdings Ltd,52201020,건설 및 엔지니어링
+NHTC,Natural Health Trends Corp,53403090,기타 전문 소매
+ADGM,Adagio Medical Holdings Inc,56101010,첨단 의료 장비 및 기술
+SDOT,Sadot Group Inc,57301010,핀테크
+FGNXP,Fundamental Global 8 00 Cumulative Pref Shs,55301050,재보험
+RDIB,Reading International Inc Class B,53301040,여가 및 오락시설
+IRIX,IRIDEX Corp,56101010,첨단 의료 장비 및 기술
+AIXC,Aixcrypto Holdings Inc,57301030,블록 체인 및 암호화폐
+RCT,Redcloud Holdings PLC,57201030,온라인 서비스
+UPLD,Upland Software Inc,57201020,소프트웨어
+EDTK,Skillful Craftsman Education Technology Ltd,63103010,전문 및 비즈니스 교육
+IDAI,T Stamp Inc,57201020,소프트웨어
+PASG,Passage Bio Inc,56202010,생명 공학 및 의학 연구
+LAZR,Luminar Technologies Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+SAGT,Sagtec Global Ltd,57201020,소프트웨어
+ADAP,Adaptimmune Therapeutics PLC ADR,56201040,제약
+ZDAI,DirectBooking Technology Co Ltd,52203010,환경 서비스 및 장비
+SWVL,Swvl Holdings Corp,52406020,지상 및 해상 여객 운송
+PDSB,PDS Biotechnology Corp,56202010,생명 공학 및 의학 연구
+IOTR,iOThree Ltd,57401020,무선 통신 서비스
+ICU,SeaStar Medical Holding Corp,56101020,"의료 장비, 물품 및 유통"
+ARTW,Art's Way Manufacturing Co Inc,52102020,중장비 및 차량
+DOGZ,Dogness International Corp,53202020,의류 및 액세서리
+PTN,Palatin Technologies Inc,56202010,생명 공학 및 의학 연구
+DLPN,Dolphin Entertainment Inc,53302030,엔터테인먼트 제작
+WETH,Wetouch Technology Inc,57104010,전자 장비 및 부품
+BNGO,Bionano Genomics  Inc.,56101010,첨단 의료 장비 및 기술
+CMMB,Chemomab Therapeutics Ltd ADR,56202010,생명 공학 및 의학 연구
+BLIN,Bridgeline Digital Inc,57201020,소프트웨어
+CMCT,Creative Media & Community Trust Corporation,60102020,상업용 REITs
+TOMZ,TOMI Environmental Solutions Inc,52203010,환경 서비스 및 장비
+INTS,Intensity Therapeutics Inc,56202010,생명 공학 및 의학 연구
+MYSE,Myseum AI Inc,57201010,IT 서비스 및 컨설팅
+ARAI,Arrive AI Inc,57201020,소프트웨어
+SCKT,Socket Mobile Inc,57104010,전자 장비 및 부품
+GTBP,GT Biopharma Inc,56202010,생명 공학 및 의학 연구
+LHAI,Linkhome Holdings Inc,60101020,부동산 서비스
+BTOC,Armlogi Holding Corp,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+ALAR,Alarum Technologies Ltd ADR,57201020,소프트웨어
+NMTC,NeuroOne Medical Technologies Corp,56101010,첨단 의료 장비 및 기술
+NAII,Natural Alternatives International Inc,56201040,제약
+THH,TryHard Holdings Ltd,53301040,여가 및 오락시설
+BCDA,BioCardia Inc,56202010,생명 공학 및 의학 연구
+AMSS,Amass Brands Inc,53301040,여가 및 오락시설
+SEED,Origin Agritech Ltd,54102010,어업 및 농업
+JBDI,JBDI Holdings Ltd,51302010,용기(종이 제외) 및 포장재
+MTEK,Maris Tech Ltd,57102010,통신 및 네트워킹
+EBON,Ebang International Holdings Inc,57101010,반도체
+AKTX,Akari Therapeutics PLC ADR,56201040,제약
+PBM,Psyence Biomedical Ltd,56202010,생명 공학 및 의학 연구
+HUIZ,Huize Holding Ltd ADR,55301010,복합보험 및 중개인
+GMM,Global Mofy AI Ltd,57201010,IT 서비스 및 컨설팅
+CABR,Caring Brands Inc,54201020,개인 생활 필수 용품
+ADVB,Advanced Biomed Inc,56102010,의료 시설 및 서비스
+PHIO,Phio Pharmaceuticals Corp,56202010,생명 공학 및 의학 연구
+FLUX,Flux Power Holdings Inc,52102030,전기 부품 및 장비
+COSM,Cosmos Health Inc,56201040,제약
+NVNI,Nvni Group Ltd,55102020,투자 관리 및 펀드 운영
+LESL,Leslie's Inc,53403090,기타 전문 소매
+ICMB,Investcorp Credit Management BDC Inc,55501030,폐쇄형 펀드
+REBN,Reborn Coffee Inc,53301020,레스토랑 및 바
+CLWT,Euro Tech Holdings Company Ltd,52203010,환경 서비스 및 장비
+CLIK,Click Holdings Limited,52203030,고용 서비스
+HUDI,Huadi International Group Co.  Ltd.,51201020,철 및 강철
+CETY,Clean Energy Technologies Inc,59102010,천연가스 유틸리티
+SVRN,Oceanpal Inc,52405020,해양 화물 및 물류
+EDUC,Educational Development Corp,53302040,소비자 출판
+OBAI,Our Bond  Inc,57201020,소프트웨어
+GYRO,Gyrodyne LLC,60101010,"부동산 임대, 개발 및 운영"
+CISO,CISO Global Inc,57201030,온라인 서비스
+BLRX,BioLine RX Ltd ADR,56202010,생명 공학 및 의학 연구
+KPRX,Kiora Pharmaceuticals  Inc.,56202010,생명 공학 및 의학 연구
+VTGN,Vistagen Therapeutics Inc,56202010,생명 공학 및 의학 연구
+WVVI,Willamette Valley Vineyards Inc,54101020,증류주 및 포도주
+RAIN,Rain Enhancement Technologies Holdco Inc,52102010,산업용 기계 및 장비
+BIOT,Instinct Bio Technical Company Holdings Inc,54201020,개인 생활 필수 용품
+IQST,iQSTEL Inc,57401020,무선 통신 서비스
+ICCM,Icecure Medical Ltd,56101010,첨단 의료 장비 및 기술
+SINT,SINTX Technologies Inc,56101020,"의료 장비, 물품 및 유통"
+ELOG,Eastern International Ltd,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+OSRH,OSR Health Inc,56202010,생명 공학 및 의학 연구
+GTI,Graphjet Technology,52102030,전기 부품 및 장비
+CJMB,Callan JMB Inc,52405030,지상 화물 및 물류
+QNRX,Quoin Pharmaceuticals Ltd ADR,56202010,생명 공학 및 의학 연구
+BIVI,BioVie Inc,56202010,생명 공학 및 의학 연구
+SNTI,Senti Biosciences Holdings Inc,56202010,생명 공학 및 의학 연구
+GP,GreenPower Motor Company Inc,53101010,자동차 및 트럭 제조
+CHEK,Check Cap Ltd,56202010,생명 공학 및 의학 연구
+MSAI,MultiSensor AI Holdings Inc,57104010,전자 장비 및 부품
+MODD,Modular Medical Inc,56101020,"의료 장비, 물품 및 유통"
+ADIL,Adial Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+AIMD,Ainos Inc,56101010,첨단 의료 장비 및 기술
+SKK,Skk Holdings Ltd,52201020,건설 및 엔지니어링
+GFAI,Guardforce AI Co Ltd,52203040,경영 지원 서비스
+LZMH,LZ Technology Holdings Ltd,53302010,광고 및 마케팅
+CCTG,CCSC Technology International Holdings Ltd,57104010,전자 장비 및 부품
+SUNE,Sunation Energy Inc,59101010,전력 유틸리티
+BFRG,Bullfrog AI Holdings Inc,56202010,생명 공학 및 의학 연구
+YYGH,YY Group Holding Ltd,52203030,고용 서비스
+LNAI,Lunai Bioworks Inc,56202010,생명 공학 및 의학 연구
+LSTA,Lisata Therapeutics Inc,56202010,생명 공학 및 의학 연구
+NAMI,Jinxin Technology Holding Co ADR,53302040,소비자 출판
+PRSO,Peraso Inc,57101010,반도체
+WKSP,Worksport Ltd,52203040,경영 지원 서비스
+TDTH,Trident Digital Tech Holdings Ltd,57201010,IT 서비스 및 컨설팅
+CODX,Co-Diagnostics Inc,56101010,첨단 의료 장비 및 기술
+JCTC,Jewett-Cameron Trading Company Ltd,51301010,임업 및 목재 제품
+RVSN,Rail Vision Ltd,57104010,전자 장비 및 부품
+ZBAO,Zhibao Technology Inc,55301010,복합보험 및 중개인
+LOBO,Lobo Technologies Ltd,57201010,IT 서비스 및 컨설팅
+LEXX,Lexaria Bioscience Corp,56201040,제약
+NWGL,CL Workshop Group Ltd ADR,51301010,임업 및 목재 제품
+INEO,INNEOVA Holdings Ltd,53101020,"자동차, 트럭 및 오토바이 부품"
+INAB,IN8bio  Inc.,56202010,생명 공학 및 의학 연구
+YJ,Yunji Inc ADR,57201030,온라인 서비스
+FFAI,Faraday Future Intelligent Electric Inc,53101010,자동차 및 트럭 제조
+MTEX,Mannatech Inc,54102020,식품 가공
+MARPS,Marine Petroleum Units,50102020,"오일, 가스 탐사 및 생산"
+MTVA,MetaVia Inc,56202010,생명 공학 및 의학 연구
+EVGN,Evogene Ltd,56202010,생명 공학 및 의학 연구
+OXBR,Oxbridge Re Holdings Ltd,55301050,재보험
+SFHG,Samfine Creation Holdings Group Ltd,52203020,상업 인쇄 서비스
+AQMS,Aqua Metals Inc,51201050,특수 채굴 및 금속
+DBGI,Digital Brands Group Inc,57201030,온라인 서비스
+GDTC,CytoMed Therapeutics Ltd,56202010,생명 공학 및 의학 연구
+NDRA,ENDRA Life Sciences Inc,56202010,생명 공학 및 의학 연구
+ZCMD,Zhongchao Inc,63103010,전문 및 비즈니스 교육
+GXAI,Gaxos.ai Inc.,57201020,소프트웨어
+SVRE,Saverone 2014 Ltd ADR,57201020,소프트웨어
+ASBP,Aspire Biopharma Holdings Inc,56201040,제약
+TDIC,Dreamland Ltd,52203040,경영 지원 서비스
+VRME,VerifyMe Inc,57201020,소프트웨어
+MGRX,Mangoceuticals Inc,56102010,의료 시설 및 서비스
+NXTT,Next Technology Holding Inc,57201020,소프트웨어
+RITR,Reitar Logtech Holdings Ltd,52203040,경영 지원 서비스
+AUID,Authid Inc,57201020,소프트웨어
+MTEN,Mingteng International Corp Inc,52102010,산업용 기계 및 장비
+GLE,Global Engine Group Holding Ltd,55601010,투자 지주 회사
+OMH,Ohmyhome Ltd,57201020,소프트웨어
+UZX,Linkage Global Inc,53402010,백화점
+GITS,Global Interactive Technologies Inc,57201020,소프트웨어
+JWEL,Jowell Global Ltd,53402010,백화점
+BANL,CBL International Ltd,52407020,항만 운영 및 서비스
+FGI,FGI Industries Ltd,53204040,가정용 가구
+IMNN,Imunon Inc,56202010,생명 공학 및 의학 연구
+YHGJ,Yunhong Green CTI Ltd,51302010,용기(종이 제외) 및 포장재
+AIRE,reAlpha Tech Corp,57201020,소프트웨어
+IMRN,Immuron Ltd ADR,56201040,제약
+TAOP,Taoping Inc,57106010,컴퓨터 하드웨어
+IFBD,Infobird Co Ltd,57201020,소프트웨어
+DKI,DarkIris Inc,57201020,소프트웨어
+XWEL,XWELL Inc,54201030,개인 서비스
+YMAT,J-Star Holding Co Ltd,53205020,오락용 제품
+JYD,Jayud Global Logistics Ltd,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+PCSA,Processa Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+CENN,Cenntro Inc (The Corporation),53101010,자동차 및 트럭 제조
+SNGX,Soligenix Inc,56202010,생명 공학 및 의학 연구
+TKLF,Tokyo Lifestyle Co Ltd ADR,54301010,의약품 소매
+APRE,Aprea Therapeutics Inc,56202010,생명 공학 및 의학 연구
+BGL,Blue Gold Ltd,51201060,금
+FEBO,Fenbo Holdings Ltd,53204030,"가전제품, 도구 및 가정 용품"
+XCUR,Exicure Inc,56202010,생명 공학 및 의학 연구
+VS,Versus Systems Inc,57201020,소프트웨어
+TRAW,Traws Pharma Inc,56202010,생명 공학 및 의학 연구
+AZI,Autozi Internet Technology (Global) Ltd,53403010,"자동차 차량, 부품 및 서비스 소매"
+MRM,Medirom Healthcare Technologies Inc ADR,54201030,개인 서비스
+CAN,Canaan Inc ADR,57301030,블록 체인 및 암호화폐
+CUPR,Cuprina Holdings (Cayman) Ltd,56201040,제약
+HYFM,Hydrofarm Holdings Group Inc,52102020,중장비 및 차량
+GAUZ,Gauzy Ltd,53203020,건설 자재 및 비품
+KXIN,Kaixin Holdings,53403010,"자동차 차량, 부품 및 서비스 소매"
+DTST,Data Storage Corp,57301020,온라인 소액 투자 중개
+DTSS,Datasea Intelligent Technology Ltd,57201020,소프트웨어
+SEGG,Sports Entertainment Gaming Global Corp,53301030,카지노 및 도박
+CELZ,Creative Medical Technology Holdings Inc,56202010,생명 공학 및 의학 연구
+BTTC,Black Titan Corp,55601010,투자 지주 회사
+TRIB,Trinity Biotech PLC ADR,56101020,"의료 장비, 물품 및 유통"
+NXL,Nexalin Technology Inc,56101010,첨단 의료 장비 및 기술
+HSCS,HeartSciences Inc,56101010,첨단 의료 장비 및 기술
+BTBD,Bt Brands Inc,53301020,레스토랑 및 바
+BNKK,Bonk Inc,54102020,식품 가공
+JCSE,JE Cleantech Holdings Ltd,52102010,산업용 기계 및 장비
+XBIO,Xenetic Biosciences Inc,56202010,생명 공학 및 의학 연구
+CHAI,Core AI Holdings Inc,57201020,소프트웨어
+NVNO,enVVeno Medical Corp,56202010,생명 공학 및 의학 연구
+AEHL,Antelope Enterprise Holdings Ltd,57201030,온라인 서비스
+BYAH,Park Ha Biological Technology Co Ltd,54201010,가정용 제품
+ARBB,ARB IOT Group Ltd,57201010,IT 서비스 및 컨설팅
+CNSP,CNS Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+AMIX,Autonomix Medical Inc,56101010,첨단 의료 장비 및 기술
+BTCT,BTC Digital Ltd,55601010,투자 지주 회사
+LIMN,Liminatus Pharma Inc,56202010,생명 공학 및 의학 연구
+POM,PomDoctor Ltd ADR,56201040,제약
+MSGY,Masonglory Ltd,52201020,건설 및 엔지니어링
+OLB,OLB Group Inc,57201030,온라인 서비스
+SDST,Stardust Power Inc,51201050,특수 채굴 및 금속
+AQB,AquaBounty Technologies Inc,54102010,어업 및 농업
+BMGL,Basel Medical Group Ltd,56102010,의료 시설 및 서비스
+GLXG,Galaxy Payroll Group Ltd,52203030,고용 서비스
+SURG,Surgepays Inc,57401010,통합 통신 서비스
+BOLT,Bolt Biotherapeutics  Inc.,56202010,생명 공학 및 의학 연구
+ADN,Advent Technologies Holdings Inc,50201010,재생 가능 에너지 장비 및 서비스
+RMCF,Rocky Mountain Chocolate Factory Inc (Delaware),54102020,식품 가공
+INBS,Intelligent Bio Solutions Inc,56202010,생명 공학 및 의학 연구
+HXHX,Haoxin Holdings Ltd,52405030,지상 화물 및 물류
+FBLG,Fibrobiologics Inc,56202010,생명 공학 및 의학 연구
+CDZIP,Cadiz Depositary Shares,59103010,수자원 유틸리티
+WLDS,Wearable Devices Ltd,57107010,통합 하드웨어 및 소프트웨어
+GDC,GD Culture Group Ltd,57201010,IT 서비스 및 컨설팅
+CCHH,CCH Holdings Ltd,53301020,레스토랑 및 바
+ERNA,Ernexa Therapeutics Inc,56202010,생명 공학 및 의학 연구
+VEEE,Twin Vee PowerCats Co (Nevada),53205020,오락용 제품
+POLA,Polar Power Inc,52102030,전기 부품 및 장비
+CYCU,Cycurion Inc,57201010,IT 서비스 및 컨설팅
+BON,Bon Natural Life Ltd,56201040,제약
+FRSX,Foresight Autonomous Holdings Ltd ADR,57201020,소프트웨어
+ALZN,Alzamend Neuro Inc,56202010,생명 공학 및 의학 연구
+SQFTP,Presidio Property Trus 9.375 Cumulative Redeemable Perpetual Cumulative,60102010,복합부동산 REITs
+SNES,Senestech Inc,51101020,농화학제
+AMST,Amesite Inc,57201020,소프트웨어
+ILAG,Intelligent Living Application Group Inc,52102010,산업용 기계 및 장비
+ACON,Aclarion Inc,56202010,생명 공학 및 의학 연구
+EHGO,Eshallgo Inc,52203060,비즈니스 지원 용품
+JZ,Jianzhi Education Technology Group Co Ltd ADR,57201010,IT 서비스 및 컨설팅
+FTRK,Fast Track Entertainment,53302010,광고 및 마케팅
+ACXP,Acurx Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+DPU,Top KingWin Ltd,52203070,전문 정보 서비스
+VEEA,Veea Inc,57201010,IT 서비스 및 컨설팅
+CVKD,Cadrenal Therapeutics Inc,56202010,생명 공학 및 의학 연구
+SNOA,Sonoma Pharmaceuticals Inc,56201040,제약
+DLXY,Delixy Holdings Ltd,50102030,"오일, 가스 정제 및 마케팅"
+AUUD,Auddia Inc,57201020,소프트웨어
+CURX,Curanex Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+WAFU,Wah Fu Education Group Ltd,57201010,IT 서비스 및 컨설팅
+XTLB,X T L Biopharmaceuticals Ltd ADR,56202010,생명 공학 및 의학 연구
+RIME,Algorhythm Holdings Inc,57201010,IT 서비스 및 컨설팅
+SPHL,Springview Holdings Ltd,53203010,주택 건설
+YDKG,Yueda Digital Holding,57301030,블록 체인 및 암호화폐
+XELB,Xcel Brands Inc,53302030,엔터테인먼트 제작
+BGMS,Bio Green Med Solution Inc,56202010,생명 공학 및 의학 연구
+GELS,Gelteq Ltd,56201040,제약
+KITT,Nauticus Robotics Inc,52102010,산업용 기계 및 장비
+NCNA,NuCana PLC ADR,56202010,생명 공학 및 의학 연구
+PAVS,Paranovus Entertainment Technology Ltd,57201020,소프트웨어
+ADXN,Addex Therapeutics Ltd ADR,56202010,생명 공학 및 의학 연구
+CYAB,Cyabra Inc,57201020,소프트웨어
+TGL,Treasure Global Inc,57201020,소프트웨어
+PMCB,PharmaCyte Biotech Inc,56202010,생명 공학 및 의학 연구
+ENSC,Ensysce Biosciences Inc,56202010,생명 공학 및 의학 연구
+PULM,Pulmatrix Inc,56202010,생명 공학 및 의학 연구
+ORKT,Orangekloud Technology Inc,57201020,소프트웨어
+KWM,K Wave Media Ltd,53302030,엔터테인먼트 제작
+KRKR,36Kr Holdings Inc ADR,57201030,온라인 서비스
+TANH,Tantech Holdings Ltd,54201020,개인 생활 필수 용품
+SNTG,Sentage Holdings Inc,55101030,소비자 대출
+ISPC,iSpecimen Inc,57201020,소프트웨어
+ENVB,Enveric Biosciences Inc,56202010,생명 공학 및 의학 연구
+BCAB,Bioatla Inc,56202010,생명 공학 및 의학 연구
+GOVX,GeoVax Labs Inc,56202010,생명 공학 및 의학 연구
+APVO,Aptevo Therapeutics Inc,56202010,생명 공학 및 의학 연구
+FAMI,Farmmi Inc,54102020,식품 가공
+ZYXI,Zynex Inc,56101010,첨단 의료 장비 및 기술
+CDIO,Cardio Diagnostics Holdings Inc,56202010,생명 공학 및 의학 연구
+CLGN,Collplant Biotechnologies Ltd,56202010,생명 공학 및 의학 연구
+RMSG,Real Messenger Corp,57201020,소프트웨어
+NWTG,Newton Golf Company Inc,53205020,오락용 제품
+SGLY,Singularity Future Technology Ltd,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+PARA,Banzai International Inc,57201010,IT 서비스 및 컨설팅
+CRE,Cre8 Enterprise Ltd,52203020,상업 인쇄 서비스
+CWD,CaliberCos Inc,55102020,투자 관리 및 펀드 운영
+AIDX,20/20 Biolabs Inc,56101010,첨단 의료 장비 및 기술
+LABT,Lakewood-Amedex Biotherapeutics Inc,56202010,생명 공학 및 의학 연구
+UONE,Urban One Inc Class A,53302020,방송
+BRTX,BioRestorative Therapies Inc,56202010,생명 공학 및 의학 연구
+INLF,INLIF Ltd,52102010,산업용 기계 및 장비
+XAIR,Beyond Air Inc,56101020,"의료 장비, 물품 및 유통"
+TWAV,TaoWeave Inc,57301030,블록 체인 및 암호화폐
+MLEC,Moolec Science SA,54102010,어업 및 농업
+HIHO,Highway Holdings Ltd,51201020,철 및 강철
+RENX,RenX Enterprises Corp,53203010,주택 건설
+FBGL,FBS Global Ltd,52201020,건설 및 엔지니어링
+CETX,Cemtrex Inc,52203040,경영 지원 서비스
+TRNR,Interactive Strength Inc,53301040,여가 및 오락시설
+SONM,DNA X Inc,57106020,전화 및 소형 장치
+CHNR,China Natural Resources Inc,59103010,수자원 유틸리티
+CTNT,Cheetah Net Supply Chain Service Inc,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+SLE,Super League Enterprise Inc,57201030,온라인 서비스
+ATER,Aterian Inc,53204030,"가전제품, 도구 및 가정 용품"
+ATXG,Addentax Group Corp,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+HCWB,HCW Biologics Inc,56202010,생명 공학 및 의학 연구
+INTJ,Intelligent Group Ltd,53302010,광고 및 마케팅
+NCRA,Nocera Inc,54102010,어업 및 농업
+AGRZ,Agroz Inc,52201020,건설 및 엔지니어링
+WOK,WORK Medical Technology Group Ltd,56101020,"의료 장비, 물품 및 유통"
+LCFY,Locafy Ltd,57201020,소프트웨어
+TCRT,Alaunos Therapeutics Inc,56202010,생명 공학 및 의학 연구
+CNET,ZW Data Action Technologies Inc,53302010,광고 및 마케팅
+BMRA,Biomerica Inc,56101020,"의료 장비, 물품 및 유통"
+CPOP,Pop Culture Group Co Ltd,53302010,광고 및 마케팅
+STFS,Star Fashion Culture Holdings Ltd,53302010,광고 및 마케팅
+INM,InMed Pharmaceuticals Inc,56202010,생명 공학 및 의학 연구
+EJH,E-Home Household Service Holdings Ltd,52203040,경영 지원 서비스
+GURE,Gulf Resources Inc,51101010,상품 화학
+LUCY,Innovative Eyewear Inc,56101020,"의료 장비, 물품 및 유통"
+DXST,Decent Holding Inc,52203010,환경 서비스 및 장비
+GLMD,Galmed Pharmaceuticals Ltd,56202010,생명 공학 및 의학 연구
+MBIO,Mustang Bio Inc,56202010,생명 공학 및 의학 연구
+FMFC,Kandal M Venture Ltd,53202010,직물 및 가죽제품
+WBUY,Webuy Global Ltd,57201030,온라인 서비스
+NUWE,Nuwellis Inc,56101010,첨단 의료 장비 및 기술
+VIVS,VivoSim Labs Inc,56202010,생명 공학 및 의학 연구
+REVB,Revelation Biosciences Inc,56202010,생명 공학 및 의학 연구
+OLOX,Olenox Industries Inc,53203010,주택 건설
+WETO,Wetour Robotics Ltd,52406020,지상 및 해상 여객 운송
+SXTC,China SXT Pharmaceuticals Inc,56201040,제약
+CSAI,Cloudastructure Inc,52203040,경영 지원 서비스
+ALP,Alpha Compute Corp,57201010,IT 서비스 및 컨설팅
+VVOS,Vivos Therapeutics Inc,56101020,"의료 장비, 물품 및 유통"
+SILO,Silo Pharma Inc,56202010,생명 공학 및 의학 연구
+IPDN,Professional Diversity Network Inc,52203030,고용 서비스
+GSUN,Golden Sun Technology Group Ltd,63101010,기타 교육 서비스 제공
+CRIS,Curis Inc,56202010,생명 공학 및 의학 연구
+DRMA,Dermata Therapeutics Inc,56202010,생명 공학 및 의학 연구
+IVDA,Iveda Solutions Inc,57102010,통신 및 네트워킹
+ABTS,Abits Group Inc,57201030,온라인 서비스
+EEIQ,EpicQuest Education Group International Ltd,63102010,"초, 중, 고등 교육기관"
+ELAB,PMGC Holdings Inc,51302010,용기(종이 제외) 및 포장재
+BKYI,BIO-Key International Inc,57104010,전자 장비 및 부품
+IBG,Innovation Beverage Group Ltd,54101020,증류주 및 포도주
+GCTK,GlucoTrack Inc,56202010,생명 공학 및 의학 연구
+XRTX,XORTX Therapeutics Inc,56202010,생명 공학 및 의학 연구
+HTCR,HeartCore Enterprises Inc,57201020,소프트웨어
+BIAF,bioAffinity Technologies Inc,56101020,"의료 장비, 물품 및 유통"
+FCUV,Focus Universal Inc,57201020,소프트웨어
+NXGL,Nexgel Inc,56201040,제약
+MEDS,DataMeds AI Inc,56101010,첨단 의료 장비 및 기술
+SPRC,Scisparc Ltd,56201040,제약
+MGN,Megan Holdings Ltd,54102010,어업 및 농업
+EZRA,Reliance Global Group Inc,55301010,복합보험 및 중개인
+BGLC,BioNexus Gene Lab Corp,56202010,생명 공학 및 의학 연구
+NTCL,NetClass Technology Inc,63101010,기타 교육 서비스 제공
+ICON,Icon Energy Corp,52405020,해양 화물 및 물류
+JAGX,Jaguar Health Inc,56201040,제약
+MBRX,Moleculin Biotech Inc,56202010,생명 공학 및 의학 연구
+AGMH,AGM Group Holdings Inc,57201020,소프트웨어
+TNON,Tenon Medical Inc,56101020,"의료 장비, 물품 및 유통"
+CDTG,CDT Environmental Technology Investment Holdings Ltd,59103010,수자원 유틸리티
+RDHL,Redhill Biopharma Ltd ADR,56201040,제약
+VSME,VS Media Holdings Ltd,53302010,광고 및 마케팅
+ELPW,eLong Power Holding Ltd,52102030,전기 부품 및 장비
+RNAZ,Transcode Therapeutics Inc,56202010,생명 공학 및 의학 연구
+RUBI,Rubico Inc,50103030,오일 및 가스 수송 서비스
+IZM,ICZOOM Group Inc,57104010,전자 장비 및 부품
+SSM,Sono Group NV,53101020,"자동차, 트럭 및 오토바이 부품"
+RDGT,Ridgetech Inc,53402010,백화점
+JUNS,Jupiter Neurosciences Inc,56202010,생명 공학 및 의학 연구
+FEED,ENvue Medical Inc,56101010,첨단 의료 장비 및 기술
+ONCO,Onconetix Inc,56201040,제약
+CNEY,CN Energy Group Inc,51101010,상품 화학
+BTOG,Bit Origin Ltd,54102010,어업 및 농업
+GWAV,Greenwave Technology Solutions Inc,52203010,환경 서비스 및 장비
+GRI,GRI Bio Inc,56202010,생명 공학 및 의학 연구
+STKH,Steakholder Foods Ltd ADR,54102010,어업 및 농업
+CHR,Cheer Holding Inc,53302010,광고 및 마케팅
+MKZR,Mackenzie Realty Capital Inc,60102020,상업용 REITs
+RBNE,Robin Energy Ltd,50103030,오일 및 가스 수송 서비스
+LXEH,Lixiang Education Holding Co Ltd ADR,63102010,"초, 중, 고등 교육기관"
+CIIT,Tianci International Inc,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+XPON,Expion360 Inc,52102030,전기 부품 및 장비
+SMTK,SmartKem Inc,57101010,반도체
+QH,Quhuo Ltd,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+EDBL,Edible Garden AG Inc,54102010,어업 및 농업
+DFSC,DEFSEC Technologies Inc,52101010,항공우주 및 방위
+SUGP,SU Group Holdings Ltd,52102010,산업용 기계 및 장비
+SXTP,60 Degrees Pharmaceuticals Inc,56201040,제약
+OCG,Oriental Culture Holding Ltd,53302010,광고 및 마케팅
+PASW,Ping An Biomedical Co Ltd,53202010,직물 및 가죽제품
+PRFX,PRF Technologies Ltd,56201040,제약
+MASK,3 E Network Technology Group Ltd,57201020,소프트웨어
+CAPS,Capstone Holding Corp,51202010,건설 자재
+QVCGA,QVC Group Inc Series A,53402010,백화점
+DHAI,DIH Holding US Inc,56101020,"의료 장비, 물품 및 유통"
+BOXL,Boxlight Corp,57104010,전자 장비 및 부품
+OFAL,OFA Group,52201020,건설 및 엔지니어링
+CHGA,Change Agents Corp,56101020,"의료 장비, 물품 및 유통"
+NIVF,NewGenIvf Group Ltd,56102010,의료 시설 및 서비스
+AKAN,Akanda Corp,56102010,의료 시설 및 서비스
+SBFM,Sunshine Biopharma Inc,56201040,제약
+PMAX,Powell Max Ltd,52203040,경영 지원 서비스
+EZGO,EZGO Technologies Ltd,53205020,오락용 제품
+FLYE,Fly-E Group Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+PPCB,Propanc Biopharma Inc,56202010,생명 공학 및 의학 연구
+TNMG,TNL Mediagene,53302010,광고 및 마케팅
+IPW,iPower Inc,57201030,온라인 서비스
+JEM,707 Cayman Holdings Ltd,53202020,의류 및 액세서리
+SHPH,Shuttle Pharmaceuticals Holdings Inc,56202010,생명 공학 및 의학 연구
+RAYA,Erayak Power Solution Group Inc,52102030,전기 부품 및 장비
+NXTS,Nexentis Technologies Inc,51101020,농화학제
+JTAI,Jet.AI Inc,57201020,소프트웨어
+VCIG,VCI Global Ltd,57201010,IT 서비스 및 컨설팅
+VIVK,Vivakor Inc,50103030,오일 및 가스 수송 서비스
+NCPL,Netcapital Inc,57301090,기타 핀테크 인프라
+ARTL,Artelo Biosciences Inc,56202010,생명 공학 및 의학 연구
+ATPC,Agape ATP Corp,56101020,"의료 장비, 물품 및 유통"
+ZNB,Zeta Network Group,51202010,건설 자재
+CMND,Clearmind Medicine Inc,56202010,생명 공학 및 의학 연구
+GVH,Globavend Holdings Ltd,52405010,"배달, 우편, 항공 화물 및 육상 물류"
+PPBT,Purple Biotech Ltd ADR,56202010,생명 공학 및 의학 연구
+GNPX,Genprex Inc,56202010,생명 공학 및 의학 연구
+RCON,Recon Technology Ltd,50103020,오일 관련 서비스 및 장비
+IVF,INVO Fertility Inc,56101020,"의료 장비, 물품 및 유통"
+CDT,CDT Equity Inc,56202010,생명 공학 및 의학 연구
+CHSN,Chanson International Holding,54102020,식품 가공
+PSNYW,Polestar Automotive Holding UK PLC ADR Class C,53101010,자동차 및 트럭 제조
+VRAX,Virax Biolabs Group Ltd,56202010,생명 공학 및 의학 연구
+SHFS,SHF Holdings Inc,55101010,은행
+DRCT,Direct Digital Holdings Inc,53302010,광고 및 마케팅
+DCOY,Decoy Therapeutics Inc,56202010,생명 공학 및 의학 연구
+YHC,LQR House Inc,53402010,백화점
+MNDR,Mobile-health Network Solutions,57201020,소프트웨어
+SQFT,Presidio Property Trust Inc,60102010,복합부동산 REITs
+ONFO,Onfolio Holdings Inc,52203040,경영 지원 서비스
+SNYR,Synergy CHC Corp,56201040,제약
+AEMD,Aethlon Medical Inc,56101010,첨단 의료 장비 및 기술
+LBGJ,Li Bang International Corporation Inc,52102010,산업용 기계 및 장비
+YMT,Yimutian Inc ADR,57201030,온라인 서비스
+LNKS,Linkers Industries Ltd,52102010,산업용 기계 및 장비
+RKDA,Arcadia Biosciences Inc,54102020,식품 가공
+IMTE,Integrated Media Technology Ltd,57104010,전자 장비 및 부품
+UK,Ucommune International Ltd,53302010,광고 및 마케팅
+NEXR,Nexera Technologies Ltd,53402010,백화점
+KAVL,Kaival Brands Innovations Group Inc,54301020,식품 소매 및 유통
+SOBR,Sobr Safe Inc,57201020,소프트웨어
+FCHL,Fitness Champs Holdings Ltd,63101010,기타 교육 서비스 제공
+BDRX,Biodexa Pharmaceuticals PLC ADR,56202010,생명 공학 및 의학 연구
+FRGT,Freight Technologies Inc,52405030,지상 화물 및 물류
+XXII,22nd Century Group Inc,54102030,담배
+VMAR,Vision Marine Technologies Inc,53205020,오락용 제품
+PWCM,PowerCompute Inc,57301030,블록 체인 및 암호화폐
+LRHC,La Rosa Holdings,60101020,부동산 서비스
+BBLG,Bone Biologics Corp,56202010,생명 공학 및 의학 연구
+DAIC,CID HoldCo Inc,57101010,반도체
+IPST,IP Strategy Holdings Inc,54101020,증류주 및 포도주
+SCNI,Scinai Immunotherapeutics Ltd ADR,56202010,생명 공학 및 의학 연구
+MSS,Maison Solutions Inc,54301020,식품 소매 및 유통
+GNLN,Greenlane Holdings Inc,54301020,식품 소매 및 유통
+PFSA,Profusa Inc,56101020,"의료 장비, 물품 및 유통"
+HAO,Haoxi Health Technology Ltd,53302010,광고 및 마케팅
+BJDX,Bluejay Diagnostics Inc,56202010,생명 공학 및 의학 연구
+GMEX,GMEX Robotics Corp,53403090,기타 전문 소매
+WHLR,Wheeler Real Estate Investment Trust Inc,60102020,상업용 REITs
+TRUG,Trugolf Holdings Inc,57107010,통합 하드웨어 및 소프트웨어
+CISS,C3is Inc,52405020,해양 화물 및 물류
+VBIO,Valion Bio Inc,56101010,첨단 의료 장비 및 기술
+FGL,Founder Group Ltd,59101010,전력 유틸리티
+GIPR,Generation Income Properties Inc,60102020,상업용 REITs
+AIXI,Xiao-I Corp ADR,57201020,소프트웨어
+IMCC,IM Cannabis Corp,54301010,의약품 소매
+JZXN,Jiuzi Holdings Inc,53101020,"자동차, 트럭 및 오토바이 부품"
+LGHL,Lion Group Holding Ltd ADR,55101030,소비자 대출
+KUST,Kustom Entertainment Inc,52203040,경영 지원 서비스
+SLXN,Silexion Therapeutics Corp,56202010,생명 공학 및 의학 연구
+FRMEP,First Merchants Depository Shares Reprs 1 100Th 7 50 Non Cum Perp Prf Shs A,55101010,은행
+BUSEP,First Busey Corp Dep Shs Repstg 1 40Th Int Non Cum Perp Pfd Depositary Shares,55101010,은행
+YYAI,AiRWA Inc,57201020,소프트웨어
+FSHPR,Flag Ship Acquisition Rights,55601010,투자 지주 회사
+RFAIR,RF Acquisition II Right 01st May 2026,55601010,투자 지주 회사
+TAVIR,Tavia Acquisition Rights,55601010,투자 지주 회사
+BEAGR,Bold Eagle Acquisition Rights,55601010,투자 지주 회사
+EURKR,Eureka Acquisition Right Exp 3rd Jul 2027,55601010,투자 지주 회사
+RDACR,Rising Dragon Acquisition Rights,55601010,투자 지주 회사
+ASPCR,A Spac III Acquisition Rights Exp 05th Nov 2029,55601010,투자 지주 회사
+METCZ,Ramaco Resources 8 375 Senior Notes due 2029,51201020,철 및 강철
+DTSQR,DT Cloud Star Acquisition Rights,55601010,투자 지주 회사
+RANGR,Range Capital Acquisition Rights Exp 23rd Jun 2026,55601010,투자 지주 회사
+NOEMR,CO2 Energy Transition Rights,55601010,투자 지주 회사
+CHARR,Charlton Aria Acquisition Rights,55601010,투자 지주 회사
+HVIIR,Hennessy Capital Investment VII Rights,55601010,투자 지주 회사
+YHNAR,YHN Acquisition I Rights,55601010,투자 지주 회사
+FVNNR,Future Vision II Acquisition Rights Expiry 20th June 2029,55601010,투자 지주 회사
+BHFAL,Brighthouse Financial Junior Subordinated Debentures Exp 2058,55301030,생명 및 건강 보험
+JSM,Navient 6 Prcnt Senior Notes Exp 15 Dec 2043,55101030,소비자 대출
+RILYN,BRC Group Holdings 6 50 Senior Notes Due 2026,55102010,투자 은행 및 중개 서비스
+RILYT,BRC Group Holdings 6 00 Senior Notes Due 2028,55102010,투자 은행 및 중개 서비스
+RILYZ,BRC Group Holdings 5 25 Senior Notes due 2028,55102010,투자 은행 및 중개 서비스
+WHLRL,Wheeler Real Estate Investment Trust 7 00 Senior Conv Notes Due 2031,60102020,상업용 REITs
+GREEL,Vulcan Infrastructure and Power 8 50 Senior Notes due 2026,57201010,IT 서비스 및 컨설팅
+ATLCL,Atlanticus Holdings 6 125 Senior Notes due 2026,55101030,소비자 대출
+RILYG,BRC Group Holdings 5 00 Senior Notes due 2026,55102010,투자 은행 및 중개 서비스
+NEWTH,NewtekOne 8 625 Fixed Rate Senior Notes due 2029,55101050,기업 금융 서비스
+KFIIR,K and F Growth Acquisition II Rights,55601010,투자 지주 회사
+RIBBR,Ribbon Acquisition Rights,55601010,투자 지주 회사
+DMAAR,Drugs Made In America Acquisition Rights Exp 09th Dec 2029,55601010,투자 지주 회사
+CAPNR,Cayson Acquisition Rights,55601010,투자 지주 회사
+NEWTG,NewtekOne 8 50 Fixed Rate Senior Notes due 2029,55101050,기업 금융 서비스
+BKHAR,Black Hawk Acquisition Rights,55601010,투자 지주 회사
+IBACR,IB Acquisition Rights Exp 28th Sep 2026,55601010,투자 지주 회사
+ATLCZ,Atlanticus Holding 9 25 Senior Notes due 2029,55101030,소비자 대출
+AFJKR,Aimei Health Technology Rights Exp 17 November 2028,55601010,투자 지주 회사
+QETAR,Quetta Acquisition Rights,55601010,투자 지주 회사
+SWKHL,SWK Holdings 9 00 Senior Notes due 2027,55101050,기업 금융 서비스
+ESHAR,ESH Acquisition Rights Exp 13 June 2028,55601010,투자 지주 회사
+BKHAR,Black Hawk Acquisition Rights,55601010,투자 지주 회사
+NEWTG,NewtekOne 8 50 Fixed Rate Senior Notes due 2029,55101050,기업 금융 서비스
+RFAIR,RF Acquisition II Right 01st May 2026,55601010,투자 지주 회사
+FSHPR,Flag Ship Acquisition Rights,55601010,투자 지주 회사
+EURKR,Eureka Acquisition Right Exp 3rd Jul 2027,55601010,투자 지주 회사
+DTSQR,DT Cloud Star Acquisition Rights,55601010,투자 지주 회사
+NEWTH,NewtekOne 8 625 Fixed Rate Senior Notes due 2029,55101050,기업 금융 서비스
+CAPNR,Cayson Acquisition Rights,55601010,투자 지주 회사
+FVNNR,Future Vision II Acquisition Rights Expiry 20th June 2029,55601010,투자 지주 회사
+YHNAR,YHN Acquisition I Rights,55601010,투자 지주 회사
+CHARR,Charlton Aria Acquisition Rights,55601010,투자 지주 회사
+RDACR,Rising Dragon Acquisition Rights,55601010,투자 지주 회사
+METCZ,Ramaco Resources 8 375 Senior Notes due 2029,51201020,철 및 강철
+BEAGR,Bold Eagle Acquisition Rights,55601010,투자 지주 회사
+TAVIR,Tavia Acquisition Rights,55601010,투자 지주 회사
+ASPCR,A Spac III Acquisition Rights Exp 05th Nov 2029,55601010,투자 지주 회사
+RANGR,Range Capital Acquisition Rights Exp 23rd Jun 2026,55601010,투자 지주 회사
+NOEMR,CO2 Energy Transition Rights,55601010,투자 지주 회사
+HVIIR,Hennessy Capital Investment VII Rights,55601010,투자 지주 회사
+DMAAR,Drugs Made In America Acquisition Rights Exp 09th Dec 2029,55601010,투자 지주 회사
+RIBBR,Ribbon Acquisition Rights,55601010,투자 지주 회사
+KFIIR,K and F Growth Acquisition II Rights,55601010,투자 지주 회사
+COLAR,Columbus Acquisition Rights,55601010,투자 지주 회사
+AACBR,Artius II Acquisition Rights,55601010,투자 지주 회사
+GENVR,Gen Digital Contingent Value Rights,57201020,소프트웨어
+FERAR,Fifth Era Acquisition I Rights,55601010,투자 지주 회사
+QSEAR,Quartzsea Acquisition Rights,55601010,투자 지주 회사
+SZZLR,Sizzle Acquisition II Rights Exp 02nd April 2030,55601010,투자 지주 회사
+UYSCR,UY Scuti Acquisition Rights Exp 03rd March 2030,55601010,투자 지주 회사
+SDHIR,Siddhi Acquisition Rights,55601010,투자 지주 회사
+IPCXR,Inflection Point Acquisition III Rights Exp 25th April 2030,55601010,투자 지주 회사
+CHPGR,ChampionsGate Acquisition Rights Exp 14th May 2030,55601010,투자 지주 회사
+CRAQR,Cal Redwood Acquisition Right Exp 15th May 2030,55601010,투자 지주 회사
+LCCCR,Lakeshore Acquisition III Rights,55601010,투자 지주 회사
+EGHAR,EGH Acquisition Rights Exp 08th May 2025,55601010,투자 지주 회사
+TVAIR,Thayer Ventures Acquisition II Rights Exp 15th May 2030,55601010,투자 지주 회사
+OYSER,Oyster Enterprises II Acquisition Rights Exp 22nd May 2030,55601010,투자 지주 회사
+KCHVR,Kochav Defense Acquisition Rights Expiry 21st May 2030,55601010,투자 지주 회사
+WTGUR,Wintergreen Acquisition Rights,55601010,투자 지주 회사
+GTERR,Globa Terra Acquisition Rights Exp 17 June 2030,55601010,투자 지주 회사
+INACR,Indigo Acquisition Rights Exp 04 Feb 2027,55601010,투자 지주 회사
+METCI,Ramaco Resources 8 250 Senior Notes due 2030,51201020,철 및 강철
+AXINR,Axiom Intelligence Acquisition 1 Rights Exp 10 June 2030,55601010,투자 지주 회사
+BACCR,Blue Acquisition Rights Exp 11 June 2030,55601010,투자 지주 회사
+TMUSI,T Mobile US 5 500 Senior Notes due June 2070,57401020,무선 통신 서비스
+TMUSZ,T Mobile US 5 500 Senior Notes due March 2070,57401020,무선 통신 서비스
+TMUSL,T Mobile US 6 250 Senior Notes due 2069,57401020,무선 통신 서비스
+BSAAR,BEST SPAC I Acquisition Rights Exp 27 May 2030,55601010,투자 지주 회사
+IRHOR,Iron Horse Acquisitions II Rights Exp 11th July 2030,55601010,투자 지주 회사
+VSECU,Vse Corporation Tangible Equity Units,52101010,항공우주 및 방위
+AMPGZ,Amplitech Group Rights Series B,57102010,통신 및 네트워킹
+TDWDR,Tailwind 2.0 Acquisition Rights Exp 07 Nov 2030,55601010,투자 지주 회사
+PRHIZ,Conifer Holdings 9 75 Senior Unsecured Notes 2028,55301020,손해보험
+QUMSR,Quantumsphere Acquisition Rights,55601010,투자 지주 회사
+SPEGR,Silver Pegasus Acquisition Rights Exp 26 Jun 2030,55601010,투자 지주 회사
+PGACR,Pantages Capital Acquisition Rights,55601010,투자 지주 회사
+ADAMH,Adamas 9 875 Senior Notes Due 2030,60102040,특수 REITs
+NMPAR,NMP Acquisition Rights Expiry 27th June 2030,55601010,투자 지주 회사
+ADAMI,Adamas 9 125 Senior Notes Due 2029,60102040,특수 REITs
+ADAMG,Adamas 9 125 Senior Notes Due 2030,60102040,특수 REITs
+QMMM,QMMM Holdings Ltd,53302010,광고 및 마케팅
+ACLX,Arcellx Inc,56202010,생명 공학 및 의학 연구
+DAWN,Day One Biopharmaceuticals Inc,56201040,제약
+IAS,Integral Ad Science Holding Corp,53302010,광고 및 마케팅
+CTLP,Cantaloupe Inc,57301010,핀테크
+GDEN,Golden Entertainment Inc,53301030,카지노 및 도박
+OPT,Opthea Ltd ADR,56202010,생명 공학 및 의학 연구
+SVA,Sinovac Biotech Ltd,56201040,제약
+MCTA,Charming Medical Ltd,56102010,의료 시설 및 서비스
+EWCZ,European Wax Center Inc,54201030,개인 서비스
+PLTS,Platinum Analytics Cayman Ltd,57301010,핀테크
+EM,Smart Share Global Ltd ADR,57106020,전화 및 소형 장치
+EFTY,Etoiles Capital Group Co Ltd,53302010,광고 및 마케팅
+UCFI,CN Healthy Food Tech Group Corp,54102020,식품 가공
+MAGH,Magnitude International Ltd,52201020,건설 및 엔지니어링
+MAMK,MaxsMaking Inc,53202010,직물 및 가죽제품
+NUTR,NusaTrip Inc,53301040,여가 및 오락시설
+LAWR,Robot Consulting Co Ltd ADR,57201020,소프트웨어
+EMPG,Empro Group Inc,53403090,기타 전문 소매
+HCHL,Happy City Holdings Ltd,53301020,레스토랑 및 바
+PC,Premium Catering Holdings Ltd,53301020,레스토랑 및 바
+SMXT,SolarMax Technology Inc,59101010,전력 유틸리티
+MBAI,Check Cap Ltd,56202010,생명 공학 및 의학 연구
+OST,Ostin Technology Group Co.  Ltd,57104010,전자 장비 및 부품
+BNRG,Brenmiller Energy Ltd,50201010,재생 가능 에너지 장비 및 서비스
+IPEXR,Inflection Point Acquisition V Rights,55601010,투자 지주 회사
+IRHOR,Iron Horse Acquisitions II Rights Exp 11th July 2030,55601010,투자 지주 회사
+KTWOR,K2 Capital Acquisition Rights,55601010,투자 지주 회사
+RFAMR,RF Acquisition III Rights,55601010,투자 지주 회사
+SSACR,SPACSphere Acquisition Rights,55601010,투자 지주 회사
+IEAGR,Infinite Eagle Acquisition Rights,55601010,투자 지주 회사
+GIXXR,GigCapital9 Rights,55601010,투자 지주 회사
+HCICR,Hennessy Capital Investment VIII Share Rights Exp 2nd Feb 2031,55601010,투자 지주 회사
+BPACR,Blueport Acquisition Rights Exp 13 Feb 2027,55601010,투자 지주 회사
+ANABV,AnaptysBio Inc,56202010,생명 공학 및 의학 연구
+BHAVR,BHAV Acquisition Rights,55601010,투자 지주 회사
+SUMAR,SUMA Acquisition Rights Exp 05th Mar 2031,55601010,투자 지주 회사
+TRGSR,TRG Latin America Acquisitions Rights Exp 20th Feb 2031,55601010,투자 지주 회사
+PONOR,Pono Capital Four Rights,55601010,투자 지주 회사
+SCIIR,SC II Acquisition Rights Exp 26 Nov 2030,55601010,투자 지주 회사
+FMACR,Future Money Acquisition Rights,55601010,투자 지주 회사
+VSECU,Vse Corporation Tangible Equity Units,52101010,항공우주 및 방위
+FBYDP,Falcon's Beyond Global 11 Cumulative Convertible Pref Shs Series B,53302030,엔터테인먼트 제작
+AACPR,Apogee Acquisition Rights,55601010,투자 지주 회사
+ARCLR,ARC Group Acquisition I Rights,55101050,기업 금융 서비스
+PECER,Peace Acquisition Rights Exp 19th May 2031,55601010,투자 지주 회사
+OHACR,Oceanhawk Acquisition Rights Exp 19th May 2031,55601010,투자 지주 회사
+APURR,Aperture AC Rights Exp 6th May 2031,55601010,투자 지주 회사
+BREZR,Breeze Acquisition II Rights,55601010,투자 지주 회사
+MCAHR,Mountain Crest Acquisition 6 Rights Exp 29th April 2027,55601010,투자 지주 회사
+APMCR,AmperCap Acquisition Rights,55601010,투자 지주 회사
+NBRGR,Newbridge Acquisition Rights,55601010,투자 지주 회사
+JABRR,JAB Acquisition I Rights Exp 5th June 2031,55601010,투자 지주 회사
+NCOOR,Southern Cross Acquisition I Rights Exp 12th June 2031,55601010,투자 지주 회사
+FWACR,Futurewave Acquisition Rights,55601010,투자 지주 회사
+AESPR,Aeon Acquisition I Rights Exp 30th Jan 2031,55601010,투자 지주 회사
+GSRVR,GSR V Acquisition Rights Exp 12th May 2031,55601010,투자 지주 회사
+ALPXR,Alpex Acquisition Rights,55601010,투자 지주 회사
+SHOTR,RMG ML Sports Holdings Rights,55601010,투자 지주 회사
+BIDWR,Tribeca Strategic Acquisition Rights,55601010,투자 지주 회사
+MYSZ,My Size Inc,57201020,소프트웨어
+KIDZ,KIDZ AI Inc,57201020,소프트웨어
+RNBW,Rainbow Capital Holdings Ltd,,
+FGXCU,FG Merger III Units,55601010,투자 지주 회사
+CLRS,Clear Street Group Inc,,
+HONIV,Honeywell International Inc,54401010,소비재 대기업
+LEDRU,Leader's Advantage Acquisition Units,55601010,투자 지주 회사
+SCATU,Southern Cross Acquisition II Units,55601010,투자 지주 회사

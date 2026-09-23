@@ -1,0 +1,4 @@
+pandas>=2.2,<3
+yfinance>=0.2.65,<1
+finance-datareader>=0.9.100,<1
+

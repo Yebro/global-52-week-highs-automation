@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+*.tar.gz
+dashboard.html
+publish/
+data/universe.csv
+data/screened.csv
+
