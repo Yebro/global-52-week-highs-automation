@@ -51,6 +51,7 @@ jobs:
       - name: Assemble both dashboards
         if: steps.prepare.outputs.publish == 'true'
         run: |
+          python build_dashboard.py
           mkdir -p public/leaders
           cp dashboard.html public/index.html
           cp data/latest.json public/latest.json
