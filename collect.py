@@ -104,6 +104,7 @@ class PriceRecord:
     yahoo_symbol: str
     as_of: str
     close: float
+    day_return_pct: float
     prior_high: float
     breakout_date: str
     breakout_close: float
@@ -457,6 +458,8 @@ def parse_price_result(result: dict, market: str, now_utc: datetime) -> PriceRec
     if len(values) < 20:
         return None
     current_date, current_close = values[-1]
+    previous_close = values[-2][1]
+    day_return_pct = (current_close / previous_close - 1) * 100
     prior_values = [value for _, value in values[max(0, len(values) - 252):-1]]
     if not prior_values:
         return None
@@ -469,6 +472,7 @@ def parse_price_result(result: dict, market: str, now_utc: datetime) -> PriceRec
         yahoo_symbol=symbol,
         as_of=current_date,
         close=current_close,
+        day_return_pct=day_return_pct,
         prior_high=prior_high,
         breakout_date=breakout_date,
         breakout_close=breakout_close,
@@ -724,6 +728,7 @@ def build_payload(universe: pd.DataFrame, prices: dict[str, PriceRecord], fx_rat
                 "industry": row.industry,
                 "as_of": record.as_of,
                 "close": rounded(record.close),
+                "day_return_pct": rounded(record.day_return_pct, 3),
                 "prior_high": rounded(record.prior_high),
                 "breakout_date": record.breakout_date,
                 "breakout_close": rounded(record.breakout_close),
