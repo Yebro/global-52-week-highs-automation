@@ -1,16 +1,17 @@
 """Full-universe daily snapshots. No backfilled market caps or fabricated changes."""
 from pathlib import Path
 import argparse,concurrent.futures,datetime,hashlib,json,math,re,sqlite3,sys,urllib.request
-ROOT=Path(__file__).resolve().parents[1];DB=ROOT.parent/'leader-case-db';BASE=DB/'monitoring';TZ=datetime.timezone(datetime.timedelta(hours=9))
+ROOT=Path(__file__).resolve().parents[1];DB=ROOT.parent/'leader-case-db';BASE=DB/'monitoring-entry-v2';TZ=datetime.timezone(datetime.timedelta(hours=9))
 sys.path.insert(0,str(DB/'tools'))
 import screen_market as sm
 import screen_flows as sf
-VERSION='rs-price-v1'
+import entry_score
+VERSION=entry_score.VERSION
 
 def request(url):
  return urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'}),timeout=35).read()
 
-def score_rows(rows):
+def legacy_score_rows(rows):
  reference=[r for r in rows if r['cap']>=5e11 and r['median_value20_proxy']>=5e9]
  for market in ['KOSPI','KOSDAQ']:
   group=[r for r in reference if r['market']==market]
@@ -26,8 +27,11 @@ def score_rows(rows):
    r['pool']='candidate' if r['cap']>=5e11 and r['qualified'] else 'watch' if 4e11<=r['cap']<5e11 and r['qualified'] else 'outside'
  return rows
 
+def score_rows(rows):return entry_score.apply(rows)
+
 def compare(current,previous):
  result={k:[] for k in ['new','rising','exits','unknown','cap_crossings','new_watch']}
+ if previous and previous.get('score_version')!=current.get('score_version'):previous=None
  now={r['code']:r for r in current['metrics']};old={r['code']:r for r in previous['metrics']} if previous else {}
  old_listing={r['itemCode']:r for r in previous['listing']} if previous else {}
  for r in current['metrics']:
@@ -40,7 +44,7 @@ def compare(current,previous):
   if p and previous['score_version']==current['score_version']:
    r['previous_score']=p['priority_score'];r['score_delta']=round(r['priority_score']-p['priority_score'],2)
   if r['pool']=='candidate' and (not p or p['pool']!='candidate'):
-   uncertain=not p and r['code'] in old_listing and prior_cap is not None and prior_cap>=4e11
+   uncertain=not p and r['code'] in old_listing and prior_cap is not None and prior_cap>=entry_score.MIN_CAP
    r['change']='new_unverified' if uncertain else 'new'
    result['unknown' if uncertain else 'new'].append({'code':r['code'],'name':r['name'],'reason':'이전 관측 결측 · 신규 판정 보류' if uncertain else '직전 기록 대비 조건 충족'})
   elif r['pool']=='candidate' and p and p['pool']=='candidate' and r['score_delta'] is not None and r['score_delta']>0:
@@ -62,9 +66,7 @@ def compare(current,previous):
     result['unknown'].append({'code':code,'name':p['name'],'reason':'당일 가격·거래상태 확인 필요'});continue
    if r['pool']!='candidate':
     reasons=[]
-    if r['cap']<5e11:reasons.append('시총 5,000억원 미만')
-    if r['median_value20_proxy']<5e9:reasons.append('유동성 기준 미달')
-    if not r['passes_rs']:reasons.append('상대강도 기준 미달')
+    reasons.extend(r.get('entry',{}).get('blockers',[]))
     result['exits'].append({'code':code,'name':p['name'],'reason':' · '.join(reasons),'score':r['priority_score']})
  result['rising'].sort(key=lambda r:-r['delta'])
  return result
@@ -107,29 +109,34 @@ def run(bootstrap=None):
  previous_codes={r['code'] for r in previous['metrics'] if r['pool'] in ['candidate','watch']} if previous else set()
  common=[s for s in universe if sm.is_common(s)]
  def cap(s):return sm.numeric(s.get('marketValueRaw')) or (sm.numeric(s.get('marketValue')) or 0)*1e8
- eligible=[s for s in common if cap(s)>=4e11 or s['itemCode'] in previous_codes]
+ eligible=[s for s in common if cap(s)>=entry_score.MIN_CAP or s['itemCode'] in previous_codes]
  tradable=[s for s in eligible if s.get('tradeStopType',{}).get('name')=='TRADING' and s['localTradedAt'][:10]==asof]
  benchmark=seed['benchmark'] if seed else {m:{r['date']:r['close'] for r in sm.prices(m)} for m in first}
  seeded={r['code']:r for r in seed['all_metrics']} if seed else {}
- def measure(s):return seeded[s['itemCode']] if s['itemCode'] in seeded else sm.one(s,benchmark)
+ def measure(s):return seeded[s['itemCode']] if s['itemCode'] in seeded and 'error' not in seeded[s['itemCode']] else sm.one(s,benchmark,allow_halted_history=True)
  with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(measure,tradable))
  valid=[r for r in results if 'error' not in r and r.get('price_quote_match')]
  # An incomplete fetch must not turn missing stocks into false exits or move every percentile.
- unexpected=[r for r in results if 'error' in r and r['error'] not in ['81개 거래일 이력 부족','최근 20일 무거래 관측']]
+ unexpected=[r for r in results if 'error' in r and r['error'] not in ['81개 거래일 이력 부족','최근 20일 무거래 관측','당일 무거래 관측']]
  if unexpected:raise ValueError('Incomplete price collection; no snapshot saved: '+json.dumps(unexpected,ensure_ascii=False))
  if any(not r.get('price_quote_match',True) for r in results):raise ValueError('Price/quote mismatch; no snapshot saved')
  scored=score_rows(valid)
  selected=sorted([r for r in scored if r['pool']!='outside'],key=lambda r:-r['priority_score'])
- with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:flow=dict(pool.map(sf.fetch,selected))
+ # Flows are supporting evidence, not an entry gate. Limit expensive supplementary fetches.
+ flow_selected=[r for r in selected if r['pool']=='candidate'][:60]+[r for r in selected if r['pool']=='watch'][:40]
+ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:flow=dict(pool.map(sf.fetch,flow_selected))
  data=dict(schema_version=1,score_version=VERSION,asof=asof,previous_asof=previous['asof'] if previous else None,collected_at=datetime.datetime.now(TZ).isoformat(),listing=universe,metrics=scored,flows=flow,errors=[r for r in results if 'error' in r],counts=dict(listed=len(universe),common=len(common),cap4000=sum(cap(s)>=4e11 for s in common),cap5000=sum(cap(s)>=5e11 for s in common),valid=len(valid),candidate=sum(r['pool']=='candidate' for r in scored),watch=sum(r['pool']=='watch' for r in scored)),method=dict(cap_min=5e11,prewatch_min=4e11,liquidity_proxy_min=5e9,rs_percentile=.8,ranking_reference='same market, cap >= 500bn KRW and liquid; watch stocks evaluated against this reference without changing it',score_version=VERSION,score_alert_threshold=5,prior_comparison='previous successful dated snapshot, not necessarily previous trading day'))
  data['changes']=compare(data,previous)
+ data['counts']['cap1000']=sum(cap(s)>=entry_score.MIN_CAP for s in common)
+ data['schema_version']=2
+ data['method']=dict(score_version=VERSION,cap_min=entry_score.MIN_CAP,configuration=entry_score.CONFIG,reference_cap_min=5e11,reference_liquidity_min=5e9,components={'setup':35,'trend':20,'liquidity':15,'failure_distance':20,'entry_position':10},signal_max_age=2,blocked_score_ceiling=59,validation='Calibrated to historical entry labels; not an out-of-sample profit test; no live order execution',flow_coverage='Top 60 entry-review and top 40 watch rows; missing flow is not zero',prior_comparison='previous successful same-version snapshot')
  # Only metrics are needed in the daily DB; raw prices remain in hashed source snapshots.
  for r in data['metrics']:r.pop('bars',None)
  body=json.dumps(data,ensure_ascii=False,sort_keys=True);sha=hashlib.sha256(body.encode()).hexdigest()
- con=sqlite3.connect(DB/'leader_cases.sqlite3');con.execute('CREATE TABLE IF NOT EXISTS monitor_snapshots(asof TEXT PRIMARY KEY,score_version TEXT,sha256 TEXT,payload_json TEXT)')
- old=con.execute('SELECT sha256 FROM monitor_snapshots WHERE asof=?',(asof,)).fetchone()
+ con=sqlite3.connect(DB/'leader_cases.sqlite3');con.execute('CREATE TABLE IF NOT EXISTS entry_monitor_snapshots(asof TEXT PRIMARY KEY,score_version TEXT,sha256 TEXT,payload_json TEXT)')
+ old=con.execute('SELECT sha256 FROM entry_monitor_snapshots WHERE asof=?',(asof,)).fetchone()
  if old:assert old[0]==sha,'Snapshot is immutable'
- else:con.execute('INSERT INTO monitor_snapshots VALUES (?,?,?,?)',(asof,VERSION,sha,body))
+ else:con.execute('INSERT INTO entry_monitor_snapshots VALUES (?,?,?,?)',(asof,VERSION,sha,body))
  con.commit();con.close();temp=target.with_suffix('.tmp');temp.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8');temp.replace(target)
  (folder/'raw-manifest.json').write_text(json.dumps([{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(rawdir.iterdir())],indent=2),encoding='utf-8')
  print(json.dumps({'status':'saved','asof':asof,'counts':data['counts'],'changes':{k:len(v) for k,v in data['changes'].items()}},ensure_ascii=False))

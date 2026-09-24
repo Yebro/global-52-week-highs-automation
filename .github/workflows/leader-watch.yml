@@ -9,7 +9,7 @@ on:
       mode:
         description: 'daily: current open day / setup-test: labelled saved-data test'
         type: choice
-        options: [daily, setup-test]
+        options: [daily, setup-test, publish-only]
         default: daily
 
 permissions:
@@ -66,7 +66,7 @@ jobs:
         id: deployment
         if: steps.prepare.outputs.publish == 'true'
       - name: Send top three score rises to existing Telegram bot
-        if: steps.prepare.outputs.publish == 'true' && steps.deployment.outcome == 'success'
+        if: steps.prepare.outputs.publish == 'true' && steps.deployment.outcome == 'success' && inputs.mode != 'publish-only'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}

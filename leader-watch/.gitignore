@@ -1,7 +1,9 @@
 __pycache__/
 *.pyc
 leader-case-db/monitoring/
+leader-case-db/monitoring-entry-v2/
 leader-case-db/*.sqlite3
 leader-radar/dist/index.html
 leader-radar/dist/monitor-latest.json
 run-plan.json
+!state/raw-entry-v2/*.tar.gz

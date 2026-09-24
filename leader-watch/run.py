@@ -42,12 +42,12 @@ def persist():
 
 
 def restore():
-    files = sorted((STATE / 'snapshots').glob('*.json.gz'))
+    files = sorted((STATE / 'snapshots-entry-v2').glob('*.json.gz'))
     if not files:
         raise RuntimeError('Previous snapshots missing; refuse to silently reset baseline')
     for file in files:
         day = file.name.removesuffix('.json.gz')
-        dest = DB / 'monitoring' / day / 'snapshot.json'
+        dest = DB / 'monitoring-entry-v2' / day / 'snapshot.json'
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(gzip.decompress(file.read_bytes()))
 
@@ -67,7 +67,7 @@ def session_status(now):
 def prepare(mode):
     now = dt.datetime.now(TZ)
     today = now.date().isoformat()
-    if mode != 'setup-test':
+    if mode == 'daily':
         status = session_status(now)
         if status != 'open_day':
             output('publish', 'false')
@@ -79,23 +79,23 @@ def prepare(mode):
             output('status', 'already_sent')
             return
     restore()
-    if mode != 'setup-test':
+    if mode == 'daily':
         subprocess.run([sys.executable, str(ROOT / 'leader-radar/tools/monitor_market.py')], check=True)
-        target = DB / 'monitoring' / today / 'snapshot.json'
+        target = DB / 'monitoring-entry-v2' / today / 'snapshot.json'
         if not target.exists():
             raise RuntimeError('Open-day closing data unavailable; do not publish old quotes')
     else:
         # Probe the live source from the cloud too; do not relabel old data as today.
-        subprocess.run([sys.executable, str(ROOT / 'leader-radar/tools/monitor_market.py')], check=True)
-        target = sorted((DB / 'monitoring').glob('*/snapshot.json'))[-1]
+        if mode=='setup-test':subprocess.run([sys.executable, str(ROOT / 'leader-radar/tools/monitor_market.py')], check=True)
+        target = sorted((DB / 'monitoring-entry-v2').glob('*/snapshot.json'))[-1]
     current = json.loads(target.read_text(encoding='utf-8'))
     before = current.get('previous_asof')
-    previous = json.loads((DB / 'monitoring' / before / 'snapshot.json').read_text(encoding='utf-8')) if before else None
+    previous = json.loads((DB / 'monitoring-entry-v2' / before / 'snapshot.json').read_text(encoding='utf-8')) if before else None
     message, top = make_brief(current, previous)
     if mode == 'setup-test':
         message = '클라우드 연결 테스트 · 과거 기준 자료, 오늘 시세 아님\n\n' + message
     message += '\n\n전체 후보: ' + SITE
-    subprocess.run([sys.executable, str(ROOT / 'leader-radar/tools/build_monitor_page.py')], check=True)
+    subprocess.run([sys.executable, str(ROOT / 'leader-radar/tools/build_entry_page.py')], check=True)
     public = ROOT / 'public'
     public.mkdir(exist_ok=True)
     dashboard = (ROOT / 'leader-radar/dist/index.html').read_text(encoding='utf-8')
@@ -104,12 +104,12 @@ def prepare(mode):
     fragment = fragment.replace('실제 점검에는 연결된 작업 환경과 데이터 접근이 필요합니다.', '코덱스와 PC가 꺼져 있어도 클라우드에서 실행합니다. 예약 실행과 데이터 반영은 지연될 수 있습니다.')
     fragment = fragment.replace('모든 상승을 표에 표시하고 +5점 이상은 주요 변화로 알립니다.', '모든 상승을 표에 표시하고, 기존 후보의 점수 상승폭 상위 3개를 개장일마다 텔레그램으로 요약합니다.')
     fragment = fragment.replace('href="monitor-latest.json"', f'href="{FEED}monitor-latest.json"')
-    (public / 'monitor-fragment.json').write_text(json.dumps({'asof': current['asof'], 'html': fragment}, ensure_ascii=False), encoding='utf-8')
+    (public / 'monitor-fragment.json').write_text(json.dumps({'asof': current['asof'], 'score_version':current['score_version'], 'html': fragment}, ensure_ascii=False), encoding='utf-8')
     (public / 'monitor-latest.json').write_bytes((ROOT / 'leader-radar/dist/monitor-latest.json').read_bytes())
-    (STATE / 'snapshots' / f"{current['asof']}.json.gz").write_bytes(gzip.compress(target.read_bytes(), mtime=0))
+    (STATE / 'snapshots-entry-v2' / f"{current['asof']}.json.gz").write_bytes(gzip.compress(target.read_bytes(), mtime=0))
     raw = target.parent / 'raw'
     if raw.exists() and any(raw.iterdir()):
-        archives = STATE / 'raw'
+        archives = STATE / 'raw-entry-v2'
         archives.mkdir(exist_ok=True)
         with tarfile.open(archives / f"{current['asof']}.tar.gz", 'w:gz') as archive:
             archive.add(raw, arcname='raw')
@@ -139,7 +139,7 @@ def failure():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('action', choices=['prepare', 'persist', 'notify', 'failure'])
-    parser.add_argument('--mode', choices=['daily', 'setup-test'], default='daily')
+    parser.add_argument('--mode', choices=['daily', 'setup-test', 'publish-only'], default='daily')
     args = parser.parse_args()
     if args.action == 'prepare':
         prepare(args.mode)

@@ -20,12 +20,16 @@ def prices(code):
  return sorted(a,key=lambda r:r['date'])
 def is_common(s):
  return s.get('stockEndType')=='stock' and not re.search(r'(우[BC]?|\d+우[BC]?|우\(전환\))$',s['stockName']) and not re.search('스팩|리츠|인프라펀드',s['stockName'])
-def one(s,bm):
+def one(s,bm,allow_halted_history=False):
  try:
   p=prices(s['itemCode']);dates=[r['date'] for r in p]
   if len(p)<81:raise ValueError('81개 거래일 이력 부족')
   if p[-1]['date']!=ASOF:raise ValueError('최근 가격 날짜 불일치')
-  if any(r['volume']<=0 for r in p[-20:]):raise ValueError('최근 20일 무거래 관측')
+  if p[-1]['volume']<=0:raise ValueError('당일 무거래 관측')
+  if not allow_halted_history and any(r['volume']<=0 for r in p[-20:]):raise ValueError('최근 20일 무거래 관측')
+  if allow_halted_history:
+   for r in p:
+    if r['volume']==0 and r['high']==0 and r['low']==0:r.update(open=r['close'],high=r['close'],low=r['close'])
   if len(dates)!=len(set(dates)):raise ValueError('날짜 중복')
   market=s['_market'];b=bm[market]
   def rs(n,lag=0):
