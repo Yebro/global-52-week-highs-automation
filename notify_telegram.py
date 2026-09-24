@@ -160,12 +160,14 @@ def build_summary(payload: dict) -> str:
     for index, (row, issue) in enumerate(zip(rows, issues), start=1):
         name = truncate(clean_text(row.get("name")) or clean_text(row.get("symbol")), 70)
         market = clean_text(row.get("market")) or "시장 미확인"
+        ticker = clean_text(row.get("symbol"))
+        market_with_ticker = f"{market} ({ticker})" if ticker else market
         sector = clean_text(row.get("sector")) or "기타"
         market_cap = format_market_cap(row.get("market_cap_krw"))
         day_return = float(row["day_return_pct"])
         blocks.append(
             f"{index}. {name}\n"
-            f"시장: {market}\n"
+            f"시장: {market_with_ticker}\n"
             f"섹터: {sector}\n"
             f"시총: {market_cap}\n"
             f"수익률: {day_return:+.2f}%\n"
