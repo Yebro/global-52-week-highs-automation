@@ -1,11 +1,12 @@
 """Full-universe daily snapshots. No backfilled market caps or fabricated changes."""
 from pathlib import Path
 import argparse,concurrent.futures,datetime,hashlib,json,math,re,sqlite3,sys,urllib.request
-ROOT=Path(__file__).resolve().parents[1];DB=ROOT.parent/'leader-case-db';BASE=DB/'monitoring-entry-v2';TZ=datetime.timezone(datetime.timedelta(hours=9))
+ROOT=Path(__file__).resolve().parents[1];DB=ROOT.parent/'leader-case-db';BASE=DB/'monitoring-entry-v2-liquidity100';TZ=datetime.timezone(datetime.timedelta(hours=9))
 sys.path.insert(0,str(DB/'tools'))
 import screen_market as sm
 import screen_flows as sf
 import entry_score
+import turnover_filter
 VERSION=entry_score.VERSION
 
 def request(url):
@@ -120,23 +121,26 @@ def run(bootstrap=None):
  unexpected=[r for r in results if 'error' in r and r['error'] not in ['81개 거래일 이력 부족','최근 20일 무거래 관측','당일 무거래 관측']]
  if unexpected:raise ValueError('Incomplete price collection; no snapshot saved: '+json.dumps(unexpected,ensure_ascii=False))
  if any(not r.get('price_quote_match',True) for r in results):raise ValueError('Price/quote mismatch; no snapshot saved')
- scored=score_rows(valid)
+ sessions=turnover_filter.collect(universe,sorted(benchmark["KOSPI"])[-3:],previous,cached)
+ scored=turnover_filter.apply(score_rows(valid),sessions)
  selected=sorted([r for r in scored if r['pool']!='outside'],key=lambda r:-r['priority_score'])
  # Flows are supporting evidence, not an entry gate. Limit expensive supplementary fetches.
  flow_selected=[r for r in selected if r['pool']=='candidate'][:60]+[r for r in selected if r['pool']=='watch'][:40]
  with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:flow=dict(pool.map(sf.fetch,flow_selected))
  data=dict(schema_version=1,score_version=VERSION,asof=asof,previous_asof=previous['asof'] if previous else None,collected_at=datetime.datetime.now(TZ).isoformat(),listing=universe,metrics=scored,flows=flow,errors=[r for r in results if 'error' in r],counts=dict(listed=len(universe),common=len(common),cap4000=sum(cap(s)>=4e11 for s in common),cap5000=sum(cap(s)>=5e11 for s in common),valid=len(valid),candidate=sum(r['pool']=='candidate' for r in scored),watch=sum(r['pool']=='watch' for r in scored)),method=dict(cap_min=5e11,prewatch_min=4e11,liquidity_proxy_min=5e9,rs_percentile=.8,ranking_reference='same market, cap >= 500bn KRW and liquid; watch stocks evaluated against this reference without changing it',score_version=VERSION,score_alert_threshold=5,prior_comparison='previous successful dated snapshot, not necessarily previous trading day'))
+ data['turnover_sessions']=sessions
+ data['counts']['turnover_excluded']=sum(not r['turnover_filter']['passed'] for r in scored)
  data['changes']=compare(data,previous)
  data['counts']['cap1000']=sum(cap(s)>=entry_score.MIN_CAP for s in common)
  data['schema_version']=2
- data['method']=dict(score_version=VERSION,cap_min=entry_score.MIN_CAP,configuration=entry_score.CONFIG,reference_cap_min=5e11,reference_liquidity_min=5e9,components={'setup':35,'trend':20,'liquidity':15,'failure_distance':20,'entry_position':10},signal_max_age=2,blocked_score_ceiling=59,validation='Calibrated to historical entry labels; not an out-of-sample profit test; no live order execution',flow_coverage='Top 60 entry-review and top 40 watch rows; missing flow is not zero',prior_comparison='previous successful same-version snapshot')
+ data['method']=dict(score_version=VERSION,cap_min=entry_score.MIN_CAP,configuration=entry_score.CONFIG,turnover_policy=turnover_filter.POLICY,turnover_min_exclusive=turnover_filter.THRESHOLD,turnover_sessions=3,reference_cap_min=5e11,reference_liquidity_min=5e9,components={'setup':35,'trend':20,'liquidity':15,'failure_distance':20,'entry_position':10},signal_max_age=2,blocked_score_ceiling=59,validation='Calibrated to historical entry labels; not an out-of-sample profit test; no live order execution',flow_coverage='Top 60 entry-review and top 40 watch rows; missing flow is not zero',prior_comparison='previous successful same-version snapshot')
  # Only metrics are needed in the daily DB; raw prices remain in hashed source snapshots.
  for r in data['metrics']:r.pop('bars',None)
  body=json.dumps(data,ensure_ascii=False,sort_keys=True);sha=hashlib.sha256(body.encode()).hexdigest()
- con=sqlite3.connect(DB/'leader_cases.sqlite3');con.execute('CREATE TABLE IF NOT EXISTS entry_monitor_snapshots(asof TEXT PRIMARY KEY,score_version TEXT,sha256 TEXT,payload_json TEXT)')
- old=con.execute('SELECT sha256 FROM entry_monitor_snapshots WHERE asof=?',(asof,)).fetchone()
+ con=sqlite3.connect(DB/'leader_cases.sqlite3');con.execute('CREATE TABLE IF NOT EXISTS entry_liquidity_monitor_snapshots(asof TEXT PRIMARY KEY,score_version TEXT,sha256 TEXT,payload_json TEXT)')
+ old=con.execute('SELECT sha256 FROM entry_liquidity_monitor_snapshots WHERE asof=?',(asof,)).fetchone()
  if old:assert old[0]==sha,'Snapshot is immutable'
- else:con.execute('INSERT INTO entry_monitor_snapshots VALUES (?,?,?,?)',(asof,VERSION,sha,body))
+ else:con.execute('INSERT INTO entry_liquidity_monitor_snapshots VALUES (?,?,?,?)',(asof,VERSION,sha,body))
  con.commit();con.close();temp=target.with_suffix('.tmp');temp.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8');temp.replace(target)
  (folder/'raw-manifest.json').write_text(json.dumps([{'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(rawdir.iterdir())],indent=2),encoding='utf-8')
  print(json.dumps({'status':'saved','asof':asof,'counts':data['counts'],'changes':{k:len(v) for k,v in data['changes'].items()}},ensure_ascii=False))

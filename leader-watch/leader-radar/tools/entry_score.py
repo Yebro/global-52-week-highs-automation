@@ -2,7 +2,7 @@
 Thresholds are calibrated to historical entry labels, never future profits.
 """
 import statistics as st
-VERSION='entry-readiness-v2'
+VERSION='entry-readiness-v2-liquidity100'
 MIN_CAP=1e11
 CONFIG=dict(min_score=70,max_risk=.16,max_pivot_atr=2,max_ma_atr=6,min_liquidity=5e8,require_slope=False)
 

@@ -42,12 +42,12 @@ def persist():
 
 
 def restore():
-    files = sorted((STATE / 'snapshots-entry-v2').glob('*.json.gz'))
+    files = sorted((STATE / 'snapshots-entry-v2-liquidity100').glob('*.json.gz'))
     if not files:
         raise RuntimeError('Previous snapshots missing; refuse to silently reset baseline')
     for file in files:
         day = file.name.removesuffix('.json.gz')
-        dest = DB / 'monitoring-entry-v2' / day / 'snapshot.json'
+        dest = DB / 'monitoring-entry-v2-liquidity100' / day / 'snapshot.json'
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(gzip.decompress(file.read_bytes()))
 
@@ -81,16 +81,16 @@ def prepare(mode):
     restore()
     if mode == 'daily':
         subprocess.run([sys.executable, str(ROOT / 'leader-radar/tools/monitor_market.py')], check=True)
-        target = DB / 'monitoring-entry-v2' / today / 'snapshot.json'
+        target = DB / 'monitoring-entry-v2-liquidity100' / today / 'snapshot.json'
         if not target.exists():
             raise RuntimeError('Open-day closing data unavailable; do not publish old quotes')
     else:
         # Probe the live source from the cloud too; do not relabel old data as today.
         if mode=='setup-test':subprocess.run([sys.executable, str(ROOT / 'leader-radar/tools/monitor_market.py')], check=True)
-        target = sorted((DB / 'monitoring-entry-v2').glob('*/snapshot.json'))[-1]
+        target = sorted((DB / 'monitoring-entry-v2-liquidity100').glob('*/snapshot.json'))[-1]
     current = json.loads(target.read_text(encoding='utf-8'))
     before = current.get('previous_asof')
-    previous = json.loads((DB / 'monitoring-entry-v2' / before / 'snapshot.json').read_text(encoding='utf-8')) if before else None
+    previous = json.loads((DB / 'monitoring-entry-v2-liquidity100' / before / 'snapshot.json').read_text(encoding='utf-8')) if before else None
     message, top = make_brief(current, previous)
     if mode == 'setup-test':
         message = '클라우드 연결 테스트 · 과거 기준 자료, 오늘 시세 아님\n\n' + message
@@ -106,10 +106,10 @@ def prepare(mode):
     fragment = fragment.replace('href="monitor-latest.json"', f'href="{FEED}monitor-latest.json"')
     (public / 'monitor-fragment.json').write_text(json.dumps({'asof': current['asof'], 'score_version':current['score_version'], 'html': fragment}, ensure_ascii=False), encoding='utf-8')
     (public / 'monitor-latest.json').write_bytes((ROOT / 'leader-radar/dist/monitor-latest.json').read_bytes())
-    (STATE / 'snapshots-entry-v2' / f"{current['asof']}.json.gz").write_bytes(gzip.compress(target.read_bytes(), mtime=0))
+    (STATE / 'snapshots-entry-v2-liquidity100' / f"{current['asof']}.json.gz").write_bytes(gzip.compress(target.read_bytes(), mtime=0))
     raw = target.parent / 'raw'
     if raw.exists() and any(raw.iterdir()):
-        archives = STATE / 'raw-entry-v2'
+        archives = STATE / 'raw-entry-v2-liquidity100'
         archives.mkdir(exist_ok=True)
         with tarfile.open(archives / f"{current['asof']}.tar.gz", 'w:gz') as archive:
             archive.add(raw, arcname='raw')

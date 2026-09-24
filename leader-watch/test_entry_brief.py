@@ -2,7 +2,7 @@ import unittest,json,gzip,copy
 from pathlib import Path
 from entry_brief import make_brief
 class EntryBriefTests(unittest.TestCase):
- def setUp(self):self.a=json.loads(gzip.decompress((Path(__file__).parent/'state/snapshots-entry-v2/2026-09-23.json.gz').read_bytes()))
+ def setUp(self):self.a=json.loads(gzip.decompress((Path(__file__).parent/'state/snapshots-entry-v2-liquidity100/2026-09-23.json.gz').read_bytes()))
  def test_baseline_and_mixed_versions(self):
   self.assertEqual(make_brief(self.a)[1],[])
   old=copy.deepcopy(self.a);old['score_version']='rs-price-v1';now=copy.deepcopy(self.a);now['previous_asof']=old['asof']

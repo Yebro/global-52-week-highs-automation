@@ -17,7 +17,7 @@ def components(r):
 
 
 def make_brief(current, previous=None):
-    if current.get('score_version')=='entry-readiness-v2':
+    if current.get('score_version')=='entry-readiness-v2-liquidity100':
         from entry_brief import make_brief as entry_brief
         return entry_brief(current, previous)
     comparable = (previous is not None

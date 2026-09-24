@@ -26,9 +26,12 @@ actions are not independently fully reconciled. Current nontrading/suspended nam
 are excluded; past zero-volume bars are permitted and zero OHLC is filled with
 unchanged close solely for ATR calculation. Previous v1 exclusions are not altered.
 
-Cloud source: leader-automation/leader-watch; separate state/snapshots-entry-v2.
+Cloud source: leader-automation/leader-watch; separate state/snapshots-entry-v2-liquidity100.
 Same-version comparisons only, never compare v1 scores against v2.
 GitHub Actions stays at 16:00 KST plus recovery attempts on exchange sessions.
 publish-only deploys saved data without a Telegram message or current quote claim.
 Daily Telegram reports top 3 positive gains among continuing eligible names and
 new eligible names separately, including price bounds, failure level and risk.
+
+## Actual-turnover filter (2026-09-24)
+The current universe requires at least one of the latest three exchange sessions to have reported actual turnover strictly greater than KRW 10bn. Exactly 10bn fails. Applies to candidates, watch rows, and Telegram. Daily amounts are saved for every listing, including names below the cap floor. Missing sessions use FinanceData/marcap Amount; unavailable bulk history aborts publication, individual unknowns cannot certify a pass. The original 81/99 entry recall is BEFORE this filter; no post-filter recall claim. Versioned snapshots retain the previous baseline.

@@ -7,3 +7,6 @@ leader-radar/dist/index.html
 leader-radar/dist/monitor-latest.json
 run-plan.json
 !state/raw-entry-v2/*.tar.gz
+
+leader-case-db/monitoring-entry-v2-liquidity100/
+!state/raw-entry-v2-liquidity100/*.tar.gz
