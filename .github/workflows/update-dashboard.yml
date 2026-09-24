@@ -4,8 +4,8 @@ on:
   schedule:
     # GitHub scheduled events can be delayed. Backup attempts improve punctuality;
     # the precheck below makes later attempts no-ops after a successful update.
-    - cron: "5,20,35,50 7 * * 1-5"
-    - cron: "5,20,35,50 23 * * 1-5"
+    - cron: "5,15,25,35,45,55 7 * * 1-5"
+    - cron: "5,15,25,35,45,55 23 * * 1-5"
   workflow_dispatch:
 
 permissions:
@@ -45,7 +45,7 @@ jobs:
         run: |
           if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
             slot="manual"
-          elif [[ "$EVENT_SCHEDULE" == "5,20,35,50 7 * * 1-5" ]]; then
+          elif [[ "$EVENT_SCHEDULE" == "5,15,25,35,45,55 7 * * 1-5" ]]; then
             slot="asia"
           else
             slot="us"
