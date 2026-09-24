@@ -24,6 +24,8 @@ MARKET_LABELS = (
 )
 SUMMARY_MIN_MARKET_CAP_KRW = 1_000_000_000_000
 SUMMARY_LIMIT = 10
+LIMITED_MARKETS = {"CN", "HK", "TW"}
+LIMITED_MARKET_MAX = 2
 NEWS_MAX_AGE_DAYS = 14
 NEWS_TIMEOUT_SECONDS = 8
 NO_NEWS_TEXT = "최근 공개 뉴스에서 뚜렷한 개별 이슈를 확인하지 못했습니다."
@@ -139,7 +141,18 @@ def select_summary_rows(payload: dict) -> list[dict]:
         if row.get("is_new_high") and market_cap >= SUMMARY_MIN_MARKET_CAP_KRW:
             candidates.append({**row, "day_return_pct": day_return})
     candidates.sort(key=lambda row: row["day_return_pct"], reverse=True)
-    return candidates[:SUMMARY_LIMIT]
+    selected = []
+    limited_counts = {market: 0 for market in LIMITED_MARKETS}
+    for row in candidates:
+        market_code = clean_text(row.get("market_code"))
+        if market_code in LIMITED_MARKETS:
+            if limited_counts[market_code] >= LIMITED_MARKET_MAX:
+                continue
+            limited_counts[market_code] += 1
+        selected.append(row)
+        if len(selected) == SUMMARY_LIMIT:
+            break
+    return selected
 
 
 def build_summary(payload: dict) -> str:
