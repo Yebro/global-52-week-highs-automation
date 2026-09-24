@@ -150,24 +150,28 @@ def build_summary(payload: dict) -> str:
             "시가총액 1조원 이상 신규 52주 신고가 기업 중 당일 수익률을 계산할 수 있는 종목이 없습니다."
         )
 
-    paragraphs = [
-        "\n\n📌 핵심 요약",
-        "신규 52주 신고가 기업 중 시가총액 1조원 이상 종목을 당일 수익률순으로 선정했습니다.",
-    ]
+    header = (
+        "\n\n📌 핵심 요약\n"
+        "신규 52주 신고가 · 시총 1조원 이상 · 당일 수익률순"
+    )
+    blocks = []
     with ThreadPoolExecutor(max_workers=min(5, len(rows))) as executor:
         issues = list(executor.map(safe_fetch_issue, rows))
     for index, (row, issue) in enumerate(zip(rows, issues), start=1):
-        name = clean_text(row.get("name")) or clean_text(row.get("symbol"))
+        name = truncate(clean_text(row.get("name")) or clean_text(row.get("symbol")), 70)
         market = clean_text(row.get("market")) or "시장 미확인"
         sector = clean_text(row.get("sector")) or "기타"
         market_cap = format_market_cap(row.get("market_cap_krw"))
         day_return = float(row["day_return_pct"])
-        paragraphs.append(
-            f"{index}. {name}의 시장은 {market}, 섹터는 {sector}이며, "
-            f"시가총액은 약 {market_cap}, 당일 수익률은 {day_return:+.2f}%입니다. "
-            f"주요 이슈: {issue}"
+        blocks.append(
+            f"{index}. {name}\n"
+            f"시장: {market}\n"
+            f"섹터: {sector}\n"
+            f"시총: {market_cap}\n"
+            f"수익률: {day_return:+.2f}%\n"
+            f"이슈: {issue}"
         )
-    return "\n".join(paragraphs)
+    return "\n\n".join([header, *blocks])
 
 
 def build_message(payload: dict, *, include_issues: bool = True) -> str:
