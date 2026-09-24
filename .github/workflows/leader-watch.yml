@@ -1,0 +1,78 @@
+name: Korean leader watch 16 KST
+
+on:
+  schedule:
+    # 16:00 KST, with two recovery attempts. Successful messages are not resent.
+    - cron: '0,20,40 7 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'daily: current open day / setup-test: labelled saved-data test'
+        type: choice
+        options: [daily, setup-test]
+        default: daily
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Both dashboards share one Pages deployment, so always serialize them.
+concurrency:
+  group: 52-week-highs-pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: leader-watch/requirements.txt
+      - name: Install market calendar
+        run: python -m pip install -r leader-watch/requirements.txt
+      - name: Collect and build leader observations
+        id: prepare
+        env:
+          MODE: ${{ inputs.mode || 'daily' }}
+        run: python leader-watch/run.py prepare --mode "$MODE"
+      - name: Preserve immutable observations
+        if: steps.prepare.outputs.publish == 'true'
+        run: python leader-watch/run.py persist
+      - name: Assemble both dashboards
+        if: steps.prepare.outputs.publish == 'true'
+        run: |
+          mkdir -p public/leaders
+          cp dashboard.html public/index.html
+          cp data/latest.json public/latest.json
+          cp -R leader-watch/public/. public/leaders/
+      - uses: actions/configure-pages@v5
+        if: steps.prepare.outputs.publish == 'true'
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.prepare.outputs.publish == 'true'
+        with:
+          path: public
+      - uses: actions/deploy-pages@v4
+        id: deployment
+        if: steps.prepare.outputs.publish == 'true'
+      - name: Send top three score rises to existing Telegram bot
+        if: steps.prepare.outputs.publish == 'true' && steps.deployment.outcome == 'success'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+        run: python leader-watch/run.py notify
+      - name: Notify a failed run
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ vars.TELEGRAM_CHAT_ID }}
+        run: python leader-watch/run.py failure
