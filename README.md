@@ -34,7 +34,7 @@ py -m venv .venv
 
 GitHub Actions는 한국시간 기준 평일 16:05와 다음 날 08:05에 첫 실행됩니다. GitHub 예약 지연에 대비해 16:20·16:35·16:50 및 08:20·08:35·08:50에도 예비 실행을 요청하며, 첫 성공 이후의 예비 실행은 수집과 배포를 건너뜁니다. 16시 실행은 한국 또는 일본 시장의 당일 종가가 확인될 때만, 08시 실행은 미국 시장의 전일 종가가 확인될 때만 새 대시보드를 배포합니다. 따라서 휴장일은 자동으로 건너뛰고, 아시아와 미국 시장이 모두 열리면 하루 두 번 갱신됩니다.
 
-배포 성공 알림은 저장소의 Actions 비밀값 `TELEGRAM_BOT_TOKEN`과 변수 `TELEGRAM_CHAT_ID`가 모두 설정된 경우 텔레그램으로 전송됩니다. 토큰은 코드나 대화에 기록하지 않습니다. 봇에게 `/start`를 보낸 뒤 `Set up Telegram notifications` 작업을 한 번 실행하면 채팅 ID가 자동 저장되고 시험 알림이 전송됩니다.
+배포 성공 알림은 저장소의 Actions 비밀값 `TELEGRAM_BOT_TOKEN`과 변수 `TELEGRAM_CHAT_ID`가 모두 설정된 경우 텔레그램으로 전송됩니다. 토큰은 코드나 대화에 기록하지 않습니다. 봇에게 `/start`를 보낸 뒤 `Set up Telegram notifications` 작업을 실행하면 채팅 ID가 텔레그램으로 전송됩니다. 그 숫자를 `TELEGRAM_CHAT_ID` 저장소 변수에 저장한 뒤 작업을 다시 실행해 연결을 검증합니다.
 
 수동 실행은 GitHub의 Actions 화면에서 `Update 52-week highs dashboard`를 선택해 실행할 수 있습니다.
 

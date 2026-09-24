@@ -60,38 +60,21 @@ def discover_chat_id(bot_token: str) -> str:
     return candidates[0][2]
 
 
-def save_repository_variable(repository: str, github_token: str, chat_id: str) -> None:
-    api_url = f"https://api.github.com/repos/{repository}/actions/variables"
-    headers = {
-        "Authorization": f"Bearer {github_token}",
-        "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-        "User-Agent": "global-52-week-highs-automation",
-    }
-    status, _ = request_json(
-        f"{api_url}/TELEGRAM_CHAT_ID",
-        method="PATCH",
-        data={"name": "TELEGRAM_CHAT_ID", "value": chat_id},
-        headers=headers,
-    )
-    if status == 404:
-        status, _ = request_json(
-            api_url,
-            method="POST",
-            data={"name": "TELEGRAM_CHAT_ID", "value": chat_id},
-            headers=headers,
+def send_test_message(bot_token: str, chat_id: str, *, show_chat_id: bool) -> None:
+    if show_chat_id:
+        text = (
+            "✅ 52주 신고가 트래커가 봇과 연결되었습니다.\n"
+            f"채팅 ID: {chat_id}\n"
+            "이 숫자를 GitHub의 TELEGRAM_CHAT_ID 변수에 저장하세요."
         )
-    if status not in (201, 204):
-        raise RuntimeError(f"GitHub could not store TELEGRAM_CHAT_ID (HTTP {status}).")
-
-
-def send_test_message(bot_token: str, chat_id: str) -> None:
+    else:
+        text = f"✅ 52주 신고가 트래커 알림 연결 완료\n{DASHBOARD_URL}"
     _, payload = request_json(
         f"https://api.telegram.org/bot{bot_token}/sendMessage",
         method="POST",
         data={
             "chat_id": chat_id,
-            "text": f"✅ 52주 신고가 트래커 알림 연결 완료\n{DASHBOARD_URL}",
+            "text": text,
             "disable_web_page_preview": True,
         },
     )
@@ -101,12 +84,10 @@ def send_test_message(bot_token: str, chat_id: str) -> None:
 
 def main() -> None:
     bot_token = os.environ["TELEGRAM_BOT_TOKEN"].strip()
-    github_token = os.environ["GITHUB_TOKEN"].strip()
-    repository = os.environ["GITHUB_REPOSITORY"].strip()
-    chat_id = discover_chat_id(bot_token)
+    configured_chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    chat_id = configured_chat_id or discover_chat_id(bot_token)
     print(f"::add-mask::{chat_id}")
-    save_repository_variable(repository, github_token, chat_id)
-    send_test_message(bot_token, chat_id)
+    send_test_message(bot_token, chat_id, show_chat_id=not configured_chat_id)
     print("Telegram setup completed and a test notification was sent.")
 
 
