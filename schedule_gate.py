@@ -34,6 +34,22 @@ def load_published_sessions() -> dict[str, str]:
     return json.loads(PUBLISHED_SESSIONS.read_text(encoding="utf-8"))
 
 
+def evaluate_postcheck(slot: str, now_kst: datetime | None = None) -> tuple[bool, str]:
+    now_kst = now_kst or datetime.now(KST)
+    target = target_date(slot, now_kst)
+    payload = json.loads((ROOT / "data" / "latest.json").read_text(encoding="utf-8"))
+    markets = payload.get("markets", {})
+
+    if slot == "manual":
+        return True, "manual run"
+    if slot == "asia":
+        open_markets = [code for code in ("KR", "JP") if markets.get(code, {}).get("as_of") == target]
+        return bool(open_markets), f"Asia target {target}; completed: {','.join(open_markets) or 'none'}"
+
+    us_as_of = markets.get("US", {}).get("as_of", "")
+    return us_as_of == target, f"US target {target}; completed: {us_as_of or 'none'}"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Check whether a scheduled market update should publish")
     parser.add_argument("--slot", choices=("asia", "us", "manual"), required=True)
@@ -67,20 +83,7 @@ def main() -> None:
         print(reason)
         return
 
-    payload = json.loads((ROOT / "data" / "latest.json").read_text(encoding="utf-8"))
-    markets = payload.get("markets", {})
-
-    if args.slot == "manual":
-        should_publish = True
-        reason = "manual run"
-    elif args.slot == "asia":
-        open_markets = [code for code in ("KR", "JP") if markets.get(code, {}).get("as_of") == target]
-        should_publish = bool(open_markets)
-        reason = f"Asia target {target}; completed: {','.join(open_markets) or 'none'}"
-    else:
-        us_as_of = markets.get("US", {}).get("as_of", "")
-        should_publish = us_as_of == target
-        reason = f"US target {target}; completed: {us_as_of or 'none'}"
+    should_publish, reason = evaluate_postcheck(args.slot, now_kst)
 
     write_output("should_publish", str(should_publish).lower())
     reason = f"{reason}; publish: {str(should_publish).lower()}"
