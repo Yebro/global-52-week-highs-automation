@@ -120,7 +120,7 @@ def run(bootstrap=None):
  # An incomplete fetch must not turn missing stocks into false exits or move every percentile.
  unexpected=[r for r in results if 'error' in r and r['error'] not in ['81개 거래일 이력 부족','최근 20일 무거래 관측','당일 무거래 관측']]
  if unexpected:raise ValueError('Incomplete price collection; no snapshot saved: '+json.dumps(unexpected,ensure_ascii=False))
- if any(not r.get('price_quote_match',True) for r in results):raise ValueError('Price/quote mismatch; no snapshot saved')
+ if any(not r.get('price_quote_match',True) for r in results):raise ValueError('Price/quote mismatch; no snapshot saved: '+json.dumps([{k:r[k] for k in ('code','name','close','quote_close')} for r in results if not r.get('price_quote_match',True)],ensure_ascii=False))
  sessions=turnover_filter.collect(universe,sorted(benchmark["KOSPI"])[-3:],previous,cached)
  scored=turnover_filter.apply(score_rows(valid),sessions)
  selected=sorted([r for r in scored if r['pool']!='outside'],key=lambda r:-r['priority_score'])
