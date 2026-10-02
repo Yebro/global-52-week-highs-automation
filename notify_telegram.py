@@ -13,7 +13,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-DASHBOARD_URL = "https://global-highs-tracker.paullee0618.chatgpt.site/"
+DASHBOARD_URL = os.environ.get(
+    "DASHBOARD_URL", "https://global-highs-tracker.paullee0618.chatgpt.site/"
+).strip()
 MARKET_LABELS = (
     ("US", "미국"),
     ("KR", "한국"),

@@ -1,0 +1,12 @@
+.git
+.github
+.venv
+__pycache__
+*.pyc
+*.tar.gz
+dashboard.html
+publish
+data/screened.csv
+data/universe.csv
+leader-watch/.venv
+leader-watch/__pycache__

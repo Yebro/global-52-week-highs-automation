@@ -32,7 +32,24 @@ py -m venv .venv
 
 ### 클라우드 자동 갱신
 
-GitHub Actions는 한국시간 기준 평일 16:00와 다음 날 08:00에 첫 실행됩니다. 각 작업은 최대 5회까지 1분 간격으로 데이터를 다시 확인하고, GitHub 예약 누락에 대비해 해당 시간대의 05·10·15·20·25·30·35·40·45·50·55분에도 예비 작업을 요청합니다. 첫 성공 이후의 예비 작업은 수집과 배포를 건너뜁니다. 16시 작업은 한국 또는 일본 시장의 당일 종가가 확인될 때만, 08시 작업은 미국 시장의 전일 종가가 확인될 때만 새 대시보드를 배포합니다. 따라서 휴장일은 자동으로 건너뛰고, 아시아와 미국 시장이 모두 열리면 하루 두 번 갱신됩니다.
+운영 환경은 Google Cloud Run Jobs입니다. Cloud Scheduler가 한국시간 기준 평일 16:00에 아시아 작업을, 화~토요일 08:00에 미국 작업을 시작합니다. 각 작업은 최대 5회까지 1분 간격으로 데이터를 다시 확인합니다. 16시 작업은 한국 또는 일본 시장의 당일 종가가 확인될 때만, 08시 작업은 미국 시장의 전일 종가가 확인될 때만 새 대시보드를 배포합니다. 따라서 휴장일은 자동으로 건너뛰고, 아시아와 미국 시장이 모두 열리면 하루 두 번 갱신됩니다.
+
+수집 상태와 공개 파일은 비공개 Cloud Storage 버킷에 저장하고, 공개 Cloud Run Service가 최신 대시보드를 제공합니다. 텔레그램 토큰과 채팅 ID는 Secret Manager의 `telegram-bot-token`, `telegram-chat-id`에 저장합니다.
+
+Google Cloud Shell에서 배포하려면 두 Secret Manager 비밀값을 먼저 만든 뒤 다음을 실행합니다.
+
+```bash
+git clone https://github.com/Yebro/global-52-week-highs-automation.git
+cd global-52-week-highs-automation
+chmod +x deploy-gcp.sh
+./deploy-gcp.sh YOUR_PROJECT_ID
+```
+
+배포 후 수동 검증은 다음 명령으로 실행합니다.
+
+```bash
+gcloud run jobs execute global-highs-manual --region=asia-northeast3 --wait
+```
 
 배포 성공 알림은 저장소의 Actions 비밀값 `TELEGRAM_BOT_TOKEN`과 변수 `TELEGRAM_CHAT_ID`가 모두 설정된 경우 텔레그램으로 전송됩니다. 토큰은 코드나 대화에 기록하지 않습니다. 봇에게 `/start`를 보낸 뒤 `Set up Telegram notifications` 작업을 실행하면 채팅 ID가 텔레그램으로 전송됩니다. 그 숫자를 `TELEGRAM_CHAT_ID` 저장소 변수에 저장한 뒤 작업을 다시 실행해 연결을 검증합니다.
 
