@@ -85,7 +85,7 @@ gcloud run deploy "${WEB_SERVICE}" \
   --cpu=1 \
   --memory=512Mi \
   --min=0 \
-  --max=2 \
+  --max=1 \
   --timeout=60 \
   --allow-unauthenticated \
   --quiet
