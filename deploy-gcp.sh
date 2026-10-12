@@ -134,7 +134,6 @@ upsert_schedule() {
     --http-method=POST
     --oauth-service-account-email="${SCHEDULER_SA}"
     --oauth-token-scope="https://www.googleapis.com/auth/cloud-platform"
-    --headers="Content-Type=application/json"
     --message-body="{}"
     --attempt-deadline=30m
     --max-retry-attempts=3
@@ -143,9 +142,11 @@ upsert_schedule() {
     --max-doublings=0
   )
   if gcloud scheduler jobs describe "${scheduler_name}" --location="${REGION}" >/dev/null 2>&1; then
-    gcloud scheduler jobs update http "${scheduler_name}" "${common[@]}"
+    gcloud scheduler jobs update http "${scheduler_name}" "${common[@]}" \
+      --update-headers="Content-Type=application/json"
   else
-    gcloud scheduler jobs create http "${scheduler_name}" "${common[@]}"
+    gcloud scheduler jobs create http "${scheduler_name}" "${common[@]}" \
+      --headers="Content-Type=application/json"
   fi
 }
 
