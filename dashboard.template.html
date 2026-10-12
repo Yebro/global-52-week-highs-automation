@@ -161,6 +161,9 @@
   #actual-highs-tracker .ht-market-cap { font-variant-numeric: tabular-nums; font-weight: 500; white-space: nowrap; }
   #actual-highs-tracker .ht-tag { background: var(--ht-surface-2); border-radius: 5px; color: var(--ht-muted); display: inline-block; padding: 3px 5px; white-space: nowrap; }
   #actual-highs-tracker .ht-num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  #actual-highs-tracker .ht-day-return { font-weight: 500; }
+  #actual-highs-tracker .ht-day-return.is-up { color: var(--ht-up); }
+  #actual-highs-tracker .ht-day-return.is-down { color: var(--ht-down); }
   #actual-highs-tracker .ht-breakout { color: var(--ht-up); font-weight: 500; }
   #actual-highs-tracker .ht-return-days { color: var(--ht-muted); font-size: 9px; font-weight: 400; margin-left: 4px; }
   #actual-highs-tracker .ht-date { color: var(--ht-muted); white-space: nowrap; }
@@ -281,7 +284,7 @@
           </div>
           <div class="ht-table-wrap">
             <table>
-              <thead><tr><th>#</th><th>종목</th><th class="ht-num">시가총액</th><th>시장</th><th>섹터</th><th>기준일</th><th class="ht-num">종가</th><th class="ht-num">1년 첫 신고가</th><th class="ht-num">이후 수익률</th></tr></thead>
+              <thead><tr><th>#</th><th>종목</th><th class="ht-num">시가총액</th><th class="ht-num">당일 수익률</th><th>시장</th><th>섹터</th><th>기준일</th><th class="ht-num">종가</th><th class="ht-num">1년 첫 신고가</th><th class="ht-num">이후 수익률</th></tr></thead>
               <tbody></tbody>
             </table>
           </div>
@@ -350,6 +353,11 @@
 
   const formatNumber = value => Number(value || 0).toLocaleString('ko-KR');
   const formatPrice = value => Number(value).toLocaleString('ko-KR', { maximumFractionDigits: value < 1 ? 4 : value < 100 ? 2 : 0 });
+  const formatSignedPercent = value => {
+    const number = Number(value);
+    if (!Number.isFinite(number)) return '-';
+    return `${number > 0 ? '+' : ''}${number.toFixed(2)}%`;
+  };
   const formatMarketCap = eok => {
     const value = Number(eok || 0);
     if (value >= 10000) {
@@ -546,12 +554,14 @@
     const visible = rows.slice(start, start + pageSize);
     tbody.innerHTML = '';
     if (!visible.length) {
-      const tr = document.createElement('tr'); tr.innerHTML = '<td class="ht-empty" colspan="9">해당 조건의 신고가 종목이 없습니다</td>'; tbody.appendChild(tr);
+      const tr = document.createElement('tr'); tr.innerHTML = '<td class="ht-empty" colspan="10">해당 조건의 신고가 종목이 없습니다</td>'; tbody.appendChild(tr);
     } else {
       visible.forEach((row,index) => {
         const tr = document.createElement('tr');
         const newBadge = row.is_new_high ? '<span class="ht-new-badge">NEW</span>' : '';
-        tr.innerHTML = `<td class="ht-rank">${start + index + 1}</td><td><span class="ht-company">${row.name}</span>${newBadge}<span class="ht-ticker">${row.symbol}</span></td><td class="ht-num ht-market-cap">${formatMarketCap(row.market_cap_krw_eok)}</td><td><span class="ht-tag">${row.market} · ${row.exchange}</span></td><td>${row.sector}</td><td class="ht-date">${row.as_of}</td><td class="ht-num">${formatPrice(row.close)} <span class="ht-ticker">${row.currency}</span></td><td class="ht-num">${formatPrice(row.breakout_close)}<span class="ht-ticker">${row.breakout_date}</span></td><td class="ht-num ht-breakout">+${Number(row.breakout_pct).toFixed(2)}%<span class="ht-return-days">(${Number(row.breakout_days)}일)</span></td>`;
+        const dayReturn = Number(row.day_return_pct);
+        const dayReturnClass = dayReturn > 0 ? ' is-up' : dayReturn < 0 ? ' is-down' : '';
+        tr.innerHTML = `<td class="ht-rank">${start + index + 1}</td><td><span class="ht-company">${row.name}</span>${newBadge}<span class="ht-ticker">${row.symbol}</span></td><td class="ht-num ht-market-cap">${formatMarketCap(row.market_cap_krw_eok)}</td><td class="ht-num ht-day-return${dayReturnClass}">${formatSignedPercent(row.day_return_pct)}</td><td><span class="ht-tag">${row.market} · ${row.exchange}</span></td><td>${row.sector}</td><td class="ht-date">${row.as_of}</td><td class="ht-num">${formatPrice(row.close)} <span class="ht-ticker">${row.currency}</span></td><td class="ht-num">${formatPrice(row.breakout_close)}<span class="ht-ticker">${row.breakout_date}</span></td><td class="ht-num ht-breakout">+${Number(row.breakout_pct).toFixed(2)}%<span class="ht-return-days">(${Number(row.breakout_days)}일)</span></td>`;
         tbody.appendChild(tr);
       });
     }
