@@ -64,15 +64,25 @@ def session_status(now):
     return 'open_day'
 
 
+def latest_closed_session(now):
+    """A delayed scheduled run may start after midnight or on a holiday."""
+    import exchange_calendars as xcals
+    local = now.astimezone(TZ)
+    calendar = xcals.get_calendar('XKRX')
+    session = calendar.date_to_session(local.date().isoformat(), direction='previous')
+    cutoff = max(calendar.session_close(session).to_pydatetime(),
+                 dt.datetime.combine(session.date(), dt.time(16), TZ))
+    if now < cutoff:
+        session = calendar.previous_session(session)
+    return session.date().isoformat()
+
+
 def prepare(mode):
     now = dt.datetime.now(TZ)
     today = now.date().isoformat()
     if mode == 'daily':
-        status = session_status(now)
-        if status != 'open_day':
-            output('publish', 'false')
-            output('status', status)
-            return
+        today = latest_closed_session(now)
+        output('target_session', today)
         receipts = list((STATE / 'delivery').glob(today + '-*.json'))
         if any(json.loads(p.read_text(encoding='utf-8')).get('status') == 'sent' for p in receipts):
             output('publish', 'false')
@@ -80,7 +90,7 @@ def prepare(mode):
             return
     restore()
     if mode == 'daily':
-        subprocess.run([sys.executable, str(ROOT / 'leader-radar/tools/monitor_market.py')], check=True)
+        subprocess.run([sys.executable, str(ROOT / 'leader-radar/tools/monitor_market.py'), '--asof', today], check=True)
         target = DB / 'monitoring-entry-v2-liquidity100' / today / 'snapshot.json'
         if not target.exists():
             raise RuntimeError('Open-day closing data unavailable; do not publish old quotes')
@@ -130,6 +140,9 @@ def notify():
 
 
 def failure():
+    # Retain the independently collected daily amounts even if the full screen failed.
+    # Do this on every attempt, including when today's failure alert was already sent.
+    persist()
     day = dt.datetime.now(TZ).date().isoformat()
     run = os.environ.get('GITHUB_RUN_ID', '')
     text = f'주도주 레이더 {day}: 자동 갱신 또는 발송을 완료하지 못했습니다. 기존 성공 기록을 유지합니다.\n확인: https://github.com/Yebro/global-52-week-highs-automation/actions/runs/{run}'

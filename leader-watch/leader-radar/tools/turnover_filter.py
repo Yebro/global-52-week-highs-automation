@@ -10,20 +10,23 @@ def number(v):
         return n if math.isfinite(n) and n>=0 else None
     except (TypeError, ValueError):return None
 
-def collect(listing, dates, previous, cached):
-    """Keep ALL listing amounts, including names below today's cap floor."""
-    if len(dates)!=3 or dates!=sorted(set(dates)):raise ValueError('Need three distinct trading sessions')
-    sessions={s['date']:s for s in (previous or {}).get('turnover_sessions',[]) if s['date'] in dates}
+def current_session(listing, date):
     current={}
     for s in listing:
-        if s.get('localTradedAt','')[:10]!=dates[-1]:continue
+        if s.get('localTradedAt','')[:10]!=date:continue
         v=number(s.get('accumulatedTradingValueRaw'))
         if v is None:
             v=number(s.get('accumulatedTradingValue'))
             if v is not None:v*=1_000_000 # Naver display unit: million KRW
         if v is not None:current[s['itemCode']]=v
     if not current:raise ValueError('Current actual turnover unavailable')
-    sessions[dates[-1]]=dict(date=dates[-1],amounts=current,source='Naver marketValue accumulatedTradingValueRaw (KRW)')
+    return dict(date=date,amounts=current,source='Naver marketValue accumulatedTradingValueRaw (KRW)')
+
+def collect(listing, dates, previous, cached):
+    """Keep ALL listing amounts, including names below today's cap floor."""
+    if len(dates)!=3 or dates!=sorted(set(dates)):raise ValueError('Need three distinct trading sessions')
+    sessions={s['date']:s for s in (previous or {}).get('turnover_sessions',[]) if s['date'] in dates}
+    sessions[dates[-1]]=current_session(listing,dates[-1])
     missing=[d for d in dates if d not in sessions]
     for year in sorted({d[:4] for d in missing}):
         import pandas as pd

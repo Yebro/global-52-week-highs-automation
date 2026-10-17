@@ -72,7 +72,7 @@ def compare(current,previous):
  result['rising'].sort(key=lambda r:-r['delta'])
  return result
 
-def run(bootstrap=None):
+def run(bootstrap=None,expected_asof=None):
  BASE.mkdir(parents=True,exist_ok=True);today=datetime.datetime.now(TZ).date().isoformat()
  if bootstrap:
   original=DB/'screening'/bootstrap;seed=json.loads((original/'screen.json').read_text(encoding='utf-8'));asof=seed['asof'];universe=seed['listing'];first=None
@@ -82,9 +82,9 @@ def run(bootstrap=None):
   market_dates={max(s['localTradedAt'][:10] for s in a['stocks'] if s.get('localTradedAt')) for a in first.values()}
   if len(market_dates)!=1:raise ValueError('Market dates differ; keep last good snapshot')
   asof=market_dates.pop()
-  if asof!=today:
+  if asof!=(expected_asof or today):
    print(json.dumps({'status':'no_current_session','latest_quote_date':asof,'today':today}));return
-  if datetime.datetime.now(TZ).hour<16:raise ValueError('Run after 16:00 KST for closing snapshot')
+  if asof==today and datetime.datetime.now(TZ).hour<16:raise ValueError('Run after 16:00 KST for closing snapshot')
   original=DB/'screening'/asof;seed=None
  folder=BASE/asof;rawdir=folder/'raw';rawdir.mkdir(parents=True,exist_ok=True)
  target=folder/'snapshot.json'
@@ -107,6 +107,14 @@ def run(bootstrap=None):
  assert len({r['itemCode'] for r in universe})==len(universe),'Duplicate listing'
  prior_paths=sorted(p for p in BASE.glob('*/snapshot.json') if p.parent.name<asof)
  previous=json.loads(prior_paths[-1].read_text(encoding='utf-8')) if prior_paths else None
+ # Keep daily turnover independently of screening success so missing history
+ # cannot erase today's good observations and cause an endless failure chain.
+ ledger=ROOT.parent/'state/turnover';ledger.mkdir(parents=True,exist_ok=True)
+ checkpoint=ledger/(asof+'.json');temp=checkpoint.with_suffix('.tmp')
+ temp.write_text(json.dumps(turnover_filter.current_session(universe,asof),ensure_ascii=False),encoding='utf-8');temp.replace(checkpoint)
+ history={s['date']:s for s in (previous or {}).get('turnover_sessions',[])}
+ for path in sorted(ledger.glob('*.json')):
+  if path.stem<=asof:history[path.stem]=json.loads(path.read_text(encoding='utf-8'))
  previous_codes={r['code'] for r in previous['metrics'] if r['pool'] in ['candidate','watch']} if previous else set()
  common=[s for s in universe if sm.is_common(s)]
  def cap(s):return sm.numeric(s.get('marketValueRaw')) or (sm.numeric(s.get('marketValue')) or 0)*1e8
@@ -121,7 +129,7 @@ def run(bootstrap=None):
  unexpected=[r for r in results if 'error' in r and r['error'] not in ['81개 거래일 이력 부족','최근 20일 무거래 관측','당일 무거래 관측']]
  if unexpected:raise ValueError('Incomplete price collection; no snapshot saved: '+json.dumps(unexpected,ensure_ascii=False))
  if any(not r.get('price_quote_match',True) for r in results):raise ValueError('Price/quote mismatch; no snapshot saved: '+json.dumps([{k:r[k] for k in ('code','name','close','quote_close')} for r in results if not r.get('price_quote_match',True)],ensure_ascii=False))
- sessions=turnover_filter.collect(universe,sorted(benchmark["KOSPI"])[-3:],previous,cached)
+ sessions=turnover_filter.collect(universe,sorted(benchmark["KOSPI"])[-3:],dict(turnover_sessions=list(history.values())),cached)
  scored=turnover_filter.apply(score_rows(valid),sessions)
  selected=sorted([r for r in scored if r['pool']!='outside'],key=lambda r:-r['priority_score'])
  # Flows are supporting evidence, not an entry gate. Limit expensive supplementary fetches.
@@ -146,4 +154,4 @@ def run(bootstrap=None):
  print(json.dumps({'status':'saved','asof':asof,'counts':data['counts'],'changes':{k:len(v) for k,v in data['changes'].items()}},ensure_ascii=False))
 
 if __name__=='__main__':
- sys.stdout.reconfigure(encoding='utf-8');parser=argparse.ArgumentParser();parser.add_argument('--bootstrap');args=parser.parse_args();run(args.bootstrap)
+ sys.stdout.reconfigure(encoding='utf-8');parser=argparse.ArgumentParser();parser.add_argument('--bootstrap');parser.add_argument('--asof');args=parser.parse_args();run(args.bootstrap,args.asof)

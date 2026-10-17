@@ -12,6 +12,7 @@ def make_brief(current,previous=None):
   if delta>0:ranked.append((delta,r,p))
  ranked.sort(key=lambda x:(-x[0],-x[1]['priority_score'],x[1]['code']))
  lines=[f"주도주 레이더 | {current['asof']} 종가",f"진입 검토 {len(candidates)}종목 · 시총 1,000억원 이상",'최근 3거래일 중 실제 거래대금 100억원 초과 1회 이상','진입 적합도 상승 TOP 3']
+ if comparable:lines.insert(3,f"비교 기준: 직전 정상 기록 {previous['asof']} (직전 거래일과 다를 수 있음)")
  if not comparable:lines.append('새 점수 기준 기록: 이전 관찰 점수와 비교하지 않습니다.')
  elif not ranked:lines.append('기존 진입 검토 종목 중 점수 상승 없음')
  for i,(delta,r,p) in enumerate(ranked[:3],1):
