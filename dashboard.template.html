@@ -150,7 +150,17 @@
   #actual-highs-tracker .ht-control-button[aria-pressed="true"] { background: var(--ht-accent-soft); border-color: var(--ht-accent); color: var(--ht-accent); }
   #actual-highs-tracker .ht-count-chip { background: var(--ht-surface-2); border-radius: 6px; color: var(--ht-muted); font-size: 10px; padding: 4px 6px; white-space: nowrap; }
   #actual-highs-tracker .ht-table-wrap { overflow-x: auto; }
-  #actual-highs-tracker table { border-collapse: collapse; min-width: 760px; width: 100%; }
+  #actual-highs-tracker table { border-collapse: collapse; min-width: 940px; table-layout: fixed; width: 100%; }
+  #actual-highs-tracker .ht-col-rank { width: 4%; }
+  #actual-highs-tracker .ht-col-company { width: 18%; }
+  #actual-highs-tracker .ht-col-market-cap { width: 10%; }
+  #actual-highs-tracker .ht-col-day-return { width: 9%; }
+  #actual-highs-tracker .ht-col-market { width: 11%; }
+  #actual-highs-tracker .ht-col-sector { width: 8%; }
+  #actual-highs-tracker .ht-col-date { width: 9%; }
+  #actual-highs-tracker .ht-col-close { width: 8%; }
+  #actual-highs-tracker .ht-col-first-high { width: 11%; }
+  #actual-highs-tracker .ht-col-breakout-return { width: 12%; }
   #actual-highs-tracker th { border-bottom: 1px solid var(--ht-line); color: var(--ht-muted); font-size: 9px; font-weight: 400; padding: 0 7px 8px; text-align: left; white-space: nowrap; }
   #actual-highs-tracker td { border-bottom: 1px solid var(--ht-line); font-size: 10px; padding: 8px 7px; vertical-align: middle; }
   #actual-highs-tracker tbody tr:last-child td { border-bottom: 0; }
@@ -284,6 +294,18 @@
           </div>
           <div class="ht-table-wrap">
             <table>
+              <colgroup>
+                <col class="ht-col-rank">
+                <col class="ht-col-company">
+                <col class="ht-col-market-cap">
+                <col class="ht-col-day-return">
+                <col class="ht-col-market">
+                <col class="ht-col-sector">
+                <col class="ht-col-date">
+                <col class="ht-col-close">
+                <col class="ht-col-first-high">
+                <col class="ht-col-breakout-return">
+              </colgroup>
               <thead><tr><th>#</th><th>종목</th><th class="ht-num">시가총액</th><th class="ht-num">당일 수익률</th><th>시장</th><th>섹터</th><th>기준일</th><th class="ht-num">종가</th><th class="ht-num">1년 첫 신고가</th><th class="ht-num">이후 수익률</th></tr></thead>
               <tbody></tbody>
             </table>
