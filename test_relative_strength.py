@@ -158,6 +158,53 @@ class RelativeStrengthTests(unittest.TestCase):
         self.assertEqual(row["relative_strength_5d_pct"], 7.0)
         self.assertIn("Naver Finance", row["price_source"])
 
+    def test_relative_strength_requires_500_billion_krw_in_every_market(self) -> None:
+        universe = pd.DataFrame(
+            [
+                {
+                    "market": "KR", "exchange": "KOSDAQ", "symbol": symbol,
+                    "yahoo_symbol": f"{symbol}.KQ", "name": symbol, "sector": "IT",
+                    "industry": "소프트웨어", "market_cap_local": market_cap,
+                    "currency": "KRW", "shares_outstanding": 1,
+                }
+                for symbol, market_cap in (("SMALL", 499_999_999_999), ("LARGE", 500_000_000_000))
+            ]
+        )
+
+        def price(symbol: str) -> collect.PriceRecord:
+            return collect.PriceRecord(
+                yahoo_symbol=f"{symbol}.KQ", as_of="2026-10-20", close=100.0,
+                day_return_pct=1.0, return_5d_pct=4.0, prior_high=110.0,
+                breakout_date="2026-10-20", breakout_close=100.0, breakout_pct=0.0,
+                is_high=False, was_high_previous=False, history_days=253,
+                latest_volume=0, currency="KRW",
+            )
+
+        prices = {f"KR|{symbol}.KQ": price(symbol) for symbol in ("SMALL", "LARGE")}
+        relative_prices = {
+            f"KR|{symbol}.KQ": collect.RelativePriceRecord(
+                as_of="2026-10-20", return_5d_pct=4.0, latest_volume=100_000,
+                source="Naver Finance domestic daily OHLCV",
+            )
+            for symbol in ("SMALL", "LARGE")
+        }
+        benchmarks = {
+            "KR:KOSDAQ": {
+                "symbol": "KOSDAQ", "name": "KOSDAQ", "as_of": "2026-10-20",
+                "return_5d_pct": 1.0, "source": "Naver Finance domestic index daily OHLCV",
+            }
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with patch.object(collect, "SCREENED_PATH", Path(temp_dir) / "screened.csv"):
+                payload = collect.build_payload(
+                    universe, prices, {"KRW": 1.0},
+                    "2026-10-20T00:00:00+09:00", benchmarks, relative_prices,
+                )
+
+        self.assertEqual([row["symbol"] for row in payload["relative_strength"]], ["LARGE"])
+        self.assertEqual(payload["markets"]["KR"]["screened"], 2)
+        self.assertEqual(payload["meta"]["relative_strength_market_cap_min_krw"], 500_000_000_000)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -252,7 +252,7 @@
         <div class="ht-tabs" role="group" aria-label="시장 필터"></div>
         <span class="ht-rule" id="ht-rule-text">한국 시총 제한 없음 · 기타 시장 시총 ≥ 3,000억원 · 수익률은 최근 365일 내 첫 52주 신고가 종가 대비</span>
       </div>
-      <div class="ht-scope"><strong>범위</strong> 한국 KOSPI+KOSDAQ 전체 시총 · 미국 NASDAQ 전체+S&amp;P 500 중복 제거 · 일본 TSE · 중국 SSE+SZSE · 대만 TWSE+TPEx · 홍콩 HKEX · 한국 외 원화 환산 시가총액 3,000억원 미만 및 전 시장 시가총액 미확인 종목 제외</div>
+      <div class="ht-scope" id="ht-scope"><strong>범위</strong> 한국 KOSPI+KOSDAQ 전체 시총 · 미국 NASDAQ 전체+S&amp;P 500 중복 제거 · 일본 TSE · 중국 SSE+SZSE · 대만 TWSE+TPEx · 홍콩 HKEX · 한국 외 원화 환산 시가총액 3,000억원 미만 및 전 시장 시가총액 미확인 종목 제외</div>
 
       <section class="ht-stats ht-high-view" aria-label="핵심 지표">
         <div class="ht-stat"><span class="ht-stat-label">신고가 종목</span><span class="ht-stat-value" id="ht-highs">-</span><span class="ht-stat-unit">개</span><span class="ht-stat-context" id="ht-delta">-</span></div>
@@ -704,7 +704,10 @@
     root.querySelectorAll('.ht-mode-button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.view === activeView)));
     root.querySelector('#ht-rule-text').textContent = showHighs
       ? '한국 시총 제한 없음 · 기타 시장 시총 ≥ 3,000억원 · 수익률은 최근 365일 내 첫 52주 신고가 종가 대비'
-      : `최근 완료 5거래일 · 종목 수익률 - 거래소 벤치마크 수익률 · 시장별 상위 ${Number(data.meta.relative_strength_limit_per_market || 100)}개`;
+      : `전 시장 시총 ≥ 5,000억원 · 최근 완료 5거래일 · 시장별 상위 ${Number(data.meta.relative_strength_limit_per_market || 100)}개`;
+    root.querySelector('#ht-scope').innerHTML = showHighs
+      ? '<strong>범위</strong> 한국 KOSPI+KOSDAQ 전체 시총 · 미국 NASDAQ 전체+S&amp;P 500 중복 제거 · 일본 TSE · 중국 SSE+SZSE · 대만 TWSE+TPEx · 홍콩 HKEX · 한국 외 원화 환산 시가총액 3,000억원 미만 및 전 시장 시가총액 미확인 종목 제외'
+      : '<strong>범위</strong> 한국 KOSPI+KOSDAQ · 미국 NASDAQ 전체+S&amp;P 500 중복 제거 · 일본 TSE · 중국 SSE+SZSE · 대만 TWSE+TPEx · 홍콩 HKEX · 전 시장 원화 환산 시가총액 5,000억원 미만 및 시가총액 미확인 종목 제외';
     if (showHighs) {
       renderStats(); renderTrend(); renderDonut(); renderTable();
     } else {

@@ -40,6 +40,7 @@ MARKET_LABELS = {
 MARKET_ORDER = ["US", "KR", "JP", "CN", "TW", "HK"]
 
 RELATIVE_STRENGTH_LIMIT_PER_MARKET = 100
+RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW = 500_000_000_000
 
 BENCHMARKS = {
     "US:NASDAQ": {"symbol": "^IXIC", "name": "NASDAQ Composite", "market": "US"},
@@ -695,7 +696,7 @@ def collect_naver_relative_prices(
         market_cap_krw = market_cap_krw_for(row, price, fx_rates)
         if not price or market_cap_krw is None:
             continue
-        if row.market != "KR" and market_cap_krw < MARKET_CAP_MIN_KRW:
+        if market_cap_krw < RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW:
             continue
         candidates.append((key, row.market, row.symbol, row.yahoo_symbol))
 
@@ -1032,7 +1033,12 @@ def build_payload(
                     latest_volume=record.latest_volume,
                     source="Yahoo Finance daily close via spark endpoint",
                 )
-            if benchmark and relative_price and relative_price.latest_volume > 0:
+            if (
+                market_cap_krw >= RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW
+                and benchmark
+                and relative_price
+                and relative_price.latest_volume > 0
+            ):
                 relative_strength_rows.append(
                     {
                         "market": screened["market"],
@@ -1132,6 +1138,8 @@ def build_payload(
             "listing_sources": "FinanceDataReader/Naver, S&P 500 listing, TWSE OpenAPI, TPEx OpenAPI",
             "relative_strength_rule": "최근 완료 5거래일 종목 수익률 - 동일 거래소 벤치마크 5거래일 수익률",
             "relative_strength_activity_rule": "최근 시장 거래일에 거래량이 확인된 종목만 포함(거래정지·시세 지연 종목 제외)",
+            "relative_strength_market_cap_rule": "전 시장 원화 환산 시가총액 5,000억원 이상, 시가총액 미확인 종목 제외",
+            "relative_strength_market_cap_min_krw": RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW,
             "relative_strength_price_source": "한국·일본·중국은 네이버 증권 일봉 OHLCV, 미국·대만·홍콩은 Yahoo Finance 일봉",
             "relative_strength_limit_per_market": RELATIVE_STRENGTH_LIMIT_PER_MARKET,
         },
