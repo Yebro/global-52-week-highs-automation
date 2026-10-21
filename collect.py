@@ -4,6 +4,7 @@ import argparse
 import json
 import math
 import sys
+import threading
 import time
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict, deque
@@ -51,6 +52,16 @@ BENCHMARKS = {
     "TW:TWSE": {"symbol": "^TWII", "name": "TAIEX", "market": "TW"},
     "TW:TPEx": {"symbol": "^TWII", "name": "TAIEX (proxy)", "market": "TW"},
     "HK:HKEX": {"symbol": "^HSI", "name": "Hang Seng Index", "market": "HK"},
+}
+
+NAVER_RELATIVE_MARKETS = {"KR", "JP", "CN"}
+
+NAVER_BENCHMARKS = {
+    "KR:KOSPI": {"symbol": "KOSPI", "name": "KOSPI", "market": "KR", "kind": "domestic"},
+    "KR:KOSDAQ": {"symbol": "KOSDAQ", "name": "KOSDAQ", "market": "KR", "kind": "domestic"},
+    "JP:TSE": {"symbol": ".N225", "name": "Nikkei 225", "market": "JP", "kind": "foreign_index"},
+    "CN:SSE": {"symbol": ".SSEC", "name": "SSE Composite", "market": "CN", "kind": "foreign_index"},
+    "CN:SZSE": {"symbol": ".SZSC", "name": "Shenzhen Component", "market": "CN", "kind": "foreign_index"},
 }
 
 MARKET_CLOCK = {
@@ -130,6 +141,17 @@ class PriceRecord:
     history_days: int
     latest_volume: float
     currency: str
+
+
+@dataclass(frozen=True)
+class RelativePriceRecord:
+    as_of: str
+    return_5d_pct: float
+    latest_volume: float
+    source: str
+
+
+_NAVER_SESSION_LOCAL = threading.local()
 
 
 def clean_text(value: object) -> str:
@@ -545,6 +567,160 @@ def request_spark(symbols: list[str], timeout: int = 45) -> list[dict]:
     return []
 
 
+def naver_session() -> requests.Session:
+    session = getattr(_NAVER_SESSION_LOCAL, "session", None)
+    if session is None:
+        session = requests.Session()
+        session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"})
+        _NAVER_SESSION_LOCAL.session = session
+    return session
+
+
+def completed_market_values(
+    values: list[tuple[str, float, float]], market: str, now_utc: datetime
+) -> list[tuple[str, float, float]]:
+    tz_name, completed_after = MARKET_CLOCK[market]
+    local_now = now_utc.astimezone(ZoneInfo(tz_name))
+    completed = [
+        item
+        for item in values
+        if datetime.fromisoformat(item[0]).date() < local_now.date()
+        or local_now.time() >= completed_after
+    ]
+    return sorted({item[0]: item for item in completed}.values(), key=lambda item: item[0])
+
+
+def relative_record_from_values(
+    values: list[tuple[str, float, float]], market: str, now_utc: datetime, source: str
+) -> RelativePriceRecord | None:
+    completed = completed_market_values(values, market, now_utc)
+    if len(completed) < 6:
+        return None
+    as_of, close, volume = completed[-1]
+    base_close = completed[-6][1]
+    if close <= 0 or base_close <= 0:
+        return None
+    return RelativePriceRecord(
+        as_of=as_of,
+        return_5d_pct=(close / base_close - 1) * 100,
+        latest_volume=volume if math.isfinite(volume) and volume > 0 else 0.0,
+        source=source,
+    )
+
+
+def fetch_naver_domestic_values(symbol: str, count: int = 15, timeout: int = 20) -> list[tuple[str, float, float]]:
+    url = "https://fchart.stock.naver.com/sise.nhn"
+    params = {"symbol": symbol, "timeframe": "day", "count": count, "requestType": 0}
+    last_error: Exception | None = None
+    for attempt in range(2):
+        try:
+            response = naver_session().get(url, params=params, timeout=timeout)
+            response.raise_for_status()
+            text = response.content.decode("euc-kr", errors="replace")
+            if "?>" in text:
+                text = text.split("?>", 1)[1]
+            root = ET.fromstring(text)
+            values: list[tuple[str, float, float]] = []
+            for item in root.iter("item"):
+                parts = clean_text(item.attrib.get("data")).split("|")
+                if len(parts) < 6:
+                    continue
+                try:
+                    trade_date = datetime.strptime(parts[0], "%Y%m%d").date().isoformat()
+                    close = float(parts[4])
+                    volume = float(parts[5])
+                except (TypeError, ValueError):
+                    continue
+                if math.isfinite(close) and close > 0:
+                    values.append((trade_date, close, volume))
+            return values
+        except Exception as error:
+            last_error = error
+            if attempt == 0:
+                time.sleep(0.25)
+    print(f"[warning] Naver domestic chart failed for {symbol}: {last_error}", file=sys.stderr)
+    return []
+
+
+def fetch_naver_foreign_values(
+    symbol: str, info_type: str = "item", timeout: int = 20
+) -> list[tuple[str, float, float]]:
+    url = f"https://api.stock.naver.com/chart/foreign/{info_type}/{symbol}"
+    last_error: Exception | None = None
+    for attempt in range(2):
+        try:
+            response = naver_session().get(url, params={"periodType": "dayCandle"}, timeout=timeout)
+            response.raise_for_status()
+            values: list[tuple[str, float, float]] = []
+            for item in response.json().get("priceInfos") or []:
+                try:
+                    trade_date = datetime.strptime(clean_text(item.get("localDate")), "%Y%m%d").date().isoformat()
+                    close = float(item.get("closePrice"))
+                    volume = float(item.get("accumulatedTradingVolume") or 0)
+                except (TypeError, ValueError):
+                    continue
+                if math.isfinite(close) and close > 0:
+                    values.append((trade_date, close, volume))
+            return values
+        except Exception as error:
+            last_error = error
+            if attempt == 0:
+                time.sleep(0.25)
+    print(f"[warning] Naver foreign chart failed for {symbol}: {last_error}", file=sys.stderr)
+    return []
+
+
+def fetch_naver_relative_record(
+    market: str, symbol: str, yahoo_symbol: str, now_utc: datetime
+) -> RelativePriceRecord | None:
+    if market == "KR":
+        values = fetch_naver_domestic_values(symbol)
+        source = "Naver Finance domestic daily OHLCV"
+    else:
+        values = fetch_naver_foreign_values(yahoo_symbol)
+        source = "Naver Finance foreign daily OHLCV"
+    return relative_record_from_values(values, market, now_utc, source)
+
+
+def collect_naver_relative_prices(
+    universe: pd.DataFrame,
+    prices: dict[str, PriceRecord],
+    fx_rates: dict[str, float],
+    workers: int,
+) -> dict[str, RelativePriceRecord]:
+    candidates: list[tuple[str, str, str, str]] = []
+    for row in universe[universe["market"].isin(NAVER_RELATIVE_MARKETS)].itertuples(index=False):
+        key = f"{row.market}|{row.yahoo_symbol}"
+        price = prices.get(key)
+        market_cap_krw = market_cap_krw_for(row, price, fx_rates)
+        if not price or market_cap_krw is None:
+            continue
+        if row.market != "KR" and market_cap_krw < MARKET_CAP_MIN_KRW:
+            continue
+        candidates.append((key, row.market, row.symbol, row.yahoo_symbol))
+
+    records: dict[str, RelativePriceRecord] = {}
+    now_utc = datetime.now(timezone.utc)
+    max_workers = min(24, max(8, workers * 3))
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_map = {
+            executor.submit(fetch_naver_relative_record, market, symbol, yahoo_symbol, now_utc): key
+            for key, market, symbol, yahoo_symbol in candidates
+        }
+        for completed, future in enumerate(as_completed(future_map), start=1):
+            key = future_map[future]
+            try:
+                record = future.result()
+            except Exception as error:
+                print(f"[warning] Naver relative request failed for {key}: {error}", file=sys.stderr)
+                record = None
+            if record:
+                records[key] = record
+            if completed == 1 or completed % 250 == 0 or completed == len(candidates):
+                print(f"[naver-relative] {completed:,}/{len(candidates):,} · {len(records):,} symbols")
+    return records
+
+
 def collect_prices(universe: pd.DataFrame, workers: int, chunk_size: int) -> dict[str, PriceRecord]:
     now_utc = datetime.now(timezone.utc)
     groups = []
@@ -579,7 +755,10 @@ def collect_prices(universe: pd.DataFrame, workers: int, chunk_size: int) -> dic
 
 def collect_benchmarks() -> dict[str, dict]:
     definitions_by_symbol: dict[str, dict] = {}
-    for definition in BENCHMARKS.values():
+    naver_benchmark_ids = set(NAVER_BENCHMARKS)
+    for benchmark_id, definition in BENCHMARKS.items():
+        if benchmark_id in naver_benchmark_ids:
+            continue
         definitions_by_symbol.setdefault(definition["symbol"], definition)
     results = request_spark(list(definitions_by_symbol), timeout=45)
     now_utc = datetime.now(timezone.utc)
@@ -595,6 +774,8 @@ def collect_benchmarks() -> dict[str, dict]:
 
     benchmarks: dict[str, dict] = {}
     for benchmark_id, definition in BENCHMARKS.items():
+        if benchmark_id in naver_benchmark_ids:
+            continue
         record = records_by_symbol.get(definition["symbol"])
         if not record:
             print(f"[warning] benchmark unavailable: {benchmark_id}", file=sys.stderr)
@@ -604,6 +785,26 @@ def collect_benchmarks() -> dict[str, dict]:
             "name": definition["name"],
             "as_of": record.as_of,
             "return_5d_pct": rounded(record.return_5d_pct, 3),
+            "source": "Yahoo Finance daily close via spark endpoint",
+        }
+
+    for benchmark_id, definition in NAVER_BENCHMARKS.items():
+        if definition["kind"] == "domestic":
+            values = fetch_naver_domestic_values(definition["symbol"])
+            source = "Naver Finance domestic index daily OHLCV"
+        else:
+            values = fetch_naver_foreign_values(definition["symbol"], info_type="index")
+            source = "Naver Finance foreign index daily OHLCV"
+        relative = relative_record_from_values(values, definition["market"], now_utc, source)
+        if not relative:
+            print(f"[warning] Naver benchmark unavailable: {benchmark_id}", file=sys.stderr)
+            continue
+        benchmarks[benchmark_id] = {
+            "symbol": definition["symbol"],
+            "name": definition["name"],
+            "as_of": relative.as_of,
+            "return_5d_pct": rounded(relative.return_5d_pct, 3),
+            "source": source,
         }
     print(f"[benchmarks] {len(benchmarks)}/{len(BENCHMARKS)} available")
     return benchmarks
@@ -751,8 +952,10 @@ def build_payload(
     fx_rates: dict[str, float],
     fx_as_of: str,
     benchmarks: dict[str, dict] | None = None,
+    relative_prices: dict[str, RelativePriceRecord] | None = None,
 ) -> dict:
     benchmarks = benchmarks or {}
+    relative_prices = relative_prices or {}
     market_stats = {}
     high_rows = []
     screened_rows = []
@@ -821,7 +1024,15 @@ def build_payload(
             screened_rows.append(screened)
             benchmark_id = f"{market}:{row.exchange}"
             benchmark = benchmarks.get(benchmark_id)
-            if benchmark and record.latest_volume > 0:
+            relative_price = relative_prices.get(f"{market}|{row.yahoo_symbol}")
+            if market not in NAVER_RELATIVE_MARKETS:
+                relative_price = RelativePriceRecord(
+                    as_of=record.as_of,
+                    return_5d_pct=record.return_5d_pct,
+                    latest_volume=record.latest_volume,
+                    source="Yahoo Finance daily close via spark endpoint",
+                )
+            if benchmark and relative_price and relative_price.latest_volume > 0:
                 relative_strength_rows.append(
                     {
                         "market": screened["market"],
@@ -831,18 +1042,20 @@ def build_payload(
                         "yahoo_symbol": row.yahoo_symbol,
                         "name": row.name,
                         "sector": screened["sector"],
-                        "as_of": record.as_of,
+                        "as_of": relative_price.as_of,
                         "close": rounded(record.close),
                         "currency": record.currency,
                         "market_cap_krw": round(market_cap_krw),
                         "market_cap_krw_eok": rounded(market_cap_krw / 100_000_000, 1),
-                        "return_5d_pct": rounded(record.return_5d_pct, 3),
+                        "return_5d_pct": rounded(relative_price.return_5d_pct, 3),
+                        "price_source": relative_price.source,
                         "benchmark_id": benchmark_id,
                         "benchmark_name": benchmark["name"],
                         "benchmark_as_of": benchmark["as_of"],
                         "benchmark_return_5d_pct": benchmark["return_5d_pct"],
+                        "benchmark_source": benchmark.get("source", ""),
                         "relative_strength_5d_pct": rounded(
-                            record.return_5d_pct - benchmark["return_5d_pct"], 3
+                            relative_price.return_5d_pct - benchmark["return_5d_pct"], 3
                         ),
                     }
                 )
@@ -919,6 +1132,7 @@ def build_payload(
             "listing_sources": "FinanceDataReader/Naver, S&P 500 listing, TWSE OpenAPI, TPEx OpenAPI",
             "relative_strength_rule": "최근 완료 5거래일 종목 수익률 - 동일 거래소 벤치마크 5거래일 수익률",
             "relative_strength_activity_rule": "최근 시장 거래일에 거래량이 확인된 종목만 포함(거래정지·시세 지연 종목 제외)",
+            "relative_strength_price_source": "한국·일본·중국은 네이버 증권 일봉 OHLCV, 미국·대만·홍콩은 Yahoo Finance 일봉",
             "relative_strength_limit_per_market": RELATIVE_STRENGTH_LIMIT_PER_MARKET,
         },
         "summary": {
@@ -1002,7 +1216,12 @@ def main() -> None:
     benchmarks = collect_benchmarks()
     fx_rates, fx_as_of = fetch_fx_rates()
     print(f"[fx] {fx_rates}")
-    payload = build_payload(universe, prices, fx_rates, fx_as_of, benchmarks)
+    relative_prices = collect_naver_relative_prices(
+        universe, prices, fx_rates, max(1, args.workers)
+    )
+    payload = build_payload(
+        universe, prices, fx_rates, fx_as_of, benchmarks, relative_prices
+    )
     payload["history"] = update_history(payload)
     LATEST_PATH.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"[done] {LATEST_PATH}")

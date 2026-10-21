@@ -112,6 +112,52 @@ class RelativeStrengthTests(unittest.TestCase):
 
         self.assertEqual([row["symbol"] for row in payload["relative_strength"]], ["ACTIVE"])
 
+    def test_korean_relative_strength_uses_naver_overlay(self) -> None:
+        universe = pd.DataFrame(
+            [
+                {
+                    "market": "KR", "exchange": "KOSPI", "symbol": "005930",
+                    "yahoo_symbol": "005930.KS", "name": "삼성전자", "sector": "IT",
+                    "industry": "반도체", "market_cap_local": 500_000_000_000_000,
+                    "currency": "KRW", "shares_outstanding": 1,
+                }
+            ]
+        )
+        prices = {
+            "KR|005930.KS": collect.PriceRecord(
+                yahoo_symbol="005930.KS", as_of="2026-10-20", close=100.0,
+                day_return_pct=1.0, return_5d_pct=-99.0, prior_high=110.0,
+                breakout_date="2026-10-20", breakout_close=100.0, breakout_pct=0.0,
+                is_high=False, was_high_previous=False, history_days=253,
+                latest_volume=0, currency="KRW",
+            )
+        }
+        benchmarks = {
+            "KR:KOSPI": {
+                "symbol": "KOSPI", "name": "KOSPI", "as_of": "2026-10-20",
+                "return_5d_pct": -2.0, "source": "Naver Finance domestic index daily OHLCV",
+            }
+        }
+        relative_prices = {
+            "KR|005930.KS": collect.RelativePriceRecord(
+                as_of="2026-10-20", return_5d_pct=5.0,
+                latest_volume=10_000_000,
+                source="Naver Finance domestic daily OHLCV",
+            )
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with patch.object(collect, "SCREENED_PATH", Path(temp_dir) / "screened.csv"):
+                payload = collect.build_payload(
+                    universe, prices, {"KRW": 1.0},
+                    "2026-10-20T00:00:00+09:00", benchmarks, relative_prices,
+                )
+
+        row = payload["relative_strength"][0]
+        self.assertEqual(row["symbol"], "005930")
+        self.assertEqual(row["return_5d_pct"], 5.0)
+        self.assertEqual(row["relative_strength_5d_pct"], 7.0)
+        self.assertIn("Naver Finance", row["price_source"])
+
 
 if __name__ == "__main__":
     unittest.main()
