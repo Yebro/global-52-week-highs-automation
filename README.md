@@ -55,6 +55,8 @@ gcloud run jobs execute global-highs-manual --region=asia-northeast3 --wait
 
 업데이트 알림에는 신규 52주 신고가 기업 중 시가총액 1조원 이상 종목을 당일 수익률 내림차순으로 최대 10개 선정한 핵심 요약이 포함됩니다. 중국·홍콩·대만은 시장별 최대 2개로 제한하며, 제외된 자리에는 다음 순위의 다른 시장 종목을 채웁니다. 각 종목은 시가총액·시장·섹터·당일 수익률과 주요 이슈 한 줄을 함께 표시합니다. 주요 이슈는 최근 90일 영어권 Google News·Yahoo Finance·Bing News 검색 결과에서 Reuters·Bloomberg·Yahoo Finance·Investing.com·Business Wire 등 신뢰도 높은 출처를 우선하고, 실적·가이던스·수주·승인·파트너십 같은 실제 촉매를 단순 주가 등락 기사보다 앞세워 선정합니다.
 
+대시보드의 `5일 상대강도` 화면은 최근 완료 5거래일 종목 수익률에서 동일 거래소 벤치마크의 5거래일 수익률을 차감해 시장 대비 초과수익률을 계산합니다. NASDAQ·S&P 500, KOSPI·KOSDAQ, Nikkei 225, SSE·Shenzhen, TAIEX, Hang Seng을 사용하며 Yahoo Finance에서 TPEx 지수 시계열이 제공되지 않는 경우 TPEx 종목은 TAIEX를 대체 벤치마크로 사용합니다. 각 국가별 상대강도 상위 100개 종목을 대시보드에 포함합니다.
+
 수동 실행은 GitHub의 Actions 화면에서 `Update 52-week highs dashboard`를 선택해 실행할 수 있습니다.
 
 ## 결과

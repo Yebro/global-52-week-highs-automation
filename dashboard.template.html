@@ -72,6 +72,11 @@
   #actual-highs-tracker .ht-collected { color: var(--ht-muted); font-size: 11px; text-align: right; }
   #actual-highs-tracker .ht-collected strong { color: var(--ht-text); display: block; font-size: 12px; font-weight: 500; margin-top: 3px; }
   #actual-highs-tracker .ht-body { padding: 18px 22px 24px; }
+  #actual-highs-tracker [hidden] { display: none !important; }
+
+  #actual-highs-tracker .ht-mode-switch { background: var(--ht-surface-2); border: 1px solid var(--ht-line); border-radius: 9px; display: inline-flex; gap: 3px; margin-bottom: 12px; padding: 3px; }
+  #actual-highs-tracker .ht-mode-button { background: transparent; border: 0; border-radius: 6px; color: var(--ht-muted); cursor: pointer; min-height: 30px; padding: 0 12px; }
+  #actual-highs-tracker .ht-mode-button[aria-pressed="true"] { background: var(--ht-surface); box-shadow: 0 1px 4px rgba(0,0,0,.08); color: var(--ht-text); font-weight: 500; }
 
   #actual-highs-tracker .ht-filter-row { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; margin-bottom: 11px; }
   #actual-highs-tracker .ht-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -175,6 +180,17 @@
   #actual-highs-tracker .ht-day-return.is-up { color: var(--ht-up); }
   #actual-highs-tracker .ht-day-return.is-down { color: var(--ht-down); }
   #actual-highs-tracker .ht-breakout { color: var(--ht-up); font-weight: 500; }
+  #actual-highs-tracker .ht-relative { color: var(--ht-accent); font-weight: 600; }
+  #actual-highs-tracker .ht-relative.is-down { color: var(--ht-down); }
+  #actual-highs-tracker .ht-rs-table { min-width: 980px; }
+  #actual-highs-tracker .ht-rs-table .ht-col-company { width: 19%; }
+  #actual-highs-tracker .ht-rs-table .ht-col-market-cap { width: 11%; }
+  #actual-highs-tracker .ht-rs-table .ht-col-rs-return { width: 10%; }
+  #actual-highs-tracker .ht-rs-table .ht-col-benchmark { width: 17%; }
+  #actual-highs-tracker .ht-rs-table .ht-col-relative { width: 11%; }
+  #actual-highs-tracker .ht-rs-table .ht-col-market { width: 12%; }
+  #actual-highs-tracker .ht-rs-table .ht-col-sector { width: 9%; }
+  #actual-highs-tracker .ht-rs-table .ht-col-date { width: 9%; }
   #actual-highs-tracker .ht-return-days { color: var(--ht-muted); font-size: 9px; font-weight: 400; margin-left: 4px; }
   #actual-highs-tracker .ht-date { color: var(--ht-muted); white-space: nowrap; }
   #actual-highs-tracker .ht-empty { color: var(--ht-muted); padding: 32px 8px; text-align: center; }
@@ -214,7 +230,7 @@
 </style>
 
 <div id="actual-highs-tracker">
-  <section class="ht-app" aria-label="실제 데이터 기반 글로벌 52주 신고가 트래커">
+  <section class="ht-app" aria-label="실제 데이터 기반 글로벌 52주 신고가 및 상대강도 트래커">
     <header class="ht-header">
       <div>
         <div class="ht-title-row">
@@ -222,28 +238,32 @@
           <h1>Global Highs Tracker</h1>
           <span class="ht-live-badge">ACTUAL DATA</span>
         </div>
-        <p class="ht-subtitle">한국 전체 시총 · 기타 시장 3,000억원 이상 · 종가 기준 52주 신고가</p>
+        <p class="ht-subtitle">종가 기준 52주 신고가 · 최근 5거래일 시장 대비 상대강도</p>
       </div>
       <div class="ht-collected">수집 완료 시각<strong id="ht-collected-at">-</strong></div>
     </header>
 
     <div class="ht-body">
+      <div class="ht-mode-switch" role="group" aria-label="분석 화면 선택">
+        <button type="button" class="ht-mode-button" data-view="highs" aria-pressed="true">52주 신고가</button>
+        <button type="button" class="ht-mode-button" data-view="relative" aria-pressed="false">5일 상대강도</button>
+      </div>
       <div class="ht-filter-row">
         <div class="ht-tabs" role="group" aria-label="시장 필터"></div>
-        <span class="ht-rule">한국 시총 제한 없음 · 기타 시장 시총 ≥ 3,000억원 · 수익률은 최근 365일 내 첫 52주 신고가 종가 대비</span>
+        <span class="ht-rule" id="ht-rule-text">한국 시총 제한 없음 · 기타 시장 시총 ≥ 3,000억원 · 수익률은 최근 365일 내 첫 52주 신고가 종가 대비</span>
       </div>
       <div class="ht-scope"><strong>범위</strong> 한국 KOSPI+KOSDAQ 전체 시총 · 미국 NASDAQ 전체+S&amp;P 500 중복 제거 · 일본 TSE · 중국 SSE+SZSE · 대만 TWSE+TPEx · 홍콩 HKEX · 한국 외 원화 환산 시가총액 3,000억원 미만 및 전 시장 시가총액 미확인 종목 제외</div>
 
-      <section class="ht-stats" aria-label="핵심 지표">
+      <section class="ht-stats ht-high-view" aria-label="핵심 지표">
         <div class="ht-stat"><span class="ht-stat-label">신고가 종목</span><span class="ht-stat-value" id="ht-highs">-</span><span class="ht-stat-unit">개</span><span class="ht-stat-context" id="ht-delta">-</span></div>
         <div class="ht-stat"><span class="ht-stat-label">가격 스크리닝</span><span class="ht-stat-value" id="ht-screened">-</span><span class="ht-stat-unit">개</span><span class="ht-stat-context" id="ht-coverage">-</span></div>
         <div class="ht-stat"><span class="ht-stat-label">신고가 비율</span><span class="ht-stat-value" id="ht-ratio">-</span><span class="ht-stat-unit">%</span><span class="ht-stat-context" id="ht-as-of">시장별 최근 완료일</span></div>
         <div class="ht-stat"><span class="ht-stat-label">최다 신고가 섹터</span><span class="ht-stat-value" id="ht-top-sector">-</span><span class="ht-stat-context" id="ht-top-sector-count">-</span></div>
       </section>
 
-      <section class="ht-market-strip" aria-label="시장별 실제 신고가 현황"></section>
+      <section class="ht-market-strip ht-high-view" aria-label="시장별 실제 신고가 현황"></section>
 
-      <div class="ht-insights">
+      <div class="ht-insights ht-high-view">
         <section class="ht-panel ht-sector-panel" aria-labelledby="ht-sector-heading">
           <div class="ht-panel-header">
             <div><h2 id="ht-sector-heading">섹터별 신고가 비중</h2><div class="ht-panel-note">섹터 색상은 전 국가 공통 · 조각 또는 범례를 선택하면 종목표가 필터링됩니다</div></div>
@@ -283,7 +303,7 @@
         </section>
       </div>
 
-      <section class="ht-panel ht-list-panel" aria-labelledby="ht-list-heading">
+      <section class="ht-panel ht-list-panel ht-high-view" aria-labelledby="ht-list-heading">
           <div class="ht-panel-header">
             <div><h2 id="ht-list-heading">실제 신고가 종목</h2><div class="ht-panel-note" id="ht-list-note">1년 첫 신고가 후 수익률 높은 순</div></div>
             <div class="ht-list-tools" role="group" aria-label="종목표 보기 설정">
@@ -307,7 +327,7 @@
                 <col class="ht-col-breakout-return">
               </colgroup>
               <thead><tr><th>#</th><th>종목</th><th class="ht-num">시가총액</th><th class="ht-num">당일 수익률</th><th>시장</th><th>섹터</th><th>기준일</th><th class="ht-num">종가</th><th class="ht-num">1년 첫 신고가</th><th class="ht-num">이후 수익률</th></tr></thead>
-              <tbody></tbody>
+              <tbody id="ht-high-body"></tbody>
             </table>
           </div>
           <div class="ht-pagination">
@@ -316,7 +336,38 @@
           </div>
       </section>
 
-      <footer class="ht-footer"><span id="ht-source-note">-</span><span>상장 52주 미만은 상장 이후 · 최소 20거래일</span></footer>
+      <section class="ht-panel ht-rs-panel" aria-labelledby="ht-rs-heading" hidden>
+        <div class="ht-panel-header">
+          <div><h2 id="ht-rs-heading">최근 5거래일 시장 대비 상대강도</h2><div class="ht-panel-note" id="ht-rs-note">종목 5일 수익률 - 동일 거래소 벤치마크 5일 수익률 · 상대강도 높은 순</div></div>
+          <div class="ht-list-tools" role="group" aria-label="상대강도표 보기 설정">
+            <button type="button" class="ht-control-button" id="ht-rs-positive" aria-pressed="true">시장 상회만</button>
+            <span class="ht-count-chip" id="ht-rs-count">-</span>
+          </div>
+        </div>
+        <div class="ht-table-wrap">
+          <table class="ht-rs-table">
+            <colgroup>
+              <col class="ht-col-rank">
+              <col class="ht-col-company">
+              <col class="ht-col-market-cap">
+              <col class="ht-col-rs-return">
+              <col class="ht-col-benchmark">
+              <col class="ht-col-relative">
+              <col class="ht-col-market">
+              <col class="ht-col-sector">
+              <col class="ht-col-date">
+            </colgroup>
+            <thead><tr><th>#</th><th>종목</th><th class="ht-num">시가총액</th><th class="ht-num">종목 5일</th><th>비교 지수</th><th class="ht-num">상대강도</th><th>시장</th><th>섹터</th><th>기준일</th></tr></thead>
+            <tbody id="ht-rs-body"></tbody>
+          </table>
+        </div>
+        <div class="ht-pagination">
+          <span class="ht-page-info" id="ht-rs-page-info">-</span>
+          <div class="ht-page-actions"><button type="button" class="ht-page-button" id="ht-rs-prev">이전</button><button type="button" class="ht-page-button" id="ht-rs-next">다음</button></div>
+        </div>
+      </section>
+
+      <footer class="ht-footer"><span id="ht-source-note">-</span><span>상대강도 = 종목 5거래일 수익률 - 거래소 벤치마크 5거래일 수익률</span></footer>
     </div>
   </section>
 </div>
@@ -353,18 +404,22 @@
     HK: '#7657b2'
   };
   const pageSize = 25;
+  let activeView = 'highs';
   let activeMarket = 'ALL';
   let activeSector = null;
   let page = 1;
+  let rsPage = 1;
   let sortByCap = false;
   let newOnly = false;
+  let rsPositiveOnly = true;
   const hiddenTrendMarkets = new Set();
 
   const tabs = root.querySelector('.ht-tabs');
   const strip = root.querySelector('.ht-market-strip');
   const segments = root.querySelector('.ht-donut-segments');
   const legend = root.querySelector('.ht-legend');
-  const tbody = root.querySelector('tbody');
+  const tbody = root.querySelector('#ht-high-body');
+  const rsTbody = root.querySelector('#ht-rs-body');
   const tooltip = root.querySelector('.ht-tooltip');
   const clearButton = root.querySelector('.ht-clear');
   const sortCapButton = root.querySelector('#ht-sort-cap');
@@ -372,6 +427,8 @@
   const trendSvg = root.querySelector('.ht-trend');
   const trendLegend = root.querySelector('.ht-trend-legend');
   const trendTooltip = root.querySelector('.ht-trend-tooltip');
+  const rsPanel = root.querySelector('.ht-rs-panel');
+  const rsPositiveButton = root.querySelector('#ht-rs-positive');
 
   const formatNumber = value => Number(value || 0).toLocaleString('ko-KR');
   const formatPrice = value => Number(value).toLocaleString('ko-KR', { maximumFractionDigits: value < 1 ? 4 : value < 100 ? 2 : 0 });
@@ -402,7 +459,7 @@
     button.className = 'ht-tab';
     button.textContent = item.name;
     button.setAttribute('aria-pressed', item.code === activeMarket ? 'true' : 'false');
-    button.addEventListener('click', () => { activeMarket = item.code; activeSector = null; page = 1; render(); });
+    button.addEventListener('click', () => { activeMarket = item.code; activeSector = null; page = 1; rsPage = 1; render(); });
     tabs.appendChild(button);
   });
 
@@ -413,7 +470,7 @@
     button.className = 'ht-market-cell';
     button.dataset.market = code;
     button.innerHTML = `<span class="ht-market-name">${item.name}</span><span class="ht-market-count">${formatNumber(item.highs)}</span><span class="ht-market-detail">${item.ratio_pct}% · ${item.as_of.slice(5).replace('-', '.')}<br>수집률 ${item.coverage_pct}%</span>`;
-    button.addEventListener('click', () => { activeMarket = code; activeSector = null; page = 1; render(); });
+    button.addEventListener('click', () => { activeMarket = code; activeSector = null; page = 1; rsPage = 1; render(); });
     strip.appendChild(button);
   });
 
@@ -598,10 +655,61 @@
     root.querySelector('#ht-next').disabled = page >= pages;
   }
 
+  function relativeRows() {
+    const rows = Array.isArray(data.relative_strength) ? data.relative_strength : [];
+    return rows
+      .filter(row => (activeMarket === 'ALL' || row.market_code === activeMarket) && (!rsPositiveOnly || Number(row.relative_strength_5d_pct) > 0))
+      .sort((a,b) => Number(b.relative_strength_5d_pct) - Number(a.relative_strength_5d_pct) || Number(b.return_5d_pct) - Number(a.return_5d_pct) || Number(b.market_cap_krw) - Number(a.market_cap_krw));
+  }
+
+  function renderRelativeTable() {
+    const rows = relativeRows();
+    const pages = Math.max(1, Math.ceil(rows.length / pageSize));
+    rsPage = Math.min(rsPage, pages);
+    const start = (rsPage - 1) * pageSize;
+    const visible = rows.slice(start, start + pageSize);
+    rsTbody.innerHTML = '';
+    if (!visible.length) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = '<td class="ht-empty" colspan="9">해당 조건의 상대강도 종목이 없습니다</td>';
+      rsTbody.appendChild(tr);
+    } else {
+      visible.forEach((row,index) => {
+        const tr = document.createElement('tr');
+        const stockReturn = Number(row.return_5d_pct);
+        const relative = Number(row.relative_strength_5d_pct);
+        const stockClass = stockReturn > 0 ? ' is-up' : stockReturn < 0 ? ' is-down' : '';
+        const relativeClass = relative < 0 ? ' is-down' : '';
+        tr.innerHTML = `<td class="ht-rank">${start + index + 1}</td><td><span class="ht-company">${row.name}</span><span class="ht-ticker">${row.symbol}</span></td><td class="ht-num ht-market-cap">${formatMarketCap(row.market_cap_krw_eok)}</td><td class="ht-num ht-day-return${stockClass}">${formatSignedPercent(stockReturn)}</td><td>${row.benchmark_name}<span class="ht-ticker">지수 ${formatSignedPercent(row.benchmark_return_5d_pct)}</span></td><td class="ht-num ht-relative${relativeClass}">${formatSignedPercent(relative)}p</td><td><span class="ht-tag">${row.market} · ${row.exchange}</span></td><td>${row.sector}</td><td class="ht-date">${row.as_of}</td>`;
+        rsTbody.appendChild(tr);
+      });
+    }
+    const baseRows = (Array.isArray(data.relative_strength) ? data.relative_strength : []).filter(row => activeMarket === 'ALL' || row.market_code === activeMarket);
+    const benchmarkNames = [...new Set(baseRows.map(row => row.benchmark_name))];
+    const benchmarkText = activeMarket === 'ALL' ? '거래소별 지수 비교' : benchmarkNames.join(' · ');
+    root.querySelector('#ht-rs-note').textContent = `${marketName()} · ${benchmarkText} · 종목 5일 수익률에서 지수 5일 수익률을 차감`;
+    root.querySelector('#ht-rs-count').textContent = `${formatNumber(rows.length)}개`;
+    rsPositiveButton.setAttribute('aria-pressed', String(rsPositiveOnly));
+    root.querySelector('#ht-rs-page-info').textContent = rows.length ? `${formatNumber(start + 1)}–${formatNumber(Math.min(start + pageSize, rows.length))} / ${formatNumber(rows.length)}` : '0개';
+    root.querySelector('#ht-rs-prev').disabled = rsPage <= 1;
+    root.querySelector('#ht-rs-next').disabled = rsPage >= pages;
+  }
+
   function render() {
     root.querySelectorAll('.ht-tab').forEach((button,index) => button.setAttribute('aria-pressed', (index === 0 ? 'ALL' : marketOrder[index - 1]) === activeMarket ? 'true' : 'false'));
     root.querySelectorAll('.ht-market-cell').forEach(button => button.classList.toggle('is-active', button.dataset.market === activeMarket));
-    renderStats(); renderTrend(); renderDonut(); renderTable();
+    const showHighs = activeView === 'highs';
+    root.querySelectorAll('.ht-high-view').forEach(element => { element.hidden = !showHighs; });
+    rsPanel.hidden = showHighs;
+    root.querySelectorAll('.ht-mode-button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.view === activeView)));
+    root.querySelector('#ht-rule-text').textContent = showHighs
+      ? '한국 시총 제한 없음 · 기타 시장 시총 ≥ 3,000억원 · 수익률은 최근 365일 내 첫 52주 신고가 종가 대비'
+      : `최근 완료 5거래일 · 종목 수익률 - 거래소 벤치마크 수익률 · 시장별 상위 ${Number(data.meta.relative_strength_limit_per_market || 100)}개`;
+    if (showHighs) {
+      renderStats(); renderTrend(); renderDonut(); renderTable();
+    } else {
+      renderRelativeTable();
+    }
   }
 
   clearButton.addEventListener('click', () => { activeSector = null; page = 1; render(); });
@@ -609,6 +717,16 @@
   newOnlyButton.addEventListener('click', () => { newOnly = !newOnly; page = 1; renderTable(); });
   root.querySelector('#ht-prev').addEventListener('click', () => { if (page > 1) { page -= 1; renderTable(); } });
   root.querySelector('#ht-next').addEventListener('click', () => { if (page * pageSize < filteredRows().length) { page += 1; renderTable(); } });
+  root.querySelectorAll('.ht-mode-button').forEach(button => button.addEventListener('click', () => {
+    activeView = button.dataset.view;
+    activeSector = null;
+    page = 1;
+    rsPage = 1;
+    render();
+  }));
+  rsPositiveButton.addEventListener('click', () => { rsPositiveOnly = !rsPositiveOnly; rsPage = 1; renderRelativeTable(); });
+  root.querySelector('#ht-rs-prev').addEventListener('click', () => { if (rsPage > 1) { rsPage -= 1; renderRelativeTable(); } });
+  root.querySelector('#ht-rs-next').addEventListener('click', () => { if (rsPage * pageSize < relativeRows().length) { rsPage += 1; renderRelativeTable(); } });
   render();
 })();
 </script>

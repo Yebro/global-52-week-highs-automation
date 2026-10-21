@@ -38,6 +38,21 @@ MARKET_LABELS = {
 
 MARKET_ORDER = ["US", "KR", "JP", "CN", "TW", "HK"]
 
+RELATIVE_STRENGTH_LIMIT_PER_MARKET = 100
+
+BENCHMARKS = {
+    "US:NASDAQ": {"symbol": "^IXIC", "name": "NASDAQ Composite", "market": "US"},
+    "US:S&P500": {"symbol": "^GSPC", "name": "S&P 500", "market": "US"},
+    "KR:KOSPI": {"symbol": "^KS11", "name": "KOSPI", "market": "KR"},
+    "KR:KOSDAQ": {"symbol": "^KQ11", "name": "KOSDAQ", "market": "KR"},
+    "JP:TSE": {"symbol": "^N225", "name": "Nikkei 225", "market": "JP"},
+    "CN:SSE": {"symbol": "000001.SS", "name": "SSE Composite", "market": "CN"},
+    "CN:SZSE": {"symbol": "399001.SZ", "name": "Shenzhen Component", "market": "CN"},
+    "TW:TWSE": {"symbol": "^TWII", "name": "TAIEX", "market": "TW"},
+    "TW:TPEx": {"symbol": "^TWII", "name": "TAIEX (proxy)", "market": "TW"},
+    "HK:HKEX": {"symbol": "^HSI", "name": "Hang Seng Index", "market": "HK"},
+}
+
 MARKET_CLOCK = {
     "US": ("America/New_York", clock_time(16, 20)),
     "KR": ("Asia/Seoul", clock_time(15, 50)),
@@ -105,6 +120,7 @@ class PriceRecord:
     as_of: str
     close: float
     day_return_pct: float
+    return_5d_pct: float
     prior_high: float
     breakout_date: str
     breakout_close: float
@@ -460,6 +476,7 @@ def parse_price_result(result: dict, market: str, now_utc: datetime) -> PriceRec
     current_date, current_close = values[-1]
     previous_close = values[-2][1]
     day_return_pct = (current_close / previous_close - 1) * 100
+    return_5d_pct = (current_close / values[-6][1] - 1) * 100
     prior_values = [value for _, value in values[max(0, len(values) - 252):-1]]
     if not prior_values:
         return None
@@ -473,6 +490,7 @@ def parse_price_result(result: dict, market: str, now_utc: datetime) -> PriceRec
         as_of=current_date,
         close=current_close,
         day_return_pct=day_return_pct,
+        return_5d_pct=return_5d_pct,
         prior_high=prior_high,
         breakout_date=breakout_date,
         breakout_close=breakout_close,
@@ -540,6 +558,38 @@ def collect_prices(universe: pd.DataFrame, workers: int, chunk_size: int) -> dic
             if completed == 1 or completed % 10 == 0 or completed == total:
                 print(f"[prices] {completed}/{total} batches · {len(records):,} symbols")
     return records
+
+
+def collect_benchmarks() -> dict[str, dict]:
+    definitions_by_symbol: dict[str, dict] = {}
+    for definition in BENCHMARKS.values():
+        definitions_by_symbol.setdefault(definition["symbol"], definition)
+    results = request_spark(list(definitions_by_symbol), timeout=45)
+    now_utc = datetime.now(timezone.utc)
+    records_by_symbol: dict[str, PriceRecord] = {}
+    for result in results:
+        symbol = clean_text(result.get("symbol"))
+        definition = definitions_by_symbol.get(symbol)
+        if not definition:
+            continue
+        record = parse_price_result(result, definition["market"], now_utc)
+        if record:
+            records_by_symbol[symbol] = record
+
+    benchmarks: dict[str, dict] = {}
+    for benchmark_id, definition in BENCHMARKS.items():
+        record = records_by_symbol.get(definition["symbol"])
+        if not record:
+            print(f"[warning] benchmark unavailable: {benchmark_id}", file=sys.stderr)
+            continue
+        benchmarks[benchmark_id] = {
+            "symbol": definition["symbol"],
+            "name": definition["name"],
+            "as_of": record.as_of,
+            "return_5d_pct": rounded(record.return_5d_pct, 3),
+        }
+    print(f"[benchmarks] {len(benchmarks)}/{len(BENCHMARKS)} available")
+    return benchmarks
 
 
 def fetch_naver_recent_activity(symbol: str, target_date: str, timeout: int = 30) -> tuple[float, float] | None:
@@ -678,10 +728,18 @@ def market_cap_krw_for(row: object, record: PriceRecord | None, fx_rates: dict[s
     return local_cap * fx_rate if local_cap else None
 
 
-def build_payload(universe: pd.DataFrame, prices: dict[str, PriceRecord], fx_rates: dict[str, float], fx_as_of: str) -> dict:
+def build_payload(
+    universe: pd.DataFrame,
+    prices: dict[str, PriceRecord],
+    fx_rates: dict[str, float],
+    fx_as_of: str,
+    benchmarks: dict[str, dict] | None = None,
+) -> dict:
+    benchmarks = benchmarks or {}
     market_stats = {}
     high_rows = []
     screened_rows = []
+    relative_strength_rows = []
     global_sector_counts: Counter[str] = Counter()
     total_previous_highs = 0
 
@@ -729,6 +787,7 @@ def build_payload(universe: pd.DataFrame, prices: dict[str, PriceRecord], fx_rat
                 "as_of": record.as_of,
                 "close": rounded(record.close),
                 "day_return_pct": rounded(record.day_return_pct, 3),
+                "return_5d_pct": rounded(record.return_5d_pct, 3),
                 "prior_high": rounded(record.prior_high),
                 "breakout_date": record.breakout_date,
                 "breakout_close": rounded(record.breakout_close),
@@ -743,6 +802,33 @@ def build_payload(universe: pd.DataFrame, prices: dict[str, PriceRecord], fx_rat
                 "market_cap_krw_eok": rounded(market_cap_krw / 100_000_000, 1),
             }
             screened_rows.append(screened)
+            benchmark_id = f"{market}:{row.exchange}"
+            benchmark = benchmarks.get(benchmark_id)
+            if benchmark:
+                relative_strength_rows.append(
+                    {
+                        "market": screened["market"],
+                        "market_code": market,
+                        "exchange": row.exchange,
+                        "symbol": row.symbol,
+                        "yahoo_symbol": row.yahoo_symbol,
+                        "name": row.name,
+                        "sector": screened["sector"],
+                        "as_of": record.as_of,
+                        "close": rounded(record.close),
+                        "currency": record.currency,
+                        "market_cap_krw": round(market_cap_krw),
+                        "market_cap_krw_eok": rounded(market_cap_krw / 100_000_000, 1),
+                        "return_5d_pct": rounded(record.return_5d_pct, 3),
+                        "benchmark_id": benchmark_id,
+                        "benchmark_name": benchmark["name"],
+                        "benchmark_as_of": benchmark["as_of"],
+                        "benchmark_return_5d_pct": benchmark["return_5d_pct"],
+                        "relative_strength_5d_pct": rounded(
+                            record.return_5d_pct - benchmark["return_5d_pct"], 3
+                        ),
+                    }
+                )
             if record.is_high:
                 high_count += 1
                 new_high_count += int(not record.was_high_previous)
@@ -770,6 +856,23 @@ def build_payload(universe: pd.DataFrame, prices: dict[str, PriceRecord], fx_rat
 
     high_rows.sort(key=lambda row: (row["breakout_pct"], row["close"]), reverse=True)
     screened_rows.sort(key=lambda row: (row["market_code"], row["yahoo_symbol"]))
+    relative_strength_rows = [
+        row
+        for market in MARKET_ORDER
+        for row in sorted(
+            (
+                item
+                for item in relative_strength_rows
+                if item["market_code"] == market
+            ),
+            key=lambda item: (
+                item["relative_strength_5d_pct"],
+                item["return_5d_pct"],
+                item["market_cap_krw"],
+            ),
+            reverse=True,
+        )[:RELATIVE_STRENGTH_LIMIT_PER_MARKET]
+    ]
     SCREENED_PATH.parent.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(screened_rows).to_csv(SCREENED_PATH, index=False, encoding="utf-8-sig")
 
@@ -796,6 +899,8 @@ def build_payload(universe: pd.DataFrame, prices: dict[str, PriceRecord], fx_rat
             "fx_as_of": fx_as_of,
             "price_source": "Yahoo Finance daily close via spark endpoint",
             "listing_sources": "FinanceDataReader/Naver, S&P 500 listing, TWSE OpenAPI, TPEx OpenAPI",
+            "relative_strength_rule": "최근 완료 5거래일 종목 수익률 - 동일 거래소 벤치마크 5거래일 수익률",
+            "relative_strength_limit_per_market": RELATIVE_STRENGTH_LIMIT_PER_MARKET,
         },
         "summary": {
             "raw_universe": total_raw_universe,
@@ -815,6 +920,8 @@ def build_payload(universe: pd.DataFrame, prices: dict[str, PriceRecord], fx_rat
         "markets": market_stats,
         "sectors": dict(global_sector_counts.most_common()),
         "highs": high_rows,
+        "benchmarks": benchmarks,
+        "relative_strength": relative_strength_rows,
     }
 
 
@@ -873,9 +980,10 @@ def main() -> None:
     print(f"[universe] {len(universe):,} symbols")
     prices = collect_prices(universe, max(1, args.workers), max(1, args.chunk_size))
     prices = validate_korean_trading_activity(universe, prices, max(1, args.workers))
+    benchmarks = collect_benchmarks()
     fx_rates, fx_as_of = fetch_fx_rates()
     print(f"[fx] {fx_rates}")
-    payload = build_payload(universe, prices, fx_rates, fx_as_of)
+    payload = build_payload(universe, prices, fx_rates, fx_as_of, benchmarks)
     payload["history"] = update_history(payload)
     LATEST_PATH.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"[done] {LATEST_PATH}")
