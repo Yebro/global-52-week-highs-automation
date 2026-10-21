@@ -15,14 +15,21 @@ WEB_SA="global-highs-web@${PROJECT_ID}.iam.gserviceaccount.com"
 SCHEDULER_SA="global-highs-scheduler@${PROJECT_ID}.iam.gserviceaccount.com"
 
 gcloud config set project "${PROJECT_ID}"
-gcloud services enable \
-  artifactregistry.googleapis.com \
-  cloudbuild.googleapis.com \
-  cloudscheduler.googleapis.com \
-  iam.googleapis.com \
-  run.googleapis.com \
-  secretmanager.googleapis.com \
+required_services=(
+  artifactregistry.googleapis.com
+  cloudbuild.googleapis.com
+  cloudscheduler.googleapis.com
+  iam.googleapis.com
+  run.googleapis.com
+  secretmanager.googleapis.com
   storage.googleapis.com
+)
+enabled_services="$(gcloud services list --enabled --format='value(config.name)')"
+for service in "${required_services[@]}"; do
+  if ! grep -Fqx "${service}" <<<"${enabled_services}"; then
+    gcloud services enable "${service}"
+  fi
+done
 
 if ! gcloud storage buckets describe "gs://${BUCKET}" >/dev/null 2>&1; then
   gcloud storage buckets create "gs://${BUCKET}" \
