@@ -128,6 +128,7 @@ class PriceRecord:
     is_high: bool
     was_high_previous: bool
     history_days: int
+    latest_volume: float
     currency: str
 
 
@@ -436,13 +437,16 @@ def parse_price_result(result: dict, market: str, now_utc: datetime) -> PriceRec
     quote_list = indicators.get("quote") or []
     if not timestamps or not quote_list:
         return None
-    closes = quote_list[0].get("close") or []
+    quote = quote_list[0]
+    closes = quote.get("close") or []
+    volumes = quote.get("volume") or []
     meta = response.get("meta") or {}
     tz_name, completed_after = MARKET_CLOCK[market]
     market_tz = ZoneInfo(tz_name)
     local_now = now_utc.astimezone(market_tz)
     values: list[tuple[str, float]] = []
-    for stamp, close in zip(timestamps, closes):
+    volume_by_date: dict[str, float] = {}
+    for index, (stamp, close) in enumerate(zip(timestamps, closes)):
         if close is None:
             continue
         try:
@@ -454,7 +458,13 @@ def parse_price_result(result: dict, market: str, now_utc: datetime) -> PriceRec
         date = datetime.fromtimestamp(int(stamp), tz=timezone.utc).astimezone(market_tz).date()
         if date == local_now.date() and local_now.time() < completed_after:
             continue
-        values.append((date.isoformat(), price))
+        date_text = date.isoformat()
+        values.append((date_text, price))
+        try:
+            volume = float(volumes[index]) if index < len(volumes) and volumes[index] is not None else 0.0
+        except (TypeError, ValueError):
+            volume = 0.0
+        volume_by_date[date_text] = volume if math.isfinite(volume) and volume > 0 else 0.0
 
     regular_price = meta.get("regularMarketPrice")
     regular_stamp = meta.get("regularMarketTime")
@@ -464,6 +474,12 @@ def parse_price_result(result: dict, market: str, now_utc: datetime) -> PriceRec
         regular_is_complete = regular_date < local_now.date() or local_now.time() >= completed_after
         if math.isfinite(regular_price) and regular_price > 0 and regular_is_complete:
             regular_pair = (regular_date.isoformat(), regular_price)
+            try:
+                regular_volume = float(meta.get("regularMarketVolume"))
+            except (TypeError, ValueError):
+                regular_volume = 0.0
+            if math.isfinite(regular_volume) and regular_volume > 0:
+                volume_by_date[regular_pair[0]] = regular_volume
             if values and regular_pair[0] == values[-1][0]:
                 values[-1] = regular_pair
             elif not values or regular_pair[0] > values[-1][0]:
@@ -498,6 +514,7 @@ def parse_price_result(result: dict, market: str, now_utc: datetime) -> PriceRec
         is_high=is_high,
         was_high_previous=was_high_previous,
         history_days=min(len(values), 253),
+        latest_volume=volume_by_date.get(current_date, 0.0),
         currency=clean_text(meta.get("currency")),
     )
 
@@ -804,7 +821,7 @@ def build_payload(
             screened_rows.append(screened)
             benchmark_id = f"{market}:{row.exchange}"
             benchmark = benchmarks.get(benchmark_id)
-            if benchmark:
+            if benchmark and record.latest_volume > 0:
                 relative_strength_rows.append(
                     {
                         "market": screened["market"],
@@ -864,6 +881,7 @@ def build_payload(
                 item
                 for item in relative_strength_rows
                 if item["market_code"] == market
+                and item["as_of"] == market_stats[market]["as_of"]
             ),
             key=lambda item: (
                 item["relative_strength_5d_pct"],
@@ -900,6 +918,7 @@ def build_payload(
             "price_source": "Yahoo Finance daily close via spark endpoint",
             "listing_sources": "FinanceDataReader/Naver, S&P 500 listing, TWSE OpenAPI, TPEx OpenAPI",
             "relative_strength_rule": "최근 완료 5거래일 종목 수익률 - 동일 거래소 벤치마크 5거래일 수익률",
+            "relative_strength_activity_rule": "최근 시장 거래일에 거래량이 확인된 종목만 포함(거래정지·시세 지연 종목 제외)",
             "relative_strength_limit_per_market": RELATIVE_STRENGTH_LIMIT_PER_MARKET,
         },
         "summary": {
