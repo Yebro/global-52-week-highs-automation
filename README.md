@@ -53,7 +53,7 @@ gcloud run jobs execute global-highs-manual --region=asia-northeast3 --wait
 
 배포 성공 알림은 저장소의 Actions 비밀값 `TELEGRAM_BOT_TOKEN`과 변수 `TELEGRAM_CHAT_ID`가 모두 설정된 경우 텔레그램으로 전송됩니다. 토큰은 코드나 대화에 기록하지 않습니다. 봇에게 `/start`를 보낸 뒤 `Set up Telegram notifications` 작업을 실행하면 채팅 ID가 텔레그램으로 전송됩니다. 그 숫자를 `TELEGRAM_CHAT_ID` 저장소 변수에 저장한 뒤 작업을 다시 실행해 연결을 검증합니다.
 
-업데이트 알림에는 신규 52주 신고가 기업 중 시가총액 1조원 이상 종목을 당일 수익률 내림차순으로 최대 10개 선정한 핵심 요약이 포함됩니다. 중국·홍콩·대만은 시장별 최대 2개로 제한하며, 제외된 자리에는 다음 순위의 다른 시장 종목을 채웁니다. 각 종목은 시가총액·시장·섹터·당일 수익률과 최신 공개 뉴스 제목을 이용한 주요 이슈 한 줄을 함께 표시합니다.
+업데이트 알림에는 신규 52주 신고가 기업 중 시가총액 1조원 이상 종목을 당일 수익률 내림차순으로 최대 10개 선정한 핵심 요약이 포함됩니다. 중국·홍콩·대만은 시장별 최대 2개로 제한하며, 제외된 자리에는 다음 순위의 다른 시장 종목을 채웁니다. 각 종목은 시가총액·시장·섹터·당일 수익률과 주요 이슈 한 줄을 함께 표시합니다. 주요 이슈는 최근 90일 영어권 Google News·Yahoo Finance·Bing News 검색 결과에서 Reuters·Bloomberg·Yahoo Finance·Investing.com·Business Wire 등 신뢰도 높은 출처를 우선하고, 실적·가이던스·수주·승인·파트너십 같은 실제 촉매를 단순 주가 등락 기사보다 앞세워 선정합니다.
 
 수동 실행은 GitHub의 Actions 화면에서 `Update 52-week highs dashboard`를 선택해 실행할 수 있습니다.
 
