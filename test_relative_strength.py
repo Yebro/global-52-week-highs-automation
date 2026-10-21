@@ -158,6 +158,109 @@ class RelativeStrengthTests(unittest.TestCase):
         self.assertEqual(row["relative_strength_5d_pct"], 7.0)
         self.assertIn("Naver Finance", row["price_source"])
 
+    def test_taiwan_and_hong_kong_use_primary_source_overlays(self) -> None:
+        universe = pd.DataFrame(
+            [
+                {
+                    "market": market, "exchange": exchange, "symbol": symbol,
+                    "yahoo_symbol": yahoo_symbol, "name": symbol, "sector": "IT",
+                    "industry": "Technology", "market_cap_local": 1_000_000_000_000,
+                    "currency": currency, "shares_outstanding": 1,
+                }
+                for market, exchange, symbol, yahoo_symbol, currency in (
+                    ("TW", "TWSE", "2330", "2330.TW", "TWD"),
+                    ("HK", "HKEX", "00700", "0700.HK", "HKD"),
+                )
+            ]
+        )
+
+        def price(yahoo_symbol: str, currency: str) -> collect.PriceRecord:
+            return collect.PriceRecord(
+                yahoo_symbol=yahoo_symbol, as_of="2026-10-20", close=100.0,
+                day_return_pct=1.0, return_5d_pct=-99.0, prior_high=110.0,
+                breakout_date="2026-10-20", breakout_close=100.0, breakout_pct=0.0,
+                is_high=False, was_high_previous=False, history_days=253,
+                latest_volume=0, currency=currency,
+            )
+
+        prices = {
+            "TW|2330.TW": price("2330.TW", "TWD"),
+            "HK|0700.HK": price("0700.HK", "HKD"),
+        }
+        relative_prices = {
+            "TW|2330.TW": collect.RelativePriceRecord(
+                as_of="2026-10-20", return_5d_pct=7.0, latest_volume=100_000,
+                source="TWSE official daily OHLCV",
+            ),
+            "HK|0700.HK": collect.RelativePriceRecord(
+                as_of="2026-10-20", return_5d_pct=6.0, latest_volume=100_000,
+                source="Naver Finance foreign daily OHLCV",
+            ),
+        }
+        benchmarks = {
+            "TW:TWSE": {
+                "symbol": ".TWII", "name": "TAIEX", "as_of": "2026-10-20",
+                "return_5d_pct": 2.0, "source": "Naver Finance foreign index daily OHLCV",
+            },
+            "HK:HKEX": {
+                "symbol": ".HSI", "name": "Hang Seng Index", "as_of": "2026-10-20",
+                "return_5d_pct": 1.0, "source": "Naver Finance foreign index daily OHLCV",
+            },
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with patch.object(collect, "SCREENED_PATH", Path(temp_dir) / "screened.csv"):
+                payload = collect.build_payload(
+                    universe, prices, {"TWD": 45.0, "HKD": 180.0},
+                    "2026-10-20T00:00:00+09:00", benchmarks, relative_prices,
+                )
+
+        rows = {row["market_code"]: row for row in payload["relative_strength"]}
+        self.assertEqual(rows["TW"]["return_5d_pct"], 7.0)
+        self.assertIn("TWSE official", rows["TW"]["price_source"])
+        self.assertEqual(rows["HK"]["return_5d_pct"], 6.0)
+        self.assertIn("Naver Finance", rows["HK"]["price_source"])
+
+    def test_relative_strength_limits_each_market_to_top_20(self) -> None:
+        universe = pd.DataFrame(
+            [
+                {
+                    "market": "US", "exchange": "NASDAQ", "symbol": f"S{index:02d}",
+                    "yahoo_symbol": f"S{index:02d}", "name": f"Stock {index:02d}",
+                    "sector": "IT", "industry": "Software",
+                    "market_cap_local": 1_000_000_000, "currency": "USD",
+                    "shares_outstanding": 10_000_000,
+                }
+                for index in range(21)
+            ]
+        )
+        prices = {
+            f"US|S{index:02d}": collect.PriceRecord(
+                yahoo_symbol=f"S{index:02d}", as_of="2026-10-20", close=100.0,
+                day_return_pct=1.0, return_5d_pct=float(index), prior_high=110.0,
+                breakout_date="2026-10-20", breakout_close=100.0, breakout_pct=0.0,
+                is_high=False, was_high_previous=False, history_days=253,
+                latest_volume=100_000, currency="USD",
+            )
+            for index in range(21)
+        }
+        benchmarks = {
+            "US:NASDAQ": {
+                "symbol": "^IXIC", "name": "NASDAQ Composite",
+                "as_of": "2026-10-20", "return_5d_pct": 0.0,
+            }
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with patch.object(collect, "SCREENED_PATH", Path(temp_dir) / "screened.csv"):
+                payload = collect.build_payload(
+                    universe, prices, {"USD": 1_400.0},
+                    "2026-10-20T00:00:00+09:00", benchmarks,
+                )
+
+        symbols = [row["symbol"] for row in payload["relative_strength"]]
+        self.assertEqual(len(symbols), 20)
+        self.assertNotIn("S00", symbols)
+        self.assertEqual(payload["meta"]["relative_strength_limit_per_market"], 20)
+
     def test_relative_strength_requires_500_billion_krw_in_every_market(self) -> None:
         universe = pd.DataFrame(
             [

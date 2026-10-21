@@ -39,7 +39,7 @@ MARKET_LABELS = {
 
 MARKET_ORDER = ["US", "KR", "JP", "CN", "TW", "HK"]
 
-RELATIVE_STRENGTH_LIMIT_PER_MARKET = 100
+RELATIVE_STRENGTH_LIMIT_PER_MARKET = 20
 RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW = 500_000_000_000
 
 BENCHMARKS = {
@@ -55,7 +55,7 @@ BENCHMARKS = {
     "HK:HKEX": {"symbol": "^HSI", "name": "Hang Seng Index", "market": "HK"},
 }
 
-NAVER_RELATIVE_MARKETS = {"KR", "JP", "CN"}
+NON_YAHOO_RELATIVE_MARKETS = {"KR", "JP", "CN", "TW", "HK"}
 
 NAVER_BENCHMARKS = {
     "KR:KOSPI": {"symbol": "KOSPI", "name": "KOSPI", "market": "KR", "kind": "domestic"},
@@ -63,6 +63,9 @@ NAVER_BENCHMARKS = {
     "JP:TSE": {"symbol": ".N225", "name": "Nikkei 225", "market": "JP", "kind": "foreign_index"},
     "CN:SSE": {"symbol": ".SSEC", "name": "SSE Composite", "market": "CN", "kind": "foreign_index"},
     "CN:SZSE": {"symbol": ".SZSC", "name": "Shenzhen Component", "market": "CN", "kind": "foreign_index"},
+    "TW:TWSE": {"symbol": ".TWII", "name": "TAIEX", "market": "TW", "kind": "foreign_index"},
+    "TW:TPEx": {"symbol": ".TWII", "name": "TAIEX (proxy)", "market": "TW", "kind": "foreign_index"},
+    "HK:HKEX": {"symbol": ".HSI", "name": "Hang Seng Index", "market": "HK", "kind": "foreign_index"},
 }
 
 MARKET_CLOCK = {
@@ -683,14 +686,81 @@ def fetch_naver_relative_record(
     return relative_record_from_values(values, market, now_utc, source)
 
 
-def collect_naver_relative_prices(
+def parse_taiwan_official_row(row: list[object]) -> tuple[str, float, float] | None:
+    if len(row) < 7:
+        return None
+    try:
+        roc_year, month, day = (int(part) for part in clean_text(row[0]).split("/"))
+        trade_date = datetime(roc_year + 1911, month, day).date().isoformat()
+        volume = float(clean_text(row[1]).replace(",", ""))
+        close = float(clean_text(row[6]).replace(",", ""))
+    except (TypeError, ValueError):
+        return None
+    if not math.isfinite(close) or close <= 0:
+        return None
+    return trade_date, close, volume
+
+
+def fetch_taiwan_official_values(
+    exchange: str, symbol: str, now_utc: datetime, timeout: int = 20
+) -> list[tuple[str, float, float]]:
+    local_now = now_utc.astimezone(ZoneInfo("Asia/Taipei"))
+    current_month = local_now.replace(day=1)
+    previous_month = (current_month - timedelta(days=1)).replace(day=1)
+    values: list[tuple[str, float, float]] = []
+    for target_month in (current_month, previous_month):
+        try:
+            if exchange == "TWSE":
+                url = "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY"
+                params = {
+                    "date": target_month.strftime("%Y%m%d"),
+                    "stockNo": symbol,
+                    "response": "json",
+                }
+                response = naver_session().get(url, params=params, timeout=timeout)
+                response.raise_for_status()
+                rows = response.json().get("data") or []
+            else:
+                url = "https://www.tpex.org.tw/www/zh-tw/afterTrading/tradingStock"
+                params = {
+                    "code": symbol,
+                    "date": target_month.strftime("%Y/%m/%d"),
+                    "id": "",
+                    "response": "json",
+                }
+                response = naver_session().get(url, params=params, timeout=timeout)
+                response.raise_for_status()
+                tables = response.json().get("tables") or []
+                rows = (tables[0].get("data") or []) if tables else []
+            values.extend(parsed for row in rows if (parsed := parse_taiwan_official_row(row)))
+            if len(values) >= 6:
+                break
+        except Exception as error:
+            print(
+                f"[warning] Taiwan official chart failed for {exchange}:{symbol}: {error}",
+                file=sys.stderr,
+            )
+    return values
+
+
+def fetch_primary_relative_record(
+    market: str, exchange: str, symbol: str, yahoo_symbol: str, now_utc: datetime
+) -> RelativePriceRecord | None:
+    if market == "TW":
+        values = fetch_taiwan_official_values(exchange, symbol, now_utc)
+        source = f"{exchange} official daily OHLCV"
+        return relative_record_from_values(values, market, now_utc, source)
+    return fetch_naver_relative_record(market, symbol, yahoo_symbol, now_utc)
+
+
+def collect_primary_relative_prices(
     universe: pd.DataFrame,
     prices: dict[str, PriceRecord],
     fx_rates: dict[str, float],
     workers: int,
 ) -> dict[str, RelativePriceRecord]:
-    candidates: list[tuple[str, str, str, str]] = []
-    for row in universe[universe["market"].isin(NAVER_RELATIVE_MARKETS)].itertuples(index=False):
+    candidates: list[tuple[str, str, str, str, str]] = []
+    for row in universe[universe["market"].isin(NON_YAHOO_RELATIVE_MARKETS)].itertuples(index=False):
         key = f"{row.market}|{row.yahoo_symbol}"
         price = prices.get(key)
         market_cap_krw = market_cap_krw_for(row, price, fx_rates)
@@ -698,27 +768,34 @@ def collect_naver_relative_prices(
             continue
         if market_cap_krw < RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW:
             continue
-        candidates.append((key, row.market, row.symbol, row.yahoo_symbol))
+        candidates.append((key, row.market, row.exchange, row.symbol, row.yahoo_symbol))
 
     records: dict[str, RelativePriceRecord] = {}
     now_utc = datetime.now(timezone.utc)
     max_workers = min(24, max(8, workers * 3))
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_map = {
-            executor.submit(fetch_naver_relative_record, market, symbol, yahoo_symbol, now_utc): key
-            for key, market, symbol, yahoo_symbol in candidates
+            executor.submit(
+                fetch_primary_relative_record,
+                market,
+                exchange,
+                symbol,
+                yahoo_symbol,
+                now_utc,
+            ): key
+            for key, market, exchange, symbol, yahoo_symbol in candidates
         }
         for completed, future in enumerate(as_completed(future_map), start=1):
             key = future_map[future]
             try:
                 record = future.result()
             except Exception as error:
-                print(f"[warning] Naver relative request failed for {key}: {error}", file=sys.stderr)
+                print(f"[warning] primary relative request failed for {key}: {error}", file=sys.stderr)
                 record = None
             if record:
                 records[key] = record
             if completed == 1 or completed % 250 == 0 or completed == len(candidates):
-                print(f"[naver-relative] {completed:,}/{len(candidates):,} · {len(records):,} symbols")
+                print(f"[relative-source] {completed:,}/{len(candidates):,} · {len(records):,} symbols")
     return records
 
 
@@ -1026,7 +1103,7 @@ def build_payload(
             benchmark_id = f"{market}:{row.exchange}"
             benchmark = benchmarks.get(benchmark_id)
             relative_price = relative_prices.get(f"{market}|{row.yahoo_symbol}")
-            if market not in NAVER_RELATIVE_MARKETS:
+            if market not in NON_YAHOO_RELATIVE_MARKETS:
                 relative_price = RelativePriceRecord(
                     as_of=record.as_of,
                     return_5d_pct=record.return_5d_pct,
@@ -1140,7 +1217,7 @@ def build_payload(
             "relative_strength_activity_rule": "최근 시장 거래일에 거래량이 확인된 종목만 포함(거래정지·시세 지연 종목 제외)",
             "relative_strength_market_cap_rule": "전 시장 원화 환산 시가총액 5,000억원 이상, 시가총액 미확인 종목 제외",
             "relative_strength_market_cap_min_krw": RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW,
-            "relative_strength_price_source": "한국·일본·중국은 네이버 증권 일봉 OHLCV, 미국·대만·홍콩은 Yahoo Finance 일봉",
+            "relative_strength_price_source": "한국·일본·중국·홍콩은 네이버 증권 일봉 OHLCV, 대만은 TWSE·TPEx 공식 일봉, 미국은 Yahoo Finance 일봉",
             "relative_strength_limit_per_market": RELATIVE_STRENGTH_LIMIT_PER_MARKET,
         },
         "summary": {
@@ -1224,7 +1301,7 @@ def main() -> None:
     benchmarks = collect_benchmarks()
     fx_rates, fx_as_of = fetch_fx_rates()
     print(f"[fx] {fx_rates}")
-    relative_prices = collect_naver_relative_prices(
+    relative_prices = collect_primary_relative_prices(
         universe, prices, fx_rates, max(1, args.workers)
     )
     payload = build_payload(
