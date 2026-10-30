@@ -7,6 +7,64 @@ import notify_telegram as subject
 
 
 class IssueSelectionTests(unittest.TestCase):
+    def test_asia_summary_uses_asia_markets_and_one_trillion_cutoff(self) -> None:
+        payload = {
+            "highs": [
+                {
+                    "market_code": "KR",
+                    "is_new_high": True,
+                    "market_cap_krw": 1_000_000_000_000,
+                    "day_return_pct": 5,
+                    "symbol": "000001",
+                },
+                {
+                    "market_code": "US",
+                    "is_new_high": True,
+                    "market_cap_krw": 50_000_000_000_000,
+                    "day_return_pct": 10,
+                    "symbol": "BIG",
+                },
+                {
+                    "market_code": "JP",
+                    "is_new_high": True,
+                    "market_cap_krw": 999_999_999_999,
+                    "day_return_pct": 20,
+                    "symbol": "SMALL",
+                },
+            ]
+        }
+        rows = subject.select_summary_rows(payload, slot="asia")
+        self.assertEqual([row["symbol"] for row in rows], ["000001"])
+
+    def test_us_summary_uses_us_market_and_ten_trillion_cutoff(self) -> None:
+        payload = {
+            "highs": [
+                {
+                    "market_code": "US",
+                    "is_new_high": True,
+                    "market_cap_krw": 10_000_000_000_000,
+                    "day_return_pct": 4,
+                    "symbol": "QUALIFY",
+                },
+                {
+                    "market_code": "US",
+                    "is_new_high": True,
+                    "market_cap_krw": 9_999_999_999_999,
+                    "day_return_pct": 8,
+                    "symbol": "TOO_SMALL",
+                },
+                {
+                    "market_code": "KR",
+                    "is_new_high": True,
+                    "market_cap_krw": 20_000_000_000_000,
+                    "day_return_pct": 12,
+                    "symbol": "WRONG_MARKET",
+                },
+            ]
+        }
+        rows = subject.select_summary_rows(payload, slot="us")
+        self.assertEqual([row["symbol"] for row in rows], ["QUALIFY"])
+
     def test_yahoo_symbol_matching_handles_exchange_suffix(self) -> None:
         self.assertTrue(subject._symbols_match("2362.HK", "2362.HK"))
         self.assertTrue(subject._symbols_match("2362.HK", "2362"))

@@ -72,7 +72,7 @@ def main() -> None:
 
     subprocess.run([sys.executable, str(ROOT / "build_dashboard.py")], cwd=ROOT, check=True)
     publish_site()
-    notify_telegram()
+    notify_telegram(args.slot)
     mark_published(args.slot, datetime.now(KST))
     save_state()
     print("Cloud Run update completed.", flush=True)

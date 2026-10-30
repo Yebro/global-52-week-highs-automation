@@ -26,7 +26,11 @@ MARKET_LABELS = (
     ("TW", "대만"),
     ("HK", "홍콩"),
 )
-SUMMARY_MIN_MARKET_CAP_KRW = 1_000_000_000_000
+ASIA_SUMMARY_MARKETS = {"KR", "JP", "CN", "TW", "HK"}
+ASIA_SUMMARY_MIN_MARKET_CAP_KRW = 1_000_000_000_000
+US_SUMMARY_MARKETS = {"US"}
+US_SUMMARY_MIN_MARKET_CAP_KRW = 10_000_000_000_000
+MANUAL_SUMMARY_MIN_MARKET_CAP_KRW = 1_000_000_000_000
 SUMMARY_LIMIT = 10
 LIMITED_MARKETS = {"CN", "HK", "TW"}
 LIMITED_MARKET_MAX = 2
@@ -553,7 +557,16 @@ def safe_fetch_issue(row: dict) -> str:
         return NO_NEWS_TEXT
 
 
-def select_summary_rows(payload: dict) -> list[dict]:
+def summary_scope(slot: str) -> tuple[set[str] | None, int, str]:
+    if slot == "asia":
+        return ASIA_SUMMARY_MARKETS, ASIA_SUMMARY_MIN_MARKET_CAP_KRW, "아시아장"
+    if slot == "us":
+        return US_SUMMARY_MARKETS, US_SUMMARY_MIN_MARKET_CAP_KRW, "미국장"
+    return None, MANUAL_SUMMARY_MIN_MARKET_CAP_KRW, "전체 시장"
+
+
+def select_summary_rows(payload: dict, *, slot: str = "manual") -> list[dict]:
+    allowed_markets, minimum_market_cap, _ = summary_scope(slot)
     candidates = []
     for row in payload.get("highs", []):
         try:
@@ -561,7 +574,10 @@ def select_summary_rows(payload: dict) -> list[dict]:
             day_return = float(row.get("day_return_pct"))
         except (TypeError, ValueError):
             continue
-        if row.get("is_new_high") and market_cap >= SUMMARY_MIN_MARKET_CAP_KRW:
+        market_code = clean_text(row.get("market_code"))
+        if allowed_markets is not None and market_code not in allowed_markets:
+            continue
+        if row.get("is_new_high") and market_cap >= minimum_market_cap:
             candidates.append({**row, "day_return_pct": day_return})
     candidates.sort(key=lambda row: row["day_return_pct"], reverse=True)
     selected = []
@@ -578,17 +594,20 @@ def select_summary_rows(payload: dict) -> list[dict]:
     return selected
 
 
-def build_summary(payload: dict) -> str:
-    rows = select_summary_rows(payload)
+def build_summary(payload: dict, *, slot: str = "manual") -> str:
+    _, minimum_market_cap, market_label = summary_scope(slot)
+    minimum_cap_label = format_market_cap(minimum_market_cap)
+    rows = select_summary_rows(payload, slot=slot)
     if not rows:
         return (
             "\n\n📌 핵심 요약\n"
-            "시가총액 1조원 이상 신규 52주 신고가 기업 중 당일 수익률을 계산할 수 있는 종목이 없습니다."
+            f"{market_label} 시가총액 {minimum_cap_label} 이상 신규 52주 신고가 기업 중 "
+            "당일 수익률을 계산할 수 있는 종목이 없습니다."
         )
 
     header = (
         "\n\n📌 핵심 요약\n"
-        "신규 52주 신고가 · 시총 1조원 이상 · 당일 수익률순"
+        f"{market_label} 신규 52주 신고가 · 시총 {minimum_cap_label} 이상 · 당일 수익률순"
     )
     blocks = []
     with ThreadPoolExecutor(max_workers=min(5, len(rows))) as executor:
@@ -612,7 +631,9 @@ def build_summary(payload: dict) -> str:
     return "\n\n".join([header, *blocks])
 
 
-def build_message(payload: dict, *, include_issues: bool = True) -> str:
+def build_message(
+    payload: dict, *, include_issues: bool = True, slot: str = "manual"
+) -> str:
     markets = payload.get("markets", {})
     total_highs = sum(int(markets.get(code, {}).get("highs", 0)) for code, _ in MARKET_LABELS)
     total_new = sum(int(markets.get(code, {}).get("new_highs", 0)) for code, _ in MARKET_LABELS)
@@ -629,11 +650,11 @@ def build_message(payload: dict, *, include_issues: bool = True) -> str:
         f"{DASHBOARD_URL}"
     )
     if include_issues:
-        message += build_summary(payload)
+        message += build_summary(payload, slot=slot)
     return message
 
 
-def main() -> None:
+def main(slot: str = "manual") -> None:
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
     if not token or not chat_id:
@@ -642,7 +663,11 @@ def main() -> None:
 
     payload = json.loads((ROOT / "data" / "latest.json").read_text(encoding="utf-8"))
     body = json.dumps(
-        {"chat_id": chat_id, "text": build_message(payload), "disable_web_page_preview": True}
+        {
+            "chat_id": chat_id,
+            "text": build_message(payload, slot=slot),
+            "disable_web_page_preview": True,
+        }
     ).encode("utf-8")
     request = urllib.request.Request(
         f"https://api.telegram.org/bot{token}/sendMessage",
