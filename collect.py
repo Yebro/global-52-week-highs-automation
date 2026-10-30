@@ -13,6 +13,7 @@ from dataclasses import dataclass, replace
 from datetime import datetime, time as clock_time, timedelta, timezone
 from pathlib import Path
 from typing import Callable, Iterable
+from urllib.parse import quote
 from zoneinfo import ZoneInfo
 
 import FinanceDataReader as fdr
@@ -27,6 +28,7 @@ LATEST_PATH = DATA_DIR / "latest.json"
 UNIVERSE_PATH = DATA_DIR / "universe.csv"
 SCREENED_PATH = DATA_DIR / "screened.csv"
 HISTORY_PATH = DATA_DIR / "history.json"
+ALL_TIME_HIGH_CACHE_PATH = CACHE_DIR / "all_time_highs.json"
 
 MARKET_LABELS = {
     "US": "미국",
@@ -571,6 +573,73 @@ def request_spark(symbols: list[str], timeout: int = 45) -> list[dict]:
     return []
 
 
+def parse_all_time_history(
+    payload: dict, market: str, as_of: str
+) -> tuple[float, str] | None:
+    chart = payload.get("chart") or {}
+    results = chart.get("result") or []
+    if not results:
+        return None
+    result = results[0] or {}
+    timestamps = result.get("timestamp") or []
+    quotes = ((result.get("indicators") or {}).get("quote") or [])
+    if not timestamps or not quotes:
+        return None
+    closes = (quotes[0] or {}).get("close") or []
+    market_tz = ZoneInfo(MARKET_CLOCK[market][0])
+    values: list[tuple[str, float]] = []
+    for stamp, close in zip(timestamps, closes):
+        if close is None:
+            continue
+        try:
+            price = float(close)
+            trade_date = datetime.fromtimestamp(
+                int(stamp), tz=timezone.utc
+            ).astimezone(market_tz).date().isoformat()
+        except (TypeError, ValueError, OSError):
+            continue
+        if trade_date <= as_of and math.isfinite(price) and price > 0:
+            values.append((trade_date, price))
+    if not values:
+        return None
+    return max(price for _, price in values), values[0][0]
+
+
+def request_all_time_history(
+    market: str, yahoo_symbol: str, as_of: str, timeout: int = 45
+) -> tuple[float, str] | None:
+    cutoff = datetime.fromisoformat(as_of).replace(tzinfo=timezone.utc) + timedelta(days=2)
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(yahoo_symbol, safe='')}"
+    params = {
+        "period1": 0,
+        "period2": int(cutoff.timestamp()),
+        "interval": "1d",
+        "events": "history",
+    }
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    }
+    last_error: Exception | None = None
+    for attempt in range(2):
+        try:
+            response = requests.get(url, params=params, headers=headers, timeout=timeout)
+            if response.status_code == 429:
+                raise RuntimeError("Yahoo rate limit (429)")
+            response.raise_for_status()
+            parsed = parse_all_time_history(response.json(), market, as_of)
+            if parsed:
+                return parsed
+            raise RuntimeError("empty all-time history")
+        except Exception as error:
+            last_error = error
+            time.sleep(1 + attempt)
+    print(
+        f"[warning] all-time history failed for {market}|{yahoo_symbol}: {last_error}",
+        file=sys.stderr,
+    )
+    return None
+
+
 def naver_session() -> requests.Session:
     session = getattr(_NAVER_SESSION_LOCAL, "session", None)
     if session is None:
@@ -1024,6 +1093,112 @@ def market_cap_krw_for(row: object, record: PriceRecord | None, fx_rates: dict[s
     return local_cap * fx_rate if local_cap else None
 
 
+def load_all_time_high_cache() -> dict[str, dict]:
+    if not ALL_TIME_HIGH_CACHE_PATH.exists():
+        return {}
+    try:
+        payload = json.loads(ALL_TIME_HIGH_CACHE_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return payload if isinstance(payload, dict) else {}
+
+
+def save_all_time_high_cache(cache: dict[str, dict]) -> None:
+    ALL_TIME_HIGH_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    temporary = ALL_TIME_HIGH_CACHE_PATH.with_suffix(".tmp")
+    temporary.write_text(
+        json.dumps(cache, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    temporary.replace(ALL_TIME_HIGH_CACHE_PATH)
+
+
+def collect_all_time_high_flags(
+    universe: pd.DataFrame,
+    prices: dict[str, PriceRecord],
+    fx_rates: dict[str, float],
+    workers: int,
+) -> dict[str, bool]:
+    candidates: list[tuple[str, str, str, PriceRecord]] = []
+    for row in universe.itertuples(index=False):
+        key = f"{row.market}|{row.yahoo_symbol}"
+        record = prices.get(key)
+        if not record or not record.is_high:
+            continue
+        market_cap_krw = market_cap_krw_for(row, record, fx_rates)
+        if market_cap_krw is None:
+            continue
+        if row.market != "KR" and market_cap_krw < MARKET_CAP_MIN_KRW:
+            continue
+        candidates.append((key, row.market, row.yahoo_symbol, record))
+
+    cache = load_all_time_high_cache()
+    flags: dict[str, bool] = {}
+    pending: list[tuple[str, str, str, PriceRecord]] = []
+    for key, market, yahoo_symbol, record in candidates:
+        entry = cache.get(key)
+        if not isinstance(entry, dict):
+            entry = {}
+        historical_max = positive_number(entry.get("historical_max_close"))
+        checked_through = clean_text(entry.get("checked_through"))
+        try:
+            cache_age_days = (
+                datetime.fromisoformat(record.as_of).date()
+                - datetime.fromisoformat(checked_through).date()
+            ).days
+        except ValueError:
+            cache_age_days = -1
+        if historical_max is not None and 0 <= cache_age_days <= 365:
+            flags[key] = record.close >= historical_max * (1 - 1e-8)
+            cache[key] = {
+                **entry,
+                "historical_max_close": max(historical_max, record.close),
+                "checked_through": record.as_of,
+            }
+        else:
+            pending.append((key, market, yahoo_symbol, record))
+
+    max_workers = min(8, max(4, workers))
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_map = {
+            executor.submit(
+                request_all_time_history, market, yahoo_symbol, record.as_of
+            ): (key, market, yahoo_symbol, record)
+            for key, market, yahoo_symbol, record in pending
+        }
+        for completed, future in enumerate(as_completed(future_map), start=1):
+            key, market, yahoo_symbol, record = future_map[future]
+            try:
+                result = future.result()
+            except Exception as error:
+                print(
+                    f"[warning] all-time request failed for {key}: {error}",
+                    file=sys.stderr,
+                )
+                result = None
+            if result:
+                historical_max, first_trade_date = result
+                flags[key] = record.close >= historical_max * (1 - 1e-8)
+                cache[key] = {
+                    "market": market,
+                    "yahoo_symbol": yahoo_symbol,
+                    "historical_max_close": historical_max,
+                    "first_trade_date": first_trade_date,
+                    "checked_through": record.as_of,
+                }
+            if completed == 1 or completed % 50 == 0 or completed == len(pending):
+                print(
+                    f"[all-time-high] {completed:,}/{len(pending):,} · "
+                    f"{sum(flags.values()):,} historical highs"
+                )
+
+    save_all_time_high_cache(cache)
+    print(
+        f"[all-time-high] checked {len(flags):,}/{len(candidates):,} current 52-week highs"
+    )
+    return flags
+
+
 def build_payload(
     universe: pd.DataFrame,
     prices: dict[str, PriceRecord],
@@ -1031,9 +1206,11 @@ def build_payload(
     fx_as_of: str,
     benchmarks: dict[str, dict] | None = None,
     relative_prices: dict[str, RelativePriceRecord] | None = None,
+    all_time_highs: dict[str, bool] | None = None,
 ) -> dict:
     benchmarks = benchmarks or {}
     relative_prices = relative_prices or {}
+    all_time_highs = all_time_highs or {}
     market_stats = {}
     high_rows = []
     screened_rows = []
@@ -1055,7 +1232,8 @@ def build_payload(
         high_count = 0
         new_high_count = 0
         for row in market_universe.itertuples(index=False):
-            record = prices.get(f"{market}|{row.yahoo_symbol}")
+            key = f"{market}|{row.yahoo_symbol}"
+            record = prices.get(key)
             market_cap_krw = market_cap_krw_for(row, record, fx_rates)
             if market_cap_krw is None:
                 excluded_unknown_cap += 1
@@ -1094,6 +1272,8 @@ def build_payload(
                 "is_high": record.is_high,
                 "was_high_previous": record.was_high_previous,
                 "is_new_high": record.is_high and not record.was_high_previous,
+                "is_all_time_high": bool(all_time_highs.get(key, False)),
+                "is_all_time_high_checked": key in all_time_highs,
                 "history_days": record.history_days,
                 "currency": record.currency,
                 "market_cap_krw": round(market_cap_krw),
@@ -1196,6 +1376,10 @@ def build_payload(
     total_excluded_small_cap = sum(item["excluded_small_cap"] for item in market_stats.values())
     total_excluded_unknown_cap = sum(item["excluded_unknown_market_cap"] for item in market_stats.values())
     total_highs = len(high_rows)
+    total_all_time_highs = sum(int(row["is_all_time_high"]) for row in high_rows)
+    total_all_time_highs_checked = sum(
+        int(row["is_all_time_high_checked"]) for row in high_rows
+    )
     total_new_highs = sum(item["new_highs"] for item in market_stats.values())
     collected_at = datetime.now(timezone.utc).astimezone(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
     return {
@@ -1206,6 +1390,7 @@ def build_payload(
             "short_history_rule": "상장 52주 미만 종목은 상장 이후, 최소 20거래일 필요",
             "breakout_return_rule": "최신 종가를 최근 365일 내 최초 52주 신고가 종가와 비교한 누적 수익률",
             "breakout_days_rule": "최초 신고가 기준일부터 최신 종가 기준일까지의 달력일수",
+            "all_time_high_rule": "상장 이후 전체 일봉 종가 기준 사상 최고가 이상",
             "market_cap_rule": "한국은 시가총액 제한 없음, 기타 시장은 원화 환산 시가총액 3,000억원 이상, 시가총액 미확인 종목 제외",
             "market_cap_min_krw": MARKET_CAP_MIN_KRW,
             "market_cap_exempt_markets": ["KR"],
@@ -1229,6 +1414,8 @@ def build_payload(
             "excluded_unknown_market_cap": total_excluded_unknown_cap,
             "highs": total_highs,
             "new_highs": total_new_highs,
+            "all_time_highs": total_all_time_highs,
+            "all_time_highs_checked": total_all_time_highs_checked,
             "previous_highs": total_previous_highs,
             "delta": total_highs - total_previous_highs,
             "ratio_pct": rounded(total_highs / total_screened * 100, 2) if total_screened else 0,
@@ -1304,8 +1491,17 @@ def main() -> None:
     relative_prices = collect_primary_relative_prices(
         universe, prices, fx_rates, max(1, args.workers)
     )
+    all_time_highs = collect_all_time_high_flags(
+        universe, prices, fx_rates, max(1, args.workers)
+    )
     payload = build_payload(
-        universe, prices, fx_rates, fx_as_of, benchmarks, relative_prices
+        universe,
+        prices,
+        fx_rates,
+        fx_as_of,
+        benchmarks,
+        relative_prices,
+        all_time_highs,
     )
     payload["history"] = update_history(payload)
     LATEST_PATH.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

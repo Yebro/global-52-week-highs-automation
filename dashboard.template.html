@@ -172,6 +172,7 @@
   #actual-highs-tracker .ht-rank { color: var(--ht-muted); width: 27px; }
   #actual-highs-tracker .ht-company { font-weight: 500; }
   #actual-highs-tracker .ht-new-badge { background: var(--ht-accent-soft); border-radius: 4px; color: var(--ht-accent); display: inline-block; font-size: 8px; font-weight: 500; margin-left: 5px; padding: 2px 4px; vertical-align: 1px; }
+  #actual-highs-tracker .ht-ath-badge { background: #f1edfa; border-radius: 4px; color: #7657b2; display: inline-block; font-size: 8px; font-weight: 600; margin-left: 5px; padding: 2px 4px; vertical-align: 1px; }
   #actual-highs-tracker .ht-ticker { color: var(--ht-muted); display: block; font-size: 9px; margin-top: 2px; }
   #actual-highs-tracker .ht-market-cap { font-variant-numeric: tabular-nums; font-weight: 500; white-space: nowrap; }
   #actual-highs-tracker .ht-tag { background: var(--ht-surface-2); border-radius: 5px; color: var(--ht-muted); display: inline-block; padding: 3px 5px; white-space: nowrap; }
@@ -309,6 +310,7 @@
             <div class="ht-list-tools" role="group" aria-label="종목표 보기 설정">
               <button type="button" class="ht-control-button" id="ht-sort-cap" aria-pressed="false">시총순</button>
               <button type="button" class="ht-control-button" id="ht-new-only" aria-pressed="false">신규만 <span id="ht-new-count">-</span></button>
+              <button type="button" class="ht-control-button" id="ht-all-time-only" aria-pressed="false" title="상장 이후 종가 기준 사상 최고가">역사적 신고가 <span id="ht-all-time-count">-</span></button>
               <span class="ht-count-chip" id="ht-visible-count">-</span>
             </div>
           </div>
@@ -411,6 +413,7 @@
   let rsPage = 1;
   let sortByCap = false;
   let newOnly = false;
+  let allTimeOnly = false;
   let rsPositiveOnly = true;
   const hiddenTrendMarkets = new Set();
 
@@ -424,6 +427,7 @@
   const clearButton = root.querySelector('.ht-clear');
   const sortCapButton = root.querySelector('#ht-sort-cap');
   const newOnlyButton = root.querySelector('#ht-new-only');
+  const allTimeOnlyButton = root.querySelector('#ht-all-time-only');
   const trendSvg = root.querySelector('.ht-trend');
   const trendLegend = root.querySelector('.ht-trend-legend');
   const trendTooltip = root.querySelector('.ht-trend-tooltip');
@@ -619,7 +623,7 @@
   }
 
   function filteredRows() {
-    const rows = marketSectorRows().filter(row => !newOnly || row.is_new_high);
+    const rows = marketSectorRows().filter(row => (!newOnly || row.is_new_high) && (!allTimeOnly || row.is_all_time_high));
     return [...rows].sort((a,b) => sortByCap
       ? Number(b.market_cap_krw) - Number(a.market_cap_krw) || Number(b.breakout_pct) - Number(a.breakout_pct)
       : Number(b.breakout_pct) - Number(a.breakout_pct) || Number(b.market_cap_krw) - Number(a.market_cap_krw));
@@ -638,18 +642,22 @@
       visible.forEach((row,index) => {
         const tr = document.createElement('tr');
         const newBadge = row.is_new_high ? '<span class="ht-new-badge">NEW</span>' : '';
+        const athBadge = row.is_all_time_high ? '<span class="ht-ath-badge">ATH</span>' : '';
         const dayReturn = Number(row.day_return_pct);
         const dayReturnClass = dayReturn > 0 ? ' is-up' : dayReturn < 0 ? ' is-down' : '';
-        tr.innerHTML = `<td class="ht-rank">${start + index + 1}</td><td><span class="ht-company">${row.name}</span>${newBadge}<span class="ht-ticker">${row.symbol}</span></td><td class="ht-num ht-market-cap">${formatMarketCap(row.market_cap_krw_eok)}</td><td class="ht-num ht-day-return${dayReturnClass}">${formatSignedPercent(row.day_return_pct)}</td><td><span class="ht-tag">${row.market} · ${row.exchange}</span></td><td>${row.sector}</td><td class="ht-date">${row.as_of}</td><td class="ht-num">${formatPrice(row.close)} <span class="ht-ticker">${row.currency}</span></td><td class="ht-num">${formatPrice(row.breakout_close)}<span class="ht-ticker">${row.breakout_date}</span></td><td class="ht-num ht-breakout">+${Number(row.breakout_pct).toFixed(2)}%<span class="ht-return-days">(${Number(row.breakout_days)}일)</span></td>`;
+        tr.innerHTML = `<td class="ht-rank">${start + index + 1}</td><td><span class="ht-company">${row.name}</span>${newBadge}${athBadge}<span class="ht-ticker">${row.symbol}</span></td><td class="ht-num ht-market-cap">${formatMarketCap(row.market_cap_krw_eok)}</td><td class="ht-num ht-day-return${dayReturnClass}">${formatSignedPercent(row.day_return_pct)}</td><td><span class="ht-tag">${row.market} · ${row.exchange}</span></td><td>${row.sector}</td><td class="ht-date">${row.as_of}</td><td class="ht-num">${formatPrice(row.close)} <span class="ht-ticker">${row.currency}</span></td><td class="ht-num">${formatPrice(row.breakout_close)}<span class="ht-ticker">${row.breakout_date}</span></td><td class="ht-num ht-breakout">+${Number(row.breakout_pct).toFixed(2)}%<span class="ht-return-days">(${Number(row.breakout_days)}일)</span></td>`;
         tbody.appendChild(tr);
       });
     }
     const newCount = marketSectorRows().filter(row => row.is_new_high).length;
+    const allTimeCount = marketSectorRows().filter(row => row.is_all_time_high).length;
     sortCapButton.setAttribute('aria-pressed', String(sortByCap));
     newOnlyButton.setAttribute('aria-pressed', String(newOnly));
+    allTimeOnlyButton.setAttribute('aria-pressed', String(allTimeOnly));
     root.querySelector('#ht-new-count').textContent = formatNumber(newCount);
+    root.querySelector('#ht-all-time-count').textContent = formatNumber(allTimeCount);
     root.querySelector('#ht-visible-count').textContent = `${formatNumber(rows.length)}개`;
-    root.querySelector('#ht-list-note').textContent = `${marketName()}${activeSector ? ` · ${activeSector}` : ''}${newOnly ? ' · 신규 신고가만' : ''} · ${sortByCap ? '시가총액 높은 순' : '1년 첫 신고가 후 수익률 높은 순'}`;
+    root.querySelector('#ht-list-note').textContent = `${marketName()}${activeSector ? ` · ${activeSector}` : ''}${newOnly ? ' · 신규 신고가만' : ''}${allTimeOnly ? ' · 역사적 신고가만' : ''} · ${sortByCap ? '시가총액 높은 순' : '1년 첫 신고가 후 수익률 높은 순'}`;
     root.querySelector('#ht-page-info').textContent = rows.length ? `${formatNumber(start + 1)}–${formatNumber(Math.min(start + pageSize, rows.length))} / ${formatNumber(rows.length)}` : '0개';
     root.querySelector('#ht-prev').disabled = page <= 1;
     root.querySelector('#ht-next').disabled = page >= pages;
@@ -717,7 +725,8 @@
 
   clearButton.addEventListener('click', () => { activeSector = null; page = 1; render(); });
   sortCapButton.addEventListener('click', () => { sortByCap = !sortByCap; page = 1; renderTable(); });
-  newOnlyButton.addEventListener('click', () => { newOnly = !newOnly; page = 1; renderTable(); });
+  newOnlyButton.addEventListener('click', () => { newOnly = !newOnly; if (newOnly) allTimeOnly = false; page = 1; renderTable(); });
+  allTimeOnlyButton.addEventListener('click', () => { allTimeOnly = !allTimeOnly; if (allTimeOnly) newOnly = false; page = 1; renderTable(); });
   root.querySelector('#ht-prev').addEventListener('click', () => { if (page > 1) { page -= 1; renderTable(); } });
   root.querySelector('#ht-next').addEventListener('click', () => { if (page * pageSize < filteredRows().length) { page += 1; renderTable(); } });
   root.querySelectorAll('.ht-mode-button').forEach(button => button.addEventListener('click', () => {

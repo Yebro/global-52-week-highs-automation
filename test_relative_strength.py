@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 
@@ -11,6 +12,60 @@ import collect
 
 
 class RelativeStrengthTests(unittest.TestCase):
+    def test_parse_all_time_history_uses_prices_through_as_of(self) -> None:
+        stamps = [
+            int(datetime(2020, 1, 2, 12, tzinfo=timezone.utc).timestamp()),
+            int(datetime(2026, 10, 20, 12, tzinfo=timezone.utc).timestamp()),
+            int(datetime(2026, 10, 21, 12, tzinfo=timezone.utc).timestamp()),
+        ]
+        payload = {
+            "chart": {
+                "result": [
+                    {
+                        "timestamp": stamps,
+                        "indicators": {"quote": [{"close": [80.0, 120.0, 150.0]}]},
+                    }
+                ]
+            }
+        }
+
+        result = collect.parse_all_time_history(payload, "US", "2026-10-20")
+
+        self.assertEqual(result, (120.0, "2020-01-02"))
+
+    def test_build_payload_marks_historical_all_time_high(self) -> None:
+        universe = pd.DataFrame(
+            [
+                {
+                    "market": "US", "exchange": "NASDAQ", "symbol": "ATH",
+                    "yahoo_symbol": "ATH", "name": "All Time High Corp", "sector": "IT",
+                    "industry": "Software", "market_cap_local": 1_000_000_000,
+                    "currency": "USD", "shares_outstanding": 10_000_000,
+                }
+            ]
+        )
+        prices = {
+            "US|ATH": collect.PriceRecord(
+                yahoo_symbol="ATH", as_of="2026-10-20", close=120.0,
+                day_return_pct=2.0, return_5d_pct=8.0, prior_high=119.0,
+                breakout_date="2026-10-20", breakout_close=120.0, breakout_pct=0.0,
+                is_high=True, was_high_previous=False, history_days=253,
+                latest_volume=1_000_000, currency="USD",
+            )
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            with patch.object(collect, "SCREENED_PATH", Path(temp_dir) / "screened.csv"):
+                payload = collect.build_payload(
+                    universe, prices, {"USD": 1_400.0},
+                    "2026-10-20T00:00:00+09:00",
+                    all_time_highs={"US|ATH": True},
+                )
+
+        self.assertTrue(payload["highs"][0]["is_all_time_high"])
+        self.assertTrue(payload["highs"][0]["is_all_time_high_checked"])
+        self.assertEqual(payload["summary"]["all_time_highs"], 1)
+        self.assertEqual(payload["summary"]["all_time_highs_checked"], 1)
+
     def test_build_payload_calculates_five_day_relative_strength(self) -> None:
         universe = pd.DataFrame(
             [
