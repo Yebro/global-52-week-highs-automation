@@ -2,11 +2,45 @@ from __future__ import annotations
 
 import time
 import unittest
+from unittest.mock import patch
 
 import notify_telegram as subject
 
 
 class IssueSelectionTests(unittest.TestCase):
+    def test_summary_uses_compact_three_line_html_format(self) -> None:
+        payload = {
+            "highs": [
+                {
+                    "market_code": "CN",
+                    "market": "중국",
+                    "is_new_high": True,
+                    "market_cap_krw": 4_100_000_000_000,
+                    "day_return_pct": 18.62,
+                    "symbol": "688686",
+                    "name": "OPT Machine Vision Tech Co Ltd Class A",
+                    "sector": "IT",
+                }
+            ]
+        }
+        issue = (
+            "OPT Machine Vision Tech : 9M revenue grew 36.95%, "
+            "led by semiconductors and AI solutions (TradingView)"
+        )
+        with patch.object(subject, "safe_fetch_issue", return_value=issue):
+            summary = subject.build_summary(payload, slot="asia")
+
+        block = summary.split("\n\n")[-1]
+        self.assertEqual(
+            block,
+            "<b>1. OPT Machine Vision Tech Co Ltd Class A "
+            "[금일 +18.62% / 시총 4.1조원]</b>\n"
+            "시장: 중국 (688686) / IT\n"
+            "이슈: OPT Machine Vision Tech : 9M revenue grew 36.95%, "
+            "led by semiconductors and AI solutions (TradingView)",
+        )
+        self.assertEqual(len(block.splitlines()), 3)
+
     def test_asia_summary_uses_asia_markets_and_one_trillion_cutoff(self) -> None:
         payload = {
             "highs": [

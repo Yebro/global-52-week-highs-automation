@@ -621,12 +621,10 @@ def build_summary(payload: dict, *, slot: str = "manual") -> str:
         market_cap = format_market_cap(row.get("market_cap_krw"))
         day_return = float(row["day_return_pct"])
         blocks.append(
-            f"{index}. {name}\n"
-            f"시장: {market_with_ticker}\n"
-            f"섹터: {sector}\n"
-            f"시총: {market_cap}\n"
-            f"수익률: {day_return:+.2f}%\n"
-            f"이슈: {issue}"
+            f"<b>{index}. {html.escape(name)} "
+            f"[금일 {day_return:+.2f}% / 시총 {html.escape(market_cap)}]</b>\n"
+            f"시장: {html.escape(market_with_ticker)} / {html.escape(sector)}\n"
+            f"이슈: {html.escape(issue)}"
         )
     return "\n\n".join([header, *blocks])
 
@@ -666,6 +664,7 @@ def main(slot: str = "manual") -> None:
         {
             "chat_id": chat_id,
             "text": build_message(payload, slot=slot),
+            "parse_mode": "HTML",
             "disable_web_page_preview": True,
         }
     ).encode("utf-8")
