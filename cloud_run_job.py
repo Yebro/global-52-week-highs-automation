@@ -56,6 +56,11 @@ def main() -> None:
     parser.add_argument("--slot", choices=("asia", "us", "manual"), required=True)
     parser.add_argument("--attempts", type=int, default=5)
     parser.add_argument("--interval-seconds", type=int, default=60)
+    parser.add_argument(
+        "--skip-notify",
+        action="store_true",
+        help="Publish refreshed data without sending a Telegram notification",
+    )
     args = parser.parse_args()
 
     restore_state()
@@ -72,7 +77,8 @@ def main() -> None:
 
     subprocess.run([sys.executable, str(ROOT / "build_dashboard.py")], cwd=ROOT, check=True)
     publish_site()
-    notify_telegram(args.slot)
+    if not args.skip_notify:
+        notify_telegram(args.slot)
     mark_published(args.slot, datetime.now(KST))
     save_state()
     print("Cloud Run update completed.", flush=True)

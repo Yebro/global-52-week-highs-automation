@@ -42,7 +42,14 @@ MARKET_LABELS = {
 MARKET_ORDER = ["US", "KR", "JP", "CN", "TW", "HK"]
 
 RELATIVE_STRENGTH_LIMIT_PER_MARKET = 20
-RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW = 500_000_000_000
+RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW = {
+    "US": 10_000_000_000_000,
+    "KR": 500_000_000_000,
+    "JP": 5_000_000_000_000,
+    "CN": 5_000_000_000_000,
+    "TW": 5_000_000_000_000,
+    "HK": 5_000_000_000_000,
+}
 
 BENCHMARKS = {
     "US:NASDAQ": {"symbol": "^IXIC", "name": "NASDAQ Composite", "market": "US"},
@@ -58,6 +65,10 @@ BENCHMARKS = {
 }
 
 NON_YAHOO_RELATIVE_MARKETS = {"KR", "JP", "CN", "TW", "HK"}
+
+
+def relative_strength_market_cap_min_krw(market: str) -> int:
+    return RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW[market]
 
 NAVER_BENCHMARKS = {
     "KR:KOSPI": {"symbol": "KOSPI", "name": "KOSPI", "market": "KR", "kind": "domestic"},
@@ -835,7 +846,7 @@ def collect_primary_relative_prices(
         market_cap_krw = market_cap_krw_for(row, price, fx_rates)
         if not price or market_cap_krw is None:
             continue
-        if market_cap_krw < RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW:
+        if market_cap_krw < relative_strength_market_cap_min_krw(row.market):
             continue
         candidates.append((key, row.market, row.exchange, row.symbol, row.yahoo_symbol))
 
@@ -1291,7 +1302,7 @@ def build_payload(
                     source="Yahoo Finance daily close via spark endpoint",
                 )
             if (
-                market_cap_krw >= RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW
+                market_cap_krw >= relative_strength_market_cap_min_krw(market)
                 and benchmark
                 and relative_price
                 and relative_price.latest_volume > 0
@@ -1400,8 +1411,8 @@ def build_payload(
             "listing_sources": "FinanceDataReader/Naver, S&P 500 listing, TWSE OpenAPI, TPEx OpenAPI",
             "relative_strength_rule": "최근 완료 5거래일 종목 수익률 - 동일 거래소 벤치마크 5거래일 수익률",
             "relative_strength_activity_rule": "최근 시장 거래일에 거래량이 확인된 종목만 포함(거래정지·시세 지연 종목 제외)",
-            "relative_strength_market_cap_rule": "전 시장 원화 환산 시가총액 5,000억원 이상, 시가총액 미확인 종목 제외",
-            "relative_strength_market_cap_min_krw": RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW,
+            "relative_strength_market_cap_rule": "미국 10조원 이상 · 한국 5,000억원 이상 · 일본·중국·대만·홍콩 5조원 이상, 시가총액 미확인 종목 제외",
+            "relative_strength_market_cap_min_krw_by_market": RELATIVE_STRENGTH_MARKET_CAP_MIN_KRW,
             "relative_strength_price_source": "한국·일본·중국·홍콩은 네이버 증권 일봉 OHLCV, 대만은 TWSE·TPEx 공식 일봉, 미국은 Yahoo Finance 일봉",
             "relative_strength_limit_per_market": RELATIVE_STRENGTH_LIMIT_PER_MARKET,
         },

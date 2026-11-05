@@ -77,7 +77,7 @@ class RelativeStrengthTests(unittest.TestCase):
                     "name": "ABC Corporation",
                     "sector": "IT",
                     "industry": "Software",
-                    "market_cap_local": 1_000_000_000,
+                    "market_cap_local": 10_000_000_000,
                     "currency": "USD",
                     "shares_outstanding": 10_000_000,
                 }
@@ -131,7 +131,7 @@ class RelativeStrengthTests(unittest.TestCase):
                 {
                     "market": "US", "exchange": "NASDAQ", "symbol": symbol,
                     "yahoo_symbol": symbol, "name": symbol, "sector": "IT",
-                    "industry": "Software", "market_cap_local": 1_000_000_000,
+                    "industry": "Software", "market_cap_local": 10_000_000_000,
                     "currency": "USD", "shares_outstanding": 10_000_000,
                 }
                 for symbol in ("ACTIVE", "HALTED", "STALE")
@@ -282,7 +282,7 @@ class RelativeStrengthTests(unittest.TestCase):
                     "market": "US", "exchange": "NASDAQ", "symbol": f"S{index:02d}",
                     "yahoo_symbol": f"S{index:02d}", "name": f"Stock {index:02d}",
                     "sector": "IT", "industry": "Software",
-                    "market_cap_local": 1_000_000_000, "currency": "USD",
+                    "market_cap_local": 10_000_000_000, "currency": "USD",
                     "shares_outstanding": 10_000_000,
                 }
                 for index in range(21)
@@ -316,7 +316,16 @@ class RelativeStrengthTests(unittest.TestCase):
         self.assertNotIn("S00", symbols)
         self.assertEqual(payload["meta"]["relative_strength_limit_per_market"], 20)
 
-    def test_relative_strength_requires_500_billion_krw_in_every_market(self) -> None:
+    def test_relative_strength_uses_market_specific_market_cap_thresholds(self) -> None:
+        self.assertEqual(collect.relative_strength_market_cap_min_krw("US"), 10_000_000_000_000)
+        self.assertEqual(collect.relative_strength_market_cap_min_krw("KR"), 500_000_000_000)
+        for market in ("JP", "CN", "TW", "HK"):
+            self.assertEqual(
+                collect.relative_strength_market_cap_min_krw(market),
+                5_000_000_000_000,
+            )
+
+    def test_korean_relative_strength_requires_500_billion_krw(self) -> None:
         universe = pd.DataFrame(
             [
                 {
@@ -361,7 +370,17 @@ class RelativeStrengthTests(unittest.TestCase):
 
         self.assertEqual([row["symbol"] for row in payload["relative_strength"]], ["LARGE"])
         self.assertEqual(payload["markets"]["KR"]["screened"], 2)
-        self.assertEqual(payload["meta"]["relative_strength_market_cap_min_krw"], 500_000_000_000)
+        self.assertEqual(
+            payload["meta"]["relative_strength_market_cap_min_krw_by_market"],
+            {
+                "US": 10_000_000_000_000,
+                "KR": 500_000_000_000,
+                "JP": 5_000_000_000_000,
+                "CN": 5_000_000_000_000,
+                "TW": 5_000_000_000_000,
+                "HK": 5_000_000_000_000,
+            },
+        )
 
 
 if __name__ == "__main__":
